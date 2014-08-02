@@ -15,6 +15,8 @@
 		208A81C3198B24DE0075A441 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A81C2198B24DE0075A441 /* User.swift */; };
 		208A81C5198B26DE0075A441 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A81C4198B26DE0075A441 /* API.swift */; };
 		208A81C9198C464E0075A441 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A81C8198C464E0075A441 /* RegisterViewController.swift */; };
+		55E1D404198D66FC0006749D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E1D403198D66FC0006749D /* HomeViewController.swift */; };
+		55E1D409198D79EA0006749D /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E1D408198D79EA0006749D /* FacebookSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,9 @@
 		208A81C2198B24DE0075A441 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		208A81C4198B26DE0075A441 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		208A81C8198C464E0075A441 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		55E1D403198D66FC0006749D /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		55E1D408198D79EA0006749D /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		55E1D40A198D7C1E0006749D /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "Tourismmer/Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55E1D409198D79EA0006749D /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +69,8 @@
 		208A8187198732890075A441 = {
 			isa = PBXGroup;
 			children = (
+				55E1D40A198D7C1E0006749D /* Bridging-Header.h */,
+				55E1D405198D791C0006749D /* Frameworks */,
 				208A8192198732890075A441 /* Tourismmer */,
 				208A81A5198732890075A441 /* TourismmerTests */,
 				208A8191198732890075A441 /* Products */,
@@ -130,6 +138,7 @@
 			children = (
 				208A8197198732890075A441 /* LoginViewController.swift */,
 				208A81C8198C464E0075A441 /* RegisterViewController.swift */,
+				55E1D403198D66FC0006749D /* HomeViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -140,6 +149,14 @@
 				208A81C4198B26DE0075A441 /* API.swift */,
 			);
 			name = Service;
+			sourceTree = "<group>";
+		};
+		55E1D405198D791C0006749D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				55E1D408198D79EA0006749D /* FacebookSDK.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +263,7 @@
 				208A8196198732890075A441 /* AppDelegate.swift in Sources */,
 				208A81C5198B26DE0075A441 /* API.swift in Sources */,
 				208A81C3198B24DE0075A441 /* User.swift in Sources */,
+				55E1D404198D66FC0006749D /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,9 +381,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					/Users/felipe/Documents/FacebookSDK,
+				);
 				INFOPLIST_FILE = Tourismmer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Tourismmer/Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -374,9 +398,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					/Users/felipe/Documents/FacebookSDK,
+				);
 				INFOPLIST_FILE = Tourismmer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Tourismmer/Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -433,6 +463,7 @@
 				208A81AE198732890075A441 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		208A81AF198732890075A441 /* Build configuration list for PBXNativeTarget "TourismmerTests" */ = {
 			isa = XCConfigurationList;
@@ -441,6 +472,7 @@
 				208A81B1198732890075A441 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

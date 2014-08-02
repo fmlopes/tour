@@ -8,17 +8,17 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, FBLoginViewDelegate {
     
+    @IBOutlet weak var fbLoginView: FBLoginView!
     lazy var api:API = API(delegate: LoginDelegate())
-    var genders = [NSString]()
-                            
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        genders.append("Masculino")
-        genders.append("Feminino")
+        self.fbLoginView.delegate = self
+        self.fbLoginView.readPermissions = ["public_profile", "email", "user_friends"]
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,6 +28,30 @@ class LoginViewController: UIViewController {
 
     @IBAction func login(sender: AnyObject) {
         
+    }
+    
+    // Facebook Delegate Methods
+    
+    func loginViewShowingLoggedInUser(loginView : FBLoginView!) {
+        println("User Logged In")
+    }
+    
+    func loginViewFetchedUserInfo(loginView : FBLoginView!, user: FBGraphUser) {
+        println("User: \(user)")
+        println("User ID: \(user.objectID)")
+        println("User Name: \(user.name)")
+        var userEmail = user.objectForKey("email") as String
+        println("User Email: \(userEmail)")
+        
+        performSegueWithIdentifier("registeredSegue", sender: self)
+    }
+    
+    func loginViewShowingLoggedOutUser(loginView : FBLoginView!) {
+        println("User Logged Out")
+    }
+    
+    func loginView(loginView : FBLoginView!, handleError:NSError) {
+        println("Error: \(handleError.localizedDescription)")
     }
 }
 

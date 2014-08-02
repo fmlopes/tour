@@ -9,11 +9,14 @@
 import Foundation
 import UIKit
 
-class RegisterViewController:UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class RegisterViewController:UIViewController {
     
-    var genders = [NSString]()
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var cityTextField: UITextField!
     
-    @IBOutlet weak var genderPickerView: UIPickerView!
+    @IBOutlet weak var birthdayPickerView: UIDatePicker!
+    @IBOutlet weak var gendersSegmentedControl: UISegmentedControl!
     
     init(coder aDecoder: NSCoder!) {
         super.init(coder: aDecoder)
@@ -22,26 +25,20 @@ class RegisterViewController:UIViewController, UIPickerViewDataSource, UIPickerV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        genders.append("Masculino")
-        genders.append("Feminino")
-        genderPickerView.reloadAllComponents()
-    }
-    
-    func pickerView(pickerView: UIPickerView!, numberOfRowsInComponent component: Int) -> Int {
-        return genders.count
-    }
-    
-    func pickerView(pickerView: UIPickerView!, titleForRow row: Int, forComponent component: Int) -> String! {
-        return genders[row]
-    }
-    
-    func numberOfComponentsInPickerView(pickerView: UIPickerView!) -> Int {
-        return 1
     }
     
     @IBAction func RegisterClick(sender: AnyObject) {
+        
+        if nameTextField.text.isEmpty {
+            println("Nome é obrigatório")
+            return
+        }
+        if emailTextField.text.isEmpty {
+            println("Email é obrigatório")
+            return
+        }
+        
         println("Registered")
-        
-        
+        performSegueWithIdentifier("registeredSegue", sender: self)
     }
 }

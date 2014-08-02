@@ -22,7 +22,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="192" width="360" height="30"/>
+                                    <rect key="frame" x="20" y="192" width="280" height="30"/>
                                 </variation>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7sz-j8-WtZ">
@@ -30,7 +30,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="277" width="360" height="30"/>
+                                    <rect key="frame" x="20" y="282" width="280" height="30"/>
                                 </variation>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="di9-VE-t8C">
@@ -39,28 +39,26 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="179" y="349" width="42" height="30"/>
+                                    <rect key="frame" x="139" y="349" width="42" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zpd-vO-gtq"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u2N-jY-knG">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Entrar com Facebook">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mf8-pY-Iub" customClass="FBLoginView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="126" y="387" width="148" height="30"/>
+                                    <rect key="frame" x="24" y="490" width="273" height="58"/>
                                 </variation>
-                            </button>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fe7-RX-kh1">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Cadastrar">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="166" y="425" width="68" height="30"/>
+                                    <rect key="frame" x="126" y="446" width="68" height="30"/>
                                 </variation>
                                 <connections>
                                     <segue destination="L2z-4B-tfn" kind="show" id="6Nl-Nq-Ufc"/>
@@ -73,7 +71,7 @@
                                 <exclude reference="xW9-kN-Y2b"/>
                                 <exclude reference="7sz-j8-WtZ"/>
                                 <exclude reference="di9-VE-t8C"/>
-                                <exclude reference="u2N-jY-knG"/>
+                                <exclude reference="mf8-pY-Iub"/>
                                 <exclude reference="Fe7-RX-kh1"/>
                             </mask>
                         </variation>
@@ -82,16 +80,47 @@
                                 <include reference="xW9-kN-Y2b"/>
                                 <include reference="7sz-j8-WtZ"/>
                                 <include reference="di9-VE-t8C"/>
-                                <include reference="u2N-jY-knG"/>
+                                <include reference="mf8-pY-Iub"/>
                                 <include reference="Fe7-RX-kh1"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="6Lj-ep-bUd"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4">
+                        <size key="portraitSize" width="320" height="568"/>
+                        <size key="landscapeSize" width="568" height="320"/>
+                    </simulatedScreenMetrics>
+                    <connections>
+                        <outlet property="fbLoginView" destination="mf8-pY-Iub" id="b7O-xL-CAU"/>
+                        <segue destination="Nf4-Vd-m2E" kind="show" id="LQe-Dc-fFp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="321" y="413"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="3M6-V3-apL">
+            <objects>
+                <viewController storyboardIdentifier="Home" id="Nf4-Vd-m2E" customClass="HomeViewController" customModule="Tourismmer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ypm-2e-eKC"/>
+                        <viewControllerLayoutGuide type="bottom" id="aZh-xy-TLP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Gsv-6E-t8f">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4">
+                        <size key="portraitSize" width="320" height="568"/>
+                        <size key="landscapeSize" width="568" height="320"/>
+                    </simulatedScreenMetrics>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dfK-J5-e25" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="976.5" y="112"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="kfP-1g-nwm">
@@ -110,7 +139,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="85" width="360" height="30"/>
+                                    <rect key="frame" x="15" y="85" width="293" height="30"/>
                                 </variation>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ucI-vY-rVg">
@@ -118,7 +147,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="135" width="360" height="30"/>
+                                    <rect key="frame" x="15" y="133" width="293" height="30"/>
                                 </variation>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cidade" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TaA-dR-Rly">
@@ -126,7 +155,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="184" width="360" height="30"/>
+                                    <rect key="frame" x="15" y="184" width="293" height="30"/>
                                 </variation>
                             </textField>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="fKX-7N-GI3">
@@ -136,7 +165,7 @@
                                 </date>
                                 <locale key="locale" localeIdentifier="pt_BR"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="264" width="400" height="162"/>
+                                    <rect key="frame" x="1" y="264" width="320" height="162"/>
                                 </variation>
                             </datePicker>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data de Nascimento" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Jt-uD-CL9">
@@ -154,22 +183,31 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="312" y="555" width="68" height="30"/>
+                                    <rect key="frame" x="232" y="518" width="68" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="RegisterClick:" destination="L2z-4B-tfn" eventType="touchUpInside" id="w70-YM-F3h"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MK1-WU-deb">
-                                <rect key="frame" x="0.0" y="-162" width="320" height="162"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sexo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgJ-qM-x4A">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="5" y="379" width="390" height="162"/>
+                                    <rect key="frame" x="20" y="434" width="39" height="21"/>
                                 </variation>
-                                <connections>
-                                    <outlet property="dataSource" destination="L2z-4B-tfn" id="QDG-65-Vio"/>
-                                    <outlet property="delegate" destination="L2z-4B-tfn" id="A2q-6Q-I98"/>
-                                </connections>
-                            </pickerView>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9nm-9f-Etj">
+                                <rect key="frame" x="-61" y="-14" width="123" height="29"/>
+                                <segments>
+                                    <segment title="Masculino"/>
+                                    <segment title="Feminino"/>
+                                </segments>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="87" y="472" width="147" height="29"/>
+                                </variation>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -180,7 +218,8 @@
                                 <exclude reference="fKX-7N-GI3"/>
                                 <exclude reference="4Jt-uD-CL9"/>
                                 <exclude reference="JKT-4F-Azb"/>
-                                <exclude reference="MK1-WU-deb"/>
+                                <exclude reference="cgJ-qM-x4A"/>
+                                <exclude reference="9nm-9f-Etj"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -191,17 +230,23 @@
                                 <include reference="fKX-7N-GI3"/>
                                 <include reference="4Jt-uD-CL9"/>
                                 <include reference="JKT-4F-Azb"/>
-                                <include reference="MK1-WU-deb"/>
+                                <include reference="cgJ-qM-x4A"/>
+                                <include reference="9nm-9f-Etj"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="genderPickerView" destination="MK1-WU-deb" id="N6y-fN-QoE"/>
+                        <outlet property="birthdayPickerView" destination="fKX-7N-GI3" id="mpN-lS-0Bs"/>
+                        <outlet property="cityTextField" destination="TaA-dR-Rly" id="XOa-9c-bDe"/>
+                        <outlet property="emailTextField" destination="ucI-vY-rVg" id="7OQ-vU-V8O"/>
+                        <outlet property="gendersSegmentedControl" destination="9nm-9f-Etj" id="T8W-fV-pqM"/>
+                        <outlet property="nameTextField" destination="cIb-Sd-RkJ" id="00k-rY-AaX"/>
+                        <segue destination="Nf4-Vd-m2E" kind="show" identifier="registeredSegue" id="jPI-T0-bUq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mvj-wI-ZOF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1096.5" y="742"/>
+            <point key="canvasLocation" x="976.5" y="955"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dA4-Ec-tZO">
@@ -222,4 +267,7 @@
             <point key="canvasLocation" x="-513" y="413"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="jPI-T0-bUq"/>
+    </inferredMetricsTieBreakers>
 </document>
