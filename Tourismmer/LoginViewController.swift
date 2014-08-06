@@ -27,7 +27,7 @@ class LoginViewController: UIViewController, FBLoginViewDelegate {
     }
 
     @IBAction func login(sender: AnyObject) {
-        
+        performSegueWithIdentifier("loginSegue", sender: self)
     }
     
     // Facebook Delegate Methods
