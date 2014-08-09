@@ -39,7 +39,9 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         let group = groups[indexPath.row]
         
         cell.textLabel.text = group.location.name
-        //cell.detailTextLabel.text = group.type?.toRaw()
+        if group.type? {
+            cell.detailTextLabel.text = group.type?.toRaw()
+        }
         cell.imageView.image = UIImage(named: "Blank52.png")
         
         var imgURL:NSURL = NSURL(string:group.imgPath)
