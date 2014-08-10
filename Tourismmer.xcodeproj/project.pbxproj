@@ -19,7 +19,7 @@
 		209BB9611991B03E00BE6D26 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209BB9601991B03E00BE6D26 /* Group.swift */; };
 		209BB9631991B07200BE6D26 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209BB9621991B07200BE6D26 /* Location.swift */; };
 		209BB9651991B19C00BE6D26 /* TripType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209BB9641991B19C00BE6D26 /* TripType.swift */; };
-		209BB9671991D32A00BE6D26 /* Blank52.png in Resources */ = {isa = PBXBuildFile; fileRef = 209BB9661991D32A00BE6D26 /* Blank52.png */; };
+		5504ED391996774600DA6FC9 /* Blank52.png in Resources */ = {isa = PBXBuildFile; fileRef = 5504ED381996774600DA6FC9 /* Blank52.png */; };
 		55E1D404198D66FC0006749D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E1D403198D66FC0006749D /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +50,7 @@
 		209BB9601991B03E00BE6D26 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		209BB9621991B07200BE6D26 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		209BB9641991B19C00BE6D26 /* TripType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripType.swift; sourceTree = "<group>"; };
-		209BB9661991D32A00BE6D26 /* Blank52.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Blank52.png; path = ../../../../../../Downloads/Blank52.png; sourceTree = "<group>"; };
+		5504ED381996774600DA6FC9 /* Blank52.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Blank52.png; path = Tourismmer/Images.xcassets/Blank52.png; sourceTree = "<group>"; };
 		55E1D403198D66FC0006749D /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		55E1D40A198D7C1E0006749D /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "Tourismmer/Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,7 +82,7 @@
 				208A8192198732890075A441 /* Tourismmer */,
 				208A81A5198732890075A441 /* TourismmerTests */,
 				208A8191198732890075A441 /* Products */,
-				209BB9661991D32A00BE6D26 /* Blank52.png */,
+				5504ED381996774600DA6FC9 /* Blank52.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -251,7 +251,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				209BB9671991D32A00BE6D26 /* Blank52.png in Resources */,
+				5504ED391996774600DA6FC9 /* Blank52.png in Resources */,
 				208A819B198732890075A441 /* Main.storyboard in Resources */,
 				208A819D198732890075A441 /* Images.xcassets in Resources */,
 			);

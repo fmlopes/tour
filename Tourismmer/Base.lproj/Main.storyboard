@@ -92,7 +92,10 @@
                         <size key="landscapeSize" width="568" height="320"/>
                     </simulatedScreenMetrics>
                     <connections>
+                        <outlet property="emailTextField" destination="xW9-kN-Y2b" id="TpY-pl-SZ5"/>
                         <outlet property="fbLoginView" destination="mf8-pY-Iub" id="b7O-xL-CAU"/>
+                        <outlet property="loginButton" destination="di9-VE-t8C" id="X22-We-Qcu"/>
+                        <outlet property="passTextField" destination="7sz-j8-WtZ" id="8CQ-qc-lOa"/>
                         <segue destination="Nf4-Vd-m2E" kind="show" identifier="loginSegue" id="LQe-Dc-fFp"/>
                     </connections>
                 </viewController>

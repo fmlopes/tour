@@ -11,6 +11,9 @@ import UIKit
 class LoginViewController: UIViewController, FBLoginViewDelegate {
     
     @IBOutlet weak var fbLoginView: FBLoginView!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passTextField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
     lazy var api:API = API(delegate: LoginDelegate())
     
     override func viewDidLoad() {
@@ -19,6 +22,8 @@ class LoginViewController: UIViewController, FBLoginViewDelegate {
         
         self.fbLoginView.delegate = self
         self.fbLoginView.readPermissions = ["public_profile", "email", "user_friends"]
+        
+        loginButton.enabled = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,13 +32,24 @@ class LoginViewController: UIViewController, FBLoginViewDelegate {
     }
 
     @IBAction func login(sender: AnyObject) {
-        performSegueWithIdentifier("loginSegue", sender: self)
+        if (isValidForm()) {
+            performSegueWithIdentifier("loginSegue", sender: self)
+        }
+    }
+    
+    func isValidForm() -> Bool {
+        if (emailTextField.text.isEmpty || passTextField.text.isEmpty) {
+            return false
+        }
+        
+        return true
     }
     
     // Facebook Delegate Methods
     
     func loginViewShowingLoggedInUser(loginView : FBLoginView!) {
         println("User Logged In")
+        performSegueWithIdentifier("loginSegue", sender: self)
     }
     
     func loginViewFetchedUserInfo(loginView : FBLoginView!, user: FBGraphUser) {
