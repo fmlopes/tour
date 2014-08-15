@@ -7,8 +7,8 @@
 //
 
 import Foundation
-class User {
-    var id:Int64
+class User:NSObject {
+    var id:NSNumber
     var name:NSString
     var city:NSString
     var birthdate:NSDate
@@ -16,9 +16,9 @@ class User {
     var pass:NSString
     var gender:NSString
     var relationshipStatus:NSString
-    var facebookId:Int64
+    var facebookId:NSNumber
     
-    init(id:Int64, name:NSString, city:NSString, birthdate:NSDate, email:NSString, pass:NSString, gender:NSString, relationshipStatus:NSString, facebookId:Int64) {
+    init(id:NSNumber, name:NSString, city:NSString, birthdate:NSDate, email:NSString, pass:NSString, gender:NSString, relationshipStatus:NSString, facebookId:NSNumber) {
         self.id = id
         self.name = name
         self.city = city
@@ -28,5 +28,21 @@ class User {
         self.gender = gender
         self.relationshipStatus = relationshipStatus
         self.facebookId = facebookId
+    }
+    
+    func dictionaryFromUser() -> Dictionary<String, String> {
+        var obj:Dictionary<String, String> = [
+            "id": self.id.stringValue,
+            "name": self.name,
+            "city": self.city,
+            "birthdate": self.birthdate.description,
+            "email": self.email,
+            "pass": self.pass,
+            "gender": self.gender,
+            "relationshipStatus": self.relationshipStatus,
+            "facebookId": self.facebookId.stringValue
+        ]
+        
+        return obj
     }
 }

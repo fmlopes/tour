@@ -228,7 +228,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cIb-Sd-RkJ">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="15" y="85" width="293" height="30"/>
                                 </variation>
@@ -236,17 +236,9 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ucI-vY-rVg">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="15" y="133" width="293" height="30"/>
-                                </variation>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cidade" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TaA-dR-Rly">
-                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="15" y="184" width="293" height="30"/>
+                                    <rect key="frame" x="15" y="136" width="293" height="30"/>
                                 </variation>
                             </textField>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="fKX-7N-GI3">
@@ -256,7 +248,7 @@
                                 </date>
                                 <locale key="locale" localeIdentifier="pt_BR"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="1" y="264" width="320" height="162"/>
+                                    <rect key="frame" x="0.0" y="283" width="320" height="162"/>
                                 </variation>
                             </datePicker>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data de Nascimento" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Jt-uD-CL9">
@@ -265,7 +257,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="235" width="157" height="21"/>
+                                    <rect key="frame" x="15" y="254" width="157" height="21"/>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JKT-4F-Azb">
@@ -286,7 +278,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="434" width="39" height="21"/>
+                                    <rect key="frame" x="15" y="456" width="39" height="21"/>
                                 </variation>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9nm-9f-Etj">
@@ -296,42 +288,50 @@
                                     <segment title="Feminino"/>
                                 </segments>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="87" y="472" width="147" height="29"/>
+                                    <rect key="frame" x="161" y="456" width="147" height="29"/>
                                 </variation>
                             </segmentedControl>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mpr-Lx-k0Y">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" secureTextEntry="YES"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="15" y="189" width="293" height="30"/>
+                                </variation>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="cIb-Sd-RkJ"/>
                                 <exclude reference="ucI-vY-rVg"/>
-                                <exclude reference="TaA-dR-Rly"/>
                                 <exclude reference="fKX-7N-GI3"/>
                                 <exclude reference="4Jt-uD-CL9"/>
                                 <exclude reference="JKT-4F-Azb"/>
                                 <exclude reference="cgJ-qM-x4A"/>
                                 <exclude reference="9nm-9f-Etj"/>
+                                <exclude reference="mpr-Lx-k0Y"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="cIb-Sd-RkJ"/>
                                 <include reference="ucI-vY-rVg"/>
-                                <include reference="TaA-dR-Rly"/>
                                 <include reference="fKX-7N-GI3"/>
                                 <include reference="4Jt-uD-CL9"/>
                                 <include reference="JKT-4F-Azb"/>
                                 <include reference="cgJ-qM-x4A"/>
                                 <include reference="9nm-9f-Etj"/>
+                                <include reference="mpr-Lx-k0Y"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="birthdayPickerView" destination="fKX-7N-GI3" id="mpN-lS-0Bs"/>
-                        <outlet property="cityTextField" destination="TaA-dR-Rly" id="XOa-9c-bDe"/>
                         <outlet property="emailTextField" destination="ucI-vY-rVg" id="7OQ-vU-V8O"/>
                         <outlet property="gendersSegmentedControl" destination="9nm-9f-Etj" id="T8W-fV-pqM"/>
                         <outlet property="nameTextField" destination="cIb-Sd-RkJ" id="00k-rY-AaX"/>
+                        <outlet property="passTextField" destination="mpr-Lx-k0Y" id="e3p-Pc-Ozm"/>
                         <segue destination="Nf4-Vd-m2E" kind="show" identifier="registeredSegue" id="jPI-T0-bUq"/>
                     </connections>
                 </viewController>
@@ -359,6 +359,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="LQe-Dc-fFp"/>
+        <segue reference="jPI-T0-bUq"/>
     </inferredMetricsTieBreakers>
 </document>

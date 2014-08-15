@@ -9,11 +9,14 @@
 import Foundation
 import UIKit
 
-class RegisterViewController:UIViewController {
+class RegisterViewController:UIViewController, APIProtocol {
+    
+    lazy var api:API = API(delegate: self)
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var cityTextField: UITextField!
+    @IBOutlet weak var passTextField: UITextField!
     
     @IBOutlet weak var birthdayPickerView: UIDatePicker!
     @IBOutlet weak var gendersSegmentedControl: UISegmentedControl!
@@ -24,6 +27,8 @@ class RegisterViewController:UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Get GPS Permission
         
     }
     
@@ -37,7 +42,17 @@ class RegisterViewController:UIViewController {
             println("Email é obrigatório")
             return
         }
+        if passTextField.text.isEmpty {
+            println("Senha é obrigatório")
+            return
+        }
         
+        let user:User = User(id: 0, name: nameTextField.text, city: "", birthdate: birthdayPickerView.date, email: emailTextField.text, pass: passTextField.text, gender: gendersSegmentedControl.description, relationshipStatus: "", facebookId: 0)
+        
+        api.HTTPPostJSON("http://54.94.134.216:8080/tourismmer/service/loginService/register", jsonObj: user.dictionaryFromUser())
+    }
+    
+    func didReceiveAPIResults(results: NSDictionary) {
         println("Registered")
         performSegueWithIdentifier("registeredSegue", sender: self)
     }

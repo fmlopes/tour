@@ -40,4 +40,40 @@ class API {
             })
         task.resume()
     }
+    
+    func HTTPsendRequest(request: NSMutableURLRequest) -> Void {
+        let session = NSURLSession.sharedSession()
+        let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+            println("Task completed")
+            if(error) {
+                // If there is an error in the web request, print it to the console
+                println(error.localizedDescription)
+            }
+            var err: NSError?
+            var jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as NSDictionary
+            if(err?) {
+                // If there is an error parsing JSON, print it to the console
+                println("JSON Error \(err!.localizedDescription)")
+            }
+            let results: NSArray = jsonResult["results"] as NSArray
+            self.delegate.didReceiveAPIResults(jsonResult)
+            })
+        task.resume()
+    }
+    
+    func HTTPGet(url: String, callback: (String, String?) -> Void) {
+        var request = NSMutableURLRequest(URL: NSURL(string: url))
+        HTTPsendRequest(request)
+    }
+    
+    func HTTPPostJSON(url: String, jsonObj: AnyObject) -> Void {
+        var request = NSMutableURLRequest(URL: NSURL(string: url))
+        request.HTTPMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        var err: NSError?
+        let jsonString = NSJSONSerialization.dataWithJSONObject(jsonObj, options: NSJSONWritingOptions(0), error: &err)
+        request.HTTPBody = jsonString
+        HTTPsendRequest(request)
+    }
 }
+
