@@ -30,19 +30,19 @@ class User:NSObject {
         self.facebookId = facebookId
     }
     
-    func dictionaryFromUser() -> Dictionary<String, String> {
-        var obj:Dictionary<String, String> = [
+    func dictionaryFromUser() -> Dictionary<NSString, NSString> {
+        var array: Dictionary<NSString, NSString> = [
             "id": self.id.stringValue,
             "name": self.name,
             "city": self.city,
-            "birthdate": self.birthdate.description,
+            "birthdate": "1406689915530",
             "email": self.email,
             "pass": self.pass,
-            "gender": self.gender,
+            "gender": "male",
             "relationshipStatus": self.relationshipStatus,
             "facebookId": self.facebookId.stringValue
         ]
         
-        return obj
+        return array
     }
 }

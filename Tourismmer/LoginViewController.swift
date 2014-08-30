@@ -23,7 +23,7 @@ class LoginViewController: UIViewController, FBLoginViewDelegate {
         self.fbLoginView.delegate = self
         self.fbLoginView.readPermissions = ["public_profile", "email", "user_friends"]
         
-        loginButton.enabled = false
+        //loginButton.enabled = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,6 +33,11 @@ class LoginViewController: UIViewController, FBLoginViewDelegate {
 
     @IBAction func login(sender: AnyObject) {
         if (isValidForm()) {
+            let encodedEmail = emailTextField.text.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
+            let encodedPass = passTextField.text.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
+            
+            api.HTTPGet("http://54.94.134.216:8080/tourismmer/resources/user/\(encodedEmail)/\(encodedPass)")
+            //api.get("http://itunes.apple.com/search?term=JQ+Software&media=software")
             performSegueWithIdentifier("loginSegue", sender: self)
         }
     }
@@ -73,6 +78,6 @@ class LoginViewController: UIViewController, FBLoginViewDelegate {
 
 class LoginDelegate:APIProtocol {
     func didReceiveAPIResults(results: NSDictionary)  {
-        
+        println(results)
     }
 }
