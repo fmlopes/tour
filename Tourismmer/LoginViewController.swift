@@ -24,6 +24,7 @@ class LoginViewController: UIViewController, FBLoginViewDelegate {
         self.fbLoginView.readPermissions = ["public_profile", "email", "user_friends"]
         
         //loginButton.enabled = false
+        self.navigationController.navigationBar.hidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,8 +38,10 @@ class LoginViewController: UIViewController, FBLoginViewDelegate {
             let encodedPass = passTextField.text.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
             
             api.HTTPGet("http://54.94.134.216:8080/tourismmer/resources/user/\(encodedEmail)/\(encodedPass)")
-            //api.get("http://itunes.apple.com/search?term=JQ+Software&media=software")
-            performSegueWithIdentifier("loginSegue", sender: self)
+            
+            let homeViewController = self.storyboard.instantiateViewControllerWithIdentifier("Home") as HomeViewController
+            
+            self.navigationController.pushViewController(homeViewController, animated: false)
         }
     }
     
@@ -54,7 +57,6 @@ class LoginViewController: UIViewController, FBLoginViewDelegate {
     
     func loginViewShowingLoggedInUser(loginView : FBLoginView!) {
         println("User Logged In")
-        performSegueWithIdentifier("loginSegue", sender: self)
     }
     
     func loginViewFetchedUserInfo(loginView : FBLoginView!, user: FBGraphUser) {
@@ -64,7 +66,9 @@ class LoginViewController: UIViewController, FBLoginViewDelegate {
         var userEmail = user.objectForKey("email") as String
         println("User Email: \(userEmail)")
         
-        performSegueWithIdentifier("registeredSegue", sender: self)
+        let homeViewController = self.storyboard.instantiateViewControllerWithIdentifier("Home") as HomeViewController
+        
+        self.navigationController.pushViewController(homeViewController, animated: false)
     }
     
     func loginViewShowingLoggedOutUser(loginView : FBLoginView!) {

@@ -51,7 +51,7 @@ class API {
             }
             
             var err: NSError?
-            var jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as NSDictionary
+            var jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: .MutableLeaves, error: &err) as NSDictionary
             if(err?) {
                 // If there is an error parsing JSON, print it to the console
                 println("JSON Error \(err!.localizedDescription)")
@@ -67,13 +67,15 @@ class API {
         HTTPsendRequest(request)
     }
     
-    func HTTPPostJSON(url: NSString, jsonObj: AnyObject) -> Void {
+    func HTTPPostJSON(url: NSString, jsonObj: Dictionary<NSString, NSString>) -> Void {
         var request = NSMutableURLRequest(URL: NSURL(string: url))
         request.HTTPMethod = "POST"
         request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
         var err: NSError?
         
         let jsonString = NSJSONSerialization.dataWithJSONObject(jsonObj, options: nil, error: &err)
+        
         request.HTTPBody = jsonString
         println(NSString(data: jsonString, encoding: NSUTF8StringEncoding))
         HTTPsendRequest(request)

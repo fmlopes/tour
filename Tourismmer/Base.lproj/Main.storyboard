@@ -22,15 +22,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="192" width="280" height="30"/>
-                                </variation>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7sz-j8-WtZ">
-                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="282" width="280" height="30"/>
+                                    <rect key="frame" x="20" y="253" width="280" height="30"/>
                                 </variation>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="di9-VE-t8C">
@@ -39,7 +31,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="139" y="349" width="42" height="30"/>
+                                    <rect key="frame" x="139" y="387" width="42" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zpd-vO-gtq"/>
@@ -64,24 +56,43 @@
                                     <segue destination="L2z-4B-tfn" kind="show" id="6Nl-Nq-Ufc"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxP-9A-4OD">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="141" y="140" width="39" height="21"/>
+                                </variation>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7sz-j8-WtZ">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="315" width="280" height="30"/>
+                                </variation>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="xW9-kN-Y2b"/>
-                                <exclude reference="7sz-j8-WtZ"/>
                                 <exclude reference="di9-VE-t8C"/>
                                 <exclude reference="mf8-pY-Iub"/>
                                 <exclude reference="Fe7-RX-kh1"/>
+                                <exclude reference="cxP-9A-4OD"/>
+                                <exclude reference="7sz-j8-WtZ"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="xW9-kN-Y2b"/>
-                                <include reference="7sz-j8-WtZ"/>
                                 <include reference="di9-VE-t8C"/>
                                 <include reference="mf8-pY-Iub"/>
                                 <include reference="Fe7-RX-kh1"/>
+                                <include reference="cxP-9A-4OD"/>
+                                <include reference="7sz-j8-WtZ"/>
                             </mask>
                         </variation>
                     </view>
@@ -96,7 +107,6 @@
                         <outlet property="fbLoginView" destination="mf8-pY-Iub" id="b7O-xL-CAU"/>
                         <outlet property="loginButton" destination="di9-VE-t8C" id="X22-We-Qcu"/>
                         <outlet property="passTextField" destination="7sz-j8-WtZ" id="8CQ-qc-lOa"/>
-                        <segue destination="Nf4-Vd-m2E" kind="show" identifier="loginSegue" id="LQe-Dc-fFp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -115,23 +125,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Para onde você está indo?" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OB8-uG-JN1">
-                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="89" width="280" height="30"/>
-                                </variation>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4a5-bA-co2">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Buscar">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="137" y="127" width="49" height="30"/>
-                                </variation>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="FGl-hd-OYY">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -165,7 +158,7 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="232" width="320" height="336"/>
+                                    <rect key="frame" x="0.0" y="152" width="320" height="416"/>
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="Nf4-Vd-m2E" id="2bU-fx-k2C"/>
@@ -178,25 +171,49 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="187" width="148" height="21"/>
+                                    <rect key="frame" x="20" y="117" width="148" height="21"/>
                                 </variation>
                             </label>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="8ZX-HF-rJW">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="60" width="320" height="44"/>
+                                </variation>
+                            </searchBar>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cYT-8V-wlH">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="0.0"/>
+                                    <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Home" id="a0C-He-ehL">
+                                        <barButtonItem key="leftBarButtonItem" title="Menu" id="2JW-5l-nkJ" colorLabel="IBBuiltInLabel-Red"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="QUw-50-3V8"/>
+                                    </navigationItem>
+                                </items>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="5" y="16" width="309" height="44"/>
+                                </variation>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="OB8-uG-JN1"/>
-                                <exclude reference="4a5-bA-co2"/>
                                 <exclude reference="FGl-hd-OYY"/>
                                 <exclude reference="9ZM-W1-B2U"/>
+                                <exclude reference="8ZX-HF-rJW"/>
+                                <exclude reference="cYT-8V-wlH"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="OB8-uG-JN1"/>
-                                <include reference="4a5-bA-co2"/>
                                 <include reference="FGl-hd-OYY"/>
                                 <include reference="9ZM-W1-B2U"/>
+                                <include reference="8ZX-HF-rJW"/>
+                                <include reference="cYT-8V-wlH"/>
                             </mask>
                         </variation>
                     </view>
@@ -332,7 +349,6 @@
                         <outlet property="gendersSegmentedControl" destination="9nm-9f-Etj" id="T8W-fV-pqM"/>
                         <outlet property="nameTextField" destination="cIb-Sd-RkJ" id="00k-rY-AaX"/>
                         <outlet property="passTextField" destination="mpr-Lx-k0Y" id="e3p-Pc-Ozm"/>
-                        <segue destination="Nf4-Vd-m2E" kind="show" identifier="registeredSegue" id="jPI-T0-bUq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mvj-wI-ZOF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -358,7 +374,4 @@
             <point key="canvasLocation" x="-513" y="413"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="jPI-T0-bUq"/>
-    </inferredMetricsTieBreakers>
 </document>

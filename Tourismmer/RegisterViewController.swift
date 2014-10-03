@@ -54,6 +54,9 @@ class RegisterViewController:UIViewController, APIProtocol {
     
     func didReceiveAPIResults(results: NSDictionary) {
         println("Registered")
-        performSegueWithIdentifier("registeredSegue", sender: self)
+        //performSegueWithIdentifier("registeredSegue", sender: self)
+        let homeViewController = self.storyboard.instantiateViewControllerWithIdentifier("Home") as HomeViewController
+        
+        self.navigationController.pushViewController(homeViewController, animated: true)
     }
 }

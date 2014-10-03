@@ -42,7 +42,8 @@ class User:NSObject {
             "relationshipStatus": self.relationshipStatus,
             "facebookId": self.facebookId.stringValue
         ]
+        var test = ["name":"Felipe", "city":"Teste", "birthday":"1406689915530", "email":"felipelopes_7@hotmail.com", "pass": "123", "gender":"male", "relationshipStatus":"Single", "facebookId":"1"] as Dictionary<String, String>
         
-        return array
+        return test
     }
 }
