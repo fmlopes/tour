@@ -9,11 +9,13 @@
 import Foundation
 import UIKit
 
-class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, UISearchDisplayDelegate {
     
     var groups = [Group]()
+    var filteredGroups = [Group]()
     var kCellIdentifier:NSString = "GroupCell"
     
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var groupsTableView: UITableView!
     
     override func viewDidLoad() {
@@ -22,8 +24,21 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         var users = [User]()
         users.append(User(id: 0, name: "", city: "", birthdate: NSDate(), email: "", pass: "", gender: "", relationshipStatus: "", facebookId: 0))
         
-        var location = Location(name: "New York", lat: NSDecimalNumber.zero(), long: NSDecimalNumber.zero())
+        var location = Location(name: "NEW YORK", lat: NSDecimalNumber.zero(), long: NSDecimalNumber.zero())
         
+        groups.append(Group(users: users, location: location, date: NSDate(), type: .Business, imgPath: "https://s3-sa-east-1.amazonaws.com/location-imgs-sa-east-1/1.jpg"))
+        
+        users = [User]()
+        users.append(User(id: 0, name: "", city: "", birthdate: NSDate(), email: "", pass: "", gender: "", relationshipStatus: "", facebookId: 0))
+        
+        location = Location(name: "BOSTON", lat: NSDecimalNumber.zero(), long: NSDecimalNumber.zero())
+        
+        groups.append(Group(users: users, location: location, date: NSDate(), type: .Business, imgPath: "https://s3-sa-east-1.amazonaws.com/location-imgs-sa-east-1/2.jpg"))
+        
+        users = [User]()
+        users.append(User(id: 0, name: "", city: "", birthdate: NSDate(), email: "", pass: "", gender: "", relationshipStatus: "", facebookId: 0))
+        
+        location = Location(name: "CHICAGO", lat: NSDecimalNumber.zero(), long: NSDecimalNumber.zero())
         
         groups.append(Group(users: users, location: location, date: NSDate(), type: .Business, imgPath: "https://s3-sa-east-1.amazonaws.com/location-imgs-sa-east-1/ny.png"))
         self.groupsTableView!.reloadData()
@@ -34,15 +49,21 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-        let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier) as UITableViewCell
+        var cell: Cell = self.groupsTableView.dequeueReusableCellWithIdentifier(kCellIdentifier, forIndexPath: indexPath) as Cell
+        var group: Group
         
-        let group = groups[indexPath.row]
-        
-        cell.textLabel.text = group.location.name
-        if group.type? {
-            cell.detailTextLabel.text = group.type?.toRaw()
+        if tableView == self.searchDisplayController.searchResultsTableView {
+            group = filteredGroups[indexPath.row]
+        } else {
+            group = groups[indexPath.row]
         }
-        cell.imageView.image = UIImage(named: "Blank52.png")
+        
+        cell.postText.text = group.location.name.uppercaseString
+        if group.type? {
+            cell.postGoal.text = group.type?.toRaw().uppercaseString
+        }
+        cell.postImage.image = UIImage(named: "Blank52.png")
+        cell.postDate.text = Util.stringFromDate("MM/yy", date: group.date)
         
         var imgURL:NSURL = NSURL(string:group.imgPath)
         
@@ -51,7 +72,7 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!, data: NSData!, error:NSError!) -> Void in
             if !error? {
                 
-                cell.imageView.image = UIImage(data: data)
+                cell.postImage.image = UIImage(data: data)
                 
             } else {
                 println("Error: \(error.localizedDescription)")
@@ -62,10 +83,36 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
-        return groups.count
+        if tableView == self.searchDisplayController.searchResultsTableView {
+            return self.filteredGroups.count
+        } else {
+            return self.groups.count
+        }
     }
     
     func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
         return 1
+    }
+    
+    func filterContentForSearchText(searchText: String) {
+        self.filteredGroups = self.groups.filter({( group: Group) -> Bool in
+            //let match = (scope == "All") || (group.location.name == scope)
+            let stringMatch = group.location.name.rangeOfString(searchText).toRange()
+            if (stringMatch != nil) {
+                return true
+            } else {
+                return false
+            }
+        })
+    }
+    
+    func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchString searchString: String!) -> Bool {
+        self.filterContentForSearchText(searchString)
+        return true
+    }
+    
+    func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchScope searchOption: Int) -> Bool {
+        self.filterContentForSearchText(self.searchDisplayController!.searchBar.text)
+        return true
     }
 }
