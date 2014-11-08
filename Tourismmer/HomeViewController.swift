@@ -115,4 +115,16 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         self.filterContentForSearchText(self.searchDisplayController!.searchBar.text)
         return true
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+        if segue.identifier == "home_group" {
+            let vc = segue.destinationViewController as GroupViewController
+            let groupCell = sender as Cell
+            
+            vc.group.location = Location(name: groupCell.postText.text, lat: NSDecimalNumber.zero(), long: NSDecimalNumber.zero())
+            vc.group.date = Util.dateFromString("MM/yy", date: groupCell.postDate.text)
+            vc.group.type = TripType.fromRaw(groupCell.postGoal.text)
+            vc.image = groupCell.postImage.image
+        }
+    }
 }

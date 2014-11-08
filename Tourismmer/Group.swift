@@ -22,4 +22,12 @@ class Group {
         self.type = type
         self.imgPath = imgPath
     }
+    
+    init() {
+        self.users = [User]()
+        self.location = Location(name: "", lat: NSDecimalNumber.zero(), long: NSDecimalNumber.zero())
+        self.date = NSDate()
+        self.type = TripType.Business
+        self.imgPath = ""
+    }
 }

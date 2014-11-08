@@ -21,6 +21,10 @@
 		209BB9611991B03E00BE6D26 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209BB9601991B03E00BE6D26 /* Group.swift */; };
 		209BB9631991B07200BE6D26 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209BB9621991B07200BE6D26 /* Location.swift */; };
 		209BB9651991B19C00BE6D26 /* TripType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209BB9641991B19C00BE6D26 /* TripType.swift */; };
+		20AC20211A0998C10035255C /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC20201A0998C10035255C /* GroupViewController.swift */; };
+		20AC20231A0ACAC60035255C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC20221A0ACAC60035255C /* Post.swift */; };
+		20AC20271A0ACCB50035255C /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC20261A0ACCB50035255C /* Comment.swift */; };
+		20AE73F91A0C475A00BA12DB /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AE73F81A0C475A00BA12DB /* CommentCell.swift */; };
 		5504ED391996774600DA6FC9 /* Blank52.png in Resources */ = {isa = PBXBuildFile; fileRef = 5504ED381996774600DA6FC9 /* Blank52.png */; };
 		55E1D404198D66FC0006749D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E1D403198D66FC0006749D /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
@@ -54,6 +58,10 @@
 		209BB9601991B03E00BE6D26 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		209BB9621991B07200BE6D26 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		209BB9641991B19C00BE6D26 /* TripType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripType.swift; sourceTree = "<group>"; };
+		20AC20201A0998C10035255C /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
+		20AC20221A0ACAC60035255C /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		20AC20261A0ACCB50035255C /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		20AE73F81A0C475A00BA12DB /* CommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		5504ED381996774600DA6FC9 /* Blank52.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Blank52.png; path = Tourismmer/Images.xcassets/Blank52.png; sourceTree = "<group>"; };
 		55E1D403198D66FC0006749D /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		55E1D40A198D7C1E0006749D /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "Tourismmer/Bridging-Header.h"; sourceTree = "<group>"; };
@@ -146,6 +154,8 @@
 				209BB9601991B03E00BE6D26 /* Group.swift */,
 				209BB9621991B07200BE6D26 /* Location.swift */,
 				209BB9641991B19C00BE6D26 /* TripType.swift */,
+				20AC20221A0ACAC60035255C /* Post.swift */,
+				20AC20261A0ACCB50035255C /* Comment.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -157,6 +167,8 @@
 				208A81C8198C464E0075A441 /* RegisterViewController.swift */,
 				55E1D403198D66FC0006749D /* HomeViewController.swift */,
 				20918E8019E370FE00BD39E8 /* Cell.swift */,
+				20AC20201A0998C10035255C /* GroupViewController.swift */,
+				20AE73F81A0C475A00BA12DB /* CommentCell.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -285,9 +297,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20AC20211A0998C10035255C /* GroupViewController.swift in Sources */,
 				20918E8419E4A9B900BD39E8 /* Util.swift in Sources */,
 				209BB9611991B03E00BE6D26 /* Group.swift in Sources */,
+				20AC20271A0ACCB50035255C /* Comment.swift in Sources */,
 				208A8198198732890075A441 /* LoginViewController.swift in Sources */,
+				20AE73F91A0C475A00BA12DB /* CommentCell.swift in Sources */,
+				20AC20231A0ACAC60035255C /* Post.swift in Sources */,
 				209BB9631991B07200BE6D26 /* Location.swift in Sources */,
 				208A81C9198C464E0075A441 /* RegisterViewController.swift in Sources */,
 				208A8196198732890075A441 /* AppDelegate.swift in Sources */,
