@@ -26,6 +26,7 @@
 		20AC20271A0ACCB50035255C /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC20261A0ACCB50035255C /* Comment.swift */; };
 		20AE73F91A0C475A00BA12DB /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AE73F81A0C475A00BA12DB /* CommentCell.swift */; };
 		5504ED391996774600DA6FC9 /* Blank52.png in Resources */ = {isa = PBXBuildFile; fileRef = 5504ED381996774600DA6FC9 /* Blank52.png */; };
+		551FE5301A0FAA3600B868B1 /* RecoverPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551FE52F1A0FAA3600B868B1 /* RecoverPasswordViewController.swift */; };
 		55E1D404198D66FC0006749D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E1D403198D66FC0006749D /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		20AC20261A0ACCB50035255C /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		20AE73F81A0C475A00BA12DB /* CommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		5504ED381996774600DA6FC9 /* Blank52.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Blank52.png; path = Tourismmer/Images.xcassets/Blank52.png; sourceTree = "<group>"; };
+		551FE52F1A0FAA3600B868B1 /* RecoverPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewController.swift; sourceTree = "<group>"; };
 		55E1D403198D66FC0006749D /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		55E1D40A198D7C1E0006749D /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "Tourismmer/Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -169,6 +171,7 @@
 				20918E8019E370FE00BD39E8 /* Cell.swift */,
 				20AC20201A0998C10035255C /* GroupViewController.swift */,
 				20AE73F81A0C475A00BA12DB /* CommentCell.swift */,
+				551FE52F1A0FAA3600B868B1 /* RecoverPasswordViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				20AC20271A0ACCB50035255C /* Comment.swift in Sources */,
 				208A8198198732890075A441 /* LoginViewController.swift in Sources */,
 				20AE73F91A0C475A00BA12DB /* CommentCell.swift in Sources */,
+				551FE5301A0FAA3600B868B1 /* RecoverPasswordViewController.swift in Sources */,
 				20AC20231A0ACAC60035255C /* Post.swift in Sources */,
 				209BB9631991B07200BE6D26 /* Location.swift in Sources */,
 				208A81C9198C464E0075A441 /* RegisterViewController.swift in Sources */,
