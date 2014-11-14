@@ -22,9 +22,6 @@ class LoginViewController: UIViewController, FBLoginViewDelegate {
         
         self.fbLoginView.delegate = self
         self.fbLoginView.readPermissions = ["public_profile", "email", "user_friends"]
-        
-        //loginButton.enabled = false
-        self.navigationController.navigationBar.hidden = true
     }
 
     override func didReceiveMemoryWarning() {

@@ -42,6 +42,8 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         
         groups.append(Group(users: users, location: location, date: NSDate(), type: .Business, imgPath: "https://s3-sa-east-1.amazonaws.com/location-imgs-sa-east-1/ny.png"))
         self.groupsTableView!.reloadData()
+        
+        self.navigationController.navigationBar.hidden = true
     }
     
     init(coder aDecoder: NSCoder!) {
