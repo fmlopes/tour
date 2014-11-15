@@ -142,6 +142,7 @@
                         <viewControllerLayoutGuide type="bottom" id="f1F-TA-9cb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hav-O0-9gb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOGO" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vsc-YE-JJM">
