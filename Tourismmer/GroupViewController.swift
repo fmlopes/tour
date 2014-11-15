@@ -28,6 +28,8 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
         labelDate.text = Util.stringFromDate("MM/yy", date: self.group.date).uppercaseString
         labelGoal.text = self.group.type?.toRaw().uppercaseString
         imagePlace.image = self.image
+        
+        self.navigationController.navigationBar.hidden = false
     }
     
     init(coder aDecoder: NSCoder!) {
