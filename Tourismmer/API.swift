@@ -13,7 +13,7 @@ protocol APIProtocol {
 }
 
 class API {
-    var domainUrl:NSString = "http://tourismmer.com.br"
+    var apiURL:String = "http://54.94.134.216:8080/tourismmer/resources"
     var delegate:APIProtocol
     
     init(delegate:APIProtocol){
@@ -21,7 +21,8 @@ class API {
     }
     
     func get(path:NSString) {
-        let url: NSURL = NSURL(string: path)
+        let fullPath:NSString = apiURL + path
+        let url: NSURL = NSURL(string: fullPath)
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithURL(url, completionHandler: {data, response, error -> Void in
             println("Task completed")
@@ -63,12 +64,14 @@ class API {
     }
     
     func HTTPGet(url: String) -> Void {
-        var request = NSMutableURLRequest(URL: NSURL(string: url))
+        let fullPath:String = apiURL + url
+        var request = NSMutableURLRequest(URL: NSURL(string: fullPath))
         HTTPsendRequest(request)
     }
     
-    func HTTPPostJSON(url: NSString, jsonObj: Dictionary<NSString, NSString>) -> Void {
-        var request = NSMutableURLRequest(URL: NSURL(string: url))
+    func HTTPPostJSON(url: String, jsonObj: Dictionary<NSString, NSString>) -> Void {
+        let fullPath:String = apiURL + url
+        var request = NSMutableURLRequest(URL: NSURL(string: fullPath))
         request.HTTPMethod = "POST"
         request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")

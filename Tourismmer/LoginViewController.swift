@@ -8,13 +8,13 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, FBLoginViewDelegate {
+class LoginViewController: UIViewController, FBLoginViewDelegate, APIProtocol {
     
     @IBOutlet weak var fbLoginView: FBLoginView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
-    lazy var api:API = API(delegate: LoginDelegate())
+    lazy var api:API = API(delegate: self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +34,7 @@ class LoginViewController: UIViewController, FBLoginViewDelegate {
             let encodedEmail = emailTextField.text.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
             let encodedPass = passTextField.text.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
             
-            api.HTTPGet("http://54.94.134.216:8080/tourismmer/resources/user/\(encodedEmail)/\(encodedPass)")
+            api.HTTPGet("/user/\(encodedEmail)/\(encodedPass)")
             
             let homeViewController = self.storyboard.instantiateViewControllerWithIdentifier("Home") as HomeViewController
             
@@ -63,9 +63,7 @@ class LoginViewController: UIViewController, FBLoginViewDelegate {
         var userEmail = user.objectForKey("email") as String
         println("User Email: \(userEmail)")
         
-        let homeViewController = self.storyboard.instantiateViewControllerWithIdentifier("Home") as HomeViewController
-        
-        self.navigationController.pushViewController(homeViewController, animated: false)
+        api.HTTPGet("/user/facebook/\(user.objectID)")
     }
     
     func loginViewShowingLoggedOutUser(loginView : FBLoginView!) {
@@ -75,10 +73,18 @@ class LoginViewController: UIViewController, FBLoginViewDelegate {
     func loginView(loginView : FBLoginView!, handleError:NSError) {
         println("Error: \(handleError.localizedDescription)")
     }
-}
-
-class LoginDelegate:APIProtocol {
+    
     func didReceiveAPIResults(results: NSDictionary)  {
         println(results)
+        if (results["statusCode"] as NSString == MessageCode.RecordNotFound.toRaw()) {
+            let user:User = User(id: 0, name: nameTextField.text, city: "", birthdate: birthdayPickerView.date, email: emailTextField.text, pass: passTextField.text, gender: gendersSegmentedControl.description, relationshipStatus: "", facebookId: 0)
+            
+            api.HTTPPostJSON("/user", jsonObj: user.dictionaryFromUser())
+        } else {
+            let homeViewController = self.storyboard.instantiateViewControllerWithIdentifier("Home") as HomeViewController
+            self.navigationController.pushViewController(homeViewController, animated: false)
+        }
     }
 }
+
+

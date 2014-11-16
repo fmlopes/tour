@@ -49,7 +49,7 @@ class RegisterViewController:UIViewController, APIProtocol {
         
         let user:User = User(id: 0, name: nameTextField.text, city: "", birthdate: birthdayPickerView.date, email: emailTextField.text, pass: passTextField.text, gender: gendersSegmentedControl.description, relationshipStatus: "", facebookId: 0)
         
-        api.HTTPPostJSON("http://54.94.134.216:8080/tourismmer/resources/user", jsonObj: user.dictionaryFromUser())
+        api.HTTPPostJSON("/user", jsonObj: user.dictionaryFromUser())
     }
     
     func didReceiveAPIResults(results: NSDictionary) {
