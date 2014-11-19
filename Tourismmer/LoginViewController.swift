@@ -10,6 +10,8 @@ import UIKit
 
 class LoginViewController: UIViewController, FBLoginViewDelegate, APIProtocol {
     
+    var user:User = User()
+    
     @IBOutlet weak var fbLoginView: FBLoginView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passTextField: UITextField!
@@ -62,6 +64,13 @@ class LoginViewController: UIViewController, FBLoginViewDelegate, APIProtocol {
         println("User Name: \(user.name)")
         var userEmail = user.objectForKey("email") as String
         println("User Email: \(userEmail)")
+        let userFBID:Int = (user.objectID as String).toInt()!
+        
+        self.user.name = user.name
+        self.user.email = user.objectForKey("email") as String
+        self.user.facebookId = Int64(userFBID)
+        self.user.gender = user.objectForKey("gender") as NSString
+        self.user.birthdate = Util.dateFromString("MM/dd/yyyy", date: user.objectForKey("birthday") as String)
         
         api.HTTPGet("/user/facebook/\(user.objectID)")
     }
@@ -76,13 +85,14 @@ class LoginViewController: UIViewController, FBLoginViewDelegate, APIProtocol {
     
     func didReceiveAPIResults(results: NSDictionary)  {
         println(results)
-        if (results["statusCode"] as NSString == MessageCode.RecordNotFound.toRaw()) {
-            let user:User = User(id: 0, name: nameTextField.text, city: "", birthdate: birthdayPickerView.date, email: emailTextField.text, pass: passTextField.text, gender: gendersSegmentedControl.description, relationshipStatus: "", facebookId: 0)
-            
-            api.HTTPPostJSON("/user", jsonObj: user.dictionaryFromUser())
-        } else {
-            let homeViewController = self.storyboard.instantiateViewControllerWithIdentifier("Home") as HomeViewController
+let homeViewController = self.storyboard.instantiateViewControllerWithIdentifier("Home") as HomeViewController
             self.navigationController.pushViewController(homeViewController, animated: false)
+        if (results["statusCode"] as NSString == MessageCode.RecordNotFound.toRaw()) {
+            
+            api.HTTPPostJSON("/user", jsonObj: self.user.dictionaryFromUser())
+        } else {
+            //let homeViewController = self.storyboard.instantiateViewControllerWithIdentifier("Home") as HomeViewController
+            //self.navigationController.pushViewController(homeViewController, animated: false)
         }
     }
 }

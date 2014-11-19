@@ -10,40 +10,60 @@ import Foundation
 class User:NSObject {
     var id:NSNumber
     var name:NSString
-    var city:NSString
     var birthdate:NSDate
     var email:NSString
     var pass:NSString
     var gender:NSString
-    var relationshipStatus:NSString
-    var facebookId:NSNumber
+    var facebookId:Int64
     
-    init(id:NSNumber, name:NSString, city:NSString, birthdate:NSDate, email:NSString, pass:NSString, gender:NSString, relationshipStatus:NSString, facebookId:NSNumber) {
+    init() {
+        self.id = 0
+        self.name = ""
+        self.birthdate = NSDate()
+        self.email = ""
+        self.pass = ""
+        self.gender = ""
+        self.facebookId = 0
+        
+        super.init()
+    }
+    
+    init(id:NSNumber, name:NSString, birthdate:NSDate, email:NSString, pass:NSString, gender:NSString, facebookId:Int64) {
         self.id = id
         self.name = name
-        self.city = city
         self.birthdate = birthdate
         self.email = email
         self.pass = pass
         self.gender = gender
-        self.relationshipStatus = relationshipStatus
         self.facebookId = facebookId
     }
     
     func dictionaryFromUser() -> Dictionary<NSString, NSString> {
         var array: Dictionary<NSString, NSString> = [
-            "id": self.id.stringValue,
+            "id": getId(),
             "name": self.name,
-            "city": self.city,
-            "birthdate": "1406689915530",
+            "birthday": Util.stringFromDate("dd-MM-yyyy", date: self.birthdate),
             "email": self.email,
             "pass": self.pass,
             "gender": "male",
-            "relationshipStatus": self.relationshipStatus,
-            "facebookId": self.facebookId.stringValue
+            "facebookId": getFacebookId()
         ]
-        var test = ["name":"Felipe", "city":"Teste", "birthday":"1406689915530", "email":"felipelopes_7@hotmail.com", "pass": "123", "gender":"male", "relationshipStatus":"Single", "facebookId":"1"] as Dictionary<String, String>
-        
-        return test
+        return array
+    }
+    
+    func getId() -> String {
+        if (self.id == 0) {
+            return "";
+        } else {
+            return self.id.stringValue
+        }
+    }
+    
+    func getFacebookId() -> String {
+        if (self.facebookId == 0) {
+            return "";
+        } else {
+            return String(self.facebookId)
+        }
     }
 }

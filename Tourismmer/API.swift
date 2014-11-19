@@ -13,7 +13,7 @@ protocol APIProtocol {
 }
 
 class API {
-    var apiURL:String = "http://54.94.134.216:8080/tourismmer/resources"
+    var apiURL:String = "http://54.94.141.250:8080/tourismmer/resources"
     var delegate:APIProtocol
     
     init(delegate:APIProtocol){

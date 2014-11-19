@@ -22,21 +22,21 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         super.viewDidLoad()
         
         var users = [User]()
-        users.append(User(id: 0, name: "", city: "", birthdate: NSDate(), email: "", pass: "", gender: "", relationshipStatus: "", facebookId: 0))
+        users.append(User(id: 0, name: "", birthdate: NSDate(), email: "", pass: "", gender: "", facebookId: 0))
         
         var location = Location(name: "NEW YORK", lat: NSDecimalNumber.zero(), long: NSDecimalNumber.zero())
         
         groups.append(Group(users: users, location: location, date: NSDate(), type: .Business, imgPath: "https://s3-sa-east-1.amazonaws.com/location-imgs-sa-east-1/1.jpg"))
         
         users = [User]()
-        users.append(User(id: 0, name: "", city: "", birthdate: NSDate(), email: "", pass: "", gender: "", relationshipStatus: "", facebookId: 0))
+        users.append(User(id: 0, name: "", birthdate: NSDate(), email: "", pass: "", gender: "", facebookId: 0))
         
         location = Location(name: "BOSTON", lat: NSDecimalNumber.zero(), long: NSDecimalNumber.zero())
         
         groups.append(Group(users: users, location: location, date: NSDate(), type: .Business, imgPath: "https://s3-sa-east-1.amazonaws.com/location-imgs-sa-east-1/2.jpg"))
         
         users = [User]()
-        users.append(User(id: 0, name: "", city: "", birthdate: NSDate(), email: "", pass: "", gender: "", relationshipStatus: "", facebookId: 0))
+        users.append(User(id: 0, name: "", birthdate: NSDate(), email: "", pass: "", gender: "", facebookId: 0))
         
         location = Location(name: "CHICAGO", lat: NSDecimalNumber.zero(), long: NSDecimalNumber.zero())
         

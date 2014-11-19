@@ -47,7 +47,7 @@ class RegisterViewController:UIViewController, APIProtocol {
             return
         }
         
-        let user:User = User(id: 0, name: nameTextField.text, city: "", birthdate: birthdayPickerView.date, email: emailTextField.text, pass: passTextField.text, gender: gendersSegmentedControl.description, relationshipStatus: "", facebookId: 0)
+        let user:User = User(id: 0, name: nameTextField.text, birthdate: birthdayPickerView.date, email: emailTextField.text, pass: passTextField.text, gender: gendersSegmentedControl.description, facebookId: 0)
         
         api.HTTPPostJSON("/user", jsonObj: user.dictionaryFromUser())
     }
