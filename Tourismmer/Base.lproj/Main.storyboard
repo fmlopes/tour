@@ -219,7 +219,129 @@
             </objects>
             <point key="canvasLocation" x="355" y="-411"/>
         </scene>
-        <!--Home View Controller-->
+        <!--NOVO GRUPO-->
+        <scene sceneID="TcU-Er-TAF">
+            <objects>
+                <viewController id="BTr-Fc-ULC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LRk-da-0z6"/>
+                        <viewControllerLayoutGuide type="bottom" id="hLR-UV-zZk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WbL-5F-GEA">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ONDE?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EN2-C3-hwl">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="72" width="60" height="24"/>
+                                </variation>
+                            </label>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="yrF-rh-BiV">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="98" width="320" height="44"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="BTr-Fc-ULC" id="vqp-yD-SOc"/>
+                                </connections>
+                            </searchBar>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QUANDO?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jrX-7r-E0v">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="150" width="92" height="21"/>
+                                </variation>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Tm3-SA-QYA">
+                                <rect key="frame" x="-160" y="-81" width="320" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="438381517.46271503">
+                                    <!--2014-11-22 20:38:37 +0000-->
+                                </date>
+                                <locale key="locale" localeIdentifier="pt_BR"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="179" width="320" height="162"/>
+                                </variation>
+                            </datePicker>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OBJETIVO?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ae-IO-DXI">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="354" width="96" height="21"/>
+                                </variation>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lDb-UZ-btQ">
+                                <rect key="frame" x="0.0" y="-162" width="320" height="162"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="370" width="320" height="162"/>
+                                </variation>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7lv-1O-tSx">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="20"/>
+                                <state key="normal" title="CRIAR">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="126" y="530" width="69" height="30"/>
+                                </variation>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="EN2-C3-hwl"/>
+                                <exclude reference="yrF-rh-BiV"/>
+                                <exclude reference="jrX-7r-E0v"/>
+                                <exclude reference="Tm3-SA-QYA"/>
+                                <exclude reference="4Ae-IO-DXI"/>
+                                <exclude reference="lDb-UZ-btQ"/>
+                                <exclude reference="7lv-1O-tSx"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="EN2-C3-hwl"/>
+                                <include reference="yrF-rh-BiV"/>
+                                <include reference="jrX-7r-E0v"/>
+                                <include reference="Tm3-SA-QYA"/>
+                                <include reference="4Ae-IO-DXI"/>
+                                <include reference="lDb-UZ-btQ"/>
+                                <include reference="7lv-1O-tSx"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="NOVO GRUPO" id="6BR-pP-5Br"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4">
+                        <size key="portraitSize" width="320" height="568"/>
+                        <size key="landscapeSize" width="568" height="320"/>
+                    </simulatedScreenMetrics>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="eXF-B1-Lom" id="FqA-Am-V4p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K7E-gU-kVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="eXF-B1-Lom">
+                    <connections>
+                        <outlet property="delegate" destination="BTr-Fc-ULC" id="0wH-Ah-OsW"/>
+                        <outlet property="searchBar" destination="yrF-rh-BiV" id="mo8-fu-8YZ"/>
+                        <outlet property="searchContentsController" destination="BTr-Fc-ULC" id="XxX-Eb-4TW"/>
+                        <outlet property="searchResultsDataSource" destination="BTr-Fc-ULC" id="yGY-vK-PXw"/>
+                        <outlet property="searchResultsDelegate" destination="BTr-Fc-ULC" id="LME-eg-tyA"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="1000.5" y="-412"/>
+        </scene>
+        <!--HOME-->
         <scene sceneID="3M6-V3-apL">
             <objects>
                 <viewController storyboardIdentifier="Home" id="Nf4-Vd-m2E" customClass="HomeViewController" customModule="Tourismmer" customModuleProvider="target" sceneMemberID="viewController">
@@ -330,6 +452,14 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="HOME" id="PwT-IJ-ftw">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="MX7-am-yxK"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="CdB-YN-bbc">
+                            <connections>
+                                <segue destination="BTr-Fc-ULC" kind="show" id="KFx-HV-Xlk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4">
                         <size key="portraitSize" width="320" height="568"/>
@@ -497,7 +627,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Juz-1k-K0c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="849" y="230"/>
+            <point key="canvasLocation" x="1000.5" y="230"/>
         </scene>
         <!--CRIAR CONTA-->
         <scene sceneID="kfP-1g-nwm">

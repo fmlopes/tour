@@ -85,14 +85,12 @@ class LoginViewController: UIViewController, FBLoginViewDelegate, APIProtocol {
     
     func didReceiveAPIResults(results: NSDictionary)  {
         println(results)
-let homeViewController = self.storyboard.instantiateViewControllerWithIdentifier("Home") as HomeViewController
-            self.navigationController.pushViewController(homeViewController, animated: false)
         if (results["statusCode"] as NSString == MessageCode.RecordNotFound.toRaw()) {
             
             api.HTTPPostJSON("/user", jsonObj: self.user.dictionaryFromUser())
         } else {
-            //let homeViewController = self.storyboard.instantiateViewControllerWithIdentifier("Home") as HomeViewController
-            //self.navigationController.pushViewController(homeViewController, animated: false)
+            let homeViewController = self.storyboard.instantiateViewControllerWithIdentifier("Home") as HomeViewController
+            self.navigationController.pushViewController(homeViewController, animated: false)
         }
     }
 }
