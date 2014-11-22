@@ -127,6 +127,7 @@
                         <outlet property="fbLoginView" destination="mf8-pY-Iub" id="b7O-xL-CAU"/>
                         <outlet property="loginButton" destination="di9-VE-t8C" id="X22-We-Qcu"/>
                         <outlet property="passTextField" destination="7sz-j8-WtZ" id="8CQ-qc-lOa"/>
+                        <segue destination="Nf4-Vd-m2E" kind="show" id="YAH-Z2-sZH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -230,27 +231,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cYT-8V-wlH">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="19"/>
-                                    <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="HOME" id="a0C-He-ehL">
-                                        <barButtonItem key="leftBarButtonItem" title="Menu" id="2JW-5l-nkJ" colorLabel="IBBuiltInLabel-Red">
-                                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="QUw-50-3V8">
-                                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="16" width="320" height="44"/>
-                                </variation>
-                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="294" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="FGl-hd-OYY">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -330,7 +310,7 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="60" width="320" height="508"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="Nf4-Vd-m2E" id="2bU-fx-k2C"/>
@@ -341,13 +321,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="cYT-8V-wlH"/>
                                 <exclude reference="FGl-hd-OYY"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="cYT-8V-wlH"/>
                                 <include reference="FGl-hd-OYY"/>
                             </mask>
                         </variation>
@@ -374,7 +352,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="355" y="230"/>
+            <point key="canvasLocation" x="354" y="230"/>
         </scene>
         <!--Group View Controller-->
         <scene sceneID="aLw-iA-4E2">
