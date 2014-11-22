@@ -57,9 +57,10 @@ class API {
                 // If there is an error parsing JSON, print it to the console
                 println("JSON Error \(err!.localizedDescription)")
             }
-            //let results: NSArray = jsonResult["results"] as NSArray
-            self.delegate.didReceiveAPIResults(jsonResult)
+            dispatch_async(dispatch_get_main_queue(), {
+                self.delegate.didReceiveAPIResults(jsonResult)
             })
+        })
         task.resume()
     }
     
