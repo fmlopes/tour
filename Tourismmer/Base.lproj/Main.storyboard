@@ -484,10 +484,10 @@
             </objects>
             <point key="canvasLocation" x="354" y="230"/>
         </scene>
-        <!--Group View Controller-->
+        <!--GRUPO-->
         <scene sceneID="aLw-iA-4E2">
             <objects>
-                <viewController id="X5e-do-ZUI" customClass="GroupViewController" customModule="Tourismmer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="GRUPO" id="X5e-do-ZUI" customClass="GroupViewController" customModule="Tourismmer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tkG-Xs-Ktz"/>
                         <viewControllerLayoutGuide type="bottom" id="mkU-SN-ZOD"/>
@@ -496,26 +496,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5wq-0V-2n9">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="0.0"/>
-                                    <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="GRUPO" id="eAq-nQ-WKl">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="vxz-WV-bPa">
-                                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="zpr-Ip-NcC">
-                                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="17" width="320" height="44"/>
-                                </variation>
-                            </navigationBar>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DATE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="2lM-bK-43a">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="21"/>
@@ -555,7 +535,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WRK-re-n9H">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="61" width="320" height="240"/>
+                                    <rect key="frame" x="0.0" y="64" width="320" height="240"/>
                                 </variation>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOCATION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="851-uT-CFa">
@@ -589,7 +569,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="5wq-0V-2n9"/>
                                 <exclude reference="2lM-bK-43a"/>
                                 <exclude reference="EYf-uZ-E3t"/>
                                 <exclude reference="K5Q-h0-L0u"/>
@@ -601,7 +580,6 @@
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="5wq-0V-2n9"/>
                                 <include reference="2lM-bK-43a"/>
                                 <include reference="EYf-uZ-E3t"/>
                                 <include reference="K5Q-h0-L0u"/>
@@ -612,6 +590,13 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="GRUPO" id="dvK-03-SXH">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="bSj-ZT-cf9">
+                            <connections>
+                                <segue destination="wsH-Ko-Zyz" kind="show" id="VMx-rQ-zdo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4">
                         <size key="portraitSize" width="320" height="568"/>
@@ -628,6 +613,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Juz-1k-K0c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1000.5" y="230"/>
+        </scene>
+        <!--PUBLICAR-->
+        <scene sceneID="LTd-b0-qds">
+            <objects>
+                <viewController id="wsH-Ko-Zyz" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZeO-qK-BA0"/>
+                        <viewControllerLayoutGuide type="bottom" id="QII-JA-kPe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LId-DX-l9r">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="PUBLICAR" id="qit-a3-JxI">
+                        <barButtonItem key="leftBarButtonItem" systemItem="camera" id="J6X-Vw-Sp0"/>
+                        <barButtonItem key="rightBarButtonItem" title="Eu vou" id="R5x-8J-Yqo"/>
+                    </navigationItem>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4">
+                        <size key="portraitSize" width="320" height="568"/>
+                        <size key="landscapeSize" width="568" height="320"/>
+                    </simulatedScreenMetrics>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5sK-Yz-4OE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1651.5" y="-411"/>
         </scene>
         <!--CRIAR CONTA-->
         <scene sceneID="kfP-1g-nwm">
