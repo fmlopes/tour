@@ -89,8 +89,8 @@ class LoginViewController: UIViewController, FBLoginViewDelegate, APIProtocol {
             
             api.HTTPPostJSON("/user", jsonObj: self.user.dictionaryFromUser())
         } else {
-            let homeViewController = self.storyboard.instantiateViewControllerWithIdentifier("Home") as HomeViewController
-            self.navigationController.pushViewController(homeViewController, animated: false)
+            //let homeViewController = self.storyboard.instantiateViewControllerWithIdentifier("Home") as HomeViewController
+            //self.navigationController.pushViewController(homeViewController, animated: false)
         }
     }
 }

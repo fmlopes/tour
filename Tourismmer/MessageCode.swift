@@ -10,4 +10,6 @@ import Foundation
 
 enum MessageCode : String {
     case RecordNotFound = "009"
+    case UserLogged = "002"
+    case Success = "001"
 }

@@ -28,8 +28,6 @@ class RegisterViewController:UIViewController, APIProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Get GPS Permission
-        
     }
     
     @IBAction func RegisterClick(sender: AnyObject) {
