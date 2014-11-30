@@ -41,6 +41,13 @@ class LoginViewController: UIViewController, FBLoginViewDelegate, APIProtocol {
             let homeViewController = self.storyboard.instantiateViewControllerWithIdentifier("Home") as HomeViewController
             
             self.navigationController.pushViewController(homeViewController, animated: false)
+        } else {
+            let alert = UIAlertController(title: "Erro", message: "Os campos Email e Senha são obrigatórios.", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,
+                handler: nil))
+            
+            self.presentViewController(alert, animated: false, completion: nil)
         }
     }
     
@@ -88,6 +95,8 @@ class LoginViewController: UIViewController, FBLoginViewDelegate, APIProtocol {
         if (results["statusCode"] as NSString == MessageCode.RecordNotFound.toRaw()) {
             
             api.HTTPPostJSON("/user", jsonObj: self.user.dictionaryFromUser())
+        } else if (results["statusCode"] as NSString == MessageCode.UserNotRegistered.toRaw()) {
+            
         } else {
             //let homeViewController = self.storyboard.instantiateViewControllerWithIdentifier("Home") as HomeViewController
             //self.navigationController.pushViewController(homeViewController, animated: false)
