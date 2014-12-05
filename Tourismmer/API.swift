@@ -22,17 +22,17 @@ class API {
     
     func get(path:NSString) {
         let fullPath:NSString = apiURL + path
-        let url: NSURL = NSURL(string: fullPath)
+        let url: NSURL = NSURL(string: fullPath)!
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithURL(url, completionHandler: {data, response, error -> Void in
             println("Task completed")
-            if(error) {
+            if((error) != nil) {
                 // If there is an error in the web request, print it to the console
                 println(error.description)
             }
             var err: NSError?
             var jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as NSDictionary
-            if(err?) {
+            if((err?) != nil) {
                 // If there is an error parsing JSON, print it to the console
                 println("JSON Error \(err!.localizedDescription)")
             }
@@ -46,14 +46,14 @@ class API {
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
             println("Task completed")
-            if(error) {
+            if((error) != nil) {
                 // If there is an error in the web request, print it to the console
                 println(error.localizedDescription)
             }
             
             var err: NSError?
             var jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: .MutableLeaves, error: &err) as NSDictionary
-            if(err?) {
+            if((err?) != nil) {
                 // If there is an error parsing JSON, print it to the console
                 println("JSON Error \(err!.localizedDescription)")
             }
@@ -66,13 +66,13 @@ class API {
     
     func HTTPGet(url: String) -> Void {
         let fullPath:String = apiURL + url
-        var request = NSMutableURLRequest(URL: NSURL(string: fullPath))
+        var request = NSMutableURLRequest(URL: NSURL(string: fullPath)!)
         HTTPsendRequest(request)
     }
     
     func HTTPPostJSON(url: String, jsonObj: Dictionary<NSString, NSString>) -> Void {
         let fullPath:String = apiURL + url
-        var request = NSMutableURLRequest(URL: NSURL(string: fullPath))
+        var request = NSMutableURLRequest(URL: NSURL(string: fullPath)!)
         request.HTTPMethod = "POST"
         request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
@@ -81,7 +81,7 @@ class API {
         let jsonString = NSJSONSerialization.dataWithJSONObject(jsonObj, options: nil, error: &err)
         
         request.HTTPBody = jsonString
-        println(NSString(data: jsonString, encoding: NSUTF8StringEncoding))
+        println(NSString(data: jsonString!, encoding: NSUTF8StringEncoding))
         HTTPsendRequest(request)
     }
 }

@@ -19,6 +19,6 @@ class Util {
     class func dateFromString(format: String, date: NSString) -> NSDate {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = format
-        return dateFormatter.dateFromString(date)
+        return dateFormatter.dateFromString(date)!
     }
 }

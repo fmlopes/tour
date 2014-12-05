@@ -26,24 +26,41 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
         
         labelLocation.text = group.location.name.uppercaseString
         labelDate.text = Util.stringFromDate("MM/yy", date: self.group.date).uppercaseString
-        labelGoal.text = self.group.type?.toRaw().uppercaseString
+        labelGoal.text = self.group.type?.rawValue.uppercaseString
         imagePlace.image = self.image
         
-        self.navigationController.navigationBar.hidden = false
+        self.navigationController?.toolbar.hidden = false
+        
+        var post = Post(text: "Empire State Bora AE!", imagePath: "", likeCount: 2, commentCount: 15, imGoingCount: 5, user: User(), comments: [Comment]())
+        posts.append(post)
+        
+        post = Post(text: "Alguém a fim de dar uma volta no Central Park?", imagePath: "", likeCount: 2, commentCount: 15, imGoingCount: 5, user: User(), comments: [Comment]())
+        posts.append(post)
+        
+        post = Post(text: "Gata, quer tc?", imagePath: "", likeCount: 2, commentCount: 15, imGoingCount: 5, user: User(), comments: [Comment]())
+        posts.append(post)
+        
+        self.postTableView!.reloadData()
     }
     
-    init(coder aDecoder: NSCoder!) {
+    required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-        var cell: Cell = self.postTableView.dequeueReusableCellWithIdentifier(kCellIdentifier, forIndexPath: indexPath) as Cell
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell: PostCell = self.postTableView.dequeueReusableCellWithIdentifier(kCellIdentifier, forIndexPath: indexPath) as PostCell
         
-        let request:NSURLRequest = NSURLRequest(URL: NSURL(string:""))
+        let post: Post = posts[indexPath.row]
+        cell.postTextLabel!.text = post.text
+        cell.postCommentLabel!.text = String(post.commentCount)
+        cell.postImGoingCountUser!.text = String(post.imGoingCount)
+        cell.postLikesLabel!.text = String(post.likeCount)
+        
+        let request:NSURLRequest = NSURLRequest(URL: NSURL(string:post.imagePath)!)
         
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!, data: NSData!, error:NSError!) -> Void in
-            if !error? {
-                
+            if !(error? != nil) {
+                cell.postBackgroundImage!.image = UIImage(data: data)
             } else {
                 println("Error: \(error.localizedDescription)")
             }
@@ -52,7 +69,7 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
-    func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.posts.count
     }
     

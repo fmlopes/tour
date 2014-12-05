@@ -46,33 +46,33 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         //self.navigationController.navigationBar.hidden = true
     }
     
-    init(coder aDecoder: NSCoder!) {
+    required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: Cell = self.groupsTableView.dequeueReusableCellWithIdentifier(kCellIdentifier, forIndexPath: indexPath) as Cell
         var group: Group
         
-        if tableView == self.searchDisplayController.searchResultsTableView {
+        if tableView == self.searchDisplayController?.searchResultsTableView {
             group = filteredGroups[indexPath.row]
         } else {
             group = groups[indexPath.row]
         }
         
         cell.postText.text = group.location.name.uppercaseString
-        if group.type? {
-            cell.postGoal.text = group.type?.toRaw().uppercaseString
+        if (group.type?  != nil){
+            cell.postGoal.text = group.type?.rawValue.uppercaseString
         }
         cell.postImage.image = UIImage(named: "Blank52.png")
         cell.postDate.text = Util.stringFromDate("MM/yy", date: group.date)
         
-        var imgURL:NSURL = NSURL(string:group.imgPath)
+        var imgURL:NSURL = NSURL(string:group.imgPath)!
         
         let request:NSURLRequest = NSURLRequest(URL: imgURL)
         
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!, data: NSData!, error:NSError!) -> Void in
-            if !error? {
+            if !(error? != nil) {
                 
                 cell.postImage.image = UIImage(data: data)
                 
@@ -84,8 +84,8 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         return cell
     }
     
-    func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
-        if tableView == self.searchDisplayController.searchResultsTableView {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if tableView == self.searchDisplayController?.searchResultsTableView {
             return self.filteredGroups.count
         } else {
             return self.groups.count
@@ -118,15 +118,15 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         return true
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if segue.identifier == "home_group" {
             let vc = segue.destinationViewController as GroupViewController
             let groupCell = sender as Cell
             
-            vc.group.location = Location(name: groupCell.postText.text, lat: NSDecimalNumber.zero(), long: NSDecimalNumber.zero())
-            vc.group.date = Util.dateFromString("MM/yy", date: groupCell.postDate.text)
-            vc.group.type = TripType.fromRaw(groupCell.postGoal.text)
-            vc.image = groupCell.postImage.image
+            vc.group.location = Location(name: groupCell.postText.text!, lat: NSDecimalNumber.zero(), long: NSDecimalNumber.zero())
+            vc.group.date = Util.dateFromString("MM/yy", date: groupCell.postDate.text!)
+            vc.group.type = TripType(rawValue: groupCell.postGoal.text!)
+            vc.image = groupCell.postImage.image!
         }
     }
 }

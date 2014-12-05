@@ -21,7 +21,7 @@ class RegisterViewController:UIViewController, APIProtocol {
     @IBOutlet weak var birthdayPickerView: UIDatePicker!
     @IBOutlet weak var gendersSegmentedControl: UISegmentedControl!
     
-    init(coder aDecoder: NSCoder!) {
+    required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -53,8 +53,8 @@ class RegisterViewController:UIViewController, APIProtocol {
     func didReceiveAPIResults(results: NSDictionary) {
         println("Registered")
         //performSegueWithIdentifier("registeredSegue", sender: self)
-        let homeViewController = self.storyboard.instantiateViewControllerWithIdentifier("Home") as HomeViewController
+        let homeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Home") as HomeViewController
         
-        self.navigationController.pushViewController(homeViewController, animated: true)
+        self.navigationController?.pushViewController(homeViewController, animated: true)
     }
 }

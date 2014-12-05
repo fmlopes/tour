@@ -16,7 +16,7 @@ class User:NSObject {
     var gender:NSString
     var facebookId:Int64
     
-    init() {
+    override init() {
         self.id = 0
         self.name = ""
         self.birthdate = NSDate()
