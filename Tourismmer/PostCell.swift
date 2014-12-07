@@ -12,10 +12,10 @@ import UIKit
 class PostCell:UITableViewCell {
     
     
+    @IBOutlet weak var postTextLabel: UILabel!
     @IBOutlet weak var userPhoto: UIImageView!
     @IBOutlet weak var userNameLabel: UIButton!
     @IBOutlet weak var postBackgroundImage: UIImageView!
-    @IBOutlet weak var postTextLabel: UILabel!
     @IBOutlet weak var postCommentsImage: UIImageView!
     @IBOutlet weak var postCommentLabel: UILabel!
     @IBOutlet weak var postLikesImage: UIImageView!

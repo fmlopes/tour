@@ -12,4 +12,5 @@ enum MessageCode : String {
     case RecordNotFound = "006"
     case UserNotRegistered = "005"
     case Success = "001"
+    case UserOrPassInvalid = "002"
 }

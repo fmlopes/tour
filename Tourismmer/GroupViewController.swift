@@ -24,20 +24,17 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        labelLocation.text = group.location.name.uppercaseString
-        labelDate.text = Util.stringFromDate("MM/yy", date: self.group.date).uppercaseString
-        labelGoal.text = self.group.type?.rawValue.uppercaseString
-        imagePlace.image = self.image
-        
         self.navigationController?.toolbar.hidden = false
         
-        var post = Post(text: "Empire State Bora AE!", imagePath: "", likeCount: 2, commentCount: 15, imGoingCount: 5, user: User(), comments: [Comment]())
+        self.navigationItem.title = group.location.name
+        
+        var post = Post(text: "Empire State Bora AE!", imagePath: "https://s3-sa-east-1.amazonaws.com/location-imgs-sa-east-1/1.jpg", likeCount: 2, commentCount: 15, imGoingCount: 5, user: User(), comments: [Comment]())
         posts.append(post)
         
-        post = Post(text: "Alguém a fim de dar uma volta no Central Park?", imagePath: "", likeCount: 2, commentCount: 15, imGoingCount: 5, user: User(), comments: [Comment]())
+        post = Post(text: "Alguém a fim de dar uma volta no Central Park?", imagePath: "https://s3-sa-east-1.amazonaws.com/location-imgs-sa-east-1/1.jpg", likeCount: 2, commentCount: 15, imGoingCount: 5, user: User(), comments: [Comment]())
         posts.append(post)
         
-        post = Post(text: "Gata, quer tc?", imagePath: "", likeCount: 2, commentCount: 15, imGoingCount: 5, user: User(), comments: [Comment]())
+        post = Post(text: "Gata, quer tc?", imagePath: "https://s3-sa-east-1.amazonaws.com/location-imgs-sa-east-1/1.jpg", likeCount: 2, commentCount: 15, imGoingCount: 5, user: User(), comments: [Comment]())
         posts.append(post)
         
         self.postTableView!.reloadData()

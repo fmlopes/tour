@@ -33,8 +33,8 @@ class LoginViewController: UIViewController, FBLoginViewDelegate, APIProtocol {
 
     @IBAction func login(sender: AnyObject) {
         if (isValidForm()) {
-            let encodedEmail = emailTextField.text.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
-            let encodedPass = passTextField.text.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
+            let encodedEmail:String = emailTextField.text.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+            let encodedPass:String = passTextField.text.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
             
             api.HTTPGet("/user/\(encodedEmail)/\(encodedPass)")
             
@@ -94,9 +94,16 @@ class LoginViewController: UIViewController, FBLoginViewDelegate, APIProtocol {
             api.HTTPPostJSON("/user", jsonObj: self.user.dictionaryFromUser())
         } else if (results["statusCode"] as NSString == MessageCode.UserNotRegistered.rawValue) {
             
+        } else if (results["statusCode"] as NSString == MessageCode.UserOrPassInvalid.rawValue) {
+            let alert = UIAlertController(title: "Erro", message: "Usuário e senha inválidos.", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,
+                handler: nil))
+            
+            self.presentViewController(alert, animated: false, completion: nil)
         } else {
-            let homeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Home") as HomeViewController
-            self.navigationController?.pushViewController(homeViewController, animated: false)
+            //let homeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Home") as HomeViewController
+            //self.navigationController?.pushViewController(homeViewController, animated: false)
         }
     }
 }
