@@ -26,6 +26,8 @@
 		20AC20231A0ACAC60035255C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC20221A0ACAC60035255C /* Post.swift */; };
 		20AC20271A0ACCB50035255C /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC20261A0ACCB50035255C /* Comment.swift */; };
 		20AE73F91A0C475A00BA12DB /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AE73F81A0C475A00BA12DB /* PostCell.swift */; };
+		20CD0F561A37CCB6003204F8 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD0F551A37CCB6003204F8 /* CommentCell.swift */; };
+		20DC43AC1A3A877A00F2DA8E /* GoogleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DC43AB1A3A877A00F2DA8E /* GoogleService.swift */; };
 		5504ED391996774600DA6FC9 /* Blank52.png in Resources */ = {isa = PBXBuildFile; fileRef = 5504ED381996774600DA6FC9 /* Blank52.png */; };
 		551FE5301A0FAA3600B868B1 /* RecoverPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551FE52F1A0FAA3600B868B1 /* RecoverPasswordViewController.swift */; };
 		55CC781A1A17BFA4001C41E8 /* MessageCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CC78191A17BFA4001C41E8 /* MessageCode.swift */; };
@@ -66,6 +68,8 @@
 		20AC20221A0ACAC60035255C /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		20AC20261A0ACCB50035255C /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		20AE73F81A0C475A00BA12DB /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		20CD0F551A37CCB6003204F8 /* CommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		20DC43AB1A3A877A00F2DA8E /* GoogleService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleService.swift; sourceTree = "<group>"; };
 		5504ED381996774600DA6FC9 /* Blank52.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Blank52.png; path = Tourismmer/Images.xcassets/Blank52.png; sourceTree = "<group>"; };
 		551FE52F1A0FAA3600B868B1 /* RecoverPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewController.swift; sourceTree = "<group>"; };
 		55CC78191A17BFA4001C41E8 /* MessageCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCode.swift; sourceTree = "<group>"; };
@@ -178,6 +182,7 @@
 				20AE73F81A0C475A00BA12DB /* PostCell.swift */,
 				551FE52F1A0FAA3600B868B1 /* RecoverPasswordViewController.swift */,
 				2042C28E1A25529800EEEE99 /* NewGroupViewController.swift */,
+				20CD0F551A37CCB6003204F8 /* CommentCell.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -186,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				208A81C4198B26DE0075A441 /* API.swift */,
+				20DC43AB1A3A877A00F2DA8E /* GoogleService.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -306,6 +312,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20CD0F561A37CCB6003204F8 /* CommentCell.swift in Sources */,
 				20AC20211A0998C10035255C /* GroupViewController.swift in Sources */,
 				20918E8419E4A9B900BD39E8 /* Util.swift in Sources */,
 				209BB9611991B03E00BE6D26 /* Group.swift in Sources */,
@@ -321,6 +328,7 @@
 				208A81C3198B24DE0075A441 /* User.swift in Sources */,
 				2042C28F1A25529800EEEE99 /* NewGroupViewController.swift in Sources */,
 				55CC781A1A17BFA4001C41E8 /* MessageCode.swift in Sources */,
+				20DC43AC1A3A877A00F2DA8E /* GoogleService.swift in Sources */,
 				20918E8119E370FE00BD39E8 /* Cell.swift in Sources */,
 				209BB9651991B19C00BE6D26 /* TripType.swift in Sources */,
 				55E1D404198D66FC0006749D /* HomeViewController.swift in Sources */,

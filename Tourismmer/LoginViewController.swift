@@ -95,15 +95,15 @@ class LoginViewController: UIViewController, FBLoginViewDelegate, APIProtocol {
         } else if (results["statusCode"] as NSString == MessageCode.UserNotRegistered.rawValue) {
             
         } else if (results["statusCode"] as NSString == MessageCode.UserOrPassInvalid.rawValue) {
-            let alert = UIAlertController(title: "Erro", message: "Usuário e senha inválidos.", preferredStyle: UIAlertControllerStyle.Alert)
+            let alert = UIAlertController(title: "Erro", message: "Email ou senha inválidos.", preferredStyle: UIAlertControllerStyle.Alert)
             
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,
                 handler: nil))
             
             self.presentViewController(alert, animated: false, completion: nil)
         } else {
-            //let homeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Home") as HomeViewController
-            //self.navigationController?.pushViewController(homeViewController, animated: false)
+            let homeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Home") as HomeViewController
+            self.navigationController?.pushViewController(homeViewController, animated: false)
         }
     }
 }

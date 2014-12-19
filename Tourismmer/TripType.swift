@@ -9,7 +9,8 @@
 import Foundation
 
 enum TripType : String {
-    case Tourism = "TOURISM"
-    case Business = "BUSINESS"
-    case ExchangeProgram = "EXCHANGE_PROGRAM"
+    case Tourism = "TURISMO"
+    case Business = "NEGÓCIOS"
+    case ExchangeProgram = "INTERCÂMBIO"
+    case Excursion = "EXCURSÃO"
 }
