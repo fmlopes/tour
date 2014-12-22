@@ -297,6 +297,17 @@
                                     <action selector="create:" destination="BTr-Fc-ULC" eventType="touchUpInside" id="9rs-Pc-b5z"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qDu-27-m4q">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="BTr-Fc-ULC" id="tiR-c1-W8r"/>
+                                    <outlet property="delegate" destination="BTr-Fc-ULC" id="DCk-er-NzU"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -308,6 +319,7 @@
                                 <exclude reference="4Ae-IO-DXI"/>
                                 <exclude reference="lDb-UZ-btQ"/>
                                 <exclude reference="7lv-1O-tSx"/>
+                                <exclude reference="qDu-27-m4q"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -319,6 +331,7 @@
                                 <include reference="4Ae-IO-DXI"/>
                                 <include reference="lDb-UZ-btQ"/>
                                 <include reference="7lv-1O-tSx"/>
+                                <include reference="qDu-27-m4q"/>
                             </mask>
                         </variation>
                     </view>
@@ -328,6 +341,7 @@
                     <connections>
                         <outlet property="pickerViewTripType" destination="lDb-UZ-btQ" id="9Gg-Tb-UTh"/>
                         <outlet property="searchDisplayController" destination="eXF-B1-Lom" id="FqA-Am-V4p"/>
+                        <outlet property="tableViewCities" destination="qDu-27-m4q" id="bsU-26-Ux2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K7E-gU-kVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
