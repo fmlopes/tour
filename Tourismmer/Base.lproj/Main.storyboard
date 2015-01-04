@@ -218,6 +218,7 @@
         <!--NOVO GRUPO-->
         <scene sceneID="TcU-Er-TAF">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K7E-gU-kVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="BTr-Fc-ULC" customClass="NewGroupViewController" customModule="Tourismmer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LRk-da-0z6"/>
@@ -227,32 +228,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ONDE?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EN2-C3-hwl">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
-                                <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="72" width="60" height="24"/>
-                                </variation>
-                            </label>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="yrF-rh-BiV">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="98" width="320" height="44"/>
-                                </variation>
-                                <connections>
-                                    <outlet property="delegate" destination="BTr-Fc-ULC" id="vqp-yD-SOc"/>
-                                </connections>
-                            </searchBar>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QUANDO?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jrX-7r-E0v">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
                                 <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="150" width="92" height="21"/>
+                                    <rect key="frame" x="16" y="57" width="92" height="21"/>
                                 </variation>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Tm3-SA-QYA">
@@ -262,7 +244,7 @@
                                 </date>
                                 <locale key="locale" localeIdentifier="pt_BR"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="179" width="320" height="162"/>
+                                    <rect key="frame" x="0.0" y="86" width="320" height="162"/>
                                 </variation>
                             </datePicker>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OBJETIVO?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ae-IO-DXI">
@@ -271,19 +253,9 @@
                                 <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="354" width="96" height="21"/>
+                                    <rect key="frame" x="16" y="256" width="96" height="21"/>
                                 </variation>
                             </label>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lDb-UZ-btQ">
-                                <rect key="frame" x="0.0" y="-162" width="320" height="162"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="370" width="320" height="162"/>
-                                </variation>
-                                <connections>
-                                    <outlet property="dataSource" destination="BTr-Fc-ULC" id="P87-oP-Xpq"/>
-                                    <outlet property="delegate" destination="BTr-Fc-ULC" id="b55-Sb-uC5"/>
-                                </connections>
-                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7lv-1O-tSx">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="20"/>
@@ -297,61 +269,66 @@
                                     <action selector="create:" destination="BTr-Fc-ULC" eventType="touchUpInside" id="9rs-Pc-b5z"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qDu-27-m4q">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="WN1-rX-BUF">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 </variation>
                                 <connections>
-                                    <outlet property="dataSource" destination="BTr-Fc-ULC" id="tiR-c1-W8r"/>
-                                    <outlet property="delegate" destination="BTr-Fc-ULC" id="DCk-er-NzU"/>
+                                    <outlet property="delegate" destination="BTr-Fc-ULC" id="Ppd-fL-kOe"/>
                                 </connections>
-                            </tableView>
+                            </searchBar>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lDb-UZ-btQ">
+                                <rect key="frame" x="0.0" y="-162" width="320" height="162"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="261" width="320" height="162"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="BTr-Fc-ULC" id="P87-oP-Xpq"/>
+                                    <outlet property="delegate" destination="BTr-Fc-ULC" id="b55-Sb-uC5"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="EN2-C3-hwl"/>
-                                <exclude reference="yrF-rh-BiV"/>
                                 <exclude reference="jrX-7r-E0v"/>
                                 <exclude reference="Tm3-SA-QYA"/>
                                 <exclude reference="4Ae-IO-DXI"/>
-                                <exclude reference="lDb-UZ-btQ"/>
                                 <exclude reference="7lv-1O-tSx"/>
-                                <exclude reference="qDu-27-m4q"/>
+                                <exclude reference="WN1-rX-BUF"/>
+                                <exclude reference="lDb-UZ-btQ"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="EN2-C3-hwl"/>
-                                <include reference="yrF-rh-BiV"/>
                                 <include reference="jrX-7r-E0v"/>
                                 <include reference="Tm3-SA-QYA"/>
                                 <include reference="4Ae-IO-DXI"/>
-                                <include reference="lDb-UZ-btQ"/>
                                 <include reference="7lv-1O-tSx"/>
-                                <include reference="qDu-27-m4q"/>
+                                <include reference="WN1-rX-BUF"/>
+                                <include reference="lDb-UZ-btQ"/>
                             </mask>
                         </variation>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="NOVO GRUPO" id="6BR-pP-5Br"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="pickerViewTripType" destination="lDb-UZ-btQ" id="9Gg-Tb-UTh"/>
-                        <outlet property="searchDisplayController" destination="eXF-B1-Lom" id="FqA-Am-V4p"/>
-                        <outlet property="tableViewCities" destination="qDu-27-m4q" id="bsU-26-Ux2"/>
+                        <outlet property="searchBar" destination="WN1-rX-BUF" id="EKT-97-Q0e"/>
+                        <outlet property="searchDisplayController" destination="bul-iv-mnS" id="psO-cJ-X6t"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="K7E-gU-kVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="eXF-B1-Lom">
+                <searchDisplayController id="bul-iv-mnS">
                     <connections>
-                        <outlet property="delegate" destination="BTr-Fc-ULC" id="0wH-Ah-OsW"/>
-                        <outlet property="searchBar" destination="yrF-rh-BiV" id="mo8-fu-8YZ"/>
-                        <outlet property="searchContentsController" destination="BTr-Fc-ULC" id="XxX-Eb-4TW"/>
-                        <outlet property="searchResultsDataSource" destination="BTr-Fc-ULC" id="yGY-vK-PXw"/>
-                        <outlet property="searchResultsDelegate" destination="BTr-Fc-ULC" id="LME-eg-tyA"/>
+                        <outlet property="delegate" destination="BTr-Fc-ULC" id="bVa-xH-H9h"/>
+                        <outlet property="searchBar" destination="WN1-rX-BUF" id="wSj-Kv-rMa"/>
+                        <outlet property="searchContentsController" destination="BTr-Fc-ULC" id="C7j-7K-fNG"/>
+                        <outlet property="searchResultsDataSource" destination="BTr-Fc-ULC" id="kOP-I4-yUv"/>
+                        <outlet property="searchResultsDelegate" destination="BTr-Fc-ULC" id="fFd-1x-cMz"/>
                     </connections>
                 </searchDisplayController>
             </objects>

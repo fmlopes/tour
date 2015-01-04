@@ -8,21 +8,21 @@
 
 import Foundation
 
-class NewGroupViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate, GoogleServiceProtocol, APIProtocol, UITableViewDelegate, UITableViewDataSource  {
+class NewGroupViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate, GoogleServiceProtocol, APIProtocol, UITableViewDataSource, UITableViewDelegate  {
     
     var pickerViewArray:[TripType] = [TripType.Business, TripType.ExchangeProgram, TripType.Tourism, TripType.Excursion]
     var filteredCities = [String]()
     var cities = [String]()
     lazy var googleService:GoogleService = GoogleService(delegate: self)
     lazy var api:API = API(delegate: self)
-    @IBOutlet weak var tableViewCities: UITableView!
+    var kCellIdentifier:NSString = "CityCell"
     
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var pickerViewTripType: UIPickerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableViewCities.hidden = true
     }
     
     @IBAction func create(sender: AnyObject) {
@@ -40,45 +40,51 @@ class NewGroupViewController: UIViewController, UIPickerViewDataSource, UIPicker
         return pickerViewArray[row].rawValue
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = self.tableViewCities.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell
+    func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchString searchString: String!) -> Bool {
         
-        cell.textLabel?.text = filteredCities[indexPath.row]
+        self.filterContentForSearchText(searchString)
+        return false
+    }
+    
+    func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchScope searchOption: Int) -> Bool {
         
-        return cell
+        self.filterContentForSearchText(self.searchDisplayController!.searchBar.text)
+        return false
+    }
+    
+    func filterContentForSearchText(searchText: String) {
+        googleService.HTTPGet("/maps/api/place/autocomplete/json?input=\(searchText)&key=AIzaSyC47pgYWvg_sVs5cs2_UXKoIsDPQTo8z7A&language=pt_BR&types=(cities)")
+        //println("filter called")
+    }
+    
+    func didReceiveGoogleResults(results: NSDictionary) {
+        let array: Array = results["predictions"] as Array<Dictionary<String, AnyObject>>
+        self.cities.removeAll(keepCapacity: false)
+        for item in array {
+            cities.append(item["description"] as String)
+        }
+        
+        self.searchDisplayController?.searchResultsTableView.reloadData()
+    }
+    
+    func didReceiveAPIResults(results: NSDictionary) {
+        print(results)
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell: UITableViewCell = UITableViewCell()
+        
+        cell.textLabel?.text = cities[indexPath.row]
+        
+        return cell
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredCities.count
-    }
-    
-    func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchString searchString: String!) -> Bool {
-        
-        self.filterContentForSearchText(searchString)
-        return true
-    }
-    
-    func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchScope searchOption: Int) -> Bool {
-        
-        self.filterContentForSearchText(self.searchDisplayController!.searchBar.text)
-        return true
-    }
-    
-    func filterContentForSearchText(searchText: String) {
-        googleService.HTTPGet("/maps/api/place/autocomplete/json?input=\(searchText)&key=AIzaSyC47pgYWvg_sVs5cs2_UXKoIsDPQTo8z7A&language=pt_BR&types=(cities)")
-        self.tableViewCities.hidden = false
-    }
-    
-    func didReceiveGoogleResults(results: NSDictionary) {
-        print(results)
-        
-    }
-    
-    func didReceiveAPIResults(results: NSDictionary) {
-        print(results)
+        return cities.count
     }
 }
