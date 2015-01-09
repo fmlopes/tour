@@ -218,14 +218,13 @@
         <!--NOVO GRUPO-->
         <scene sceneID="TcU-Er-TAF">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="K7E-gU-kVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="BTr-Fc-ULC" customClass="NewGroupViewController" customModule="Tourismmer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LRk-da-0z6"/>
                         <viewControllerLayoutGuide type="bottom" id="hLR-UV-zZk"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="WbL-5F-GEA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QUANDO?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jrX-7r-E0v">
@@ -322,6 +321,7 @@
                         <outlet property="searchDisplayController" destination="bul-iv-mnS" id="psO-cJ-X6t"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K7E-gU-kVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <searchDisplayController id="bul-iv-mnS">
                     <connections>
                         <outlet property="delegate" destination="BTr-Fc-ULC" id="bVa-xH-H9h"/>

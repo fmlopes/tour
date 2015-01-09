@@ -22,7 +22,7 @@ class GoogleService {
     
     func HTTPGet(url: String) -> Void {
         let fullPath:String = googleURL + url
-        var request = NSMutableURLRequest(URL: NSURL(string: fullPath)!)
+        var request = NSMutableURLRequest(URL: NSURL(string: fullPath.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)!)
         HTTPsendRequest(request)
     }
     
