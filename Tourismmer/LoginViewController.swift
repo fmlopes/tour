@@ -24,6 +24,17 @@ class LoginViewController: UIViewController, FBLoginViewDelegate, APIProtocol {
         
         self.fbLoginView.delegate = self
         self.fbLoginView.readPermissions = ["public_profile", "email", "user_friends"]
+        
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.jpg")!)
+        //self.view.backgroundColor = UIColor(patternImage: image)
+        
+        self.navigationController?.navigationBarHidden = true
+        
+        self.emailTextField.backgroundColor = UIColor.whiteColor()
+        self.emailTextField.alpha = 0.5
+        
+        self.passTextField.backgroundColor = UIColor.whiteColor()
+        self.passTextField.alpha = 0.5
     }
 
     override func didReceiveMemoryWarning() {
@@ -102,7 +113,7 @@ class LoginViewController: UIViewController, FBLoginViewDelegate, APIProtocol {
             
             self.presentViewController(alert, animated: false, completion: nil)
         } else {
-            let homeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Home") as HomeViewController
+            let homeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("TabBar") as UITabBarController
             self.navigationController?.pushViewController(homeViewController, animated: false)
         }
     }

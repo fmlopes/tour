@@ -16,6 +16,14 @@ class RecoverPasswordViewController:UIViewController, APIProtocol {
     
     lazy var api:API = API(delegate: self)
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.jpg")!)
+        
+        self.emailTextField.backgroundColor = UIColor.whiteColor()
+        self.emailTextField.alpha = 0.5
+    }
+    
     @IBAction func send(sender: AnyObject) {
         let url = "/passRecover/\(emailTextField.text)"
         

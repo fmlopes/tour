@@ -13,7 +13,7 @@ protocol APIProtocol {
 }
 
 class API {
-    var apiURL:String = "http://54.94.141.250:8080/tourismmer/resources"
+    var apiURL:String = "http://192.168.0.23:8080/tourismmer/resources"
     var delegate:APIProtocol
     
     init(delegate:APIProtocol){
@@ -52,7 +52,7 @@ class API {
             }
             
             var err: NSError?
-            var jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: .MutableLeaves, error: &err) as NSDictionary
+            var jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers, error: &err) as NSDictionary
             if((err?) != nil) {
                 // If there is an error parsing JSON, print it to the console
                 println("JSON Error \(err!.localizedDescription)")

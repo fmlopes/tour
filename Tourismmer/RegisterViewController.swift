@@ -28,6 +28,16 @@ class RegisterViewController:UIViewController, APIProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.jpg")!)
+        
+        self.emailTextField.backgroundColor = UIColor.whiteColor()
+        self.emailTextField.alpha = 0.5
+        
+        self.nameTextField.backgroundColor = UIColor.whiteColor()
+        self.nameTextField.alpha = 0.5
+        
+        self.cityTextField.backgroundColor = UIColor.whiteColor()
+        self.passTextField.alpha = 0.5
     }
     
     @IBAction func RegisterClick(sender: AnyObject) {

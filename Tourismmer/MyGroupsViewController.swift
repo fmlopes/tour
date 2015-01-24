@@ -1,32 +1,27 @@
 //
-//  HomeViewController.swift
+//  MyGroupsViewController.swift
 //  Tourismmer
 //
-//  Created by Felipe Lopes on 02/08/14.
-//  Copyright (c) 2014 Felipe Lopes. All rights reserved.
+//  Created by Felipe Lopes on 1/24/15.
+//  Copyright (c) 2015 Felipe Lopes. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, UISearchDisplayDelegate, APIProtocol {
+class MyGroupsViewController:UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, UISearchDisplayDelegate, APIProtocol {
     
     var groups = [Group]()
     var filteredGroups = [Group]()
     var kCellIdentifier:NSString = "GroupCell"
     lazy var api:API = API(delegate: self)
     
-    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var groupsTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        api.HTTPGet("/group/getTopGroups/\(50)")
-    }
-    
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        api.HTTPGet("/group/getUserGroups/1/50/0/")
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -58,8 +53,8 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
             } else {
                 println("Error: \(error.localizedDescription)")
             }
-            })
-
+        })
+        
         return cell
     }
     
@@ -75,18 +70,6 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         return 1
     }
     
-    func filterContentForSearchText(searchText: String) {
-        self.filteredGroups = self.groups.filter({( group: Group) -> Bool in
-            //let match = (scope == "All") || (group.location.name == scope)
-            let stringMatch = group.location.name.rangeOfString(searchText).toRange()
-            if (stringMatch != nil) {
-                return true
-            } else {
-                return false
-            }
-        })
-    }
-    
     func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchString searchString: String!) -> Bool {
         self.filterContentForSearchText(searchString)
         return true
@@ -97,18 +80,6 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         return true
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        if segue.identifier == "home_group" {
-            let vc = segue.destinationViewController as GroupViewController
-            let groupCell = sender as Cell
-            
-            vc.group.location = Location(name: groupCell.postText.text!, lat: NSDecimalNumber.zero(), long: NSDecimalNumber.zero())
-            vc.group.date = Util.dateFromString("MM/yy", date: groupCell.postDate.text!)
-            vc.group.type = TripType(rawValue: groupCell.postGoal.text!)
-            vc.image = groupCell.postImage.image!
-        }
-    }
-    
     func didReceiveAPIResults(results: NSDictionary) {
         if (results["statusCode"] as String == MessageCode.Success.rawValue) {
             //let array:Array = results["listGroup"] as String
@@ -116,7 +87,7 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
             for item in results["listGroup"] as NSArray {
                 var users = [User]()
                 users.append(User(id: 0, name: "", birthdate: NSDate(), email: "", pass: "", gender: "", facebookId: 0))
-        
+                
                 var location = Location(name: item["destination"] as String, lat: NSDecimalNumber.zero(), long: NSDecimalNumber.zero())
                 
                 var purpose:NSDictionary = item["purpose"] as NSDictionary
@@ -126,5 +97,17 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
             }
             self.groupsTableView!.reloadData()
         }
+    }
+    
+    func filterContentForSearchText(searchText: String) {
+        self.filteredGroups = self.groups.filter({( group: Group) -> Bool in
+            //let match = (scope == "All") || (group.location.name == scope)
+            let stringMatch = group.location.name.rangeOfString(searchText).toRange()
+            if (stringMatch != nil) {
+                return true
+            } else {
+                return false
+            }
+        })
     }
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2042C28F1A25529800EEEE99 /* NewGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2042C28E1A25529800EEEE99 /* NewGroupViewController.swift */; };
+		20526DB51A73365E00A704C8 /* loading.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 20526DB41A73365E00A704C8 /* loading.jpg */; };
 		208A8196198732890075A441 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A8195198732890075A441 /* AppDelegate.swift */; };
 		208A8198198732890075A441 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A8197198732890075A441 /* LoginViewController.swift */; };
 		208A819B198732890075A441 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 208A8199198732890075A441 /* Main.storyboard */; };
@@ -18,10 +19,14 @@
 		208A81C9198C464E0075A441 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A81C8198C464E0075A441 /* RegisterViewController.swift */; };
 		20918E8119E370FE00BD39E8 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20918E8019E370FE00BD39E8 /* Cell.swift */; };
 		20918E8419E4A9B900BD39E8 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20918E8319E4A9B900BD39E8 /* Util.swift */; };
+		2097D08F1A7339AA001EF5A4 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2097D08E1A7339AA001EF5A4 /* bg.jpg */; };
+		2097D0911A733A46001EF5A4 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2097D0901A733A46001EF5A4 /* logo.png */; };
 		209BB95F1991AA2C00BE6D26 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 209BB95E1991AA2C00BE6D26 /* FacebookSDK.framework */; };
 		209BB9611991B03E00BE6D26 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209BB9601991B03E00BE6D26 /* Group.swift */; };
 		209BB9631991B07200BE6D26 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209BB9621991B07200BE6D26 /* Location.swift */; };
 		209BB9651991B19C00BE6D26 /* TripType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209BB9641991B19C00BE6D26 /* TripType.swift */; };
+		20A84D681A73CEC0003AC6F2 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A84D671A73CEC0003AC6F2 /* TabBarViewController.swift */; };
+		20A891551A73FB2C0057E8ED /* MyGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A891541A73FB2C0057E8ED /* MyGroupsViewController.swift */; };
 		20AC20211A0998C10035255C /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC20201A0998C10035255C /* GroupViewController.swift */; };
 		20AC20231A0ACAC60035255C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC20221A0ACAC60035255C /* Post.swift */; };
 		20AC20271A0ACCB50035255C /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC20261A0ACCB50035255C /* Comment.swift */; };
@@ -46,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		2042C28E1A25529800EEEE99 /* NewGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGroupViewController.swift; sourceTree = "<group>"; };
+		20526DB41A73365E00A704C8 /* loading.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = loading.jpg; path = Tourismmer/Images.xcassets/LaunchImage.launchimage/loading.jpg; sourceTree = "<group>"; };
 		208A8190198732890075A441 /* Tourismmer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tourismmer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		208A8194198732890075A441 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		208A8195198732890075A441 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,10 +66,14 @@
 		208A81C8198C464E0075A441 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		20918E8019E370FE00BD39E8 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		20918E8319E4A9B900BD39E8 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		2097D08E1A7339AA001EF5A4 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bg.jpg; path = Tourismmer/Images.xcassets/LaunchImage.launchimage/bg.jpg; sourceTree = "<group>"; };
+		2097D0901A733A46001EF5A4 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = Tourismmer/Images.xcassets/LaunchImage.launchimage/logo.png; sourceTree = "<group>"; };
 		209BB95E1991AA2C00BE6D26 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		209BB9601991B03E00BE6D26 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		209BB9621991B07200BE6D26 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		209BB9641991B19C00BE6D26 /* TripType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripType.swift; sourceTree = "<group>"; };
+		20A84D671A73CEC0003AC6F2 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		20A891541A73FB2C0057E8ED /* MyGroupsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGroupsViewController.swift; sourceTree = "<group>"; };
 		20AC20201A0998C10035255C /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		20AC20221A0ACAC60035255C /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		20AC20261A0ACCB50035255C /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
@@ -96,6 +106,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20526DB31A73363B00A704C8 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
 		208A8187198732890075A441 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +122,9 @@
 				208A81A5198732890075A441 /* TourismmerTests */,
 				208A8191198732890075A441 /* Products */,
 				5504ED381996774600DA6FC9 /* Blank52.png */,
+				20526DB41A73365E00A704C8 /* loading.jpg */,
+				2097D08E1A7339AA001EF5A4 /* bg.jpg */,
+				2097D0901A733A46001EF5A4 /* logo.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,6 +140,7 @@
 		208A8192198732890075A441 /* Tourismmer */ = {
 			isa = PBXGroup;
 			children = (
+				20526DB31A73363B00A704C8 /* Assets */,
 				20918E8219E4A9AD00BD39E8 /* Util */,
 				208A81C1198B11970075A441 /* Service */,
 				208A81C0198B11880075A441 /* ViewController */,
@@ -183,6 +204,8 @@
 				551FE52F1A0FAA3600B868B1 /* RecoverPasswordViewController.swift */,
 				2042C28E1A25529800EEEE99 /* NewGroupViewController.swift */,
 				20CD0F551A37CCB6003204F8 /* CommentCell.swift */,
+				20A84D671A73CEC0003AC6F2 /* TabBarViewController.swift */,
+				20A891541A73FB2C0057E8ED /* MyGroupsViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -292,6 +315,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2097D08F1A7339AA001EF5A4 /* bg.jpg in Resources */,
+				20526DB51A73365E00A704C8 /* loading.jpg in Resources */,
+				2097D0911A733A46001EF5A4 /* logo.png in Resources */,
 				5504ED391996774600DA6FC9 /* Blank52.png in Resources */,
 				208A819B198732890075A441 /* Main.storyboard in Resources */,
 				208A819D198732890075A441 /* Images.xcassets in Resources */,
@@ -316,6 +342,7 @@
 				20AC20211A0998C10035255C /* GroupViewController.swift in Sources */,
 				20918E8419E4A9B900BD39E8 /* Util.swift in Sources */,
 				209BB9611991B03E00BE6D26 /* Group.swift in Sources */,
+				20A84D681A73CEC0003AC6F2 /* TabBarViewController.swift in Sources */,
 				20AC20271A0ACCB50035255C /* Comment.swift in Sources */,
 				208A8198198732890075A441 /* LoginViewController.swift in Sources */,
 				20AE73F91A0C475A00BA12DB /* PostCell.swift in Sources */,
@@ -323,6 +350,7 @@
 				20AC20231A0ACAC60035255C /* Post.swift in Sources */,
 				209BB9631991B07200BE6D26 /* Location.swift in Sources */,
 				208A81C9198C464E0075A441 /* RegisterViewController.swift in Sources */,
+				20A891551A73FB2C0057E8ED /* MyGroupsViewController.swift in Sources */,
 				208A8196198732890075A441 /* AppDelegate.swift in Sources */,
 				208A81C5198B26DE0075A441 /* API.swift in Sources */,
 				208A81C3198B24DE0075A441 /* User.swift in Sources */,

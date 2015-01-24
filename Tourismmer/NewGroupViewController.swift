@@ -10,7 +10,10 @@ import Foundation
 
 class NewGroupViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate, GoogleServiceProtocol, APIProtocol, UITableViewDataSource, UITableViewDelegate  {
     
-    var pickerViewArray:[TripType] = [TripType.Business, TripType.ExchangeProgram, TripType.Tourism, TripType.Excursion]
+    var pickerViewArray:[TripType] = [TripType.Business, TripType.ExchangeProgram, TripType.Vacation, TripType.Excursion]
+    var monthArray:[String] = ["JANEIRO", "FEVEREIRO", "MARÇO", "ABRIL" ,"MAIO" ,"JUNHO", "JULHO", "AGOSTO", "SETEMBRO", "OUTUBRO", "NOVEMBRO", "DEZEMBRO"]
+    var yearArray:[Int] = [2015, 2016, 2017, 2018, 2019, 2020]
+    
     var filteredCities = [String]()
     var cities = [String]()
     lazy var googleService:GoogleService = GoogleService(delegate: self)
