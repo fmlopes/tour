@@ -14,32 +14,11 @@ protocol APIProtocol {
 
 class API {
     var apiURL:String = "http://192.168.0.23:8080/tourismmer/resources"
+    var callback: ((NSDictionary) -> Void)!
     var delegate:APIProtocol
     
     init(delegate:APIProtocol){
         self.delegate = delegate
-    }
-    
-    func get(path:NSString) {
-        let fullPath:NSString = apiURL + path
-        let url: NSURL = NSURL(string: fullPath)!
-        let session = NSURLSession.sharedSession()
-        let task = session.dataTaskWithURL(url, completionHandler: {data, response, error -> Void in
-            println("Task completed")
-            if((error) != nil) {
-                // If there is an error in the web request, print it to the console
-                println(error.description)
-            }
-            var err: NSError?
-            var jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as NSDictionary
-            if((err?) != nil) {
-                // If there is an error parsing JSON, print it to the console
-                println("JSON Error \(err!.localizedDescription)")
-            }
-            //let results: NSArray = jsonResult["results"] as NSArray
-            self.delegate.didReceiveAPIResults(jsonResult)
-            })
-        task.resume()
     }
     
     func HTTPsendRequest(request: NSMutableURLRequest) -> Void {
@@ -58,7 +37,11 @@ class API {
                 println("JSON Error \(err!.localizedDescription)")
             }
             dispatch_async(dispatch_get_main_queue(), {
-                self.delegate.didReceiveAPIResults(jsonResult)
+                if ((self.callback) != nil) {
+                    self.callback(jsonResult)
+                } else {
+                    self.delegate.didReceiveAPIResults(jsonResult)
+                }
             })
         })
         task.resume()
@@ -70,7 +53,7 @@ class API {
         HTTPsendRequest(request)
     }
     
-    func HTTPPostJSON(url: String, jsonObj: Dictionary<NSString, NSString>) -> Void {
+    func HTTPPostJSON(url: String, jsonObj: Dictionary<NSString, AnyObject>) -> Void {
         let fullPath:String = apiURL + url
         var request = NSMutableURLRequest(URL: NSURL(string: fullPath)!)
         request.HTTPMethod = "POST"

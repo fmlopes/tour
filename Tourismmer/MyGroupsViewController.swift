@@ -93,7 +93,7 @@ class MyGroupsViewController:UIViewController, UITableViewDelegate, UITableViewD
                 var purpose:NSDictionary = item["purpose"] as NSDictionary
                 var image:NSDictionary = item["image"] as NSDictionary
                 var dateString = item["date"] as String
-                groups.append(Group(users: users, location: location, date: Util.dateFromString("dd-MM-yyyy", date: dateString), type: TripType.valueFromId(purpose["id"] as Int), imgPath: image["url"] as String))
+                groups.append(Group(users: users, user: User(), location: location.name, date: Util.dateFromString("dd-MM-yyyy", date: dateString), type: TripType.valueFromId(purpose["id"] as Int), imgPath: image["url"] as String))
             }
             self.groupsTableView!.reloadData()
         }

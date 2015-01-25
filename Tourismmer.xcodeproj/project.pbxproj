@@ -27,6 +27,10 @@
 		209BB9651991B19C00BE6D26 /* TripType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209BB9641991B19C00BE6D26 /* TripType.swift */; };
 		20A84D681A73CEC0003AC6F2 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A84D671A73CEC0003AC6F2 /* TabBarViewController.swift */; };
 		20A891551A73FB2C0057E8ED /* MyGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A891541A73FB2C0057E8ED /* MyGroupsViewController.swift */; };
+		20A891571A7451000057E8ED /* PostType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A891561A7451000057E8ED /* PostType.swift */; };
+		20A891591A7459BF0057E8ED /* FacebookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A891581A7459BF0057E8ED /* FacebookService.swift */; };
+		20A8915B1A74876F0057E8ED /* PublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A8915A1A74876F0057E8ED /* PublishViewController.swift */; };
+		20A8915D1A748F300057E8ED /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A8915C1A748F300057E8ED /* PostViewController.swift */; };
 		20AC20211A0998C10035255C /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC20201A0998C10035255C /* GroupViewController.swift */; };
 		20AC20231A0ACAC60035255C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC20221A0ACAC60035255C /* Post.swift */; };
 		20AC20271A0ACCB50035255C /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC20261A0ACCB50035255C /* Comment.swift */; };
@@ -74,6 +78,10 @@
 		209BB9641991B19C00BE6D26 /* TripType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripType.swift; sourceTree = "<group>"; };
 		20A84D671A73CEC0003AC6F2 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		20A891541A73FB2C0057E8ED /* MyGroupsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGroupsViewController.swift; sourceTree = "<group>"; };
+		20A891561A7451000057E8ED /* PostType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostType.swift; sourceTree = "<group>"; };
+		20A891581A7459BF0057E8ED /* FacebookService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookService.swift; sourceTree = "<group>"; };
+		20A8915A1A74876F0057E8ED /* PublishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishViewController.swift; sourceTree = "<group>"; };
+		20A8915C1A748F300057E8ED /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		20AC20201A0998C10035255C /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		20AC20221A0ACAC60035255C /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		20AC20261A0ACCB50035255C /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
@@ -188,6 +196,7 @@
 				20AC20221A0ACAC60035255C /* Post.swift */,
 				20AC20261A0ACCB50035255C /* Comment.swift */,
 				55CC78191A17BFA4001C41E8 /* MessageCode.swift */,
+				20A891561A7451000057E8ED /* PostType.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -206,6 +215,8 @@
 				20CD0F551A37CCB6003204F8 /* CommentCell.swift */,
 				20A84D671A73CEC0003AC6F2 /* TabBarViewController.swift */,
 				20A891541A73FB2C0057E8ED /* MyGroupsViewController.swift */,
+				20A8915A1A74876F0057E8ED /* PublishViewController.swift */,
+				20A8915C1A748F300057E8ED /* PostViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -215,6 +226,7 @@
 			children = (
 				208A81C4198B26DE0075A441 /* API.swift */,
 				20DC43AB1A3A877A00F2DA8E /* GoogleService.swift */,
+				20A891581A7459BF0057E8ED /* FacebookService.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -345,6 +357,7 @@
 				20A84D681A73CEC0003AC6F2 /* TabBarViewController.swift in Sources */,
 				20AC20271A0ACCB50035255C /* Comment.swift in Sources */,
 				208A8198198732890075A441 /* LoginViewController.swift in Sources */,
+				20A891571A7451000057E8ED /* PostType.swift in Sources */,
 				20AE73F91A0C475A00BA12DB /* PostCell.swift in Sources */,
 				551FE5301A0FAA3600B868B1 /* RecoverPasswordViewController.swift in Sources */,
 				20AC20231A0ACAC60035255C /* Post.swift in Sources */,
@@ -352,10 +365,13 @@
 				208A81C9198C464E0075A441 /* RegisterViewController.swift in Sources */,
 				20A891551A73FB2C0057E8ED /* MyGroupsViewController.swift in Sources */,
 				208A8196198732890075A441 /* AppDelegate.swift in Sources */,
+				20A8915B1A74876F0057E8ED /* PublishViewController.swift in Sources */,
+				20A8915D1A748F300057E8ED /* PostViewController.swift in Sources */,
 				208A81C5198B26DE0075A441 /* API.swift in Sources */,
 				208A81C3198B24DE0075A441 /* User.swift in Sources */,
 				2042C28F1A25529800EEEE99 /* NewGroupViewController.swift in Sources */,
 				55CC781A1A17BFA4001C41E8 /* MessageCode.swift in Sources */,
+				20A891591A7459BF0057E8ED /* FacebookService.swift in Sources */,
 				20DC43AC1A3A877A00F2DA8E /* GoogleService.swift in Sources */,
 				20918E8119E370FE00BD39E8 /* Cell.swift in Sources */,
 				209BB9651991B19C00BE6D26 /* TripType.swift in Sources */,

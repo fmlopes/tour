@@ -22,7 +22,7 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        api.HTTPGet("/group/getTopGroups/\(50)")
+        api.HTTPGet("/group/getTopGroups/\(50)/1")
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -104,7 +104,7 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
             
             vc.group.location = Location(name: groupCell.postText.text!, lat: NSDecimalNumber.zero(), long: NSDecimalNumber.zero())
             vc.group.date = Util.dateFromString("MM/yy", date: groupCell.postDate.text!)
-            vc.group.type = TripType(rawValue: groupCell.postGoal.text!)
+            vc.group.type = TripType(rawValue: (groupCell.postGoal.text!))
             vc.image = groupCell.postImage.image!
         }
     }
@@ -122,7 +122,7 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
                 var purpose:NSDictionary = item["purpose"] as NSDictionary
                 var image:NSDictionary = item["image"] as NSDictionary
                 var dateString = item["date"] as String
-                groups.append(Group(users: users, location: location, date: Util.dateFromString("dd-MM-yyyy", date: dateString), type: TripType.valueFromId(purpose["id"] as Int), imgPath: image["url"] as String))
+                groups.append(Group(users: users, user: User(), location: location.name, date: Util.dateFromString("dd-MM-yyyy", date: dateString), type: TripType.valueFromId(purpose["id"] as Int), imgPath: image["url"] as String))
             }
             self.groupsTableView!.reloadData()
         }

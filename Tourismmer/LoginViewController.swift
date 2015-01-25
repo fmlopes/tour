@@ -79,11 +79,11 @@ class LoginViewController: UIViewController, FBLoginViewDelegate, APIProtocol {
         println("User Name: \(user.name)")
         var userEmail = user.objectForKey("email") as String
         println("User Email: \(userEmail)")
-        let userFBID:Int = (user.objectID as String).toInt()!
+        let userFBID:NSNumber = user.objectID.toInt()!
         
         self.user.name = user.name
         self.user.email = user.objectForKey("email") as String
-        self.user.facebookId = Int64(userFBID)
+        self.user.facebookId = userFBID
         self.user.gender = user.objectForKey("gender") as NSString
         self.user.birthdate = Util.dateFromString("MM/dd/yyyy", date: user.objectForKey("birthday") as String)
         
@@ -113,6 +113,12 @@ class LoginViewController: UIViewController, FBLoginViewDelegate, APIProtocol {
             
             self.presentViewController(alert, animated: false, completion: nil)
         } else {
+            //let stringId:NSString = results["id"] as NSNumber
+            self.user.id = results["id"] as NSNumber
+            var defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject(self.user.dictionaryFromUser(), forKey: "loggedUser")
+            defaults.synchronize()
+            
             let homeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("TabBar") as UITabBarController
             self.navigationController?.pushViewController(homeViewController, animated: false)
         }

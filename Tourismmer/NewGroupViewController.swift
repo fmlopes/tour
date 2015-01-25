@@ -14,6 +14,10 @@ class NewGroupViewController: UIViewController, UIPickerViewDataSource, UIPicker
     var monthArray:[String] = ["JANEIRO", "FEVEREIRO", "MARÇO", "ABRIL" ,"MAIO" ,"JUNHO", "JULHO", "AGOSTO", "SETEMBRO", "OUTUBRO", "NOVEMBRO", "DEZEMBRO"]
     var yearArray:[Int] = [2015, 2016, 2017, 2018, 2019, 2020]
     
+    var selectedMonth:String = "JANEIRO"
+    var selectedYear:Int = 2015
+    var selectedPurpose:String = "NEGÓCIOS"
+    
     var filteredCities = [String]()
     var cities = [String]()
     lazy var googleService:GoogleService = GoogleService(delegate: self)
@@ -29,18 +33,63 @@ class NewGroupViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
     
     @IBAction func create(sender: AnyObject) {
+        let month:String = Util.monthNumberFromString(selectedMonth)
+        let year:String = String(selectedYear)
+        let stringDate = "01/\(month)/\(year)"
+        
+        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        
+        let loggedUser:Dictionary<NSString, AnyObject> = defaults.objectForKey("loggedUser") as Dictionary<String, AnyObject>
+        let owner:User = User()
+        owner.id = loggedUser["id"] as NSNumber
+        
+        let group:Group = Group(users: [User](), user: owner, location: searchBar.text, date: Util.dateFromString("dd/MM/yyyy", date: stringDate), type: TripType(rawValue: selectedPurpose)!, imgPath: "")
+        
+        api.HTTPPostJSON("/group", jsonObj: group.dictionaryFromGroup())
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
+        if pickerView.tag == 1 {
+            return 2
+        } else {
+            return 1
+        }
     }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerViewArray.count
+        if pickerView.tag == 1 {
+            if component == 0 {
+                return monthArray.count
+            } else {
+                return yearArray.count
+            }
+        } else {
+            return pickerViewArray.count
+        }
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
-        return pickerViewArray[row].rawValue
+        if pickerView.tag == 1 {
+            if component == 0 {
+                return monthArray[row]
+            } else {
+                return String(yearArray[row])
+            }
+        } else {
+            return pickerViewArray[row].rawValue
+        }
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerView.tag == 1 {
+            if component == 0 {
+                selectedMonth = monthArray[row]
+            } else {
+                selectedYear = yearArray[row]
+            }
+        } else {
+            selectedPurpose = pickerViewArray[row].rawValue
+        }
     }
     
     func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchString searchString: String!) -> Bool {
@@ -64,7 +113,7 @@ class NewGroupViewController: UIViewController, UIPickerViewDataSource, UIPicker
         let array: Array = results["predictions"] as Array<Dictionary<String, AnyObject>>
         self.cities.removeAll(keepCapacity: false)
         for item in array {
-            cities.append(item["description"] as String)
+            cities.append(item["description"] as NSString)
         }
         
         self.searchDisplayController?.searchResultsTableView.reloadData()
@@ -89,5 +138,10 @@ class NewGroupViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cities.count
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        searchDisplayController?.setActive(false, animated: true)
+        searchBar.text = cities[indexPath.row]
     }
 }
