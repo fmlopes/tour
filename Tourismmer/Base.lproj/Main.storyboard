@@ -850,7 +850,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PostCell" rowHeight="94" id="bag-JJ-e8H" customClass="CommentCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CommentCell" rowHeight="94" id="bag-JJ-e8H" customClass="CommentCell" customModule="Tourismmer">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bag-JJ-e8H" id="4M7-KN-jun">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -858,7 +858,7 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Db5-mY-duW">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="8" y="8" width="43" height="43"/>
+                                                        <rect key="frame" x="8" y="9" width="43" height="43"/>
                                                     </variation>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOME DO USUÁRIO" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMB-kh-0vo">
@@ -867,7 +867,7 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="59" y="9" width="142" height="21"/>
+                                                        <rect key="frame" x="67" y="9" width="142" height="21"/>
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="253" translatesAutoresizingMaskIntoConstraints="NO" id="GkI-pc-agp">
@@ -876,7 +876,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="59" y="36" width="253" height="50"/>
+                                                        <rect key="frame" x="67" y="36" width="253" height="50"/>
                                                     </variation>
                                                 </label>
                                             </subviews>
@@ -928,7 +928,7 @@
                                     <rect key="frame" x="254" y="484" width="59" height="30"/>
                                 </variation>
                                 <connections>
-                                    <action selector="postComment:" destination="Ib5-sI-8oP" eventType="touchUpInside" id="C3W-j0-8YY"/>
+                                    <action selector="postComment:" destination="Ib5-sI-8oP" eventType="touchUpInside" id="2EZ-rj-Okb"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -953,20 +953,19 @@
                     <navigationItem key="navigationItem" title="POST" id="PA8-po-zeq">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="jki-eZ-ai0">
                             <connections>
-                                <action selector="composeComment:" destination="Ib5-sI-8oP" id="diq-U7-6uK"/>
+                                <action selector="composeComment:" destination="Ib5-sI-8oP" id="V2s-LN-yw2"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="commentsTableView" destination="5iy-yh-trM" id="qqS-N4-FL4"/>
-                        <outlet property="composeComment" destination="jki-eZ-ai0" id="Bbx-6m-4k3"/>
                         <outlet property="composeTextField" destination="qco-pR-pWb" id="trP-ZC-Y5Y"/>
                         <outlet property="postButton" destination="brn-bI-UsN" id="GVw-Wa-qVx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zob-sH-dhY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2386.5" y="514"/>
+            <point key="canvasLocation" x="2386.5" y="513"/>
         </scene>
         <!--PUBLICAR-->
         <scene sceneID="LTd-b0-qds">

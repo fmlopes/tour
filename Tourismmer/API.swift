@@ -13,7 +13,7 @@ protocol APIProtocol {
 }
 
 class API {
-    var apiURL:String = "http://192.168.0.23:8080/tourismmer/resources"
+    var apiURL:String = "http://54.94.240.208:8080/tourismmer/resources"
     var callback: ((NSDictionary) -> Void)!
     var delegate:APIProtocol
     

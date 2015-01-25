@@ -15,7 +15,7 @@ class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     
     lazy var composeCommentApi:API = API(delegate: self)
     
-    var kCellIdentifier:NSString = "PostCell"
+    var kCellIdentifier:NSString = "CommentCell"
     
     @IBOutlet weak var commentsTableView: UITableView!
     
@@ -39,7 +39,7 @@ class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         
         let loggedUser:Dictionary<NSString, AnyObject> = defaults.objectForKey("loggedUser") as Dictionary<String, AnyObject>
         let author:User = User()
-        author.id = loggedUser["id"] as NSNumber
+        author.id = (loggedUser["id"] as NSString).integerValue
 
         let comment:Comment = Comment()
         comment.text = composeTextField.text
