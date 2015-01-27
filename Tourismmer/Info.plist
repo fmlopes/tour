@@ -2,6 +2,27 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Exo-Black.otf</string>
+		<string>Exo-ExtraLightItalic.otf</string>
+		<string>Exo-BlackItalic.otf</string>
+		<string>Exo-Bold.otf</string>
+		<string>Exo-BoldItalic.otf</string>
+		<string>Exo-ExtraBold.otf</string>
+		<string>Exo-ExtraBoldItalic.otf</string>
+		<string>Exo-ExtraLight.otf</string>
+		<string>Exo-Italic.otf</string>
+		<string>Exo-Light.otf</string>
+		<string>Exo-LightItalic.otf</string>
+		<string>Exo-Medium.otf</string>
+		<string>Exo-MediumItalic.otf</string>
+		<string>Exo-Regular.otf</string>
+		<string>Exo-SemiBold.otf</string>
+		<string>Exo-SemiBoldItalic.otf</string>
+		<string>Exo-Thin.otf</string>
+		<string>Exo-ThinItalic.otf</string>
+	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

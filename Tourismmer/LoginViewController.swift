@@ -22,19 +22,17 @@ class LoginViewController: UIViewController, FBLoginViewDelegate, APIProtocol {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.fbLoginView.delegate = self
+        //self.fbLoginView.delegate = self
         self.fbLoginView.readPermissions = ["public_profile", "email", "user_friends"]
-        
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.jpg")!)
-        //self.view.backgroundColor = UIColor(patternImage: image)
         
         self.navigationController?.navigationBarHidden = true
         
         self.emailTextField.backgroundColor = UIColor.whiteColor()
-        self.emailTextField.alpha = 0.5
+        self.emailTextField.alpha = 0.3
         
         self.passTextField.backgroundColor = UIColor.whiteColor()
-        self.passTextField.alpha = 0.5
+        self.passTextField.alpha = 0.3
+        
     }
 
     override func didReceiveMemoryWarning() {
