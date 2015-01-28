@@ -18,10 +18,11 @@ class RecoverPasswordViewController:UIViewController, APIProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.jpg")!)
         
         self.emailTextField.backgroundColor = UIColor.whiteColor()
-        self.emailTextField.alpha = 0.5
+        self.emailTextField.alpha = 0.3
+        
+        self.navigationController?.navigationBarHidden = false
     }
     
     @IBAction func send(sender: AnyObject) {

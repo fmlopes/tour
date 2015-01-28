@@ -27,6 +27,7 @@
 		205BDBA31A7725B2001071F8 /* Exo-SemiBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 205BDB931A7725B1001071F8 /* Exo-SemiBoldItalic.otf */; };
 		205BDBA41A7725B2001071F8 /* Exo-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 205BDB941A7725B2001071F8 /* Exo-Thin.otf */; };
 		205BDBA51A7725B2001071F8 /* Exo-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 205BDB951A7725B2001071F8 /* Exo-ThinItalic.otf */; };
+		205BDBBD1A7877A9001071F8 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205BDBBC1A7877A9001071F8 /* MenuController.swift */; };
 		208A8196198732890075A441 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A8195198732890075A441 /* AppDelegate.swift */; };
 		208A8198198732890075A441 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A8197198732890075A441 /* LoginViewController.swift */; };
 		208A819B198732890075A441 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 208A8199198732890075A441 /* Main.storyboard */; };
@@ -92,6 +93,7 @@
 		205BDB931A7725B1001071F8 /* Exo-SemiBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Exo-SemiBoldItalic.otf"; path = "../../Documents/Tourismmer/exo-font/Exo-SemiBoldItalic.otf"; sourceTree = "<group>"; };
 		205BDB941A7725B2001071F8 /* Exo-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Exo-Thin.otf"; path = "../../Documents/Tourismmer/exo-font/Exo-Thin.otf"; sourceTree = "<group>"; };
 		205BDB951A7725B2001071F8 /* Exo-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Exo-ThinItalic.otf"; path = "../../Documents/Tourismmer/exo-font/Exo-ThinItalic.otf"; sourceTree = "<group>"; };
+		205BDBBC1A7877A9001071F8 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		208A8190198732890075A441 /* Tourismmer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tourismmer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		208A8194198732890075A441 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		208A8195198732890075A441 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 				20A891541A73FB2C0057E8ED /* MyGroupsViewController.swift */,
 				20A8915A1A74876F0057E8ED /* PublishViewController.swift */,
 				20A8915C1A748F300057E8ED /* PostViewController.swift */,
+				205BDBBC1A7877A9001071F8 /* MenuController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20CD0F561A37CCB6003204F8 /* CommentCell.swift in Sources */,
+				205BDBBD1A7877A9001071F8 /* MenuController.swift in Sources */,
 				20AC20211A0998C10035255C /* GroupViewController.swift in Sources */,
 				20918E8419E4A9B900BD39E8 /* Util.swift in Sources */,
 				209BB9611991B03E00BE6D26 /* Group.swift in Sources */,
