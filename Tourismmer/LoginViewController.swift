@@ -22,9 +22,7 @@ class LoginViewController: UIViewController, FBLoginViewDelegate, APIProtocol {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        //self.fbLoginView.delegate = self
-        let homeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("TabBar") as UITabBarController
-        self.navigationController?.pushViewController(homeViewController, animated: false)
+        self.fbLoginView.delegate = self
         self.fbLoginView.readPermissions = ["public_profile", "email", "user_friends"]
         
         self.navigationController?.navigationBarHidden = true

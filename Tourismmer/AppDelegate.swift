@@ -19,6 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FBLoginView.self
         FBProfilePictureView.self
+        
+        UIApplication.sharedApplication().registerForRemoteNotifications()
+        
         return true
     }
 
@@ -44,6 +47,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    // implemented in your application delegate
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData!) {
+        println("Got token data! \(deviceToken)")
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError!) {
+        println("Couldn't register: \(error)")
+    }
 }
 

@@ -41,7 +41,8 @@ class NewGroupViewController: UIViewController, UIPickerViewDataSource, UIPicker
         
         let loggedUser:Dictionary<NSString, AnyObject> = defaults.objectForKey("loggedUser") as Dictionary<String, AnyObject>
         let owner:User = User()
-        owner.id = loggedUser["id"] as NSNumber
+        let stringId:NSString = loggedUser["id"] as NSString
+        owner.id = NSNumber(longLong: stringId.longLongValue)
         
         let group:Group = Group(users: [User](), user: owner, location: searchBar.text, date: Util.dateFromString("dd/MM/yyyy", date: stringDate), type: TripType(rawValue: selectedPurpose)!, imgPath: "")
         

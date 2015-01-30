@@ -22,8 +22,6 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
-        
         api.HTTPGet("/group/getTopGroups/\(50)/1")
     }
     
