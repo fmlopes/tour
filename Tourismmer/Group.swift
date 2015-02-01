@@ -9,6 +9,7 @@
 import Foundation
 
 class Group {
+    var id:NSNumber
     var users = [User]()
     var owner = User()
     var location:Location
@@ -16,13 +17,14 @@ class Group {
     var type:TripType?
     var imgPath:NSString
     
-    init(users:[User], user:User, location:String, date:NSDate, type:TripType, imgPath:NSString) {
+    init(users:[User], user:User, location:String, date:NSDate, type:TripType, imgPath:NSString, id: NSNumber) {
         self.users = users
         self.owner = user
         self.location = Location(name: location, lat: NSDecimalNumber.zero(), long: NSDecimalNumber.zero())
         self.date = date
         self.type = type
         self.imgPath = imgPath
+        self.id = id
     }
     
     init() {
@@ -31,6 +33,7 @@ class Group {
         self.date = NSDate()
         self.type = TripType.Business
         self.imgPath = ""
+        self.id = 0
     }
     
     func dictionaryFromGroup() -> Dictionary<String, AnyObject> {

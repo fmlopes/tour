@@ -16,4 +16,6 @@ class Cell:UITableViewCell {
     
     @IBOutlet weak var postDate: UILabel!
     @IBOutlet weak var postGoal: UILabel!
+    
+    var id:NSNumber = 0
 }

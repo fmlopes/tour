@@ -45,6 +45,7 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         }
         cell.postImage.image = UIImage(named: "Blank52.png")
         cell.postDate.text = Util.stringFromDate("MM/yy", date: group.date)
+        cell.id = group.id
         
         var imgURL:NSURL = NSURL(string:group.imgPath)!
         
@@ -106,6 +107,7 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
             vc.group.date = Util.dateFromString("MM/yy", date: groupCell.postDate.text!)
             vc.group.type = TripType(rawValue: (groupCell.postGoal.text!))
             vc.image = groupCell.postImage.image!
+            vc.group.id = groupCell.id
         }
     }
     
@@ -122,7 +124,7 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
                 var purpose:NSDictionary = item["purpose"] as NSDictionary
                 var image:NSDictionary = item["image"] as NSDictionary
                 var dateString = item["date"] as String
-                groups.append(Group(users: users, user: User(), location: location.name, date: Util.dateFromString("dd-MM-yyyy", date: dateString), type: TripType.valueFromId(purpose["id"] as Int), imgPath: image["url"] as String))
+                groups.append(Group(users: users, user: User(), location: location.name, date: Util.dateFromString("dd-MM-yyyy", date: dateString), type: TripType.valueFromId(purpose["id"] as Int), imgPath: image["url"] as String, id: item["id"] as Int))
             }
             self.groupsTableView!.reloadData()
         }

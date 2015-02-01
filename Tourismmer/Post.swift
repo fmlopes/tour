@@ -19,8 +19,9 @@ class Post:NSObject {
     var author:User
     var comments:[Comment]
     var postType:PostType
+    var group:Group
     
-    init(id:NSNumber, text:NSString, imagePath:NSString, likeCount:NSInteger, commentCount:NSInteger, imGoingCount: NSInteger, user:User, comments:[Comment], postType:PostType) {
+    init(id:NSNumber, text:NSString, imagePath:NSString, likeCount:NSInteger, commentCount:NSInteger, imGoingCount: NSInteger, user:User, comments:[Comment], postType:PostType, group:Group) {
         self.id = id
         self.text = text
         self.imagePath = imagePath
@@ -30,6 +31,7 @@ class Post:NSObject {
         self.author = user
         self.comments = comments
         self.postType = postType
+        self.group = group
     }
     
     override init() {
@@ -42,7 +44,27 @@ class Post:NSObject {
         self.author = User()
         self.comments = [Comment]()
         self.postType = PostType.Recomendation
+        self.group = Group()
         
         super.init()
+    }
+    
+    func dictionaryFromObject() -> Dictionary<String, AnyObject> {
+        var groupDictionary:Dictionary<String, AnyObject> = Dictionary<String, AnyObject>()
+        groupDictionary.updateValue(self.group.id, forKey: "id")
+        
+        var authorDictionary:Dictionary<String, AnyObject> = Dictionary<String, AnyObject>()
+        authorDictionary.updateValue(self.author.id, forKey: "id")
+        
+        var postTypeDictionary:Dictionary<String, AnyObject> = Dictionary<String, AnyObject>()
+        postTypeDictionary.updateValue(self.postType.id(), forKey: "id")
+        
+        var array: Dictionary<String, AnyObject> = [
+            "description": text,
+            "author": authorDictionary,
+            "group": groupDictionary,
+            "typePost": postTypeDictionary
+        ]
+        return array
     }
 }

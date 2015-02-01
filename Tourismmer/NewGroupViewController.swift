@@ -44,7 +44,7 @@ class NewGroupViewController: UIViewController, UIPickerViewDataSource, UIPicker
         let stringId:NSString = loggedUser["id"] as NSString
         owner.id = NSNumber(longLong: stringId.longLongValue)
         
-        let group:Group = Group(users: [User](), user: owner, location: searchBar.text, date: Util.dateFromString("dd/MM/yyyy", date: stringDate), type: TripType(rawValue: selectedPurpose)!, imgPath: "")
+        let group:Group = Group(users: [User](), user: owner, location: searchBar.text, date: Util.dateFromString("dd/MM/yyyy", date: stringDate), type: TripType(rawValue: selectedPurpose)!, imgPath: "", id: 0)
         
         api.HTTPPostJSON("/group", jsonObj: group.dictionaryFromGroup())
     }

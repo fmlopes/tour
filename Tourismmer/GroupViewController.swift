@@ -79,7 +79,7 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
                 
                 let postType:NSDictionary = item["typePost"] as NSDictionary
                 let postTypeId:Int = (postType["id"] as NSNumber).integerValue
-                let post = Post(id: item["id"] as NSNumber, text: item["description"] as String, imagePath: image["url"] as String, likeCount: 2, commentCount: 15, imGoingCount: 5, user: user, comments: [Comment](), postType: PostType.valueFromId(postTypeId))
+                let post = Post(id: item["id"] as NSNumber, text: item["description"] as String, imagePath: image["url"] as String, likeCount: 2, commentCount: 15, imGoingCount: 5, user: user, comments: [Comment](), postType: PostType.valueFromId(postTypeId), group: Group())
                 posts.append(post)
             }
             self.postTableView!.reloadData()
@@ -117,5 +117,13 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
             })
         })
         task.resume()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if segue.identifier == "group_newPost" {
+            let vc = segue.destinationViewController as PublishViewController
+            
+            vc.group = self.group
+        }
     }
 }

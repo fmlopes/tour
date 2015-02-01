@@ -9,15 +9,36 @@
 import Foundation
 import AVFoundation
 
-class PublishViewController:UIViewController {
+class PublishViewController:UIViewController, APIProtocol {
     
     let captureSession = AVCaptureSession()
+    var group:Group = Group()
+    var user:User = User()
+    lazy var api:API = API(delegate: self)
     
+    @IBOutlet weak var postTextField: UITextField!
     // If we find a device we'll store it here for later use
     var captureDevice : AVCaptureDevice?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        
+        let loggedUser:Dictionary<NSString, AnyObject> = defaults.objectForKey("loggedUser") as Dictionary<String, AnyObject>
+        let stringId:NSString = loggedUser["id"] as NSString
+        user.id = NSNumber(longLong: stringId.longLongValue)
+    }
+    
+    @IBAction func publishPost(sender: AnyObject) {
+        
+        let post:Post = Post()
+        post.text = postTextField.text
+        post.author = user
+        post.group = group
+        post.postType = PostType.valueFromId(1)
+        
+        api.HTTPPostJSON("/post", jsonObj: post.dictionaryFromObject())
     }
     
     @IBAction func loadCamera(sender: AnyObject) {
@@ -54,5 +75,11 @@ class PublishViewController:UIViewController {
         self.view.layer.addSublayer(previewLayer)
         previewLayer?.frame = self.view.layer.frame
         captureSession.startRunning()
+    }
+    
+    func didReceiveAPIResults(results: NSDictionary) {
+        if (results["statusCode"] as String == MessageCode.Success.rawValue) {
+            
+        }
     }
 }

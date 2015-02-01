@@ -631,7 +631,7 @@
                     <navigationItem key="navigationItem" title="GRUPO" id="dvK-03-SXH">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="bSj-ZT-cf9">
                             <connections>
-                                <segue destination="wsH-Ko-Zyz" kind="push" id="VMx-rQ-zdo"/>
+                                <segue destination="wsH-Ko-Zyz" kind="push" identifier="group_newPost" id="VMx-rQ-zdo"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -764,6 +764,9 @@
                                 <state key="normal" title="PUBLICAR">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="publishPost:" destination="wsH-Ko-Zyz" eventType="touchUpInside" id="bjT-lC-vhI"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PREVIEW" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MCa-da-Zym">
                                 <rect key="frame" x="20" y="116" width="60" height="21"/>
@@ -789,6 +792,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="postTextField" destination="Ylb-BA-cHL" id="Wx1-lu-DVX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5sK-Yz-4OE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
