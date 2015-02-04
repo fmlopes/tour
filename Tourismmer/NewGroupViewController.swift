@@ -121,7 +121,12 @@ class NewGroupViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
     
     func didReceiveAPIResults(results: NSDictionary) {
-        print(results)
+        if (results["statusCode"] as String == MessageCode.Success.rawValue) {
+            let groupViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Group") as GroupViewController
+            let groupId:NSNumber = results["id"] as NSNumber
+            groupViewController.group.id = groupId
+            self.navigationController?.pushViewController(groupViewController, animated: true)
+        }
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {

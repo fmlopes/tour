@@ -27,7 +27,13 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
         
         self.navigationItem.title = group.location.name
         
-        api.HTTPGet("/post/getListPost/\(1)/\(2)/50/0")
+        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        
+        let loggedUser:Dictionary<NSString, AnyObject> = defaults.objectForKey("loggedUser") as Dictionary<String, AnyObject>
+        let stringId:NSString = loggedUser["id"] as NSString
+        
+        
+        api.HTTPGet("/post/getListPost/\(stringId)/\(group.id)/50/0")
     }
     
     required init(coder aDecoder: NSCoder) {
