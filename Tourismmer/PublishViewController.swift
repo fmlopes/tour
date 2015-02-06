@@ -79,7 +79,8 @@ class PublishViewController:UIViewController, APIProtocol {
     
     func didReceiveAPIResults(results: NSDictionary) {
         if (results["statusCode"] as String == MessageCode.Success.rawValue) {
-            
+            let groupViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Group") as GroupViewController
+            self.navigationController?.pushViewController(groupViewController, animated: false)
         }
     }
 }

@@ -47,20 +47,23 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         cell.postDate.text = Util.stringFromDate("MM/yy", date: group.date)
         cell.id = group.id
         
-        var imgURL:NSURL = NSURL(string:group.imgPath)!
+        if group.imgPath != "" {
+            var imgURL:NSURL = NSURL(string:group.imgPath)!
         
-        let request:NSURLRequest = NSURLRequest(URL: imgURL)
+            let request:NSURLRequest = NSURLRequest(URL: imgURL)
         
-        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!, data: NSData!, error:NSError!) -> Void in
-            if !(error? != nil) {
+            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!, data: NSData!, error:NSError!) -> Void in
+                if !(error? != nil) {
                 
-                cell.postImage.image = UIImage(data: data)
+                    cell.postImage.image = UIImage(data: data)
                 
-            } else {
-                println("Error: \(error.localizedDescription)")
-            }
+                } else {
+                    println("Error: \(error.localizedDescription)")
+                }
             })
-
+        } else {
+            cell.postImage.hidden = true
+        }
         return cell
     }
     

@@ -50,17 +50,19 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
         cell.postLikesLabel!.text = String(post.likeCount)
         cell.userNameLabel!.text = String(post.author.name)
         
+        if group.imgPath != "" {
+            let request:NSURLRequest = NSURLRequest(URL: NSURL(string:post.imagePath)!)
         
-        let request:NSURLRequest = NSURLRequest(URL: NSURL(string:post.imagePath)!)
-        
-        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!, data: NSData!, error:NSError!) -> Void in
-            if !(error? != nil) {
-                cell.postBackgroundImage!.image = UIImage(data: data)
-            } else {
-                println("Error: \(error.localizedDescription)")
-            }
-        })
-        
+            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!, data: NSData!, error:NSError!) -> Void in
+                if !(error? != nil) {
+                    cell.postBackgroundImage!.image = UIImage(data: data)
+                } else {
+                    println("Error: \(error.localizedDescription)")
+                }
+            })
+        } else {
+            cell.postBackgroundImage.hidden = true
+        }
         facebookPhoto(post.author.profilePicturePath, cell: cell)
         
         return cell
