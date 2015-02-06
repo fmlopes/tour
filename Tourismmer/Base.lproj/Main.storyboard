@@ -189,15 +189,20 @@
         <!--BUSCAR-->
         <scene sceneID="2lh-i9-iia">
             <objects>
-                <viewController id="pLV-s8-t6l" customClass="SearchViewController" customModule="Tourismmer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="BUSCAR" id="pLV-s8-t6l" customClass="SearchViewController" customModule="Tourismmer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R7K-Xt-DFu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" id="U3m-jq-zns">
-                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                            <searchBar contentMode="redraw" showsScopeBar="YES" id="U3m-jq-zns">
+                                <rect key="frame" x="0.0" y="64" width="320" height="88"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>LUGARES</string>
+                                    <string>PESSOAS</string>
+                                    <string>INTERESSE</string>
+                                </scopeButtonTitles>
                                 <connections>
                                     <outlet property="delegate" destination="pLV-s8-t6l" id="NEM-jP-IaH"/>
                                 </connections>
@@ -212,8 +217,6 @@
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
                     <navigationItem key="navigationItem" title="BUSCAR" id="TZk-Ed-F0M"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="uQr-Zm-qiX" id="BtD-SK-yL7"/>
                     </connections>
@@ -552,26 +555,26 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="like_inactive" id="oe9-T8-XmQ">
-                                                    <rect key="frame" x="10" y="316" width="22" height="22"/>
+                                                    <rect key="frame" x="10" y="321" width="22" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="comment_inactive" id="0pp-dC-Sgd">
-                                                    <rect key="frame" x="48" y="316" width="22" height="22"/>
+                                                    <rect key="frame" x="53" y="321" width="22" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tA2-JV-z7N">
-                                                    <rect key="frame" x="73" y="316" width="42" height="21"/>
+                                                    <rect key="frame" x="78" y="321" width="42" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Exo-Medium" family="Exo" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgoing_inactive" id="fvg-TI-3Xh">
-                                                    <rect key="frame" x="286" y="312" width="26" height="26"/>
+                                                    <rect key="frame" x="286" y="317" width="26" height="26"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IPf-My-fkR">
-                                                    <rect key="frame" x="34" y="316" width="18" height="21"/>
+                                                    <rect key="frame" x="34" y="321" width="18" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Exo-Medium" family="Exo" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -592,7 +595,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eKl-LM-awD">
-                                                    <rect key="frame" x="258" y="314" width="20" height="21"/>
+                                                    <rect key="frame" x="258" y="319" width="20" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Exo-Medium" family="Exo" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -652,13 +655,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" id="LcP-ru-kSH">
-                                <rect key="frame" x="0.0" y="474" width="320" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.96862751245498657" green="0.94117653369903564" blue="0.88235300779342651" alpha="1" colorSpace="deviceRGB"/>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="94" sectionHeaderHeight="22" sectionFooterHeight="22" id="5iy-yh-trM">
-                                <rect key="frame" x="0.0" y="68" width="320" height="403"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="471"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -699,23 +697,30 @@
                                     <outlet property="delegate" destination="Ib5-sI-8oP" id="4hD-Qa-NQx"/>
                                 </connections>
                             </tableView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Digite seu comentário" minimumFontSize="17" id="qco-pR-pWb">
-                                <rect key="frame" x="16" y="474" width="226" height="46"/>
+                            <view contentMode="scaleToFill" id="LcP-ru-kSH">
+                                <rect key="frame" x="0.0" y="474" width="320" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Exo-Medium" family="Exo" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="brn-bI-UsN">
-                                <rect key="frame" x="250" y="474" width="59" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Exo-Medium" family="Exo" pointSize="12"/>
-                                <state key="normal" title="POSTAR">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="postComment:" destination="Ib5-sI-8oP" eventType="touchUpInside" id="2EZ-rj-Okb"/>
-                                </connections>
-                            </button>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Digite seu comentário" minimumFontSize="17" id="qco-pR-pWb">
+                                        <rect key="frame" x="8" y="0.0" width="226" height="46"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Exo-Medium" family="Exo" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="brn-bI-UsN">
+                                        <rect key="frame" x="261" y="0.0" width="59" height="46"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Exo-Medium" family="Exo" pointSize="12"/>
+                                        <state key="normal" title="POSTAR">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="postComment:" destination="Ib5-sI-8oP" eventType="touchUpInside" id="2EZ-rj-Okb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96862751245498657" green="0.94117653369903564" blue="0.88235300779342651" alpha="1" colorSpace="deviceRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -723,6 +728,7 @@
                         <barButtonItem key="backBarButtonItem" title="VOLTAR" id="Rnx-cf-mDg"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="commentInputView" destination="LcP-ru-kSH" id="PxW-n5-MTi"/>
                         <outlet property="commentsTableView" destination="5iy-yh-trM" id="qqS-N4-FL4"/>
                         <outlet property="composeTextField" destination="qco-pR-pWb" id="trP-ZC-Y5Y"/>
                         <outlet property="postButton" destination="brn-bI-UsN" id="GVw-Wa-qVx"/>

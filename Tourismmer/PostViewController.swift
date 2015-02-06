@@ -21,13 +21,12 @@ class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     
     @IBOutlet weak var commentsTableView: UITableView!
     
+    @IBOutlet weak var commentInputView: UIView!
     @IBOutlet weak var composeTextField: UITextField!
     @IBOutlet weak var postButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.frameView = UIView(frame: CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height))
         
         api.HTTPGet("/comment/getListComment/\(1)/\(2)/30/0")
     }
@@ -35,7 +34,7 @@ class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     override func viewWillAppear(animated: Bool) {
         // Keyboard stuff.
         var center: NSNotificationCenter = NSNotificationCenter.defaultCenter()
-        center.addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillChangeFrameNotification, object: nil)
+        center.addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         center.addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
     }
     
@@ -154,14 +153,14 @@ class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     
     func keyboardWillShow(notification: NSNotification) {
         var info:NSDictionary = notification.userInfo!
-        var keyboardSize = (info[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
+        var keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as NSValue).CGRectValue()
         
         var keyboardHeight:CGFloat = keyboardSize.height
         
         var animationDuration:CGFloat = CGFloat(info[UIKeyboardAnimationDurationUserInfoKey] as NSNumber)
         
         UIView.animateWithDuration(0.25, delay: 0.25, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-            self.composeTextField.frame = CGRectMake(10, (self.composeTextField.frame.origin.y - keyboardHeight + 35), 226, 40)
+            self.commentInputView.frame = CGRectMake(0, (keyboardSize.origin.y + 130 - keyboardHeight), 320, 46)
             }, completion: nil)
         
         
@@ -177,7 +176,7 @@ class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         var animationDuration:CGFloat = info[UIKeyboardAnimationDurationUserInfoKey] as CGFloat
         
         UIView.animateWithDuration(0.25, delay: 0.25, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-            self.frameView.frame = CGRectMake(0, (self.frameView.frame.origin.y + keyboardHeight), self.view.bounds.width, self.view.bounds.height)
+            self.commentInputView.frame = CGRectMake(0, (self.commentInputView.frame.origin.y + keyboardHeight), 320, 46)
             }, completion: nil)
         
     }
