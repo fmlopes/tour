@@ -17,6 +17,7 @@ class SearchViewController:UIViewController, UITableViewDataSource, UITableViewD
     lazy var api:API = API(delegate: self)
     var kCellIdentifier:String = "Cell"
     
+    @IBOutlet weak var searchTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,8 +31,9 @@ class SearchViewController:UIViewController, UITableViewDataSource, UITableViewD
         if selectedSearch == "LUGARES" {
             var group:Group = searchGroupResults[indexPath.row]
             
-            cell.textLabel?.text = group.location.name
-            cell.detailTextLabel?.text = Util.stringFromDate("MMM/yyyy", date: group.date)
+            cell.postText.text = group.location.name
+            cell.postDate.text = Util.stringFromDate("MMM/yyyy", date: group.date)
+            cell.postGoal.text = group.type?.rawValue
         } else if selectedSearch == "PESSOAS" {
             
         } else {
@@ -97,7 +99,8 @@ class SearchViewController:UIViewController, UITableViewDataSource, UITableViewD
                 searchGroupResults.append(Group(users: users, user: User(), location: location.name, date: Util.dateFromString("dd-MM-yyyy", date: dateString), type: TripType.valueFromId(purpose["id"] as Int), imgPath: image["url"] as String, id: item["id"] as Int))
             }
 
-            self.searchDisplayController?.searchResultsTableView.reloadData()
+            //self.searchDisplayController?.searchResultsTableView.reloadData()
+            self.searchTableView.reloadData()
         }
     }
 }
