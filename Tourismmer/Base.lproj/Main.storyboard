@@ -122,12 +122,14 @@
                         <outlet property="fbLoginView" destination="mf8-pY-Iub" id="b7O-xL-CAU"/>
                         <outlet property="loginButton" destination="di9-VE-t8C" id="X22-We-Qcu"/>
                         <outlet property="passTextField" destination="7sz-j8-WtZ" id="8CQ-qc-lOa"/>
+                        <outlet property="recoverPassButton" destination="31g-xH-iMk" id="VA9-XV-Quf"/>
+                        <outlet property="registerButton" destination="Fe7-RX-kh1" id="3Tw-dd-kS9"/>
                         <segue destination="JNr-Im-9sf" kind="push" id="wPW-iH-7MJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-596" y="390"/>
+            <point key="canvasLocation" x="-656" y="390"/>
         </scene>
         <!--RECUPERAR SENHA-->
         <scene sceneID="yGu-Le-8r5">
@@ -187,7 +189,7 @@
         <!--BUSCAR-->
         <scene sceneID="2lh-i9-iia">
             <objects>
-                <viewController id="pLV-s8-t6l" sceneMemberID="viewController">
+                <viewController id="pLV-s8-t6l" customClass="SearchViewController" customModule="Tourismmer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R7K-Xt-DFu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -535,12 +537,12 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="321" sectionHeaderHeight="22" sectionFooterHeight="22" id="K5Q-h0-L0u">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="352" sectionHeaderHeight="22" sectionFooterHeight="22" id="K5Q-h0-L0u">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PostCell" rowHeight="321" id="vbI-o3-gbe" customClass="PostCell" customModule="Tourismmer" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PostCell" rowHeight="352" id="vbI-o3-gbe" customClass="PostCell" customModule="Tourismmer" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vbI-o3-gbe" id="nht-6O-W7d">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -550,28 +552,28 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="like_inactive" id="oe9-T8-XmQ">
-                                                    <rect key="frame" x="10" y="291" width="22" height="22"/>
+                                                    <rect key="frame" x="10" y="316" width="22" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="comment_inactive" id="0pp-dC-Sgd">
-                                                    <rect key="frame" x="48" y="291" width="22" height="22"/>
+                                                    <rect key="frame" x="48" y="316" width="22" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tA2-JV-z7N">
-                                                    <rect key="frame" x="73" y="291" width="42" height="21"/>
+                                                    <rect key="frame" x="73" y="316" width="42" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Exo-Medium" family="Exo" pointSize="10"/>
+                                                    <fontDescription key="fontDescription" name="Exo-Medium" family="Exo" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgoing_inactive" id="fvg-TI-3Xh">
-                                                    <rect key="frame" x="286" y="287" width="26" height="26"/>
+                                                    <rect key="frame" x="286" y="312" width="26" height="26"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IPf-My-fkR">
-                                                    <rect key="frame" x="34" y="291" width="18" height="21"/>
+                                                    <rect key="frame" x="34" y="316" width="18" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Exo-Medium" family="Exo" pointSize="10"/>
+                                                    <fontDescription key="fontDescription" name="Exo-Medium" family="Exo" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -590,9 +592,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eKl-LM-awD">
-                                                    <rect key="frame" x="258" y="289" width="20" height="21"/>
+                                                    <rect key="frame" x="258" y="314" width="20" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Exo-Medium" family="Exo" pointSize="10"/>
+                                                    <fontDescription key="fontDescription" name="Exo-Medium" family="Exo" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -884,7 +886,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X5d-ig-dvu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-893.60000000000002" y="390.9733333333333"/>
+            <point key="canvasLocation" x="-1056" y="390"/>
         </scene>
         <!--TabBar-->
         <scene sceneID="C8u-eB-07k">

@@ -12,27 +12,45 @@ class LoginViewController: UIViewController, FBLoginViewDelegate, APIProtocol {
     
     var user:User = User()
     
+    @IBOutlet weak var recoverPassButton: UIButton!
+    @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var fbLoginView: FBLoginView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     lazy var api:API = API(delegate: self)
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        emailTextField.hidden = true
+        passTextField.hidden = true
+        loginButton.hidden = true
+        fbLoginView.hidden = true
+        registerButton.hidden = true
+        recoverPassButton.hidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.fbLoginView.delegate = self
-        self.fbLoginView.readPermissions = ["public_profile", "email", "user_friends"]
-        
         self.navigationController?.navigationBarHidden = true
         
-        self.emailTextField.backgroundColor = UIColor.whiteColor()
-        self.emailTextField.alpha = 0.3
+        self.user = Util.getUserFromDefaults()
         
-        self.passTextField.backgroundColor = UIColor.whiteColor()
-        self.passTextField.alpha = 0.3
+        if self.user.id == 0 {
+            self.fbLoginView.delegate = self
+            self.fbLoginView.readPermissions = ["public_profile", "email", "user_friends"]
         
+            self.emailTextField.backgroundColor = UIColor.whiteColor()
+            self.emailTextField.alpha = 0.3
+        
+            self.passTextField.backgroundColor = UIColor.whiteColor()
+            self.passTextField.alpha = 0.3
+        } else {
+            let homeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("TabBar") as UITabBarController
+            self.navigationController?.pushViewController(homeViewController, animated: false)
+        }
     }
 
     override func didReceiveMemoryWarning() {

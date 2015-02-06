@@ -10,6 +10,20 @@ import Foundation
 
 class Util {
     
+    class func getUserFromDefaults() -> User {
+        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        
+        let loggedUser:Dictionary<NSString, AnyObject> = defaults.objectForKey("loggedUser") as Dictionary<String, AnyObject>
+        let stringId:NSString = loggedUser["id"] as NSString
+        
+        let user:User = User()
+        user.id = stringId.integerValue
+        user.facebookId = (loggedUser["facebookId"] as NSString).integerValue
+        user.name = loggedUser["name"] as NSString
+        
+        return user
+    }
+    
     class func stringFromDate(format: String, date: NSDate) -> String {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = format

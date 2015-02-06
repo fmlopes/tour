@@ -36,6 +36,7 @@
 		20AC20231A0ACAC60035255C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC20221A0ACAC60035255C /* Post.swift */; };
 		20AC20271A0ACCB50035255C /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC20261A0ACCB50035255C /* Comment.swift */; };
 		20AE73F91A0C475A00BA12DB /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AE73F81A0C475A00BA12DB /* PostCell.swift */; };
+		20BEA0B41A84478D00761DDE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BEA0B31A84478D00761DDE /* SearchViewController.swift */; };
 		20CD0F561A37CCB6003204F8 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD0F551A37CCB6003204F8 /* CommentCell.swift */; };
 		20DC43AC1A3A877A00F2DA8E /* GoogleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DC43AB1A3A877A00F2DA8E /* GoogleService.swift */; };
 		5504ED391996774600DA6FC9 /* Blank52.png in Resources */ = {isa = PBXBuildFile; fileRef = 5504ED381996774600DA6FC9 /* Blank52.png */; };
@@ -106,6 +107,7 @@
 		20AC20221A0ACAC60035255C /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		20AC20261A0ACCB50035255C /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		20AE73F81A0C475A00BA12DB /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		20BEA0B31A84478D00761DDE /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		20CD0F551A37CCB6003204F8 /* CommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		20DC43AB1A3A877A00F2DA8E /* GoogleService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleService.swift; sourceTree = "<group>"; };
 		5504ED381996774600DA6FC9 /* Blank52.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Blank52.png; path = Tourismmer/Images.xcassets/Blank52.png; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 				20A8915A1A74876F0057E8ED /* PublishViewController.swift */,
 				20A8915C1A748F300057E8ED /* PostViewController.swift */,
 				205BDBBC1A7877A9001071F8 /* MenuController.swift */,
+				20BEA0B31A84478D00761DDE /* SearchViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 				208A81C3198B24DE0075A441 /* User.swift in Sources */,
 				2042C28F1A25529800EEEE99 /* NewGroupViewController.swift in Sources */,
 				55CC781A1A17BFA4001C41E8 /* MessageCode.swift in Sources */,
+				20BEA0B41A84478D00761DDE /* SearchViewController.swift in Sources */,
 				20A891591A7459BF0057E8ED /* FacebookService.swift in Sources */,
 				20DC43AC1A3A877A00F2DA8E /* GoogleService.swift in Sources */,
 				20918E8119E370FE00BD39E8 /* Cell.swift in Sources */,
