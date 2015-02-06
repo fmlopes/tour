@@ -50,7 +50,7 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
         cell.postLikesLabel!.text = String(post.likeCount)
         cell.userNameLabel!.text = String(post.author.name)
         
-        if group.imgPath != "" {
+        if post.imagePath != "" {
             let request:NSURLRequest = NSURLRequest(URL: NSURL(string:post.imagePath)!)
         
             NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!, data: NSData!, error:NSError!) -> Void in
