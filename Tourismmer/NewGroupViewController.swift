@@ -26,6 +26,7 @@ class NewGroupViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var pickerViewTripType: UIPickerView!
+    @IBOutlet weak var createButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,7 @@ class NewGroupViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
     
     @IBAction func create(sender: AnyObject) {
+        self.createButton.enabled = false
         let month:String = Util.monthNumberFromString(selectedMonth)
         let year:String = String(selectedYear)
         let stringDate = "01/\(month)/\(year)"
@@ -125,8 +127,24 @@ class NewGroupViewController: UIViewController, UIPickerViewDataSource, UIPicker
             let groupViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Group") as GroupViewController
             let groupId:NSNumber = results["id"] as NSNumber
             groupViewController.group.id = groupId
+            groupViewController.group.location.name = searchBar.text
+            
+            //Custom back button
+            var myBackButton:UIButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
+            myBackButton.addTarget(self, action: "popToRoot:", forControlEvents: UIControlEvents.TouchUpInside)
+            myBackButton.setTitle("HOME", forState: UIControlState.Normal)
+            myBackButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+            myBackButton.sizeToFit()
+            var myCustomBackButtonItem:UIBarButtonItem = UIBarButtonItem(customView: myBackButton)
+            groupViewController.navigationItem.leftBarButtonItem  = myCustomBackButtonItem
+            
             self.navigationController?.pushViewController(groupViewController, animated: true)
+            self.createButton.enabled = true
         }
+    }
+    
+    func popToRoot(sender:UIBarButtonItem){
+        self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {

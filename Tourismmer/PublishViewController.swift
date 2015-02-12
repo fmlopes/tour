@@ -30,6 +30,11 @@ class PublishViewController:UIViewController, APIProtocol {
         user.id = NSNumber(longLong: stringId.longLongValue)
     }
     
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        self.view.endEditing(true)
+        self.postTextField.resignFirstResponder()
+    }
+    
     @IBAction func publishPost(sender: AnyObject) {
         
         let post:Post = Post()

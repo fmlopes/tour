@@ -48,11 +48,6 @@ class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         self.composeTextField.resignFirstResponder()
     }
     
-    @IBAction func composeComment(sender: AnyObject) {
-        composeTextField.becomeFirstResponder()
-        postButton.enabled = true
-    }
-    
     @IBAction func postComment(sender: AnyObject) {
         
         let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
@@ -113,7 +108,7 @@ class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     func didReceiveComposePostResults(results: NSDictionary) {
         if (results["statusCode"] as String == MessageCode.Success.rawValue) {
             
-            self.commentsTableView!.reloadData()
+            api.HTTPGet("/comment/getListComment/\(1)/\(2)/30/0")
         }
         
     }
