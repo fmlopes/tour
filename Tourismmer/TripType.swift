@@ -13,17 +13,33 @@ enum TripType : String {
     case Business = "NEGÓCIOS"
     case ExchangeProgram = "INTERCÂMBIO"
     case Excursion = "EXCURSÃO"
+    case Snowboarding = "SNOWBOARDING"
+    case Parachute = "PARAQUEDAS"
+    case Shopping = "MUAMBAS"
+    case HikesWaterfalls = "TRILHAS E CACHOEIRAS"
+    case Social = "SOCIAL"
+    
     case Error = ""
     
     func id() -> Int {
-        if self.rawValue == "FÉRIAS" {
+        if self.rawValue == Vacation.rawValue {
             return 1
-        } else if self.rawValue == "NEGÓCIOS" {
+        } else if self.rawValue == Business.rawValue {
             return 2
-        } else if self.rawValue == "INTERCÂMBIO" {
-            return 3
-        } else if self.rawValue == "EXCURSÃO" {
-            return 4
+        } else if self.rawValue == ExchangeProgram.rawValue {
+            return 16
+        } else if self.rawValue == Excursion.rawValue {
+            return 17
+        } else if self.rawValue == Snowboarding.rawValue {
+            return 18
+        } else if self.rawValue == Parachute.rawValue {
+            return 19
+        } else if self.rawValue == Shopping.rawValue {
+            return 20
+        } else if self.rawValue == HikesWaterfalls.rawValue {
+            return 21
+        } else if self.rawValue == Social.rawValue {
+            return 22
         } else {
             return 0
         }
@@ -34,10 +50,20 @@ enum TripType : String {
             return TripType.Vacation
         } else if id == 2 {
             return TripType.Business
-        } else if id == 3 {
+        } else if id == 16 {
             return TripType.ExchangeProgram
-        } else if id == 4 {
+        } else if id == 17 {
             return TripType.Excursion
+        } else if id == 18 {
+            return TripType.Snowboarding
+        } else if id == 19 {
+            return TripType.Parachute
+        } else if id == 20 {
+            return TripType.Shopping
+        } else if id == 21 {
+            return TripType.HikesWaterfalls
+        } else if id == 22 {
+            return TripType.Social
         } else {
             return TripType.Error
         }

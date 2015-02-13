@@ -653,7 +653,7 @@
                                             <outlet property="postTextLabel" destination="hvh-f4-HUD" id="Ern-i2-5jM"/>
                                             <outlet property="userNameLabel" destination="JYm-ks-NSd" id="YRB-4K-S8c"/>
                                             <outlet property="userPhoto" destination="4cq-yY-VJh" id="Cdq-ZB-T2w"/>
-                                            <segue destination="Ib5-sI-8oP" kind="push" id="m5X-wk-463"/>
+                                            <segue destination="Ib5-sI-8oP" kind="push" identifier="group_post" id="m5X-wk-463"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

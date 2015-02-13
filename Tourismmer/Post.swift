@@ -20,8 +20,9 @@ class Post:NSObject {
     var comments:[Comment]
     var postType:PostType
     var group:Group
+    var date:NSDate
     
-    init(id:NSNumber, text:NSString, imagePath:NSString, likeCount:NSInteger, commentCount:NSInteger, imGoingCount: NSInteger, user:User, comments:[Comment], postType:PostType, group:Group) {
+    init(id:NSNumber, text:NSString, imagePath:NSString, likeCount:NSInteger, commentCount:NSInteger, imGoingCount: NSInteger, user:User, comments:[Comment], postType:PostType, group:Group, date:NSDate) {
         self.id = id
         self.text = text
         self.imagePath = imagePath
@@ -32,6 +33,7 @@ class Post:NSObject {
         self.comments = comments
         self.postType = postType
         self.group = group
+        self.date = date
     }
     
     override init() {
@@ -45,6 +47,7 @@ class Post:NSObject {
         self.comments = [Comment]()
         self.postType = PostType.Recomendation
         self.group = Group()
+        self.date = NSDate()
         
         super.init()
     }
@@ -63,7 +66,8 @@ class Post:NSObject {
             "description": text,
             "author": authorDictionary,
             "group": groupDictionary,
-            "typePost": postTypeDictionary
+            "typePost": postTypeDictionary,
+            "date": Util.stringFromDate("yyyy-MM-dd", date: self.date)
         ]
         return array
     }

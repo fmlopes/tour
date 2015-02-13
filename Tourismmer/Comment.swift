@@ -13,12 +13,14 @@ class Comment:NSObject {
     var text:NSString
     var author:User
     var post:Post
+    var date:NSDate
     
     init(user:User) {
         
         self.text = ""
         self.author = user
         self.post = Post()
+        self.date = NSDate()
         
         super.init()
     }
@@ -27,6 +29,7 @@ class Comment:NSObject {
         self.text = ""
         self.author = User()
         self.post = Post()
+        self.date = NSDate()
     }
     
     func dictionaryFromObject() -> Dictionary<NSString, AnyObject> {
@@ -39,7 +42,8 @@ class Comment:NSObject {
         var array: Dictionary<NSString, AnyObject> = [
             "description": self.text,
             "author": userDictionary,
-            "post": postDictionary
+            "post": postDictionary,
+            "date": Util.stringFromDate("yyyy-MM-dd", date: self.date)
         ]
         return array
     }

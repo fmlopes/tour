@@ -34,7 +34,7 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
         let user:User = Util.getUserFromDefaults()
         
         api.callback = nil
-        api.HTTPGet("/post/getListPost/\(user.id)/\(group.id)/50/0")
+        api.HTTPGet("/post/getListPost/\(group.id)/50/0")
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -50,6 +50,7 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
         cell.postImGoingCountUser!.text = String(post.imGoingCount)
         cell.postLikesLabel!.text = String(post.likeCount)
         cell.userNameLabel!.text = String(post.author.name)
+        cell.id = post.id
         
         if post.imagePath != "" {
             let request:NSURLRequest = NSURLRequest(URL: NSURL(string:post.imagePath)!)
@@ -88,7 +89,7 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
                 
                 let postType:NSDictionary = item["typePost"] as NSDictionary
                 let postTypeId:Int = (postType["id"] as NSNumber).integerValue
-                let post = Post(id: item["id"] as NSNumber, text: item["description"] as String, imagePath: image["url"] as String, likeCount: 2, commentCount: 15, imGoingCount: 5, user: user, comments: [Comment](), postType: PostType.valueFromId(postTypeId), group: Group())
+                let post = Post(id: item["id"] as NSNumber, text: item["description"] as String, imagePath: image["url"] as String, likeCount: 2, commentCount: 15, imGoingCount: 5, user: user, comments: [Comment](), postType: PostType.valueFromId(postTypeId), group: Group(), date: NSDate())
                 posts.append(post)
             }
             
@@ -137,11 +138,13 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
             let vc = segue.destinationViewController as PublishViewController
             
             vc.group = self.group
+        } else if segue.identifier == "group_post" {
+            let vc = segue.destinationViewController as PostViewController
+            
+            let postCell = sender as PostCell
+            
+            vc.post.id = postCell.id
         }
-    }
-    
-    @IBAction func cancelToGroupViewController(segue:UIStoryboardSegue) {
-        
     }
     
     @IBAction func publishPost(segue:UIStoryboardSegue) {
@@ -162,7 +165,7 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
         if (results["statusCode"] as String == MessageCode.Success.rawValue) {
             let user:User = Util.getUserFromDefaults()
             api.callback = nil
-            api.HTTPGet("/post/getListPost/\(user.id)/\(group.id)/50/0")
+            api.HTTPGet("/post/getListPost/\(group.id)/50/0")
             self.postTableView.hidden = false
         }
     }

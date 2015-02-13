@@ -23,4 +23,6 @@ class PostCell:UITableViewCell {
     @IBOutlet weak var postImGoingImage: UIImageView!
     @IBOutlet weak var postImGoingLabel: UILabel!
     @IBOutlet weak var postImGoingCountUser: UILabel!
+    
+    var id:NSNumber = 0
 }

@@ -11,6 +11,7 @@ import Foundation
 class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataSource, APIProtocol {
     
     var comments:[Comment] = [Comment]()
+    var post:Post = Post()
     lazy var api:API = API(delegate: self)
     
     lazy var composeCommentApi:API = API(delegate: self)
@@ -28,7 +29,7 @@ class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        api.HTTPGet("/comment/getListComment/\(1)/\(2)/30/0")
+        api.HTTPGet("/comment/getListComment/\(self.post.id)/30/0")
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -49,17 +50,11 @@ class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     @IBAction func postComment(sender: AnyObject) {
-        
-        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-        
-        let loggedUser:Dictionary<NSString, AnyObject> = defaults.objectForKey("loggedUser") as Dictionary<String, AnyObject>
-        let author:User = User()
-        author.id = (loggedUser["id"] as NSString).integerValue
 
         let comment:Comment = Comment()
         comment.text = composeTextField.text
-        comment.author = User()
-        comment.author = author
+        comment.author = Util.getUserFromDefaults()
+        comment.post = self.post
         
         composeCommentApi.callback = didReceiveComposePostResults
         composeCommentApi.HTTPPostJSON("/comment", jsonObj: comment.dictionaryFromObject())
@@ -107,8 +102,7 @@ class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     
     func didReceiveComposePostResults(results: NSDictionary) {
         if (results["statusCode"] as String == MessageCode.Success.rawValue) {
-            
-            api.HTTPGet("/comment/getListComment/\(1)/\(2)/30/0")
+            api.HTTPGet("/comment/getListComment/\(self.post.id)/30/0")
         }
         
     }
