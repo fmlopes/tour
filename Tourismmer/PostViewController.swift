@@ -16,7 +16,7 @@ class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     
     lazy var composeCommentApi:API = API(delegate: self)
     
-    var kCellIdentifier:NSString = "CommentCell"
+    var kCellIdentifier:NSString = "Cell"
     
     var frameView: UIView!
     
@@ -63,9 +63,11 @@ class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: CommentCell = self.commentsTableView.dequeueReusableCellWithIdentifier(kCellIdentifier, forIndexPath: indexPath) as CommentCell
         
+        //var cell:CommentCell = CommentCell()
+        
         let comment: Comment = comments[indexPath.row]
-        cell.userName!.text = comment.author.name
-        cell.textLabel!.text = comment.text
+        cell.authorName!.text = comment.author.name
+        cell.authorText!.text = comment.text
         
         facebookPhoto(comment.author.profilePicturePath, cell: cell)
         
@@ -82,6 +84,8 @@ class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     
     func didReceiveAPIResults(results: NSDictionary) {
         if (results["statusCode"] as String == MessageCode.Success.rawValue) {
+            
+            self.comments.removeAll(keepCapacity: true)
             
             for item in results["listComment"] as NSArray {
                 
@@ -130,7 +134,7 @@ class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataS
                 
                 NSURLConnection.sendAsynchronousRequest(requestProfilePicture, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!, data: NSData!, error:NSError!) -> Void in
                     if !(error? != nil) {
-                        cell.userPhoto!.image = UIImage(data: data)
+                        cell.authorPhoto!.image = UIImage(data: data)
                     } else {
                         println("Error: \(error.localizedDescription)")
                     }

@@ -42,8 +42,8 @@ class Comment:NSObject {
         var array: Dictionary<NSString, AnyObject> = [
             "description": self.text,
             "author": userDictionary,
-            "post": postDictionary,
-            "date": Util.stringFromDate("yyyy-MM-dd", date: self.date)
+            "post": postDictionary
+            //"date": Util.stringFromDate("yyyy-MM-dd", date: self.date)
         ]
         return array
     }

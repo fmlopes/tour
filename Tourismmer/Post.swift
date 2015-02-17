@@ -66,8 +66,8 @@ class Post:NSObject {
             "description": text,
             "author": authorDictionary,
             "group": groupDictionary,
-            "typePost": postTypeDictionary,
-            "date": Util.stringFromDate("yyyy-MM-dd", date: self.date)
+            "typePost": postTypeDictionary
+            //"date": Util.stringFromDate("dd-MM-yyyy", date: self.date)
         ]
         return array
     }

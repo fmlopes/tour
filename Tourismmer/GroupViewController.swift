@@ -167,6 +167,7 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
             api.callback = nil
             api.HTTPGet("/post/getListPost/\(group.id)/50/0")
             self.postTableView.hidden = false
+            self.emptyListLabel.hidden = true
         }
     }
 }
