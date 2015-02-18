@@ -89,7 +89,20 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
                 
                 let postType:NSDictionary = item["typePost"] as NSDictionary
                 let postTypeId:Int = (postType["id"] as NSNumber).integerValue
-                let post = Post(id: item["id"] as NSNumber, text: item["description"] as String, imagePath: image["url"] as String, likeCount: 2, commentCount: 15, imGoingCount: 5, user: user, comments: [Comment](), postType: PostType.valueFromId(postTypeId), group: Group(), date: NSDate())
+                var imGoingCount = 0
+                if item.objectForKey("countUserGo") != nil {
+                    imGoingCount = item["countUserGo"] as NSInteger
+                }
+                var commentCount = 0
+                if item.objectForKey("countComment") != nil {
+                    commentCount = item["countComment"] as NSInteger
+                }
+                var likeCount = 0
+                if item.objectForKey("countLike") != nil
+                {
+                    likeCount = item["countLike"] as NSInteger
+                }
+                let post = Post(id: item["id"] as NSNumber, text: item["description"] as String, imagePath: image["url"] as String, likeCount: likeCount, commentCount: commentCount, imGoingCount: imGoingCount, user: user, comments: [Comment](), postType: PostType.valueFromId(postTypeId), group: Group(), date: NSDate())
                 posts.append(post)
             }
             

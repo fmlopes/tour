@@ -106,6 +106,7 @@ class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     
     func didReceiveComposePostResults(results: NSDictionary) {
         if (results["statusCode"] as String == MessageCode.Success.rawValue) {
+            self.composeTextField.text = ""
             api.HTTPGet("/comment/getListComment/\(self.post.id)/30/0")
         }
         
@@ -145,15 +146,17 @@ class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func keyboardWillShow(notification: NSNotification) {
-        var info:NSDictionary = notification.userInfo!
-        var keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as NSValue).CGRectValue()
+        let info:NSDictionary = notification.userInfo!
+        let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as NSValue).CGRectValue()
         
-        var keyboardHeight:CGFloat = keyboardSize.height
+        let keyboardHeight:CGFloat = keyboardSize.height
         
         var animationDuration:CGFloat = CGFloat(info[UIKeyboardAnimationDurationUserInfoKey] as NSNumber)
         
+        let newViewHeight = self.commentInputView.frame.origin.y + 50 - keyboardHeight
+        
         UIView.animateWithDuration(0.25, delay: 0.25, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-            self.commentInputView.frame = CGRectMake(0, (keyboardSize.origin.y + 130 - keyboardHeight), 320, 46)
+            self.commentInputView.frame = CGRectMake(0, newViewHeight, 320, 46)
             }, completion: nil)
         
         
@@ -161,15 +164,17 @@ class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        var info:NSDictionary = notification.userInfo!
-        var keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as NSValue).CGRectValue()
+        let info:NSDictionary = notification.userInfo!
+        let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as NSValue).CGRectValue()
         
-        var keyboardHeight:CGFloat = keyboardSize.height
+        let keyboardHeight:CGFloat = keyboardSize.height
         
         var animationDuration:CGFloat = info[UIKeyboardAnimationDurationUserInfoKey] as CGFloat
         
+        let newViewHeight = self.commentInputView.frame.origin.y - 50 + keyboardHeight
+        
         UIView.animateWithDuration(0.25, delay: 0.25, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-            self.commentInputView.frame = CGRectMake(0, (self.commentInputView.frame.origin.y + keyboardHeight), 320, 46)
+            self.commentInputView.frame = CGRectMake(0, newViewHeight, 320, 46)
             }, completion: nil)
         
     }
