@@ -9,7 +9,7 @@
 import Foundation
 import AVFoundation
 
-class PublishViewController:UIViewController, APIProtocol {
+class PublishViewController:UIViewController, APIProtocol, UIImagePickerControllerDelegate {
     
     let captureSession = AVCaptureSession()
     var group:Group = Group()
@@ -82,10 +82,28 @@ class PublishViewController:UIViewController, APIProtocol {
         captureSession.startRunning()
     }
     
+    func configureDevice() {
+        if let device = captureDevice {
+            device.lockForConfiguration(nil)
+            device.focusMode = .Locked
+            device.unlockForConfiguration()
+        }
+    }
+    
     func didReceiveAPIResults(results: NSDictionary) {
         if (results["statusCode"] as String == MessageCode.Success.rawValue) {
             let groupViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Group") as GroupViewController
             self.navigationController?.pushViewController(groupViewController, animated: false)
         }
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        picker.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        
+        
+        picker.dismissViewControllerAnimated(true, completion: nil)
     }
 }

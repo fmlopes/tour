@@ -673,6 +673,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="GRUPO" id="dvK-03-SXH">
+                        <barButtonItem key="backBarButtonItem" title="GRUPO" id="7co-36-TQb"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="bSj-ZT-cf9">
                             <connections>
                                 <segue destination="wsH-Ko-Zyz" kind="push" identifier="group_newPost" id="VMx-rQ-zdo"/>
