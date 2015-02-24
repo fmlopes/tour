@@ -580,36 +580,17 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PostCell" rowHeight="352" id="vbI-o3-gbe" customClass="PostCell" customModule="Tourismmer" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PostCell" rowHeight="352" id="vbI-o3-gbe" customClass="PostCell" customModule="Tourismmer" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vbI-o3-gbe" id="nht-6O-W7d">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Blank52.png" id="3jx-RD-WEb">
-                                                    <rect key="frame" x="0.0" y="92" width="320" height="229"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="like_inactive" id="oe9-T8-XmQ">
-                                                    <rect key="frame" x="10" y="321" width="22" height="22"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="comment_inactive" id="0pp-dC-Sgd">
-                                                    <rect key="frame" x="53" y="321" width="22" height="22"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tA2-JV-z7N">
-                                                    <rect key="frame" x="35" y="321" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Exo-Medium" family="Exo" pointSize="12"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgoing_inactive" id="fvg-TI-3Xh">
-                                                    <rect key="frame" x="286" y="317" width="26" height="26"/>
+                                                    <rect key="frame" x="0.0" y="92" width="320" height="230"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IPf-My-fkR">
-                                                    <rect key="frame" x="79" y="321" width="18" height="21"/>
+                                                    <rect key="frame" x="101" y="318" width="25" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Exo-Medium" family="Exo" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -629,26 +610,61 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eKl-LM-awD">
-                                                    <rect key="frame" x="258" y="319" width="20" height="21"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Blank52.png" id="4cq-yY-VJh">
+                                                    <rect key="frame" x="8" y="17" width="48" height="48"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WYX-Ku-m3n">
+                                                    <rect key="frame" x="59" y="314" width="41" height="29"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" image="comment_inactive">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="comment:" destination="vbI-o3-gbe" eventType="touchUpInside" id="VYl-Qm-ZQW"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Bq8-Wc-JZl">
+                                                    <rect key="frame" x="8" y="314" width="36" height="29"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" image="like_inactive">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="like:" destination="vbI-o3-gbe" eventType="touchUpInside" id="DFB-1B-vkK"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tA2-JV-z7N">
+                                                    <rect key="frame" x="44" y="318" width="23" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Exo-Medium" family="Exo" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Blank52.png" id="4cq-yY-VJh">
-                                                    <rect key="frame" x="8" y="17" width="48" height="48"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pQV-oL-KE8">
+                                                    <rect key="frame" x="276" y="314" width="36" height="27"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
+                                                    <state key="normal" image="imgoing_inactive">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="imGoingThere:" destination="vbI-o3-gbe" eventType="touchUpInside" id="vx0-w3-Gg4"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eKl-LM-awD">
+                                                    <rect key="frame" x="254" y="318" width="20" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Exo-Medium" family="Exo" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="imGoingThere" destination="pQV-oL-KE8" id="CDC-JZ-kLH"/>
                                             <outlet property="postBackgroundImage" destination="3jx-RD-WEb" id="Bfm-Tn-xge"/>
                                             <outlet property="postCommentLabel" destination="IPf-My-fkR" id="75J-Tn-Tfk"/>
-                                            <outlet property="postCommentsImage" destination="oe9-T8-XmQ" id="6VC-EZ-Bsj"/>
                                             <outlet property="postImGoingCountUser" destination="eKl-LM-awD" id="xbD-kZ-uCS"/>
-                                            <outlet property="postImGoingImage" destination="fvg-TI-3Xh" id="sO0-Fy-JQT"/>
-                                            <outlet property="postLikesImage" destination="0pp-dC-Sgd" id="Wij-rb-cHp"/>
                                             <outlet property="postLikesLabel" destination="tA2-JV-z7N" id="NLT-fD-AxM"/>
                                             <outlet property="postTextLabel" destination="hvh-f4-HUD" id="Ern-i2-5jM"/>
                                             <outlet property="userNameLabel" destination="JYm-ks-NSd" id="YRB-4K-S8c"/>
@@ -792,7 +808,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="toL-FY-YbM">
-                                <rect key="frame" x="0.0" y="122" width="320" height="240"/>
+                                <rect key="frame" x="0.0" y="122" width="320" height="260"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PFi-08-1NM">
@@ -824,6 +840,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="postTextField" destination="Ylb-BA-cHL" id="Wx1-lu-DVX"/>
+                        <outlet property="previewImageView" destination="toL-FY-YbM" id="SyP-KX-31A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5sK-Yz-4OE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1071,8 +1088,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="We1-Rf-i1t"/>
-        <segue reference="nVA-Hw-ljQ"/>
+        <segue reference="KFx-HV-Xlk"/>
+        <segue reference="XF8-f6-yk0"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

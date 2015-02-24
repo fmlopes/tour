@@ -482,8 +482,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "116"
             endingLineNumber = "116"
-            landmarkName = "PostViewController"
-            landmarkType = "3">
+            landmarkName = "didReceiveComposePostResults(_:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -546,8 +546,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "117"
             endingLineNumber = "117"
-            landmarkName = "facebookPhoto(_:cell:)"
-            landmarkType = "5">
+            landmarkName = "PostViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -730,38 +730,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Tourismmer/PublishViewController.swift"
-            timestampString = "445397037.958269"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "didReceiveAPIResults(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tourismmer/PublishViewController.swift"
-            timestampString = "445397037.958269"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "didReceiveAPIResults(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Tourismmer/SearchViewController.swift"
             timestampString = "444959359.924478"
             startingColumnNumber = "9223372036854775807"
@@ -923,11 +891,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tourismmer/PublishViewController.swift"
-            timestampString = "445397037.958269"
+            timestampString = "446433223.501744"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "publishPost(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1089,6 +1057,22 @@
             startingLineNumber = "97"
             endingLineNumber = "97"
             landmarkName = "didReceiveAPIResults(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tourismmer/PostCell.swift"
+            timestampString = "446432832.533059"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "like(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

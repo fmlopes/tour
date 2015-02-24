@@ -8,17 +8,18 @@
 
 import Foundation
 import AVFoundation
+import UIKit
+import CoreData
+import MobileCoreServices
 
-class PublishViewController:UIViewController, APIProtocol, UIImagePickerControllerDelegate {
+class PublishViewController:UIViewController, APIProtocol, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    let captureSession = AVCaptureSession()
     var group:Group = Group()
     var user:User = User()
     lazy var api:API = API(delegate: self)
     
     @IBOutlet weak var postTextField: UITextField!
-    // If we find a device we'll store it here for later use
-    var captureDevice : AVCaptureDevice?
+    @IBOutlet weak var previewImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,46 +48,19 @@ class PublishViewController:UIViewController, APIProtocol, UIImagePickerControll
     }
     
     @IBAction func loadCamera(sender: AnyObject) {
-        // Do any additional setup after loading the view, typically from a nib.
-        captureSession.sessionPreset = AVCaptureSessionPresetLow
-        
-        let devices = AVCaptureDevice.devices()
-        
-        // Loop through all the capture devices on this phone
-        for device in devices {
-            // Make sure this particular device supports video
-            if (device.hasMediaType(AVMediaTypeVideo)) {
-                // Finally check the position and confirm we've got the back camera
-                if(device.position == AVCaptureDevicePosition.Back) {
-                    captureDevice = device as? AVCaptureDevice
-                    
-                    if captureDevice != nil {
-                        beginSession()
-                    }
-                }
-            }
+        if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)){
+            var picker = UIImagePickerController()
+            picker.delegate = self
+            picker.sourceType = UIImagePickerControllerSourceType.Camera
+            var mediaTypes: Array<AnyObject> = [kUTTypeImage]
+            picker.mediaTypes = mediaTypes
+            picker.allowsEditing = true
+            self.presentViewController(picker, animated: true, completion: nil)
+            
+            
         }
-    }
-    
-    func beginSession() {
-        var err : NSError? = nil
-        captureSession.addInput(AVCaptureDeviceInput(device: captureDevice, error: &err))
-        
-        if err != nil {
-            println("error: \(err?.localizedDescription)")
-        }
-        
-        let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        self.view.layer.addSublayer(previewLayer)
-        previewLayer?.frame = self.view.layer.frame
-        captureSession.startRunning()
-    }
-    
-    func configureDevice() {
-        if let device = captureDevice {
-            device.lockForConfiguration(nil)
-            device.focusMode = .Locked
-            device.unlockForConfiguration()
+        else{
+            NSLog("No Camera.")
         }
     }
     
@@ -103,6 +77,29 @@ class PublishViewController:UIViewController, APIProtocol, UIImagePickerControll
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         
+        let mediaType = info[UIImagePickerControllerMediaType] as String
+        var originalImage:UIImage?, editedImage:UIImage?, imageToSave:UIImage?
+        
+        // Handle a still image capture
+        let compResult:CFComparisonResult = CFStringCompare(mediaType as NSString!, kUTTypeImage, CFStringCompareFlags.CompareCaseInsensitive)
+        if ( compResult == CFComparisonResult.CompareEqualTo ) {
+            
+            editedImage = info[UIImagePickerControllerEditedImage] as UIImage?
+            originalImage = info[UIImagePickerControllerOriginalImage] as UIImage?
+            
+            if ( editedImage == nil ) {
+                imageToSave = editedImage
+            } else {
+                imageToSave = originalImage
+            }
+            NSLog("Write To Saved Photos")
+            previewImageView.image = imageToSave
+            previewImageView.reloadInputViews()
+            
+            // Save the new image (original or edited) to the Camera Roll
+            UIImageWriteToSavedPhotosAlbum (imageToSave, nil, nil , nil)
+            
+        }
         
         picker.dismissViewControllerAnimated(true, completion: nil)
     }

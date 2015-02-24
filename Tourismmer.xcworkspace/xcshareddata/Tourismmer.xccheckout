@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>78C49F2E-0A9F-4689-A8C6-5015313D33D0</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Tourismmer</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B4F0480BF7AFAA34DB13926B18E31C528B6A7577</key>
+		<string>https://github.com/fmlopes/tour.git</string>
+		<key>abb01da6-9fe7-5249-a21d-913f9d9322d6</key>
+		<string>http://54.94.138.1:85/svn/tour</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Tourismmer.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B4F0480BF7AFAA34DB13926B18E31C528B6A7577</key>
+		<string>..</string>
+		<key>abb01da6-9fe7-5249-a21d-913f9d9322d6</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/fmlopes/tour.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B4F0480BF7AFAA34DB13926B18E31C528B6A7577</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>abb01da6-9fe7-5249-a21d-913f9d9322d6</string>
+			<key>IDESourceControlWCCName</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B4F0480BF7AFAA34DB13926B18E31C528B6A7577</string>
+			<key>IDESourceControlWCCName</key>
+			<string>tour</string>
+		</dict>
+	</array>
+</dict>
+</plist>
