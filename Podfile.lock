@@ -145,6 +145,8 @@ PODS:
     - UICKeyChainStore (< 3.0)
     - XMLDictionary (~> 1.4.0)
   - Bolts (1.1.3)
+  - Facebook-iOS-SDK (3.23.0):
+    - Bolts (~> 1.0)
   - FMDB (2.5):
     - FMDB/standard (= 2.5)
   - FMDB/common (2.5)
@@ -162,11 +164,13 @@ PODS:
 DEPENDENCIES:
   - AWSCognitoSync
   - AWSiOSSDKv2
+  - Facebook-iOS-SDK
 
 SPEC CHECKSUMS:
   AWSCognitoSync: 4a2a456e93a5da8c3e977c15a108b328db5c47eb
   AWSiOSSDKv2: bcf17afda187f45901b07369f1f59bfbc68922bc
   Bolts: 3db0a875235e0c9042b013af13af0f00f79b102c
+  Facebook-iOS-SDK: 3d65f685348b789e46a9aacf92bfa85b60b63755
   FMDB: 0efa188cf0dd1ce82c27a478cd5f5fa245308677
   GZIP: f27c434ffee5e9a9b34f4e9c19e91350fa8bbde1
   Mantle: d5fbaf30fbc58031223af13812c060e15934a1fe
