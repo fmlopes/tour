@@ -38,13 +38,7 @@ class PublishViewController:UIViewController, APIProtocol, UIImagePickerControll
     
     @IBAction func publishPost(sender: AnyObject) {
         
-        let post:Post = Post()
-        post.text = postTextField.text
-        post.author = user
-        post.group = group
-        post.postType = PostType.valueFromId(1)
-        
-        api.HTTPPostJSON("/post", jsonObj: post.dictionaryFromObject())
+        uploadToS3()
     }
     
     @IBAction func loadCamera(sender: AnyObject) {
@@ -102,5 +96,61 @@ class PublishViewController:UIViewController, APIProtocol, UIImagePickerControll
         }
         
         picker.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func uploadToS3(){
+        
+        // get the image from a UIImageView that is displaying the selected Image
+        var img:UIImage = previewImageView!.image!
+        
+        // create a local image that we can use to upload to s3
+        var path:NSString = NSTemporaryDirectory().stringByAppendingPathComponent("image.png")
+        var imageData:NSData = UIImagePNGRepresentation(img)
+        imageData.writeToFile(path, atomically: true)
+        
+        // once the image is saved we can use the path to create a local fileurl
+        var url:NSURL = NSURL(fileURLWithPath: path)!
+        
+        // next we set up the S3 upload request manager
+        var uploadRequest = AWSS3TransferManagerUploadRequest()
+        uploadRequest?.bucket = "tour-imgs"
+        uploadRequest?.ACL = AWSS3ObjectCannedACL.PublicRead
+        uploadRequest?.key = "post-imgs/image.png"
+        uploadRequest?.contentType = "image/png"
+        uploadRequest?.body = url;
+        
+        // we will track progress through an AWSNetworkingUploadProgressBlock
+        //uploadRequest?.uploadProgress = {[unowned self](bytesSent:Int64, totalBytesSent:Int64, totalBytesExpectedToSend:Int64) in
+            
+            //dispatch_sync(dispatch_get_main_queue(), { () -> Void in
+                
+                
+            //})
+        //}
+        
+        // now the upload request is set up we can creat the transfermanger, the credentials are already set up in the app delegate
+        var transferManager:AWSS3TransferManager = AWSS3TransferManager.defaultS3TransferManager()
+        // start the upload
+        transferManager.upload(uploadRequest).continueWithExecutor(BFExecutor.mainThreadExecutor(), withBlock:{ [unowned self]
+            task -> AnyObject in
+            
+            // once the uploadmanager finishes check if there were any errors
+            if(task.error != nil){
+                NSLog("%@", task.error);
+            }else{
+                NSLog("Image uploaded.");
+                
+                let post:Post = Post()
+                post.text = self.postTextField.text
+                post.author = self.user
+                post.group = self.group
+                post.postType = PostType.valueFromId(1)
+                
+                self.api.HTTPPostJSON("/post", jsonObj: post.dictionaryFromObject())
+            }
+            
+            return "all done";
+        })
+        
     }
 }

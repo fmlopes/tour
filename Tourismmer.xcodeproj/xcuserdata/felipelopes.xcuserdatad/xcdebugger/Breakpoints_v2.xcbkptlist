@@ -436,6 +436,36 @@
             endingLineNumber = "110"
             landmarkName = "didReceiveAPIResults(_:)"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tourismmer.GroupViewController.didReceiveAPIResults (Tourismmer.GroupViewController)(ObjectiveC.NSDictionary) -&gt; ()"
+                  moduleName = "Tourismmer"
+                  urlString = "file:///Users/felipelopes/dev/tour/Tourismmer/GroupViewController.swift"
+                  timestampString = "447036391.356991"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "110"
+                  endingLineNumber = "110"
+                  offsetFromSymbolStart = "10706">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tourismmer.GroupViewController.didReceiveAPIResults (Tourismmer.GroupViewController)(ObjectiveC.NSDictionary) -&gt; ()"
+                  moduleName = "Tourismmer"
+                  urlString = "file:///Users/felipelopes/dev/tour/Tourismmer/GroupViewController.swift"
+                  timestampString = "447036391.357311"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "110"
+                  endingLineNumber = "110"
+                  offsetFromSymbolStart = "11081">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -891,11 +921,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tourismmer/PublishViewController.swift"
-            timestampString = "446433223.501744"
+            timestampString = "447043112.353619"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "publishPost(_:)"
             landmarkType = "5">
          </BreakpointContent>

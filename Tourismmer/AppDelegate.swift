@@ -12,7 +12,10 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
                             
     var window: UIWindow?
-
+    let cognitoIdentityPoolId = "us-east-1:523df34e-1ba7-45a0-8e93-3eb3fd56594c"
+    let accountId = "930676439163"
+    let unauthRoleArn = "arn:aws:iam::930676439163:role/Cognito_TourismmerUnauth_DefaultRole"
+    let authRoleArn = "arn:aws:iam::930676439163:role/Cognito_TourismmerAuth_DefaultRole"
 
     func application(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: NSDictionary!) -> Bool {
         // Override point for customization after application launch.
@@ -21,6 +24,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FBProfilePictureView.self
         
         UIApplication.sharedApplication().registerForRemoteNotifications()
+        
+        let credentialsProvider = AWSCognitoCredentialsProvider.credentialsWithRegionType(
+            AWSRegionType.USEast1, accountId: accountId, identityPoolId: cognitoIdentityPoolId, unauthRoleArn: unauthRoleArn, authRoleArn: authRoleArn)
+        
+        
+        let defaultServiceConfiguration = AWSServiceConfiguration(
+           region: AWSRegionType.SAEast1,
+            credentialsProvider: credentialsProvider)
+        
+        AWSServiceManager.defaultServiceManager().setDefaultServiceConfiguration(defaultServiceConfiguration)
+
         
         return true
     }
