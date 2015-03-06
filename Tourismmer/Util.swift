@@ -20,6 +20,7 @@ class Util {
         user.id = stringId.integerValue
         user.facebookId = (loggedUser["facebookId"] as NSString).integerValue
         user.name = loggedUser["name"] as NSString
+        user.email = loggedUser["email"] as NSString
         
         return user
     }

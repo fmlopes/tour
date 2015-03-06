@@ -2,13 +2,15 @@
 //  SettingsViewController.swift
 //  Tourismmer
 //
-//  Created by Felipe Lopes on 3/4/15.
+//  Created by Felipe Lopes on 3/6/15.
 //  Copyright (c) 2015 Felipe Lopes. All rights reserved.
 //
 
 import Foundation
+import UIKit
 
-class SettingsViewController: UITableViewController, FBLoginViewDelegate {
+class SettingsViewController: UIViewController, FBLoginViewDelegate {
+    
     
     @IBOutlet weak var accountEmail: UILabel!
     
@@ -44,5 +46,5 @@ class SettingsViewController: UITableViewController, FBLoginViewDelegate {
     func loginView(loginView : FBLoginView!, handleError:NSError) {
         println("Error: \(handleError.localizedDescription)")
     }
-
+    
 }
