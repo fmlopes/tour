@@ -140,11 +140,14 @@ class PublishViewController:UIViewController, APIProtocol, UIImagePickerControll
             }else{
                 NSLog("Image uploaded.");
                 
+                let imageURL = "https://s3-sa-east-1.amazonaws.com/tour-imgs/post-imgs/image.png"
+                
                 let post:Post = Post()
                 post.text = self.postTextField.text
                 post.author = self.user
                 post.group = self.group
                 post.postType = PostType.valueFromId(1)
+                post.imagePath = imageURL
                 
                 self.api.HTTPPostJSON("/post", jsonObj: post.dictionaryFromObject())
             }

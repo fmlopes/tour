@@ -9,13 +9,17 @@
 import Foundation
 import UIKit
 
-class PostCell:UITableViewCell {
+class PostCell:UITableViewCell, APIProtocol {
     
-    var id:NSNumber = 0
+    var post:Post = Post()
     var userHasLiked = false
     var userHasCommented = false
     var userIsGoingThere = false
+    lazy var api:API = API(delegate: self)
     
+    
+    
+    @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var postTextLabel: UILabel!
     @IBOutlet weak var userPhoto: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
@@ -33,13 +37,13 @@ class PostCell:UITableViewCell {
     }
     
     @IBAction func like(sender: AnyObject) {
-        var button:UIButton = sender as UIButton
-        
         if userHasLiked {
-            button.setImage(UIImage(named: "like_inactive"), forState: UIControlState.Normal)
+            likeButton.setImage(UIImage(named: "like_inactive"), forState: UIControlState.Normal)
             userHasLiked = false
         } else {
-            button.setImage(UIImage(named: "like_active"), forState: UIControlState.Normal)
+            api.callback = didReceiveLikeResults
+            api.HTTPPostJSON("/post/like", jsonObj: self.post.likeDictionaryFromObject())
+            likeButton.setImage(UIImage(named: "like_active"), forState: UIControlState.Normal)
             userHasLiked = true
         }
         
@@ -52,7 +56,27 @@ class PostCell:UITableViewCell {
             button.setImage(UIImage(named: "imgoing_inactive"), forState: UIControlState.Normal)
             userIsGoingThere = false
         } else {
+            api.callback = didReceiveImGoingResults
+            //api.HTTPPostJSON("/post/like", jsonObj: self.post.likeDictionaryFromObject())
             button.setImage(UIImage(named: "imgoing_active"), forState: UIControlState.Normal)
+            userIsGoingThere = true
+        }
+    }
+    
+    func didReceiveAPIResults(results: NSDictionary) {
+        
+    }
+    
+    func didReceiveLikeResults(results: NSDictionary) {
+        if (results["statusCode"] as String == MessageCode.Success.rawValue) {
+            likeButton.setImage(UIImage(named: "like_active"), forState: UIControlState.Normal)
+            userHasLiked = true
+        }
+    }
+    
+    func didReceiveImGoingResults(results: NSDictionary) {
+        if (results["statusCode"] as String == MessageCode.Success.rawValue) {
+            likeButton.setImage(UIImage(named: "imgoing_active"), forState: UIControlState.Normal)
             userIsGoingThere = true
         }
     }

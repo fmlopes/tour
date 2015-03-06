@@ -18,10 +18,9 @@ class SearchViewController:UIViewController, UITableViewDataSource, UITableViewD
     var kCellIdentifier:String = "Cell"
     
     @IBOutlet weak var searchTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

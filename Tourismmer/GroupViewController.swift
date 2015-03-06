@@ -50,7 +50,7 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
         cell.postImGoingCountUser!.text = String(post.imGoingCount)
         cell.postLikesLabel!.text = String(post.likeCount)
         cell.userNameLabel!.text = String(post.author.name)
-        cell.id = post.id
+        cell.post.id = post.id
         
         if post.imagePath != "" {
             let request:NSURLRequest = NSURLRequest(URL: NSURL(string:post.imagePath)!)
@@ -156,7 +156,7 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
             
             let postCell = sender as PostCell
             
-            vc.post.id = postCell.id
+            vc.post.id = postCell.post.id
         }
     }
     

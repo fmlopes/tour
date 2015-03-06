@@ -40,6 +40,7 @@
 		20BEA0B41A84478D00761DDE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BEA0B31A84478D00761DDE /* SearchViewController.swift */; };
 		20CD0F561A37CCB6003204F8 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD0F551A37CCB6003204F8 /* CommentCell.swift */; };
 		20DC43AC1A3A877A00F2DA8E /* GoogleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DC43AB1A3A877A00F2DA8E /* GoogleService.swift */; };
+		20F6547F1AA7B4BF00A07CF8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F6547E1AA7B4BF00A07CF8 /* SettingsViewController.swift */; };
 		30C96200C9DAD2C508DDD2D8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C88B247F5885653F0FD848 /* libPods.a */; };
 		5504ED391996774600DA6FC9 /* Blank52.png in Resources */ = {isa = PBXBuildFile; fileRef = 5504ED381996774600DA6FC9 /* Blank52.png */; };
 		551FE5301A0FAA3600B868B1 /* RecoverPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551FE52F1A0FAA3600B868B1 /* RecoverPasswordViewController.swift */; };
@@ -113,6 +114,7 @@
 		20BEA0B31A84478D00761DDE /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		20CD0F551A37CCB6003204F8 /* CommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		20DC43AB1A3A877A00F2DA8E /* GoogleService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleService.swift; sourceTree = "<group>"; };
+		20F6547E1AA7B4BF00A07CF8 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		46C88B247F5885653F0FD848 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5504ED381996774600DA6FC9 /* Blank52.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Blank52.png; path = Tourismmer/Images.xcassets/Blank52.png; sourceTree = "<group>"; };
 		551FE52F1A0FAA3600B868B1 /* RecoverPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewController.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				20A8915C1A748F300057E8ED /* PostViewController.swift */,
 				205BDBBC1A7877A9001071F8 /* MenuController.swift */,
 				20BEA0B31A84478D00761DDE /* SearchViewController.swift */,
+				20F6547E1AA7B4BF00A07CF8 /* SettingsViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -514,6 +517,7 @@
 				208A81C3198B24DE0075A441 /* User.swift in Sources */,
 				2042C28F1A25529800EEEE99 /* NewGroupViewController.swift in Sources */,
 				55CC781A1A17BFA4001C41E8 /* MessageCode.swift in Sources */,
+				20F6547F1AA7B4BF00A07CF8 /* SettingsViewController.swift in Sources */,
 				20BEA0B41A84478D00761DDE /* SearchViewController.swift in Sources */,
 				20A891591A7459BF0057E8ED /* FacebookService.swift in Sources */,
 				20DC43AC1A3A877A00F2DA8E /* GoogleService.swift in Sources */,

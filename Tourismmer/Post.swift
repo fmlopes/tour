@@ -71,4 +71,12 @@ class Post:NSObject {
         ]
         return array
     }
+    
+    func likeDictionaryFromObject() -> Dictionary<String, AnyObject> {
+        var array: Dictionary<String, AnyObject> = [
+            "idUser": self.author.id,
+            "idPost": self.id
+        ]
+        return array
+    }
 }
