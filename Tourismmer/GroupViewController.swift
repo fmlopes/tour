@@ -34,7 +34,7 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
         let user:User = Util.getUserFromDefaults()
         
         api.callback = nil
-        api.HTTPGet("/post/getListPost/\(group.id)/50/0")
+        api.HTTPGet("/post/getListPost/\(group.id)/\(user.id)/50/0")
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -82,27 +82,24 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
         if (results["statusCode"] as String == MessageCode.Success.rawValue) {
             
             for item in results["listPost"] as NSArray {
-                let image:NSDictionary = item["image"] as NSDictionary
+                
+                let image:NSDictionary = Util.getJsonOptionalDictionary(item as NSDictionary, fieldName: "image")
+                let imagePath:String = Util.getJsonOptionalString(image, fieldName: "url")
                 let author:NSDictionary = item["author"] as NSDictionary
                 
                 let user:User = User(id: author["id"] as NSNumber, name: author["name"] as String, birthdate: NSDate(), email: "", pass: "", gender: "", facebookId: (author["facebookId"] as NSString).integerValue)
                 
                 let postType:NSDictionary = item["typePost"] as NSDictionary
                 let postTypeId:Int = (postType["id"] as NSNumber).integerValue
-                var imGoingCount = 0
-                if item.objectForKey("countUserGo") != nil {
-                    imGoingCount = item["countUserGo"] as NSInteger
-                }
-                var commentCount = 0
-                if item.objectForKey("countComment") != nil {
-                    commentCount = item["countComment"] as NSInteger
-                }
-                var likeCount = 0
-                if item.objectForKey("countLike") != nil
-                {
-                    likeCount = item["countLike"] as NSInteger
-                }
-                let post = Post(id: item["id"] as NSNumber, text: item["description"] as String, imagePath: image["url"] as String, likeCount: likeCount, commentCount: commentCount, imGoingCount: imGoingCount, user: user, comments: [Comment](), postType: PostType.valueFromId(postTypeId), group: Group(), date: NSDate())
+                let userHasLiked = item["userLiked"] as String
+                let userHasCommented = item["userCommented"] as String
+                let userIsGoing = item["userGo"] as String
+                
+                var imGoingCount = Util.getJsonOptionalInteger(item as NSDictionary, fieldName: "countUserGo")
+                var commentCount = Util.getJsonOptionalInteger(item as NSDictionary, fieldName: "countComment")
+                var likeCount = Util.getJsonOptionalInteger(item as NSDictionary, fieldName: "countLike")
+                
+                let post = Post(id: item["id"] as NSNumber, text: item["description"] as String, imagePath: imagePath, likeCount: likeCount, commentCount: commentCount, imGoingCount: imGoingCount, user: user, comments: [Comment](), postType: PostType.valueFromId(postTypeId), group: Group(), date: NSDate(), userHasLiked: false, userHasCommented: false, userIsGoing: false)
                 posts.append(post)
             }
             
@@ -178,7 +175,7 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
         if (results["statusCode"] as String == MessageCode.Success.rawValue) {
             let user:User = Util.getUserFromDefaults()
             api.callback = nil
-            api.HTTPGet("/post/getListPost/\(group.id)/50/0")
+            api.HTTPGet("/post/getListPost/\(group.id)/\(user.id)/50/0")
             self.postTableView.hidden = false
             self.emptyListLabel.hidden = true
         }

@@ -10,6 +10,30 @@ import Foundation
 
 class Util {
     
+    class func getJsonOptionalDictionary(results:NSDictionary, fieldName: String) -> NSDictionary {
+        var fieldValue = NSDictionary()
+        if results.objectForKey(fieldName) != nil {
+            fieldValue = results[fieldName] as NSDictionary
+        }
+        return fieldValue
+    }
+    
+    class func getJsonOptionalString(results:NSDictionary, fieldName: String) -> String {
+        var fieldValue = ""
+        if results.objectForKey(fieldName) != nil {
+            fieldValue = results[fieldName] as String
+        }
+        return fieldValue
+    }
+    
+    class func getJsonOptionalInteger(results:NSDictionary, fieldName: String) -> NSInteger {
+        var fieldValue = 0
+        if results.objectForKey(fieldName) != nil {
+            fieldValue = results[fieldName] as NSInteger
+        }
+        return fieldValue
+    }
+    
     class func getUserFromDefaults() -> User {
         let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
         

@@ -37,8 +37,9 @@ class PublishViewController:UIViewController, APIProtocol, UIImagePickerControll
     }
     
     @IBAction func publishPost(sender: AnyObject) {
+        api.callback = didReceiveImageHashAPIResults
+        api.HTTPGet("/image/getIdS3Randown")
         
-        uploadToS3()
     }
     
     @IBAction func loadCamera(sender: AnyObject) {
@@ -62,6 +63,12 @@ class PublishViewController:UIViewController, APIProtocol, UIImagePickerControll
         if (results["statusCode"] as String == MessageCode.Success.rawValue) {
             let groupViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Group") as GroupViewController
             self.navigationController?.pushViewController(groupViewController, animated: false)
+        }
+    }
+    
+    func didReceiveImageHashAPIResults(results: NSDictionary) {
+        if (results["statusCode"] as String == MessageCode.Success.rawValue) {
+            uploadToS3(results["sequence"] as String)
         }
     }
     
@@ -98,13 +105,13 @@ class PublishViewController:UIViewController, APIProtocol, UIImagePickerControll
         picker.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func uploadToS3(){
+    func uploadToS3(name: String){
         
         // get the image from a UIImageView that is displaying the selected Image
         var img:UIImage = previewImageView!.image!
         
         // create a local image that we can use to upload to s3
-        var path:NSString = NSTemporaryDirectory().stringByAppendingPathComponent("image.png")
+        var path:NSString = NSTemporaryDirectory().stringByAppendingPathComponent("\(name).png")
         var imageData:NSData = UIImagePNGRepresentation(img)
         imageData.writeToFile(path, atomically: true)
         
@@ -115,7 +122,7 @@ class PublishViewController:UIViewController, APIProtocol, UIImagePickerControll
         var uploadRequest = AWSS3TransferManagerUploadRequest()
         uploadRequest?.bucket = "tour-imgs"
         uploadRequest?.ACL = AWSS3ObjectCannedACL.PublicRead
-        uploadRequest?.key = "post-imgs/image.png"
+        uploadRequest?.key = "post-imgs/\(name).png"
         uploadRequest?.contentType = "image/png"
         uploadRequest?.body = url;
         
@@ -140,7 +147,7 @@ class PublishViewController:UIViewController, APIProtocol, UIImagePickerControll
             }else{
                 NSLog("Image uploaded.");
                 
-                let imageURL = "https://s3-sa-east-1.amazonaws.com/tour-imgs/post-imgs/image.png"
+                let imageURL = "https://s3-sa-east-1.amazonaws.com/tour-imgs/post-imgs/\(name).png"
                 
                 let post:Post = Post()
                 post.text = self.postTextField.text

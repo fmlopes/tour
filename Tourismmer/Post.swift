@@ -21,8 +21,11 @@ class Post:NSObject {
     var postType:PostType
     var group:Group
     var date:NSDate
+    var userHasLiked: Bool
+    var userHasCommented: Bool
+    var userIsGoing: Bool
     
-    init(id:NSNumber, text:NSString, imagePath:NSString, likeCount:NSInteger, commentCount:NSInteger, imGoingCount: NSInteger, user:User, comments:[Comment], postType:PostType, group:Group, date:NSDate) {
+    init(id:NSNumber, text:NSString, imagePath:NSString, likeCount:NSInteger, commentCount:NSInteger, imGoingCount: NSInteger, user:User, comments:[Comment], postType:PostType, group:Group, date:NSDate, userHasLiked: Bool, userHasCommented: Bool, userIsGoing: Bool) {
         self.id = id
         self.text = text
         self.imagePath = imagePath
@@ -34,6 +37,9 @@ class Post:NSObject {
         self.postType = postType
         self.group = group
         self.date = date
+        self.userHasLiked = userHasLiked
+        self.userHasCommented = userHasCommented
+        self.userIsGoing = userIsGoing
     }
     
     override init() {
@@ -48,7 +54,9 @@ class Post:NSObject {
         self.postType = PostType.Recomendation
         self.group = Group()
         self.date = NSDate()
-        
+        self.userHasLiked = false
+        self.userHasCommented = false
+        self.userIsGoing = false
         super.init()
     }
     
