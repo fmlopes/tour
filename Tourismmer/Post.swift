@@ -70,12 +70,15 @@ class Post:NSObject {
         var postTypeDictionary:Dictionary<String, AnyObject> = Dictionary<String, AnyObject>()
         postTypeDictionary.updateValue(self.postType.id(), forKey: "id")
         
+        var imageDictionary:Dictionary<String, AnyObject> = Dictionary<String, AnyObject>()
+        imageDictionary.updateValue(self.imagePath, forKey: "url")
+        
         var array: Dictionary<String, AnyObject> = [
             "description": text,
             "author": authorDictionary,
             "group": groupDictionary,
-            "typePost": postTypeDictionary
-            //"date": Util.stringFromDate("dd-MM-yyyy", date: self.date)
+            "typePost": postTypeDictionary,
+            "image": imageDictionary
         ]
         return array
     }

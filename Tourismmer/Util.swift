@@ -10,6 +10,21 @@ import Foundation
 
 class Util {
     
+    class func getBooleanFromString(str:String) -> Bool {
+        if (str == "1") {
+            return true
+        }
+        return false
+    }
+    
+    class func getJsonOptionalBool(results:NSDictionary, fieldName: String) -> Bool {
+        var fieldValue = false
+        if results.objectForKey(fieldName) != nil {
+            fieldValue = results[fieldName] as Bool
+        }
+        return fieldValue
+    }
+    
     class func getJsonOptionalDictionary(results:NSDictionary, fieldName: String) -> NSDictionary {
         var fieldValue = NSDictionary()
         if results.objectForKey(fieldName) != nil {

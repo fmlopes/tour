@@ -50,7 +50,23 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
         cell.postImGoingCountUser!.text = String(post.imGoingCount)
         cell.postLikesLabel!.text = String(post.likeCount)
         cell.userNameLabel!.text = String(post.author.name)
-        cell.post.id = post.id
+        cell.post = post
+        
+        cell.userHasLiked = post.userHasLiked
+        cell.userHasCommented = post.userHasCommented
+        cell.userIsGoingThere = post.userIsGoing
+        
+        if (post.userHasLiked) {
+            cell.likeButton.setImage(UIImage(named: "like_active"), forState: UIControlState.Normal)
+        }
+        
+        if (post.userHasCommented) {
+            cell.commentButton.setImage(UIImage(named: "comment_active"), forState: UIControlState.Normal)
+        }
+        
+        if (post.userIsGoing) {
+            cell.imGoingButton.setImage(UIImage(named: "imgoing_active"), forState: UIControlState.Normal)
+        }
         
         if post.imagePath != "" {
             let request:NSURLRequest = NSURLRequest(URL: NSURL(string:post.imagePath)!)
@@ -66,6 +82,8 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
             cell.postBackgroundImage.hidden = true
         }
         facebookPhoto(post.author.profilePicturePath, cell: cell)
+        
+        cell.setLayout()
         
         return cell
     }
@@ -91,15 +109,15 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
                 
                 let postType:NSDictionary = item["typePost"] as NSDictionary
                 let postTypeId:Int = (postType["id"] as NSNumber).integerValue
-                let userHasLiked = item["userLiked"] as String
-                let userHasCommented = item["userCommented"] as String
-                let userIsGoing = item["userGo"] as String
+                let userHasLiked:Bool = Util.getJsonOptionalBool(item as NSDictionary, fieldName: "userLiked")
+                let userHasCommented = Util.getJsonOptionalBool(item as NSDictionary, fieldName: "userCommented")
+                let userIsGoing = Util.getJsonOptionalBool(item as NSDictionary, fieldName: "userGo")
                 
                 var imGoingCount = Util.getJsonOptionalInteger(item as NSDictionary, fieldName: "countUserGo")
                 var commentCount = Util.getJsonOptionalInteger(item as NSDictionary, fieldName: "countComment")
                 var likeCount = Util.getJsonOptionalInteger(item as NSDictionary, fieldName: "countLike")
                 
-                let post = Post(id: item["id"] as NSNumber, text: item["description"] as String, imagePath: imagePath, likeCount: likeCount, commentCount: commentCount, imGoingCount: imGoingCount, user: user, comments: [Comment](), postType: PostType.valueFromId(postTypeId), group: Group(), date: NSDate(), userHasLiked: false, userHasCommented: false, userIsGoing: false)
+                let post = Post(id: item["id"] as NSNumber, text: item["description"] as String, imagePath: imagePath, likeCount: likeCount, commentCount: commentCount, imGoingCount: imGoingCount, user: user, comments: [Comment](), postType: PostType.valueFromId(postTypeId), group: Group(), date: NSDate(), userHasLiked: userHasLiked, userHasCommented: userHasCommented, userIsGoing: userIsGoing)
                 posts.append(post)
             }
             
