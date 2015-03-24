@@ -29,9 +29,15 @@ class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.initialViewHeight = self.commentInputView.frame.origin.y
+        setLayout()
         
         api.HTTPGet("/comment/getListComment/\(self.post.id)/30/0")
+    }
+    
+    func setLayout() {
+        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Exo", size: 19)!]
+        
+        self.initialViewHeight = self.commentInputView.frame.origin.y
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -55,7 +61,7 @@ class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataS
 
         let comment:Comment = Comment()
         comment.text = composeTextField.text
-        comment.author = Util.getUserFromDefaults()
+        comment.author = Util.getUserFromDefaults()!
         comment.post = self.post
         
         composeCommentApi.callback = didReceiveComposePostResults

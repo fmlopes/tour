@@ -30,7 +30,11 @@ class NewGroupViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setLayout()
+    }
+    
+    func setLayout() {
+        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Exo", size: 19)!]
     }
     
     @IBAction func create(sender: AnyObject) {

@@ -23,12 +23,17 @@ class PublishViewController:UIViewController, APIProtocol, UIImagePickerControll
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setLayout()
         
         let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
         
         let loggedUser:Dictionary<NSString, AnyObject> = defaults.objectForKey("loggedUser") as Dictionary<String, AnyObject>
         let stringId:NSString = loggedUser["id"] as NSString
         user.id = NSNumber(longLong: stringId.longLongValue)
+    }
+    
+    func setLayout() {
+        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Exo", size: 19)!]
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {

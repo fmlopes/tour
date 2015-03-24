@@ -22,34 +22,44 @@ class LoginViewController: UIViewController, FBLoginViewDelegate, APIProtocol {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        emailTextField.hidden = true
-        passTextField.hidden = true
-        loginButton.hidden = true
-        fbLoginView.hidden = true
-        registerButton.hidden = true
-        recoverPassButton.hidden = true
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        emailTextField.hidden = true
+        passTextField.hidden = true
+        loginButton.hidden = true
+        fbLoginView.hidden = true
+        registerButton.hidden = true
+        recoverPassButton.hidden = true
+        
         self.navigationController?.navigationBarHidden = true
         
-        self.user = Util.getUserFromDefaults()
+        self.fbLoginView.delegate = self
+        self.fbLoginView.readPermissions = ["public_profile", "email", "user_friends"]
         
-        if self.user.id == 0 {
-            self.fbLoginView.delegate = self
-            self.fbLoginView.readPermissions = ["public_profile", "email", "user_friends"]
-        
-            self.emailTextField.backgroundColor = UIColor.whiteColor()
-            self.emailTextField.alpha = 0.3
-        
-            self.passTextField.backgroundColor = UIColor.whiteColor()
-            self.passTextField.alpha = 0.3
-        } else {
+        if let u = Util.getUserFromDefaults()
+        {
+            self.user = u
             let homeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("TabBar") as UITabBarController
             self.navigationController?.pushViewController(homeViewController, animated: false)
+            
+        } else {
+            
+            self.emailTextField.backgroundColor = UIColor.whiteColor()
+            self.emailTextField.alpha = 0.3
+            
+            self.passTextField.backgroundColor = UIColor.whiteColor()
+            self.passTextField.alpha = 0.3
+            
+            emailTextField.hidden = false
+            passTextField.hidden = false
+            loginButton.hidden = false
+            fbLoginView.hidden = false
+            registerButton.hidden = false
+            recoverPassButton.hidden = false
         }
     }
 
@@ -95,15 +105,21 @@ class LoginViewController: UIViewController, FBLoginViewDelegate, APIProtocol {
         println("User Name: \(user.name)")
         var userEmail = user.objectForKey("email") as String
         println("User Email: \(userEmail)")
-        let userFBID:NSNumber = user.objectID.toInt()!
         
-        self.user.name = user.name
-        self.user.email = user.objectForKey("email") as String
-        self.user.facebookId = userFBID
-        self.user.gender = user.objectForKey("gender") as NSString
-        self.user.birthdate = Util.dateFromString("MM/dd/yyyy", date: user.objectForKey("birthday") as String)
+        if Util.getUserFromDefaults() == nil
+        {
+            let userFBID:NSNumber = user.objectID.toInt()!
         
-        api.HTTPGet("/user/facebook/\(user.objectID)")
+            self.user.name = user.name
+            self.user.email = user.objectForKey("email") as String
+            self.user.facebookId = userFBID
+            self.user.gender = user.objectForKey("gender") as NSString
+            if let birthday: AnyObject = user.objectForKey("birthday") {
+                self.user.birthdate = Util.dateFromString("MM/dd/yyyy", date: birthday as String)
+            }
+        
+            api.HTTPGet("/user/facebook/\(user.objectID)")
+        }
     }
     
     func loginViewShowingLoggedOutUser(loginView : FBLoginView!) {

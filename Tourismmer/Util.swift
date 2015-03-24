@@ -49,19 +49,24 @@ class Util {
         return fieldValue
     }
     
-    class func getUserFromDefaults() -> User {
+    class func getUserFromDefaults() -> User? {
         let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
         
-        let loggedUser:Dictionary<NSString, AnyObject> = defaults.objectForKey("loggedUser") as Dictionary<String, AnyObject>
-        let stringId:NSString = loggedUser["id"] as NSString
+        if defaults.objectForKey("loggedUser") != nil {
         
-        let user:User = User()
-        user.id = stringId.integerValue
-        user.facebookId = (loggedUser["facebookId"] as NSString).integerValue
-        user.name = loggedUser["name"] as NSString
-        user.email = loggedUser["email"] as NSString
+            let loggedUser:Dictionary<NSString, AnyObject> = defaults.objectForKey("loggedUser") as Dictionary<String, AnyObject>
+            let stringId:NSString = loggedUser["id"] as NSString
         
-        return user
+            let user:User = User()
+            user.id = stringId.integerValue
+            user.facebookId = (loggedUser["facebookId"] as NSString).integerValue
+            user.name = loggedUser["name"] as NSString
+            user.email = loggedUser["email"] as NSString
+        
+            return user
+        } else {
+            return nil
+        }
     }
     
     class func stringFromDate(format: String, date: NSDate) -> String {

@@ -12,12 +12,22 @@ import UIKit
 class SettingsViewController: UIViewController, FBLoginViewDelegate {
     
     
+    @IBOutlet weak var fbLoginView: FBLoginView!
     @IBOutlet weak var accountEmail: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        accountEmail.text = Util.getUserFromDefaults().email
+        self.fbLoginView.delegate = self
+        self.fbLoginView.readPermissions = ["public_profile", "email", "user_friends"]
+        
+        accountEmail.text = Util.getUserFromDefaults()!.email
+        
+        setLayout()
+    }
+    
+    func setLayout() {
+        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Exo", size: 19)!]
     }
     
     // Facebook Delegate Methods
@@ -39,8 +49,8 @@ class SettingsViewController: UIViewController, FBLoginViewDelegate {
     
     func loginViewShowingLoggedOutUser(loginView : FBLoginView!) {
         println("User Logged Out")
-        let loginViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Login") as UITabBarController
-        self.navigationController?.pushViewController(loginViewController, animated: false)
+        //let loginViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Login") as UITabBarController
+        //self.navigationController?.pushViewController(loginViewController, animated: false)
     }
     
     func loginView(loginView : FBLoginView!, handleError:NSError) {

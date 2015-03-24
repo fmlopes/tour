@@ -26,15 +26,21 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setLayout()
+        
+        if let user = Util.getUserFromDefaults() {
+            api.callback = nil
+            api.HTTPGet("/post/getListPost/\(group.id)/\(user.id)/50/0")
+        }
+        
+        
+    }
+    
+    func setLayout() {
+        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Exo", size: 19)!]
+        self.navigationItem.title = group.location.name
         postTableView.hidden = true
         self.emptyListLabel.hidden = true
-        
-        self.navigationItem.title = group.location.name
-        
-        let user:User = Util.getUserFromDefaults()
-        
-        api.callback = nil
-        api.HTTPGet("/post/getListPost/\(group.id)/\(user.id)/50/0")
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -79,13 +85,31 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
                 }
             })
         } else {
+            let height:CGFloat = 90
             cell.postBackgroundImage.hidden = true
+            cell.shadowView.hidden = true
+            cell.likeButton.layer.frame.origin.y = height
+            cell.postLikesLabel.layer.frame.origin.y = height + 15
+            cell.commentButton.layer.frame.origin.y = height
+            cell.postCommentLabel.layer.frame.origin.y = height + 15
+            cell.imGoingButton.layer.frame.origin.y = height
+            cell.postImGoingCountUser.layer.frame.origin.y = height + 15
         }
         facebookPhoto(post.author.profilePicturePath, cell: cell)
         
         cell.setLayout()
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        let post: Post = posts[indexPath.row]
+        
+        if post.imagePath == "" {
+            return 140
+        } else {
+            return 368
+        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -191,11 +215,12 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
     
     func didReceivePublishResults(results: NSDictionary) {
         if (results["statusCode"] as String == MessageCode.Success.rawValue) {
-            let user:User = Util.getUserFromDefaults()
-            api.callback = nil
-            api.HTTPGet("/post/getListPost/\(group.id)/\(user.id)/50/0")
-            self.postTableView.hidden = false
-            self.emptyListLabel.hidden = true
+            if let user = Util.getUserFromDefaults() {
+                api.callback = nil
+                api.HTTPGet("/post/getListPost/\(group.id)/\(user.id)/50/0")
+                self.postTableView.hidden = false
+                self.emptyListLabel.hidden = true
+            }
         }
     }
 }

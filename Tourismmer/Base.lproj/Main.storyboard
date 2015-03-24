@@ -1107,6 +1107,7 @@
                     <navigationItem key="navigationItem" title="CONFIGURAÇÕES" id="o7B-OK-Bmn"/>
                     <connections>
                         <outlet property="accountEmail" destination="pyR-Xe-9F0" id="NTt-nZ-CL1"/>
+                        <outlet property="fbLoginView" destination="SXg-d3-95a" id="Agi-7C-cHq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ISg-JM-Ifb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1219,8 +1220,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="KFx-HV-Xlk"/>
-        <segue reference="XF8-f6-yk0"/>
+        <segue reference="We1-Rf-i1t"/>
+        <segue reference="nVA-Hw-ljQ"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

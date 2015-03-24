@@ -38,6 +38,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
+    
+    //FB Method handles what happens after authentication
+    func application (application:UIApplication, openURL url:NSURL, sourceApplication:NSString?, annotation:AnyObject) -> Bool {
+        //test var
+        var wasHandled:Bool = FBAppCall.handleOpenURL(url, sourceApplication: sourceApplication)
+        // attempt to extract a token from the url
+        return wasHandled
+        
+    }
 
     func applicationWillResignActive(application: UIApplication!) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

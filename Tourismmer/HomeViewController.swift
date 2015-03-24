@@ -23,6 +23,12 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         super.viewDidLoad()
         
         api.HTTPGet("/group/getTopGroups/\(50)/1")
+        
+        setLayout()
+    }
+    
+    func setLayout() {
+        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Exo", size: 19)!]
     }
     
     required init(coder aDecoder: NSCoder) {
