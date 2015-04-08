@@ -15,7 +15,7 @@ enum TripType : String {
     case Excursion = "EXCURSÃO"
     case Snowboarding = "SNOWBOARDING"
     case Parachute = "PARAQUEDAS"
-    case Shopping = "MUAMBAS"
+    case Shopping = "COMPRAS"
     case HikesWaterfalls = "TRILHAS E CACHOEIRAS"
     case Social = "SOCIAL"
     

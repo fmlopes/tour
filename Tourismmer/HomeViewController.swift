@@ -18,6 +18,7 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var groupsTableView: UITableView!
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,8 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     
     func setLayout() {
         self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Exo", size: 19)!]
+        self.activityIndicatorView.startAnimating()
+        self.groupsTableView.hidden = true
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -121,6 +124,7 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func didReceiveAPIResults(results: NSDictionary) {
+        self.activityIndicatorView.stopAnimating()
         if (results["statusCode"] as String == MessageCode.Success.rawValue) {
             //let array:Array = results["listGroup"] as String
             
@@ -136,6 +140,7 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
                 groups.append(Group(users: users, user: User(), location: location.name, date: Util.dateFromString("dd-MM-yyyy", date: dateString), type: TripType.valueFromId(purpose["id"] as Int), imgPath: image["url"] as String, id: item["id"] as Int))
             }
             self.groupsTableView!.reloadData()
+            self.groupsTableView.hidden = false
         }
     }
 }

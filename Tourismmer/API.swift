@@ -37,6 +37,7 @@ class API {
                 println("JSON Error \(err!.localizedDescription)")
             }
             dispatch_async(dispatch_get_main_queue(), {
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                 if ((self.callback) != nil) {
                     self.callback(jsonResult)
                 } else {
@@ -48,12 +49,14 @@ class API {
     }
     
     func HTTPGet(url: String) -> Void {
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         let fullPath:String = apiURL + url
         var request = NSMutableURLRequest(URL: NSURL(string: fullPath)!)
         HTTPsendRequest(request)
     }
     
     func HTTPPostJSON(url: String, jsonObj: Dictionary<NSString, AnyObject>) -> Void {
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         let fullPath:String = apiURL + url
         var request = NSMutableURLRequest(URL: NSURL(string: fullPath)!)
         request.HTTPMethod = "POST"

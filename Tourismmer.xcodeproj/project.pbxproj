@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2042C28F1A25529800EEEE99 /* NewGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2042C28E1A25529800EEEE99 /* NewGroupViewController.swift */; };
 		20526DB51A73365E00A704C8 /* loading.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 20526DB41A73365E00A704C8 /* loading.jpg */; };
+		205A7A311ACCBED6008A4753 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205A7A301ACCBED6008A4753 /* TermsViewController.swift */; };
+		205A7A331ACCBF68008A4753 /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205A7A321ACCBF68008A4753 /* PrivacyViewController.swift */; };
 		205BDBBD1A7877A9001071F8 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205BDBBC1A7877A9001071F8 /* MenuController.swift */; };
 		208A8196198732890075A441 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A8195198732890075A441 /* AppDelegate.swift */; };
 		208A8198198732890075A441 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A8197198732890075A441 /* LoginViewController.swift */; };
@@ -79,6 +81,8 @@
 /* Begin PBXFileReference section */
 		2042C28E1A25529800EEEE99 /* NewGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGroupViewController.swift; sourceTree = "<group>"; };
 		20526DB41A73365E00A704C8 /* loading.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = loading.jpg; path = Tourismmer/Images.xcassets/LaunchImage.launchimage/loading.jpg; sourceTree = "<group>"; };
+		205A7A301ACCBED6008A4753 /* TermsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
+		205A7A321ACCBF68008A4753 /* PrivacyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
 		205BDBBC1A7877A9001071F8 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		208A8190198732890075A441 /* Tourismmer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tourismmer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		208A8194198732890075A441 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -272,6 +276,8 @@
 				205BDBBC1A7877A9001071F8 /* MenuController.swift */,
 				20BEA0B31A84478D00761DDE /* SearchViewController.swift */,
 				20F654821AAA5E7000A07CF8 /* SettingsViewController.swift */,
+				205A7A301ACCBED6008A4753 /* TermsViewController.swift */,
+				205A7A321ACCBF68008A4753 /* PrivacyViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -509,9 +515,11 @@
 				20AC20231A0ACAC60035255C /* Post.swift in Sources */,
 				209BB9631991B07200BE6D26 /* Location.swift in Sources */,
 				208A81C9198C464E0075A441 /* RegisterViewController.swift in Sources */,
+				205A7A311ACCBED6008A4753 /* TermsViewController.swift in Sources */,
 				20A891551A73FB2C0057E8ED /* MyGroupsViewController.swift in Sources */,
 				208A8196198732890075A441 /* AppDelegate.swift in Sources */,
 				20A8915B1A74876F0057E8ED /* PublishViewController.swift in Sources */,
+				205A7A331ACCBF68008A4753 /* PrivacyViewController.swift in Sources */,
 				20A8915D1A748F300057E8ED /* PostViewController.swift in Sources */,
 				208A81C5198B26DE0075A441 /* API.swift in Sources */,
 				208A81C3198B24DE0075A441 /* User.swift in Sources */,

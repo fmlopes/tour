@@ -10,7 +10,7 @@ import Foundation
 
 class NewGroupViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate, GoogleServiceProtocol, APIProtocol, UITableViewDataSource, UITableViewDelegate  {
     
-    var pickerViewArray:[TripType] = [TripType.Business, TripType.ExchangeProgram, TripType.Vacation, TripType.Excursion]
+    var pickerViewArray:[TripType] = [TripType.Business, TripType.ExchangeProgram, TripType.Vacation, TripType.Excursion, TripType.Snowboarding, TripType.Parachute, TripType.Shopping, TripType.Social, TripType.HikesWaterfalls, ]
     var monthArray:[String] = ["JANEIRO", "FEVEREIRO", "MARÇO", "ABRIL" ,"MAIO" ,"JUNHO", "JULHO", "AGOSTO", "SETEMBRO", "OUTUBRO", "NOVEMBRO", "DEZEMBRO"]
     var yearArray:[Int] = [2015, 2016, 2017, 2018, 2019, 2020]
     
@@ -35,6 +35,7 @@ class NewGroupViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     func setLayout() {
         self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Exo", size: 19)!]
+        self.pickerViewArray.sort({ $0.rawValue > $1.rawValue })
     }
     
     @IBAction func create(sender: AnyObject) {

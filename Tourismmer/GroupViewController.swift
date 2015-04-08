@@ -22,6 +22,7 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var imagePlace: UIImageView!
     @IBOutlet weak var postTableView: UITableView!
     @IBOutlet weak var emptyListLabel: UILabel!
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +42,7 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
         self.navigationItem.title = group.location.name
         postTableView.hidden = true
         self.emptyListLabel.hidden = true
+        self.activityIndicatorView.startAnimating()
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -121,6 +123,7 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func didReceiveAPIResults(results: NSDictionary) {
+        self.activityIndicatorView.stopAnimating()
         if (results["statusCode"] as String == MessageCode.Success.rawValue) {
             
             for item in results["listPost"] as NSArray {

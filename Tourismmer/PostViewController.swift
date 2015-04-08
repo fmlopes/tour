@@ -25,6 +25,7 @@ class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var commentInputView: UIView!
     @IBOutlet weak var composeTextField: UITextField!
     @IBOutlet weak var postButton: UIButton!
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +39,8 @@ class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Exo", size: 19)!]
         
         self.initialViewHeight = self.commentInputView.frame.origin.y
+        self.commentsTableView.hidden = true
+        self.activityIndicatorView.startAnimating()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -91,9 +94,10 @@ class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func didReceiveAPIResults(results: NSDictionary) {
+        self.activityIndicatorView.stopAnimating()
         if (results["statusCode"] as String == MessageCode.Success.rawValue) {
             
-            self.comments.removeAll(keepCapacity: true)
+            //self.comments.removeAll(keepCapacity: false)
             
             for item in results["listComment"] as NSArray {
                 
@@ -108,6 +112,7 @@ class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataS
                 comments.append(comment)
             }
             self.commentsTableView!.reloadData()
+            self.commentsTableView.hidden = false
         }
 
     }
