@@ -11,6 +11,6 @@ import Foundation
 class TermsViewController: UIViewController {
     
     @IBAction func cancelToSettingsViewController(segue:UIStoryboardSegue) {
-        
+        print("fwfew")
     }
 }

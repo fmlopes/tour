@@ -49,8 +49,11 @@ class SettingsViewController: UIViewController, FBLoginViewDelegate {
     
     func loginViewShowingLoggedOutUser(loginView : FBLoginView!) {
         println("User Logged Out")
-        //let loginViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Login") as UITabBarController
-        //self.navigationController?.pushViewController(loginViewController, animated: false)
+        
+        Util.dropUserFromDefaults()
+        
+        let loginViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Login") as LoginViewController
+        self.navigationController?.pushViewController(loginViewController, animated: false)
     }
     
     func loginView(loginView : FBLoginView!, handleError:NSError) {

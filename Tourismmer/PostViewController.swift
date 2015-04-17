@@ -22,6 +22,7 @@ class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     
     @IBOutlet weak var commentsTableView: UITableView!
     
+    @IBOutlet weak var emptyTableLabel: UILabel!
     @IBOutlet weak var commentInputView: UIView!
     @IBOutlet weak var composeTextField: UITextField!
     @IBOutlet weak var postButton: UIButton!
@@ -37,7 +38,7 @@ class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     
     func setLayout() {
         self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Exo", size: 19)!]
-        
+        self.emptyTableLabel.hidden = true
         self.initialViewHeight = self.commentInputView.frame.origin.y
         self.commentsTableView.hidden = true
         self.activityIndicatorView.startAnimating()
@@ -82,6 +83,8 @@ class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         
         facebookPhoto(comment.author.profilePicturePath, cell: cell)
         
+        cell.setLayout()
+        
         return cell
     }
     
@@ -97,7 +100,7 @@ class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         self.activityIndicatorView.stopAnimating()
         if (results["statusCode"] as String == MessageCode.Success.rawValue) {
             
-            //self.comments.removeAll(keepCapacity: false)
+            self.comments.removeAll(keepCapacity: false)
             
             for item in results["listComment"] as NSArray {
                 
@@ -113,6 +116,8 @@ class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataS
             }
             self.commentsTableView!.reloadData()
             self.commentsTableView.hidden = false
+        } else if results["statusCode"] as String == MessageCode.RecordNotFound.rawValue {
+            self.emptyTableLabel.hidden = false
         }
 
     }

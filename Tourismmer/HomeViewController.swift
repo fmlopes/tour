@@ -52,7 +52,7 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         if (group.type?  != nil){
             cell.postGoal.text = group.type?.rawValue.uppercaseString
         }
-        cell.postImage.image = UIImage(named: "Blank52.png")
+        cell.postImage.image = UIImage(named: "image_placeholder")
         cell.postDate.text = Util.stringFromDate("MM/yy", date: group.date)
         cell.id = group.id
         

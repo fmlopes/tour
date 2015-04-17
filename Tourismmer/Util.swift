@@ -69,6 +69,15 @@ class Util {
         }
     }
     
+    class func dropUserFromDefaults() {
+        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        
+        if defaults.objectForKey("loggedUser") != nil {
+            
+            defaults.removeObjectForKey("loggedUser")
+        }
+    }
+    
     class func stringFromDate(format: String, date: NSDate) -> String {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = format

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1066" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="RKj-R1-hHP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="RKj-R1-hHP">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
@@ -47,6 +47,17 @@
             <string>Exo-Regular</string>
             <string>Exo-Regular</string>
             <string>Exo-Regular</string>
+            <string>Exo-Regular</string>
+            <string>Exo-Regular</string>
+            <string>Exo-Regular</string>
+            <string>Exo-Regular</string>
+            <string>Exo-Regular</string>
+            <string>Exo-Regular</string>
+            <string>Exo-Regular</string>
+            <string>Exo-Regular</string>
+            <string>Exo-Regular</string>
+            <string>Exo-Regular</string>
+            <string>Exo-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -63,7 +74,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="EMAIL" textAlignment="center" minimumFontSize="17" id="xW9-kN-Y2b">
-                                <rect key="frame" x="24" y="236" width="273" height="50"/>
+                                <rect key="frame" x="24" y="236" width="273" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" hint="Email" label="Email"/>
                                 <fontDescription key="fontDescription" name="Exo-Light" family="Exo" pointSize="15"/>
@@ -101,14 +112,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="SENHA" textAlignment="center" minimumFontSize="17" id="7sz-j8-WtZ">
-                                <rect key="frame" x="24" y="294" width="273" height="50"/>
+                                <rect key="frame" x="24" y="294" width="273" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Exo-Light" family="Exo" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="di9-VE-t8C">
-                                <rect key="frame" x="24" y="352" width="273" height="43"/>
+                                <rect key="frame" x="24" y="347" width="273" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="17"/>
@@ -806,6 +817,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEJA O PRIMEIRO A COMENTAR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xLM-k2-ZDo">
+                                <rect key="frame" x="16" y="89" width="288" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -817,6 +835,7 @@
                         <outlet property="commentInputView" destination="LcP-ru-kSH" id="tcA-qP-ify"/>
                         <outlet property="commentsTableView" destination="fJd-sr-ljQ" id="go2-8z-5kY"/>
                         <outlet property="composeTextField" destination="qco-pR-pWb" id="trP-ZC-Y5Y"/>
+                        <outlet property="emptyTableLabel" destination="xLM-k2-ZDo" id="3g5-4u-RaL"/>
                         <outlet property="postButton" destination="brn-bI-UsN" id="GVw-Wa-qVx"/>
                     </connections>
                 </viewController>
@@ -832,10 +851,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="toL-FY-YbM">
-                                <rect key="frame" x="0.0" y="122" width="320" height="260"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PFi-08-1NM">
                                 <rect key="frame" x="122" y="424" width="76" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -853,6 +868,10 @@
                                 <fontDescription key="fontDescription" name="Exo-Medium" family="Exo" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder" id="toL-FY-YbM">
+                                <rect key="frame" x="20" y="122" width="280" height="280"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -880,33 +899,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nome" textAlignment="center" minimumFontSize="17" id="cIb-Sd-RkJ">
-                                <rect key="frame" x="15" y="85" width="293" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="NOME" textAlignment="center" minimumFontSize="17" id="cIb-Sd-RkJ">
+                                <rect key="frame" x="90" y="296" width="218" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                             </textField>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" id="fKX-7N-GI3">
-                                <rect key="frame" x="0.0" y="268" width="320" height="180"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <date key="date" timeIntervalSinceReferenceDate="428553747.32594001">
-                                    <!--2014-08-01 02:42:27 +0000-->
-                                </date>
-                                <locale key="locale" localeIdentifier="pt_BR"/>
-                            </datePicker>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DATA DE NASCIMENTO" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4Jt-uD-CL9">
-                                <rect key="frame" x="20" y="236" width="293" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="15"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="JKT-4F-Azb">
-                                <rect key="frame" x="225" y="517" width="83" height="32"/>
+                                <rect key="frame" x="50" y="510" width="220" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Exo-Medium" family="Exo" pointSize="15"/>
                                 <state key="normal" title="CADASTRAR">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.97254908080000002" green="0.96078437569999997" blue="0.91764712329999998" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -914,7 +919,7 @@
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="9nm-9f-Etj">
-                                <rect key="frame" x="161" y="456" width="147" height="29"/>
+                                <rect key="frame" x="124" y="445" width="147" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <segments>
@@ -923,31 +928,69 @@
                                 </segments>
                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </segmentedControl>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Senha" textAlignment="center" minimumFontSize="17" id="mpr-Lx-k0Y">
-                                <rect key="frame" x="15" y="189" width="293" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="SENHA" textAlignment="center" minimumFontSize="17" id="mpr-Lx-k0Y">
+                                <rect key="frame" x="90" y="371" width="214" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" secureTextEntry="YES"/>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEXO" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cgJ-qM-x4A">
-                                <rect key="frame" x="15" y="459" width="39" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEXO |" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cgJ-qM-x4A">
+                                <rect key="frame" x="31" y="447" width="51" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="15"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="center" minimumFontSize="17" id="ucI-vY-rVg">
-                                <rect key="frame" x="15" y="136" width="293" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="EMAIL" textAlignment="center" minimumFontSize="17" id="ucI-vY-rVg">
+                                <rect key="frame" x="90" y="333" width="218" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOME |" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2cA-b3-Ytj">
+                                <rect key="frame" x="22" y="301" width="60" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMAIL |" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wNf-o0-ZxS">
+                                <rect key="frame" x="22" y="337" width="60" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DATA |" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5za-zn-Jdj">
+                                <rect key="frame" x="32" y="412" width="50" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SENHA |" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JWP-DY-3VJ">
+                                <rect key="frame" x="16" y="375" width="66" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="DATA DE NASCIMENTO" textAlignment="center" minimumFontSize="17" id="mhM-JO-ncN">
+                                <rect key="frame" x="90" y="408" width="214" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder" id="egB-me-QVz">
+                                <rect key="frame" x="50" y="88" width="200" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="LMq-qK-YhY"/>
                     <connections>
-                        <outlet property="birthdayPickerView" destination="fKX-7N-GI3" id="mpN-lS-0Bs"/>
+                        <outlet property="birthdayTextField" destination="mhM-JO-ncN" id="tJf-Z6-t1Y"/>
                         <outlet property="emailTextField" destination="ucI-vY-rVg" id="7OQ-vU-V8O"/>
                         <outlet property="gendersSegmentedControl" destination="9nm-9f-Etj" id="T8W-fV-pqM"/>
                         <outlet property="nameTextField" destination="cIb-Sd-RkJ" id="00k-rY-AaX"/>
@@ -956,7 +999,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mvj-wI-ZOF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-596" y="1117.0666666666666"/>
+            <point key="canvasLocation" x="-596" y="1117"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dA4-Ec-tZO">
@@ -993,10 +1036,12 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <outlet property="homeTabBar" destination="Ehh-XI-tEx" id="9xC-GD-42F"/>
+                        <outlet property="tabBar" destination="Ehh-XI-tEx" id="ySz-rk-8bD"/>
                         <segue destination="Avt-Dc-HuY" kind="relationship" relationship="viewControllers" id="n0u-kd-KMS"/>
                         <segue destination="m0g-SO-DyH" kind="relationship" relationship="viewControllers" id="HmF-OU-uUV"/>
                         <segue destination="Ra9-jB-5MG" kind="relationship" relationship="viewControllers" id="QHx-mv-r46"/>
-                        <segue destination="pDR-TV-hBP" kind="relationship" relationship="viewControllers" id="b6d-pI-vRp"/>
+                        <segue destination="mQr-LF-lCL" kind="relationship" relationship="viewControllers" id="b6d-pI-vRp"/>
                         <segue destination="bh8-W9-fFU" kind="relationship" relationship="viewControllers" id="GpX-Sh-6RU"/>
                     </connections>
                 </tabBarController>
@@ -1073,7 +1118,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="0uR-rH-pfx" kind="modal" id="bh8-Lf-4ww"/>
+                                    <segue destination="0uR-rH-pfx" kind="push" id="7Hd-Et-Gv4"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wjg-IT-pQ3">
@@ -1084,7 +1129,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="YDR-D5-pmT" kind="modal" id="pYw-Or-K6E"/>
+                                    <segue destination="YDR-D5-pmT" kind="push" id="pYw-Or-K6E"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONTA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eMZ-nR-Xj9">
@@ -1104,20 +1149,16 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="teste@email.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pyR-Xe-9F0">
                                 <rect key="frame" x="16" y="107" width="288" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" image="menu_settings_64" id="Xy0-BR-s0s">
-                        <inset key="imageInsets" minX="0.0" minY="12" maxX="0.0" maxY="-12"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="menu_settings_64"/>
-                        </userDefinedRuntimeAttributes>
-                    </tabBarItem>
-                    <navigationItem key="navigationItem" title="CONFIGURAÇÕES" id="o7B-OK-Bmn"/>
+                    <navigationItem key="navigationItem" title="CONFIGURAÇÕES" id="o7B-OK-Bmn">
+                        <barButtonItem key="backBarButtonItem" title="VOLTAR" id="wpR-xo-ZOM"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="accountEmail" destination="pyR-Xe-9F0" id="NTt-nZ-CL1"/>
                         <outlet property="fbLoginView" destination="SXg-d3-95a" id="Agi-7C-cHq"/>
@@ -1125,47 +1166,274 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ISg-JM-Ifb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="175" y="1585"/>
+            <point key="canvasLocation" x="707" y="1585"/>
         </scene>
-        <!--Terms View Controller-->
+        <!--TERMOS-->
         <scene sceneID="aS0-ij-b4v">
             <objects>
-                <viewController id="0uR-rH-pfx" customClass="TermsViewController" sceneMemberID="viewController">
+                <viewController id="0uR-rH-pfx" customClass="TermsViewController" customModule="Tourismmer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Gd-w5-BBp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" id="rir-wS-TTX">
-                                <rect key="frame" x="0.0" y="65" width="320" height="503"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" usesAttributedText="YES" selectable="NO" id="rir-wS-TTX">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="O Resumo">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                            <font key="NSFont" size="18" name="HelveticaNeue-Bold"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="20" defaultTabInterval="36">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                            <real key="NSStrokeWidth" value="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="20" defaultTabInterval="36">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                            <real key="NSStrokeWidth" value="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">    Caro usuário(a), você deve ler estes termos e condições inteiros, pois eles se aplicam toda vez que você visita o Tourismmer. Caso você precise lembrar as principais informações contidas nestes termos de uso, nós reunimos aqui um breve resumo com os principais tópicos:
+            
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="20" defaultTabInterval="36">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                            <real key="NSStrokeWidth" value="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">    Publicar mensagens  comerciais, enviar spam ou mensagens para um grande número de usuários por sistemas automáticos;
+    Publicar cenas de sexo ou pornografia envolvendo menores de 18 anos. Isso é crime sujeito a pena de reclusão de 2 (dois) a 6 (seis) anos e multa. Denuncie;
+    Trocar mensagens ligadas a pornografia infantil, exploração sexual de menores ou pedofilia. Denuncie;
+    O uso de linguagem ofensiva, grosseira ou racista ou publicação de material calunioso, abusivo ou que invada a privacidade de alguém;
+    Divulgar informações sobre atividades ilegais ou que incitem a crime;
+    Para garantir o cumprimento das regras acima o Tourismmer poderá usar bloqueio de endereços IP, bloqueio de acesso ao site, e cancelamento de cadastro;
+    Se você possui menos de 18 anos infelizmente não poderá utilizar o Tourismmer, este é um site voltado apenas para adultos;
+    Não nos responsabilizamos pelo que você disser ou publicar enquanto está utilizando o Tourismmer e não monitoramos o conteúdo do site. Porém, se encontrarmos algo, ou caso alguém nos avise sobre algo que tenha sido publicado no site e que considerarmos inadequado, nos reservamos o direito de remover este conteúdo;
+    Se você publicar qualquer conteúdo que pertença à outra pessoa, e caso esta pessoa fique incomodada com isso (ou até procure por advogados), não seremos responsabilizados por isto. Você deverá assumir a responsabilidade pelo que publicar no site;
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="20" defaultTabInterval="36">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                            <real key="NSStrokeWidth" value="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">            
+            
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="20" defaultTabInterval="36">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                            <real key="NSStrokeWidth" value="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="            ">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="20" defaultTabInterval="36">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                            <real key="NSStrokeWidth" value="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="A parte legal completa">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                            <font key="NSFont" size="18" name="HelveticaNeue-Bold"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="20" defaultTabInterval="36">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                            <real key="NSStrokeWidth" value="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="20" defaultTabInterval="36">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                            <real key="NSStrokeWidth" value="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">            O Tourismmer é um Website de desenvolvido como um meio facilitador para conhecer pessoas, um local para conversar, compartilhar fotos, novidades e informações. O site deve ser um local divertido para visitar e é importante para nós (e para você também) que permaneça um ambiente seguro e amigável. Por isto, você concorda que vai utilizar o Tourismmer de uma maneira consistente com esta proposta e de acordo com estes termos e condições (os "Termos de Uso”).
+            Os Termos se aplicam toda vez que você visita o Tourismmer, caso tenha realizado cadastro ou não no Tourismmer. Por favor, leia os Termos cuidadosamente. Ao acessar, utilizar, cadastrar ou receber serviços oferecidos pelo Tourismmer (os “Serviços”) você estará aceitando e concordando com estes termos.
+            SE VOCÊ NÃO ACEITA OU NÃO CONCORDA COM ESTES TERMOS VOCÊ NÃO DEVE ACESSAR OU UTILIZAR O SITE.
+            
+            1. Utilização do site e regras quanto ao conteúdo do site
+            Quem pode utilizar o Tourismmer?
+            O Tourismmer é um local onde pessoas planejam viajar juntas. Você só pode utilizar o Tourismmer e cadastrar-se caso tenha 18 anos ou mais.
+            Você garante que tem o direito, autoridade e capacidade para entrar, aceitar e tornar-se ligado aos Termos e que ao utilizar o Tourismmer você não vai violar qualquer lei ou regulamentos do país em que você reside. Você é o responsável por cumprir todas as leis e regulamentos vigentes no país em que reside.
+            Você garante que não foi condenado, nem está sujeito a qualquer processo legal relacionado à agressão, violência, conduta sexual inapropriada ou assédio.
+            Que tipos de conteúdo posso publicar no Tourismmer?
+            Você pode publicar todo tipo de conteúdo no Tourismmer, incluindo fotografias, e-mails, mensagens e outros conteúdos (“Conteúdo”).
+            Também temos algumas regras sobre o que aceitamos. Por isso quando estiver utilizando o Tourismmer você não deverá publicar ou enviar para publicação qualquer Conteúdo que:
+            
+                1.Contenha palavrões ou linguagem considerada ofensiva ou que possa ser inconveniente, cause danos, embaraços, alarme ou que incomode outras pessoas;
+                2.Seja obsceno, pornográfico ou que possa de qualquer forma ofender a dignidade humana;
+                3.Possa ser abusivo, insulte, ameace ou que promova ou estimule racismo, sexismo, ódio ou fanatismo;
+                4.Que mostre a imagem ou semelhança de qualquer indivíduo com menos de 18 anos de idade;
+                5.Que estimule ou promova qualquer atividade ilícita (incluindo, mas não apenas: terrorismo, incitação a ódio racial ou cuja a publicação possa constituir em si mesma uma infração penal);
+                6.Que seja difamatório;
+                7.Que esteja relacionado a atividades comerciais (incluindo, mas não apenas, vendas, competições e publicidade, links para outros websites, linhas de telefone comerciais);
+                8.Que envolva a transmissão ou divulgação de spam, mensagens não solicitadas ou “junk mail”.
+                9.Que contenha qualquer “spy ware”, “adware”, vírus, arquivos corrompidos, programas maliciosos, códigos que possam interromper, danificar, destruir ou limitar a funcionalidade de qualquer software, hardware, telecomunicação, redes, servidores ou outros equipamentos, “Trojan horses” (cavalos de tróia) ou qualquer outro material que possa danificar, interferir, interceptar ou expropriar qualquer dado ou informação pessoal seja do Tourismmer ou de seus usuários, ou;
+                10.Que por si só ou cuja publicação infrinja direitos de terceiros (incluindo, mas sem se limitar a: propriedade intelectual, outros direitos de propriedade e de privacidade).
+            
+            Por favor, escolha cuidadosamente e com bom senso o conteúdo que vai publicar ou enviar ao Tourismmer porque você será inteiramente responsável pelo mesmo.
+            Existe alguma regra com relação a minhas informações pessoais, como por exemplo, ao meu endereço de e-mail?
+            Você não deve exibir quaisquer informações de contato pessoal ou informações bancárias em sua página individual (“Perfil”), seja em relação a você ou em relação a qualquer outra pessoa (por exemplo: nomes, endereços residenciais ou códigos postais, números de telefone, endereços de e-mail, URLs, números de cartão de crédito ou débito). Se você escolher revelar qualquer informação pessoal sobre si mesmo ou outros usuários, seja por e-mail ou por qualquer outra via, esta ação será de sua responsabilidade e, portanto, por sua conta e risco. Recomendamos que, da mesma maneira, seja cauteloso ao revelar detalhes pessoais a terceiros online sob qualquer outra circunstância. 
+            E as informações de outros usuários, posso utilizá-las?
+            Você apenas poderá utilizar informações de outros usuários do Tourismmer na medida em que a utilização se preste aos propósitos do Tourismmer de promover o encontro entre pessoas. 
+            Você não deve utilizar as informações de outros usuários do Tourismmer com objetivo comercial, para enviar spam (publicidade ou comunicação não solicitada), bem como para ofender ou fazer ameaças. O Tourismmer se reserva o direito de encerrar sua conta caso utilize de forma inapropriada as informações de outros usuários.
+            Alguns amigos meus querem ver todas as pessoas com quem converso no bate-papo (chat). Posso dizer minha senha pra eles, para que eles possam acessar minha conta?
+            A resposta correta é não. Apenas você tem autorização para acessar a sua conta no Tourismmer. Você não deve compartilhar sua senha com ninguém e não deverá deixar ninguém acessar sua conta, já que isto colocaria em risco a segurança de todo o conteúdo e informações pessoais que você submeteu ao Tourismmer. Você é responsável por manter sua senha secreta e em segurança. Se você não o fizer o Tourismmer não pode ser responsabilizado por qualquer acesso não autorizado em sua conta. Se você suspeita que alguém teve acesso a sua conta, você deve nos avisar imediatamente visitando nossa Central de Suporte ao Usuário. Você deverá entrar em contato conosco e deverá informar sobre as suas suspeitas ou preocupações. Você deverá alterar sua senha o mais rápido possível. O Tourismmer se reserva o direito a encerrar sua conta caso você tenha violado qualquer uma de nossas regras para manter sua senha em segurança.
+            Quem pode ver o conteúdo que eu publico no Tourismmer?
+            Quando você publica qualquer conteúdo no Tourismmer este poderá ser acessado e visto pelo público geral. Se você não deseja que este conteúdo seja visto por outras pessoas você pode publicá-los nos álbuns privados, para que apenas usuários com sua permissão possam ter acesso. Se ainda assim você não quiser que seu conteúdo seja visto por outras pessoas, neste caso você não deve publicá-lo no Tourismmer. Nos reservamos o direito, à nosso exclusivo critério e sem que seja necessário avisar previamente, de remover ou editar, limitar ou bloquear o acesso a qualquer Conteúdo que você tenha publicado ou submetido para publicação no Tourismmer sem incorrer em qualquer responsabilidade sua. Não temos qualquer obrigação de exibir os Conteúdos que você submeteu ao Tourismmer, nem de verificar a precisão ou veracidade dos mesmos, nem de monitorar sua utilização ou a utilização que outras pessoas fazem do Tourismmer.
+            2. Propriedade de Conteúdo
+            Depois de publicar conteúdo no Tourismmer, ele ainda me pertence?
+            Sim (uma vez que você possui o direito em primeiro lugar – por favor, veja outras regras a respeito da publicação de Conteúdo que não pertença a você). Por favor, note que ao publicar ou enviar Conteúdo para o Tourismmer você reconhece e garante que tem o direito de fazê-lo e automaticamente concede ao Tourismmer uma autorização de âmbito mundial, não exclusiva, livre de royalties, com duração ilimitada para editar, copiar, modificar, adaptar, traduzir, reformatar, criar trabalhos derivados deste conteúdo, incorporá-lo a outros trabalhos, publicidade, distribuição e a tornar disponível tal Conteúdo ao público de qualquer outra forma, seja parcialmente ou por inteiro e em qualquer meio atualmente conhecido ou que seja desenvolvido no futuro.
+            Podemos repassar e confiar esta licença citada acima aos nossos afiliados e sucessores sem necessidade da sua aprovação prévia.
+            Ao submeter o Conteúdo ao Tourismmer você garante que é o autor exclusivo e detém a posse do Conteúdo que você publicou e concorda em renunciar quaisquer direitos morais relativos a este Conteúdo, incluindo, mas sem limitação ao direito de ser identificado como autor.
+            Nos reservamos o direito de revelar sua identidade a terceiros que afirmem que qualquer Conteúdo publicado por você infrinja ou viole propriedades intelectuais, direitos de privacidade ou qualquer outra lei.
+            A quem pertence os demais Conteúdos do Tourismmer?
+            Pertence a nós! Todos os textos, gráficos, interfaces de usuários, marcas, logotipos, sons e criações que aparecem no Tourismmer pertencem ao Tourismmer, são portanto controlados por nós e protegidos por direitos autorais, direitos de marca, patente ou marca registrada e outras leis de propriedade intelectual.
+            Posso utilizar qualquer conteúdo que não seja minha propriedade?
+            Com exceção do Conteúdo submetido por você ao Tourismmer, você não possui nenhum direito com relação ao Conteúdo no Tourismmer e concorda que não vai utilizar qualquer Conteúdo de qualquer forma que possa infringir direitos de terceiros. Sem se limitar ao precedente, isto significa que você concorda que não vai copiar, modificar, adaptar, distribuir, publicar ou vender toda ou qualquer parte do site Tourismmer ou o conteúdo contido no site (com exceção do Conteúdo submetido por você) a qualquer outra pessoa.
+            3. Acesso ao site
+            Vocês podem garantir que o Tourismmer vai funcionar perfeitamente em todos os momentos?
+            Infelizmente não podemos garantir isto porque eventualmente precisamos realizar manutenções no site, ou ainda porque o site pode ser afetado por uma falha ou circunstâncias que estejam fora de nosso controle. Desta forma o Tourismmer é fornecido em um modo “Tal como se apresenta”. Nenhuma garantia é fornecida quanto a qualidade, precisão, funcionalidade, disponibilidade ou desempenho do Tourismmer. Nos reservamos o direito de suspender, retirar, alterar, modificar ou mudar o serviço fornecido sem qualquer aviso prévio e sem incorrer em qualquer responsabilidade para você.
+            4. Fim da Utilização pelo Tourismmer
+            De vez em quando as pessoas esquecem-se dos Termos de Uso e publicam Conteúdos não adequados, ou se comportam de uma forma que não é coerente com os propósitos do site. Se considerarmos que você pode ser uma destas pessoas, nos reservaremos o direito, a nosso exclusivo critério e a qualquer momento, sem necessidade de fornecer aviso prévio ou reembolsar qualquer serviço não utilizado, de:
+            
+                Suspender ou revogar seu cadastro (quando aplicável) e seu direito a acessar e/ou utilizar o Tourismmer ou submeter qualquer Conteúdo para o Tourismmer; 
+                Utilizar qualquer meio tecnológico, legal, operacional disponível para renforçar os Termos (incluindo, mas sem se limitar a bloquear um endereço IP específico).
+            
+            Tentaremos (mas não somos obrigados a) avisar você caso seu acesso ao Tourismmer e/ou ao seu Perfil tenha sido suspenso ou encerrado.
+            5. Denúncias de Abuso/Reclamações
+            Alguém não está seguindo os Termos, a quem devo contar isto?
+            Você pode denunciar qualquer abuso ou Conteúdo inapropriado no Tourismmer entrando em contato conosco através de nossa página de Suporte ao Usuário, e indicando qual o abuso e informando detalhes sobre a reclamação. Você também pode denunciar um usuário diretamente a partir da página de perfil do próprio usuário. Para fazer isto deverá clicar no link “Denunciar Usuário”, na página de perfil. Você deverá escolher a razão pela qual deseja denunciar este perfil e deverá fornecer qualquer informação adicional que considerar necessária.
+            6. Política de Privacidade
+            Existem Diretrizes sobre como minhas informações pessoais são processadas pelo site?
+            Nós processamos dados de acordo com nossa Política de Privacidade que está incorporada a estes Termos de Uso. Por favor leia os Termos de nossa Política de Privacidade antes de utilizar o Tourismmer. Ao utilizar o Tourismmer, você concorda com a forma como processamos os seus dados e garante que todos os dados fornecidos por você são verdadeiros, corretos e precisos.
+            7. Links
+            Os links no site tem alguma coisa a ver com o Tourismmer?
+            O Tourismmer pode exibir links para outros sites, fontes ou oportunidades de compras fornecidas por terceiros. Estes links são apresentados a você apenas para sua informação. Se você acessar estes links poderá ser redirecionado para as páginas de terceiros. Estes sites terceiros são regidos por seus próprios termos de uso e suas próprias políticas de privacidade, que podem diferir dos Termos. A exibição de links para sites terceiros não constitui adesão ou aprovação de nossa parte de qualquer conteúdo de terceiros, sites ou recursos fornecidos.
+            Por favor, note que não temos controle sobre qualquer conteúdo de sites de terceiros ou outras fontes, e não seremos responsabilizados pelos mesmos, incluindo, mas sem limitação a adesão de sites de terceiros às leis ou regulamentações aplicáveis.
+            8. Isenção de garantias e limitação de responsabilidade
+            Eu esqueci as regras de conduta aqui e agora alguém está ameaçando me processar. Seus advogados podem me ajudar?
+            Não. Se você se comportar de uma forma que incomode outros usuários então você será responsabilizado pelas consequências. Nos isentamos expressamente de qualquer responsabilidade por sua conduta ou pela conduta de qualquer outro usuário no Tourismmer, e nos isentamos expressamente de qualquer responsabilidade por qualquer Conteúdo publicado por você ou por qualquer outro usuário.
+            Meu amigo é um advogado e disse que vocês não podem se isentar da responsabilidade por tudo...
+            Nada nestes Termos pode limitar ou excluir sua responsabilidade por:
+           
+                Morte ou dano pessoal causado por comprovada negligência;
+                Qualquer responsabilidade que não possa ser limitada ou excluída por lei.
+            
+            Na medida máxima permitida por lei, o Tourismmer expressamente se exclui de responsabilidade por:
+           
+                Todas as condições, representações, garantias e outros termos que possam de outra forma ser inferidos por lei; 
+                Qualquer responsabilidade incorrida por você decorrente da utilização do Tourismmer, seus serviços ou estes termos e condições, incluindo mas sem se limitar a quaisquer reivindicações, cobranças, demandas, danos, responsabilidades, perdas ou gastos de qualquer natureza e de qualquer forma direta, indireta, incidental, especial, exemplar, punitiva ou danos consequenciais (independentemente da forma que ocorram, incluindo negligência), perda de utilização, perda de dados, perda causada por vírus eletrônico ou de computador, perda de renda ou lucro, perda de ou dano à propriedade, perda de gerenciamento ou tempo de trabalho, quebra de contrato ou reivindicações de terceiros ou outras perdas de qualquer tipo ou característica, mesmo que o Tourismmer tenha sido informado da possibilidade de tais danos ou perdas, decorrentes de ou em conexão com a utilização do Tourismmer. Esta limitação de responsabilidade se aplica a, mas não se limita a: transmissão de qualquer aparelho de desativação ou vírus que possa infectar seu equipamento, falha mecânica ou elétrica de equipamento ou linhas de comunicação, telefone ou outros problemas de conexão (ou seja, você não pode acessar seu provedor de serviços de internet), acesso não autorizado, roubo, dano corporal, dano a propriedade, erros operacionais, greves ou outros problemas trabalhistas, ou qualquer ato de deus em conexão com o Tourismmer incluindo, mas sem limite a, qualquer responsabilidade pela perda de renda ou lucro, perda de rendimentos ou contratos, perda de negócios, perda de economias antecipadas, perda de reputação, perda de dados, perda de gerenciamento ou tempo de trabalho e qualquer outra perda ou dano de qualquer tipo, independentemente da forma que ocorra ou causada por ato ilícito (incluindo, mas sem limites a, negligência), quebra de contrato ou de qualquer outra forma, ainda que previsível seja em decorrência direta ou indireta.
+            
+            9. Indenização
+            Esqueci as regras de conduta daqui e agora alguém está ameaçando processar VOCÊS. O que fazer?
+            Se formos processados como resultado de sua utilização do Tourismmer, nos reservamos o direito de nos defender ou firmar um acordo da maneira mais adequada para nós. Se solicitarmos, você deverá cooperar completa e razoavelmente conforme solicitado para a defesa de qualquer reivindicação relevante.
+            Você concorda em não nos responsabilizar e a nos indenizar e aos nossos funcionários, diretores, empregados, agentes, representantes e licenciados de e contra quaisquer reivindicações de terceiros, danos (atual e/ou emergentes), ações, procedimentos, demandas, perdas, responsabilidades, custos e despesas (incluindo honorários razoáveis de advogados) sofridos ou razoavelmente incorridos por nós que surjam como resultado de, ou em conexão com, seu acesso e utilização do Tourismmer, a publicação ou submissão de Conteúdo ao Tourismmer por sua parte ou sua conduta, que não esteja em conformidade com os Termos ou qualquer lei ou regulamento aplicável (“Reivindicação”). O Tourismmer possui o direito exclusivo de firmar um acordo, se comprometer e pagar todas e quaisquer Reivindicações ou ações contra nós sem o seu consentimento prévio.
+            10. Miscelânea
+            E quanto a todas estas cláusulas comuns no final de todos os contratos? Geralmente são a melhor parte!
+            Já que você perguntou de uma maneira tão gentil...
+            O Tourismmer tomou providências razoáveis para garantir que todas as informações contidas no Tourismmer estejam atualizadas, disponíveis, corretas e e o Tourismmer fornece estas informações “tais quais” e “conforme disponíveis”. O Tourismmer não se responsabiliza, dá qualquer garantia ou faz qualquer representação de qualquer tipo sobre as informações contidas no Tourismmer, seja expressa ou implicitamente. A utilização do Tourismmer e dos materiais nele disponíveis é de seu próprio risco. O Tourismmer não pode ser responsabilizado por qualquer perda decorrente da transmissão, utilização de dados ou Conteúdo impreciso publicado por outros. Você é responsável por tomar todas as precauções necessárias para garantir que o material que você pode obter pelo Tourismmer está livre de vírus ou componentes danificadores. Você aceita que o Tourismmer não será fornecido ininterruptamente ou sem qualquer erro, que defeitos podem não ser corrigidos ou que o Tourismmer, ou os servidores que o tornam disponível, não estão livres de vírus, bugs (erros), spyware, Trojan Horses (cavalos de tróia) ou quaisquer softwares maliciosos similares. O Tourismmer não é responsável por qualquer dano ao hardware de seu computador, software, ou outro equipamento tecnológico incluindo, mas sem se limitar a, danos causados por qualquer brecha de segurança ou vírus, bugs, manipulação, fraude, erro, omissão, interrupção, defeito, atraso na operação ou transmissão, linha de computador ou falha de rede ou qualquer outro mau funcionamento técnico.
+            Nos reservamos o direito de alterar, aditar ou mudar os Termos a qualquer momento (uma “Alteração”). Se o fizermos as Alterações serão publicadas nesta página e indicaremos a data efetiva das atualizações ao final dos Termos. Em algumas circunstâncias poderemos enviar um email para você avisando-o de qualquer Alteração. Você deve conferir regularmente esta página para ser informado de qualquer Alteração.
+            Se você não aceitar qualquer Alteração nos Termos, você deve parar de utilizar o Tourismmer imediatamente. A utilização contínua do Tourismmer após qualquer Alteração constitui sua aceitação da Alteração e você estará legalmente comprometido com os Termos atualizados.
+            Se, por qualquer motivo, qualquer dos Termos for declarado ilegal, inválido ou de qualquer forma não possa ser executado por um tribunal competente, então, na medida em que este termo seja ilegal, inválido ou inexequível, ele deverá ser separado e deletado dos termos e o restante dos Termos deve sobreviver, permanecendo em vigor e continuando a vincular e ser exequível.
+            Os Termos definem o total acordo e entendimento entre nós e você em relação a sua utilização do Tourismmer e substituem todos os acordos prévios, representações e arranjos entre nós (seja oral ou por escrito). Nada nesta cláusula deverá limitar ou excluir qualquer responsabilidade por representações fraudulentas.
+            Nenhuma falha ou atraso da nossa parte no exercício de qualquer direito, poder ou privilégio sob estes Termos deve representar a renúncia de tais direitos ou a aceitação de qualquer variação dos Termos, nem qualquer exercício parcial ou único por qualquer uma das partes de qualquer direito, poder ou privilégio deve excluir qualquer exercício deste direito ou o exercício de qualquer outro direito, poder ou privilégio.
+            Nada nestes Termos deve conferir a qualquer terceiro qualquer benefício ou direito de executar qualquer destes Termos e os Contratos (Direitos de Terceiros) o Ato 1999 não se aplica aos Termos.
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="20" defaultTabInterval="36">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                            <real key="NSStrokeWidth" value="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                            <real key="NSStrokeWidth" value="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <navigationBar contentMode="scaleToFill" id="FeH-wP-ARQ">
-                                <rect key="frame" x="0.0" y="21" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="TERMOS DE USO" id="aux-Ih-OFd">
-                                        <barButtonItem key="leftBarButtonItem" title="Voltar" id="1at-wl-KLw">
-                                            <connections>
-                                                <segue destination="RVU-FC-YwN" kind="unwind" unwindAction="cancelToSettingsViewController:" id="v6X-r9-PJL"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="TERMOS" id="Lk6-OO-zPc">
+                        <barButtonItem key="backBarButtonItem" title="VOLTAR" id="7Oq-3g-wGJ"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3gQ-Ba-LfS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="RVU-FC-YwN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="614" y="1416"/>
+            <point key="canvasLocation" x="1146" y="1416"/>
         </scene>
-        <!--Privacy View Controller-->
+        <!--POLÍTICA-->
         <scene sceneID="ehD-UA-GN1">
             <objects>
                 <viewController id="YDR-D5-pmT" customClass="PrivacyViewController" customModule="Tourismmer" customModuleProvider="target" sceneMemberID="viewController">
@@ -1197,11 +1465,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="POLÍTICA" id="Nc7-yU-eXN">
+                        <barButtonItem key="backBarButtonItem" title="VOLTAR" id="amM-Am-Drh"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c8s-G4-zzq" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="oI8-Qc-osq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="614" y="2133"/>
+            <point key="canvasLocation" x="1146" y="2133"/>
         </scene>
         <!--PROFILE-->
         <scene sceneID="uCu-V1-vYJ">
@@ -1231,6 +1502,7 @@
                         <inset key="imageInsets" minX="0.0" minY="12" maxX="0.0" maxY="-12"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="image" keyPath="image" value="menu_search_64"/>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="menu_search_selected"/>
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
                     <toolbarItems/>
@@ -1247,11 +1519,36 @@
             </objects>
             <point key="canvasLocation" x="248" y="-537"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9rQ-fy-zHc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mQr-LF-lCL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" image="menu_settings_64" id="Xy0-BR-s0s">
+                        <inset key="imageInsets" minX="0.0" minY="12" maxX="0.0" maxY="-12"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="menu_settings_64"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CVn-I7-fIo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="pDR-TV-hBP" kind="relationship" relationship="rootViewController" id="YKs-VP-nWF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="taN-Lx-IQQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="175" y="1585"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Blank52.png" width="52" height="52"/>
         <image name="bg.jpg" width="640" height="960"/>
         <image name="comment_inactive" width="33" height="40"/>
+        <image name="image_placeholder" width="200" height="200"/>
         <image name="imgoing_inactive" width="43" height="43"/>
         <image name="like_inactive" width="33" height="40"/>
         <image name="logo.png" width="263" height="263"/>
@@ -1259,6 +1556,7 @@
         <image name="menu_mygroups_64" width="64" height="38"/>
         <image name="menu_profile_64" width="64" height="38"/>
         <image name="menu_search_64" width="64" height="38"/>
+        <image name="menu_search_selected" width="64" height="38"/>
         <image name="menu_settings_64" width="64" height="38"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -1267,8 +1565,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="nVA-Hw-ljQ"/>
-        <segue reference="We1-Rf-i1t"/>
+        <segue reference="XF8-f6-yk0"/>
+        <segue reference="KFx-HV-Xlk"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -18,7 +18,8 @@ class RegisterViewController:UIViewController, APIProtocol {
     @IBOutlet weak var cityTextField: UITextField!
     @IBOutlet weak var passTextField: UITextField!
     
-    @IBOutlet weak var birthdayPickerView: UIDatePicker!
+    @IBOutlet weak var birthdayTextField: UITextField!
+    @IBOutlet weak var birthdayDatePicker: UIDatePicker!
     @IBOutlet weak var gendersSegmentedControl: UISegmentedControl!
     
     required init(coder aDecoder: NSCoder) {
@@ -38,6 +39,8 @@ class RegisterViewController:UIViewController, APIProtocol {
         
         self.cityTextField.backgroundColor = UIColor.whiteColor()
         self.passTextField.alpha = 0.5
+        
+        self.birthdayTextField.inputView = birthdayDatePicker
     }
     
     @IBAction func RegisterClick(sender: AnyObject) {
@@ -55,16 +58,17 @@ class RegisterViewController:UIViewController, APIProtocol {
             return
         }
         
-        let user:User = User(id: 0, name: nameTextField.text, birthdate: birthdayPickerView.date, email: emailTextField.text, pass: passTextField.text, gender: gendersSegmentedControl.description, facebookId: 0)
+        let user:User = User(id: 0, name: nameTextField.text, birthdate: birthdayDatePicker.date, email: emailTextField.text, pass: passTextField.text, gender: gendersSegmentedControl.description, facebookId: 0)
         
         api.HTTPPostJSON("/user", jsonObj: user.dictionaryFromUser())
     }
     
     func didReceiveAPIResults(results: NSDictionary) {
-        println("Registered")
-        //performSegueWithIdentifier("registeredSegue", sender: self)
-        let homeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Home") as HomeViewController
+        if (results["statusCode"] as NSString == MessageCode.Success.rawValue) {
+            println("Registered")
+            let homeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("TabBar") as  UITabBarController
         
-        self.navigationController?.pushViewController(homeViewController, animated: true)
+            self.navigationController?.pushViewController(homeViewController, animated: true)
+        }
     }
 }

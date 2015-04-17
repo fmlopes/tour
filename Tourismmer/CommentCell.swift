@@ -14,4 +14,11 @@ class CommentCell:UITableViewCell {
     @IBOutlet weak var authorPhoto: UIImageView!
     @IBOutlet weak var authorName: UILabel!
     @IBOutlet weak var authorText: UILabel!
+    
+    func setLayout() {
+        // Circle Profile Photo
+        authorPhoto!.layer.masksToBounds = false
+        authorPhoto!.layer.cornerRadius = authorPhoto!.frame.height/2
+        authorPhoto!.clipsToBounds = true
+    }
 }

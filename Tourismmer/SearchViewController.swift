@@ -68,8 +68,10 @@ class SearchViewController:UIViewController, UITableViewDataSource, UITableViewD
     
     func filterContentForSearchText(searchText: String, scope:String = "LUGARES") {
         self.selectedSearch = scope
-        if scope == "LUGARES" || selectedSearch == "INTERESSE" {
-            api.HTTPGet("/group/getTopGroups/\(50)/1")
+        if scope == "LUGARES" {
+            api.HTTPGet("/group/getTripsByFilter/50/0?destination=\(searchText)")
+        } else if scope == "INTERESSE" {
+            api.HTTPGet("/group/getTripsByFilter/50/0?purpose=\(searchText)")
         } else if scope == "PESSOAS" {
             
         }
