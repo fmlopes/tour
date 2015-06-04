@@ -34,7 +34,7 @@ class NewGroupViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
     
     func setLayout() {
-        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Exo", size: 19)!]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Exo-Medium", size: 19)!]
         self.pickerViewArray.sort({ $0.rawValue > $1.rawValue })
     }
     
@@ -46,9 +46,9 @@ class NewGroupViewController: UIViewController, UIPickerViewDataSource, UIPicker
         
         let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
         
-        let loggedUser:Dictionary<NSString, AnyObject> = defaults.objectForKey("loggedUser") as Dictionary<String, AnyObject>
+        let loggedUser:Dictionary<NSString, AnyObject> = defaults.objectForKey("loggedUser") as! Dictionary<String, AnyObject>
         let owner:User = User()
-        let stringId:NSString = loggedUser["id"] as NSString
+        let stringId:NSString = loggedUser["id"] as! NSString
         owner.id = NSNumber(longLong: stringId.longLongValue)
         
         let group:Group = Group(users: [User](), user: owner, location: searchBar.text, date: Util.dateFromString("dd/MM/yyyy", date: stringDate), type: TripType(rawValue: selectedPurpose)!, imgPath: "", id: 0)
@@ -118,24 +118,24 @@ class NewGroupViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
     
     func didReceiveGoogleResults(results: NSDictionary) {
-        let array: Array = results["predictions"] as Array<Dictionary<String, AnyObject>>
+        let array: Array = results["predictions"] as! Array<Dictionary<String, AnyObject>>
         self.cities.removeAll(keepCapacity: false)
         for item in array {
-            cities.append(item["description"] as NSString)
+            cities.append(item["description"] as! NSString as String)
         }
         
         self.searchDisplayController?.searchResultsTableView.reloadData()
     }
     
     func didReceiveAPIResults(results: NSDictionary) {
-        if (results["statusCode"] as String == MessageCode.Success.rawValue) {
-            let groupViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Group") as GroupViewController
-            let groupId:NSNumber = results["id"] as NSNumber
+        if (results["statusCode"] as! String == MessageCode.Success.rawValue) {
+            let groupViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Group") as! GroupViewController
+            let groupId:NSNumber = results["id"] as! NSNumber
             groupViewController.group.id = groupId
             groupViewController.group.location.name = searchBar.text
             
             //Custom back button
-            var myBackButton:UIButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
+            var myBackButton:UIButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
             myBackButton.addTarget(self, action: "popToRoot:", forControlEvents: UIControlEvents.TouchUpInside)
             myBackButton.setTitle("HOME", forState: UIControlState.Normal)
             myBackButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)

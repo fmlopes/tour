@@ -19,6 +19,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-FBSDKCoreKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-FBSDKLoginKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-FMDB.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,62 +77,72 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>24FEFC6BA8F03BD616A79A05</key>
+		<key>0E56D3A3F1A1258262B64141</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2746BCBA8D838FA5B7CD44B3</key>
+		<key>64178C368F0E4DC87C403692</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4A90A083BB85CBABDA04E4B5</key>
+		<key>657F2DD7D209052DE10E2E02</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>50547A9C0D4B031754413D2E</key>
+		<key>6E9AB6767C2970DC03034F11</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5808E82C13E13451AF6C2E98</key>
+		<key>702C3A7783CFF5BF4E947A60</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6BF81EA8D7AFE7F6C3A24D8F</key>
+		<key>9D0D1364C41F1DD8C693518B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7D88DF7F4F435B6F03A26E7F</key>
+		<key>AA5194F2C8D5C70659A96969</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9EBD3EDBB9877708CD114101</key>
+		<key>AB1CCE48856111B930745A7D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B2117D14AD9BB0F24E07B069</key>
+		<key>BAFD7A83E10B738C93985B4B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E7D2CCE8663C9FA7F8EA66D4</key>
+		<key>BCCAA20B06566B978FF03AC4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EEB23752A4118D72B0474625</key>
+		<key>D1C85ED03D796B7F3D93FDEA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FAB0F4E26AAD405C1007536C</key>
+		<key>D97815391D39A8294A916F19</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DA79D080C7626DFD66140813</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E2C8F17A23EFD147418AB901</key>
 		<dict>
 			<key>primary</key>
 			<true/>

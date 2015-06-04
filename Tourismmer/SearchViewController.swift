@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SearchViewController:UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate, APIProtocol {
+class SearchViewController:UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating, APIProtocol {
     
     var searchGroupResults:[Group] = [Group]()
     var searchUserResults:[User] = [User]()
@@ -16,6 +16,7 @@ class SearchViewController:UIViewController, UITableViewDataSource, UITableViewD
     var selectedSearch:String = ""
     lazy var api:API = API(delegate: self)
     var kCellIdentifier:String = "Cell"
+    var resultSearchController = UISearchController()
     
     @IBOutlet weak var searchTableView: UITableView!
     
@@ -26,20 +27,34 @@ class SearchViewController:UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func setLayout() {
-        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Exo", size: 19)!]
-        self.searchTableView.hidden = true
+        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Exo-Medium", size: 19)!]
+        let backButton = UIBarButtonItem(title: "BUSCA", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
+        backButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Exo-Medium", size: 19)!], forState: UIControlState.Normal)
+        self.navigationItem.backBarButtonItem = backButton
+        
+        self.resultSearchController = ({
+            let controller = UISearchController(searchResultsController: nil)
+            controller.searchResultsUpdater = self
+            controller.dimsBackgroundDuringPresentation = false
+            controller.searchBar.sizeToFit()
+            
+            self.searchTableView.tableHeaderView = controller.searchBar
+            
+            return controller
+        })()
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var cell: Cell = self.searchTableView.dequeueReusableCellWithIdentifier(kCellIdentifier, forIndexPath: indexPath) as Cell
+        var cell: Cell = self.searchTableView.dequeueReusableCellWithIdentifier(kCellIdentifier, forIndexPath: indexPath) as! Cell
         
         if selectedSearch == "LUGARES" || selectedSearch == "INTERESSE"{
             var group:Group = searchGroupResults[indexPath.row]
             
-            cell.postText.text = group.location.name
+            cell.postText.text = group.location.name as String
             cell.postDate.text = Util.stringFromDate("MMM/yyyy", date: group.date)
             cell.postGoal.text = group.type?.rawValue
+            cell.id = group.id
         } else if selectedSearch == "PESSOAS" {
             
         }
@@ -77,52 +92,40 @@ class SearchViewController:UIViewController, UITableViewDataSource, UITableViewD
         }
     }
     
-    func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchString searchString: String!) -> Bool {
-        let scopes = self.searchDisplayController?.searchBar.scopeButtonTitles as [String]
-        let index:Int? = self.searchDisplayController?.searchBar.selectedScopeButtonIndex
-        let selectedScope = scopes[index!] as String
-        self.filterContentForSearchText(searchString, scope: selectedScope)
-        return true
-    }
-    
-    func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchScope searchOption: Int) -> Bool {
-        let scopes = self.searchDisplayController?.searchBar.scopeButtonTitles as [String]
-        let index:Int? = self.searchDisplayController?.searchBar.selectedScopeButtonIndex
-        let selectedScope = scopes[index!] as String
-        self.filterContentForSearchText(self.searchDisplayController!.searchBar.text)
-        return true
+    func updateSearchResultsForSearchController(searchController: UISearchController)
+    {
+        filterContentForSearchText(searchController.searchBar.text)
     }
     
     func didReceiveAPIResults(results: NSDictionary) {
-        if (results["statusCode"] as String == MessageCode.Success.rawValue) {
+        if (results["statusCode"] as! String == MessageCode.Success.rawValue) {
             searchGroupResults.removeAll(keepCapacity: false)
             
-            for item in results["listGroup"] as NSArray {
+            for item in results["listGroup"] as! NSArray {
                 var users = [User]()
                 users.append(User(id: 0, name: "", birthdate: NSDate(), email: "", pass: "", gender: "", facebookId: 0))
                 
-                var location = Location(name: item["destination"] as String, lat: NSDecimalNumber.zero(), long: NSDecimalNumber.zero())
+                var location = Location(name: item["destination"] as! String, lat: NSDecimalNumber.zero(), long: NSDecimalNumber.zero())
                 
-                var purpose:NSDictionary = item["purpose"] as NSDictionary
-                var image:NSDictionary = item["image"] as NSDictionary
-                var dateString = item["date"] as String
-                searchGroupResults.append(Group(users: users, user: User(), location: location.name, date: Util.dateFromString("dd-MM-yyyy", date: dateString), type: TripType.valueFromId(purpose["id"] as Int), imgPath: image["url"] as String, id: item["id"] as Int))
+                var purpose:NSDictionary = item["purpose"] as! NSDictionary
+                var image:NSDictionary = item["image"]as! NSDictionary
+                var dateString = item["date"] as! String
+                searchGroupResults.append(Group(users: users, user: User(), location: location.name as String, date: Util.dateFromString("dd-MM-yyyy", date: dateString), type: TripType.valueFromId(purpose["id"] as! Int), imgPath: image["url"]as! String, id: item["id"] as! Int))
             }
-
-            //self.searchDisplayController?.searchResultsTableView.reloadData()
             self.searchTableView.reloadData()
         }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        self.resultSearchController.active = false
         if segue.identifier == "search_group" {
-            let vc = segue.destinationViewController as GroupViewController
-            let groupCell = sender as Cell
+            let vc = segue.destinationViewController as! GroupViewController
+            let groupCell = sender as! Cell
             
             vc.group.location = Location(name: groupCell.postText.text!, lat: NSDecimalNumber.zero(), long: NSDecimalNumber.zero())
             vc.group.date = Util.dateFromString("MM/yy", date: groupCell.postDate.text!)
             vc.group.type = TripType(rawValue: (groupCell.postGoal.text!))
-            vc.image = groupCell.postImage.image!
+            //vc.image = groupCell.postImage.image!
             vc.group.id = groupCell.id
         }
     }

@@ -9,10 +9,10 @@
 import Foundation
 import UIKit
 
-class SettingsViewController: UIViewController, FBLoginViewDelegate {
+class SettingsViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     
-    @IBOutlet weak var fbLoginView: FBLoginView!
+    @IBOutlet weak var fbLoginView: FBSDKLoginButton!
     @IBOutlet weak var accountEmail: UILabel!
     
     override func viewDidLoad() {
@@ -21,43 +21,40 @@ class SettingsViewController: UIViewController, FBLoginViewDelegate {
         self.fbLoginView.delegate = self
         self.fbLoginView.readPermissions = ["public_profile", "email", "user_friends"]
         
-        accountEmail.text = Util.getUserFromDefaults()!.email
+        accountEmail.text = Util.getUserFromDefaults()!.email as String
         
         setLayout()
     }
     
     func setLayout() {
-        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Exo", size: 19)!]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Exo-Medium", size: 19)!]
+        let backButton = UIBarButtonItem(title: "VOLTAR", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
+        backButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Exo-Medium", size: 19)!], forState: UIControlState.Normal)
+        self.navigationItem.backBarButtonItem = backButton
     }
     
     // Facebook Delegate Methods
     
-    func loginViewShowingLoggedInUser(loginView : FBLoginView!) {
+    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         println("User Logged In")
-    }
-    
-    func loginViewFetchedUserInfo(loginView : FBLoginView!, user: FBGraphUser) {
-        println("User: \(user)")
-        println("User ID: \(user.objectID)")
-        println("User Name: \(user.name)")
-        var userEmail = user.objectForKey("email") as String
-        println("User Email: \(userEmail)")
-        let userFBID:NSNumber = user.objectID.toInt()!
         
-        //cadastrar id Facebook
+        if ((error) != nil) {
+            // Process error
+        } else if result.isCancelled {
+            println("Cancelled")
+        } else {
+            
+        }
     }
     
-    func loginViewShowingLoggedOutUser(loginView : FBLoginView!) {
+    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
         println("User Logged Out")
         
         Util.dropUserFromDefaults()
         
-        let loginViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Login") as LoginViewController
+        let loginViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Login") as! LoginViewController
+        self.tabBarController?.tabBar.hidden = true
         self.navigationController?.pushViewController(loginViewController, animated: false)
-    }
-    
-    func loginView(loginView : FBLoginView!, handleError:NSError) {
-        println("Error: \(handleError.localizedDescription)")
     }
     
 }

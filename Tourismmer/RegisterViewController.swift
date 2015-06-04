@@ -64,9 +64,9 @@ class RegisterViewController:UIViewController, APIProtocol {
     }
     
     func didReceiveAPIResults(results: NSDictionary) {
-        if (results["statusCode"] as NSString == MessageCode.Success.rawValue) {
+        if (results["statusCode"] as! String == MessageCode.Success.rawValue) {
             println("Registered")
-            let homeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("TabBar") as  UITabBarController
+            let homeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("TabBar") as!  UITabBarController
         
             self.navigationController?.pushViewController(homeViewController, animated: true)
         }

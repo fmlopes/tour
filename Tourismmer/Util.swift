@@ -20,7 +20,7 @@ class Util {
     class func getJsonOptionalBool(results:NSDictionary, fieldName: String) -> Bool {
         var fieldValue = false
         if results.objectForKey(fieldName) != nil {
-            fieldValue = results[fieldName] as Bool
+            fieldValue = results[fieldName] as! Bool
         }
         return fieldValue
     }
@@ -28,7 +28,7 @@ class Util {
     class func getJsonOptionalDictionary(results:NSDictionary, fieldName: String) -> NSDictionary {
         var fieldValue = NSDictionary()
         if results.objectForKey(fieldName) != nil {
-            fieldValue = results[fieldName] as NSDictionary
+            fieldValue = results[fieldName] as! NSDictionary
         }
         return fieldValue
     }
@@ -36,7 +36,7 @@ class Util {
     class func getJsonOptionalString(results:NSDictionary, fieldName: String) -> String {
         var fieldValue = ""
         if results.objectForKey(fieldName) != nil {
-            fieldValue = results[fieldName] as String
+            fieldValue = results[fieldName] as! String
         }
         return fieldValue
     }
@@ -44,7 +44,7 @@ class Util {
     class func getJsonOptionalInteger(results:NSDictionary, fieldName: String) -> NSInteger {
         var fieldValue = 0
         if results.objectForKey(fieldName) != nil {
-            fieldValue = results[fieldName] as NSInteger
+            fieldValue = results[fieldName] as! NSInteger
         }
         return fieldValue
     }
@@ -54,14 +54,14 @@ class Util {
         
         if defaults.objectForKey("loggedUser") != nil {
         
-            let loggedUser:Dictionary<NSString, AnyObject> = defaults.objectForKey("loggedUser") as Dictionary<String, AnyObject>
-            let stringId:NSString = loggedUser["id"] as NSString
+            let loggedUser:Dictionary<NSString, AnyObject> = defaults.objectForKey("loggedUser") as! Dictionary<String, AnyObject>
+            let stringId:NSString = loggedUser["id"] as! NSString
         
             let user:User = User()
             user.id = stringId.integerValue
-            user.facebookId = (loggedUser["facebookId"] as NSString).integerValue
-            user.name = loggedUser["name"] as NSString
-            user.email = loggedUser["email"] as NSString
+            user.facebookId = (loggedUser["facebookId"] as! NSString).integerValue
+            user.name = loggedUser["name"] as! NSString
+            user.email = loggedUser["email"] as! NSString
         
             return user
         } else {
@@ -87,7 +87,7 @@ class Util {
     class func dateFromString(format: String, date: NSString) -> NSDate {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = format
-        return dateFormatter.dateFromString(date)!
+        return dateFormatter.dateFromString(date as String)!
     }
     
     class func monthNumberFromString(month: String) -> String {

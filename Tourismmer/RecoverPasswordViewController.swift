@@ -34,7 +34,7 @@ class RecoverPasswordViewController:UIViewController, APIProtocol {
     func didReceiveAPIResults(results: NSDictionary) {
         let alert = UIAlertController(title: "", message: "", preferredStyle: UIAlertControllerStyle.Alert)
 
-        if (results["statusCode"] as NSString == MessageCode.Success.rawValue) {
+        if (results["statusCode"] as! String == MessageCode.Success.rawValue) {
             
             alert.title = "Recuperação de senha"
             alert.message = "Email enviado com sucesso"

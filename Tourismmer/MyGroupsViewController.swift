@@ -27,11 +27,14 @@ class MyGroupsViewController:UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func setLayout() {
-        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Exo", size: 19)!]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Exo-Medium", size: 19)!]
+        let backButton = UIBarButtonItem(title: "GRUPOS", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
+        backButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Exo-Medium", size: 19)!], forState: UIControlState.Normal)
+        self.navigationItem.backBarButtonItem = backButton
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell: Cell = self.groupsTableView.dequeueReusableCellWithIdentifier(kCellIdentifier, forIndexPath: indexPath) as Cell
+        var cell: Cell = self.groupsTableView.dequeueReusableCellWithIdentifier(kCellIdentifier as String, forIndexPath: indexPath) as! Cell
         var group: Group
         
         if tableView == self.searchDisplayController?.searchResultsTableView {
@@ -41,18 +44,18 @@ class MyGroupsViewController:UIViewController, UITableViewDelegate, UITableViewD
         }
         
         cell.postText.text = group.location.name.uppercaseString
-        if (group.type?  != nil){
+        if (group.type  != nil){
             cell.postGoal.text = group.type?.rawValue.uppercaseString
         }
-        cell.postImage.image = UIImage(named: "Blank52.png")
+        cell.postImage.image = UIImage(named: "image_placeholder")
         cell.postDate.text = Util.stringFromDate("MM/yy", date: group.date)
         
-        var imgURL:NSURL = NSURL(string:group.imgPath)!
+        var imgURL:NSURL = NSURL(string:group.imgPath as String)!
         
         let request:NSURLRequest = NSURLRequest(URL: imgURL)
         
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!, data: NSData!, error:NSError!) -> Void in
-            if !(error? != nil) {
+            if !(error != nil) {
                 
                 cell.postImage.image = UIImage(data: data)
                 
@@ -87,19 +90,19 @@ class MyGroupsViewController:UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func didReceiveAPIResults(results: NSDictionary) {
-        if (results["statusCode"] as String == MessageCode.Success.rawValue) {
+        if (results["statusCode"] as! String == MessageCode.Success.rawValue) {
             //let array:Array = results["listGroup"] as String
             
-            for item in results["listGroup"] as NSArray {
+            for item in results["listGroup"] as! NSArray {
                 var users = [User]()
                 users.append(User(id: 0, name: "", birthdate: NSDate(), email: "", pass: "", gender: "", facebookId: 0))
                 
-                var location = Location(name: item["destination"] as String, lat: NSDecimalNumber.zero(), long: NSDecimalNumber.zero())
+                var location = Location(name: item["destination"] as! String, lat: NSDecimalNumber.zero(), long: NSDecimalNumber.zero())
                 
-                var purpose:NSDictionary = item["purpose"] as NSDictionary
-                var image:NSDictionary = item["image"] as NSDictionary
-                var dateString = item["date"] as String
-                groups.append(Group(users: users, user: User(), location: location.name, date: Util.dateFromString("dd-MM-yyyy", date: dateString), type: TripType.valueFromId(purpose["id"] as Int), imgPath: image["url"] as String, id: item["id"] as Int))
+                var purpose:NSDictionary = item["purpose"] as! NSDictionary
+                var image:NSDictionary = item["image"] as! NSDictionary
+                var dateString = item["date"] as! String
+                groups.append(Group(users: users, user: User(), location: location.name as String, date: Util.dateFromString("dd-MM-yyyy", date: dateString), type: TripType.valueFromId(purpose["id"] as! Int), imgPath: image["url"] as! String, id: item["id"] as! Int))
             }
             self.groupsTableView!.reloadData()
         }

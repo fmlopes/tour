@@ -147,6 +147,17 @@ PODS:
   - Bolts (1.1.4)
   - Facebook-iOS-SDK (3.23.2):
     - Bolts (~> 1.0)
+  - FBSDKCoreKit (4.1.0):
+    - Bolts (~> 1.1)
+    - FBSDKCoreKit/arc (= 4.1.0)
+    - FBSDKCoreKit/no-arc (= 4.1.0)
+  - FBSDKCoreKit/arc (4.1.0):
+    - Bolts (~> 1.1)
+  - FBSDKCoreKit/no-arc (4.1.0):
+    - Bolts (~> 1.1)
+    - FBSDKCoreKit/arc
+  - FBSDKLoginKit (4.1.0):
+    - FBSDKCoreKit
   - FMDB (2.5):
     - FMDB/standard (= 2.5)
   - FMDB/common (2.5)
@@ -165,18 +176,22 @@ DEPENDENCIES:
   - AWSCognitoSync
   - AWSiOSSDKv2
   - Facebook-iOS-SDK
+  - FBSDKCoreKit
+  - FBSDKLoginKit
 
 SPEC CHECKSUMS:
-  AWSCognitoSync: 4a2a456e93a5da8c3e977c15a108b328db5c47eb
-  AWSiOSSDKv2: a463e466164c52814a624b5f3f70c986807f48e1
-  Bolts: dd9fb8433d67f5acc3b6b4d1379bbc5513d716c1
+  AWSCognitoSync: 10d820a9821b0d931d1343d8caadadd18aa9b6ea
+  AWSiOSSDKv2: a3211ed93ac473ad2729ee11e2dc1b88cc39d55d
+  Bolts: f8e2f94edbf9fec7bb8de5ecaaa3aa6b7de6f64e
   Facebook-iOS-SDK: cd87f0b2f0c1d9574b44e8fa2baacc275524bac3
-  FMDB: 0efa188cf0dd1ce82c27a478cd5f5fa245308677
-  GZIP: f27c434ffee5e9a9b34f4e9c19e91350fa8bbde1
-  Mantle: d5fbaf30fbc58031223af13812c060e15934a1fe
-  Reachability: 1ef8adf5c4e3d362f96515d4278f68dad3c26930
-  TMCache: 11589ef8c40909114a5e60132711c9a559e01d97
-  UICKeyChainStore: 2399076d0950e20fe859b8f817548cf6ca542dd7
-  XMLDictionary: 735e81b9a043e220b0d24e9d4f16719606f2e0fc
+  FBSDKCoreKit: 469ed167195f860dbd2b4c4bbaa33d2e90598db9
+  FBSDKLoginKit: ff6224762732e3698f30942e4544321b8c7a23e6
+  FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
+  GZIP: f0863fda354e8f83316508c0a2c7bbe385e39129
+  Mantle: 60acd0cd363e27d945bda0a6b8e90577112d28f3
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  TMCache: 5f68bc38d741aa8df4c63131b847522783665d81
+  UICKeyChainStore: 69eb0c3a6f669bccf16ba88de3b9069b71501361
+  XMLDictionary: f9f51601ba76678b594ab485f2b00ec1fed23724
 
 COCOAPODS: 0.35.0

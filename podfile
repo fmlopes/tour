@@ -2,3 +2,5 @@ source 'https://github.com/CocoaPods/Specs.git'
 pod 'AWSiOSSDKv2'
 pod "AWSCognitoSync"
 pod 'Facebook-iOS-SDK'
+pod 'FBSDKCoreKit'
+pod 'FBSDKLoginKit'

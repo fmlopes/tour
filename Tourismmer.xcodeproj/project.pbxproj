@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2042C28F1A25529800EEEE99 /* NewGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2042C28E1A25529800EEEE99 /* NewGroupViewController.swift */; };
 		20526DB51A73365E00A704C8 /* loading.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 20526DB41A73365E00A704C8 /* loading.jpg */; };
+		20557CA81B16A93D00003CBA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20557CA71B16A93D00003CBA /* ProfileViewController.swift */; };
 		205A7A311ACCBED6008A4753 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205A7A301ACCBED6008A4753 /* TermsViewController.swift */; };
 		205A7A331ACCBF68008A4753 /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205A7A321ACCBF68008A4753 /* PrivacyViewController.swift */; };
 		205BDBBD1A7877A9001071F8 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205BDBBC1A7877A9001071F8 /* MenuController.swift */; };
@@ -81,6 +82,7 @@
 /* Begin PBXFileReference section */
 		2042C28E1A25529800EEEE99 /* NewGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGroupViewController.swift; sourceTree = "<group>"; };
 		20526DB41A73365E00A704C8 /* loading.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = loading.jpg; path = Tourismmer/Images.xcassets/LaunchImage.launchimage/loading.jpg; sourceTree = "<group>"; };
+		20557CA71B16A93D00003CBA /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		205A7A301ACCBED6008A4753 /* TermsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
 		205A7A321ACCBF68008A4753 /* PrivacyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
 		205BDBBC1A7877A9001071F8 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 				20F654821AAA5E7000A07CF8 /* SettingsViewController.swift */,
 				205A7A301ACCBED6008A4753 /* TermsViewController.swift */,
 				205A7A321ACCBF68008A4753 /* PrivacyViewController.swift */,
+				20557CA71B16A93D00003CBA /* ProfileViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				20AC20211A0998C10035255C /* GroupViewController.swift in Sources */,
 				20918E8419E4A9B900BD39E8 /* Util.swift in Sources */,
 				209BB9611991B03E00BE6D26 /* Group.swift in Sources */,
+				20557CA81B16A93D00003CBA /* ProfileViewController.swift in Sources */,
 				20A84D681A73CEC0003AC6F2 /* TabBarViewController.swift in Sources */,
 				20AC20271A0ACCB50035255C /* Comment.swift in Sources */,
 				208A8198198732890075A441 /* LoginViewController.swift in Sources */,

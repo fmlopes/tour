@@ -24,25 +24,25 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var emptyListLabel: UILabel!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    override func viewWillAppear(animated: Bool) {
         setLayout()
         
         if let user = Util.getUserFromDefaults() {
             api.callback = nil
             api.HTTPGet("/post/getListPost/\(group.id)/\(user.id)/50/0")
         }
-        
-        
     }
     
     func setLayout() {
-        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Exo", size: 19)!]
-        self.navigationItem.title = group.location.name
+        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Exo-Medium", size: 19)!]
+        let backButton = UIBarButtonItem(title: "GRUPO", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
+        backButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Exo-Medium", size: 19)!], forState: UIControlState.Normal)
+        self.navigationItem.backBarButtonItem = backButton
+        self.navigationItem.title = group.location.name as String
         postTableView.hidden = true
         self.emptyListLabel.hidden = true
         self.activityIndicatorView.startAnimating()
+        self.posts.removeAll(keepCapacity: false)
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -50,10 +50,10 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell: PostCell = self.postTableView.dequeueReusableCellWithIdentifier(kCellIdentifier, forIndexPath: indexPath) as PostCell
+        var cell: PostCell = self.postTableView.dequeueReusableCellWithIdentifier(kCellIdentifier as String, forIndexPath: indexPath) as! PostCell
         
         let post: Post = posts[indexPath.row]
-        cell.postTextLabel!.text = post.text
+        cell.postTextLabel!.text = post.text as String
         cell.postCommentLabel!.text = String(post.commentCount)
         cell.postImGoingCountUser!.text = String(post.imGoingCount)
         cell.postLikesLabel!.text = String(post.likeCount)
@@ -77,10 +77,10 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
         }
         
         if post.imagePath != "" {
-            let request:NSURLRequest = NSURLRequest(URL: NSURL(string:post.imagePath)!)
+            let request:NSURLRequest = NSURLRequest(URL: NSURL(string:post.imagePath as String)!)
         
             NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!, data: NSData!, error:NSError!) -> Void in
-                if !(error? != nil) {
+                if !(error != nil) {
                     cell.postBackgroundImage!.image = UIImage(data: data)
                 } else {
                     println("Error: \(error.localizedDescription)")
@@ -110,7 +110,7 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
         if post.imagePath == "" {
             return 140
         } else {
-            return 368
+            return 430
         }
     }
     
@@ -118,39 +118,39 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
         return self.posts.count
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
     func didReceiveAPIResults(results: NSDictionary) {
         self.activityIndicatorView.stopAnimating()
-        if (results["statusCode"] as String == MessageCode.Success.rawValue) {
+        if (results["statusCode"] as! String == MessageCode.Success.rawValue) {
             
-            for item in results["listPost"] as NSArray {
+            for item in results["listPost"] as! NSArray {
                 
-                let image:NSDictionary = Util.getJsonOptionalDictionary(item as NSDictionary, fieldName: "image")
+                let image:NSDictionary = Util.getJsonOptionalDictionary(item as! NSDictionary, fieldName: "image")
                 let imagePath:String = Util.getJsonOptionalString(image, fieldName: "url")
-                let author:NSDictionary = item["author"] as NSDictionary
+                let author:NSDictionary = item["author"] as! NSDictionary
                 
-                let user:User = User(id: author["id"] as NSNumber, name: author["name"] as String, birthdate: NSDate(), email: "", pass: "", gender: "", facebookId: (author["facebookId"] as NSString).integerValue)
+                let user:User = User(id: author["id"] as! NSNumber, name: author["name"] as! String, birthdate: NSDate(), email: "", pass: "", gender: "", facebookId: (author["facebookId"] as! NSString).integerValue)
                 
-                let postType:NSDictionary = item["typePost"] as NSDictionary
-                let postTypeId:Int = (postType["id"] as NSNumber).integerValue
-                let userHasLiked:Bool = Util.getJsonOptionalBool(item as NSDictionary, fieldName: "userLiked")
-                let userHasCommented = Util.getJsonOptionalBool(item as NSDictionary, fieldName: "userCommented")
-                let userIsGoing = Util.getJsonOptionalBool(item as NSDictionary, fieldName: "userGo")
+                let postType:NSDictionary = item["typePost"] as! NSDictionary
+                let postTypeId:Int = (postType["id"] as! NSNumber).integerValue
+                let userHasLiked:Bool = Util.getJsonOptionalBool(item as! NSDictionary, fieldName: "userLiked")
+                let userHasCommented = Util.getJsonOptionalBool(item as! NSDictionary, fieldName: "userCommented")
+                let userIsGoing = Util.getJsonOptionalBool(item as! NSDictionary, fieldName: "userGo")
                 
-                var imGoingCount = Util.getJsonOptionalInteger(item as NSDictionary, fieldName: "countUserGo")
-                var commentCount = Util.getJsonOptionalInteger(item as NSDictionary, fieldName: "countComment")
-                var likeCount = Util.getJsonOptionalInteger(item as NSDictionary, fieldName: "countLike")
+                var imGoingCount = Util.getJsonOptionalInteger(item as! NSDictionary, fieldName: "countUserGo")
+                var commentCount = Util.getJsonOptionalInteger(item as! NSDictionary, fieldName: "countComment")
+                var likeCount = Util.getJsonOptionalInteger(item as! NSDictionary, fieldName: "countLike")
                 
-                let post = Post(id: item["id"] as NSNumber, text: item["description"] as String, imagePath: imagePath, likeCount: likeCount, commentCount: commentCount, imGoingCount: imGoingCount, user: user, comments: [Comment](), postType: PostType.valueFromId(postTypeId), group: Group(), date: NSDate(), userHasLiked: userHasLiked, userHasCommented: userHasCommented, userIsGoing: userIsGoing)
+                let post = Post(id: item["id"] as! NSNumber, text: item["description"] as! String, imagePath: imagePath, likeCount: likeCount, commentCount: commentCount, imGoingCount: imGoingCount, user: user, comments: [Comment](), postType: PostType.valueFromId(postTypeId), group: Group(), date: NSDate(), userHasLiked: userHasLiked, userHasCommented: userHasCommented, userIsGoing: userIsGoing)
                 posts.append(post)
             }
             
             self.postTableView!.reloadData()
             self.postTableView.hidden = false
-        } else if results["statusCode"] as String == MessageCode.RecordNotFound.rawValue {
+        } else if results["statusCode"] as! String == MessageCode.RecordNotFound.rawValue {
             self.emptyListLabel.hidden = false
         }
     }
@@ -167,17 +167,17 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
             }
             
             var err: NSError?
-            var jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: .MutableLeaves, error: &err) as NSDictionary
-            if((err?) != nil) {
+            var jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: .MutableLeaves, error: &err)as! NSDictionary
+            if((err) != nil) {
                 // If there is an error parsing JSON, print it to the console
                 println("JSON Error \(err!.localizedDescription)")
             }
-            let dataResult:NSDictionary = jsonResult["data"] as NSDictionary
+            let dataResult:NSDictionary = jsonResult["data"] as! NSDictionary
             dispatch_async(dispatch_get_main_queue(), {
-                let requestProfilePicture:NSURLRequest = NSURLRequest(URL: NSURL(string:dataResult["url"] as String)!)
+                let requestProfilePicture:NSURLRequest = NSURLRequest(URL: NSURL(string:dataResult["url"] as! String)!)
                 
                 NSURLConnection.sendAsynchronousRequest(requestProfilePicture, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!, data: NSData!, error:NSError!) -> Void in
-                    if !(error? != nil) {
+                    if !(error != nil) {
                         cell.userPhoto!.image = UIImage(data: data)
                     } else {
                         println("Error: \(error.localizedDescription)")
@@ -190,13 +190,13 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if segue.identifier == "group_newPost" {
-            let vc = segue.destinationViewController as PublishViewController
+            let vc = segue.destinationViewController as! PublishViewController
             
             vc.group = self.group
         } else if segue.identifier == "group_post" {
-            let vc = segue.destinationViewController as PostViewController
+            let vc = segue.destinationViewController as! PostViewController
             
-            let postCell = sender as PostCell
+            let postCell = sender as! PostCell
             
             vc.post.id = postCell.post.id
         }
@@ -204,7 +204,7 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBAction func publishPost(segue:UIStoryboardSegue) {
         
-        let publishViewController = segue.sourceViewController as PublishViewController
+        let publishViewController = segue.sourceViewController as! PublishViewController
         
         let post:Post = Post()
         post.text = publishViewController.postTextField.text
@@ -217,7 +217,7 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func didReceivePublishResults(results: NSDictionary) {
-        if (results["statusCode"] as String == MessageCode.Success.rawValue) {
+        if (results["statusCode"] as! String == MessageCode.Success.rawValue) {
             if let user = Util.getUserFromDefaults() {
                 api.callback = nil
                 api.HTTPGet("/post/getListPost/\(group.id)/\(user.id)/50/0")

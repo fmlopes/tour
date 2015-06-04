@@ -8,13 +8,13 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, FBLoginViewDelegate, APIProtocol {
+class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, APIProtocol {
     
     var user:User = User()
     
     @IBOutlet weak var recoverPassButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
-    @IBOutlet weak var fbLoginView: FBLoginView!
+    @IBOutlet weak var fbLoginView: FBSDKLoginButton!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
@@ -27,25 +27,23 @@ class LoginViewController: UIViewController, FBLoginViewDelegate, APIProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        emailTextField.hidden = true
-        passTextField.hidden = true
-        loginButton.hidden = true
-        fbLoginView.hidden = true
-        registerButton.hidden = true
-        recoverPassButton.hidden = true
-        
-        self.navigationController?.navigationBarHidden = true
-        
+        setLayout()
+        let fbLoginManager = FBSDKLoginManager();
+        fbLoginManager.loginBehavior = FBSDKLoginBehavior.SystemAccount;
+        FBSDKProfile.enableUpdatesOnAccessTokenChange(true)
         self.fbLoginView.delegate = self
         self.fbLoginView.readPermissions = ["public_profile", "email", "user_friends"]
         
         if let u = Util.getUserFromDefaults()
         {
-            self.user = u
-            let homeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("TabBar") as UITabBarController
+            let homeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("TabBar") as! UITabBarController
             self.navigationController?.pushViewController(homeViewController, animated: false)
             
+        } else if (FBSDKAccessToken.currentAccessToken() != nil) {
+            println("User already authorized app")
+            returnUserData()
+            let homeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("TabBar") as! UITabBarController
+            self.navigationController?.pushViewController(homeViewController, animated: false)
         } else {
             
             self.emailTextField.backgroundColor = UIColor.whiteColor()
@@ -61,6 +59,17 @@ class LoginViewController: UIViewController, FBLoginViewDelegate, APIProtocol {
             registerButton.hidden = false
             recoverPassButton.hidden = false
         }
+    }
+    
+    func setLayout() {
+        emailTextField.hidden = true
+        passTextField.hidden = true
+        loginButton.hidden = true
+        fbLoginView.hidden = true
+        registerButton.hidden = true
+        recoverPassButton.hidden = true
+        
+        self.navigationController?.navigationBarHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -93,51 +102,38 @@ class LoginViewController: UIViewController, FBLoginViewDelegate, APIProtocol {
         return true
     }
     
-    // Facebook Delegate Methods
-    
-    func loginViewShowingLoggedInUser(loginView : FBLoginView!) {
-        println("User Logged In")
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        self.view.endEditing(true)
+        self.emailTextField.resignFirstResponder()
+        self.passTextField.resignFirstResponder()
     }
     
-    func loginViewFetchedUserInfo(loginView : FBLoginView!, user: FBGraphUser) {
-        println("User: \(user)")
-        println("User ID: \(user.objectID)")
-        println("User Name: \(user.name)")
-        var userEmail = user.objectForKey("email") as String
-        println("User Email: \(userEmail)")
+    // Facebook Delegate Methods
+    
+    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
+        println("User Logged In")
         
-        if Util.getUserFromDefaults() == nil
-        {
-            let userFBID:NSNumber = user.objectID.toInt()!
-        
-            self.user.name = user.name
-            self.user.email = user.objectForKey("email") as String
-            self.user.facebookId = userFBID
-            self.user.gender = user.objectForKey("gender") as NSString
-            if let birthday: AnyObject = user.objectForKey("birthday") {
-                self.user.birthdate = Util.dateFromString("MM/dd/yyyy", date: birthday as String)
-            }
-        
-            api.HTTPGet("/user/facebook/\(user.objectID)")
+        if ((error) != nil) {
+            // Process error
+        } else if result.isCancelled {
+            println("Cancelled")
+        } else {
+            self.returnUserData()
         }
     }
     
-    func loginViewShowingLoggedOutUser(loginView : FBLoginView!) {
+    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
         println("User Logged Out")
-    }
-    
-    func loginView(loginView : FBLoginView!, handleError:NSError) {
-        println("Error: \(handleError.localizedDescription)")
     }
     
     func didReceiveAPIResults(results: NSDictionary)  {
         println(results)
-        if (results["statusCode"] as NSString == MessageCode.RecordNotFound.rawValue) {
+        if (results["statusCode"] as! String == MessageCode.RecordNotFound.rawValue) {
             
             api.HTTPPostJSON("/user", jsonObj: self.user.dictionaryFromUser())
-        } else if (results["statusCode"] as NSString == MessageCode.UserNotRegistered.rawValue) {
+        } else if (results["statusCode"] as! String == MessageCode.UserNotRegistered.rawValue) {
             
-        } else if (results["statusCode"] as NSString == MessageCode.UserOrPassInvalid.rawValue) {
+        } else if (results["statusCode"] as! String == MessageCode.UserOrPassInvalid.rawValue) {
             let alert = UIAlertController(title: "Erro", message: "Email ou senha inválidos.", preferredStyle: UIAlertControllerStyle.Alert)
             
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,
@@ -146,14 +142,43 @@ class LoginViewController: UIViewController, FBLoginViewDelegate, APIProtocol {
             self.presentViewController(alert, animated: false, completion: nil)
         } else {
             //let stringId:NSString = results["id"] as NSNumber
-            self.user.id = results["id"] as NSNumber
+            self.user.id = results["id"] as! NSNumber
             var defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
             defaults.setObject(self.user.dictionaryFromUser(), forKey: "loggedUser")
             defaults.synchronize()
             
-            let homeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("TabBar") as UITabBarController
+            let homeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("TabBar") as! UITabBarController
             self.navigationController?.pushViewController(homeViewController, animated: false)
         }
+    }
+    
+    func returnUserData()
+    {
+        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
+        graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
+            
+            if ((error) != nil)
+            {
+                // Process error
+                println("Error: \(error)")
+            }
+            else
+            {
+                if Util.getUserFromDefaults() == nil
+                {
+                    self.user.name = result.valueForKey("name") as! String
+                    self.user.email = result.valueForKey("email") as! String
+                    let facebookId:String = result.valueForKey("id") as! String
+                    self.user.facebookId = facebookId.toInt()!
+                    self.user.gender = result.valueForKey("gender") as! String
+                    if let birthday: AnyObject = result.valueForKey("birthday") as? String {
+                        self.user.birthdate = Util.dateFromString("MM/dd/yyyy", date: birthday as! String)
+                    }
+                    
+                    self.api.HTTPGet("/user/facebook/\(self.user.facebookId)")
+                }
+            }
+        })
     }
 }
 

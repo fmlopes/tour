@@ -83,20 +83,20 @@ class PostCell:UITableViewCell, APIProtocol {
     }
     
     func didReceiveLikeResults(results: NSDictionary) {
-        if (results["statusCode"] as String == MessageCode.Success.rawValue) {
+        if (results["statusCode"] as! String == MessageCode.Success.rawValue) {
             likeButton.setImage(UIImage(named: "like_active"), forState: UIControlState.Normal)
             userHasLiked = true
-        } else if (results["statusCode"] as String == MessageCode.SuccessUndo.rawValue) {
+        } else if (results["statusCode"] as! String == MessageCode.SuccessUndo.rawValue) {
             likeButton.setImage(UIImage(named: "like_inactive"), forState: UIControlState.Normal)
             userHasLiked = false
         }
     }
     
     func didReceiveImGoingResults(results: NSDictionary) {
-        if (results["statusCode"] as String == MessageCode.Success.rawValue) {
+        if (results["statusCode"] as! String == MessageCode.Success.rawValue) {
             imGoingButton.setImage(UIImage(named: "imgoing_active"), forState: UIControlState.Normal)
             userIsGoingThere = true
-        } else if (results["statusCode"] as String == MessageCode.SuccessUndo.rawValue) {
+        } else if (results["statusCode"] as! String == MessageCode.SuccessUndo.rawValue) {
             imGoingButton.setImage(UIImage(named: "imgoing_inactive"), forState: UIControlState.Normal)
             userIsGoingThere = false
         }
