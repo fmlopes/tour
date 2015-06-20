@@ -11,14 +11,14 @@ import Foundation
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, APIProtocol {
     
     var posts = [Post]()
-    var kCellIdentifier:NSString = "PostCell"
+    var kCellIdentifier:NSString = "PostCell_Profile"
     var group:Group = Group()
     lazy var api:API = API(delegate: self)
     
     @IBOutlet weak var postTableView: UITableView!
-    @IBOutlet weak var emptyListLabel: UILabel!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var profileImage: UIImageView!
     
     override func viewWillAppear(animated: Bool) {
         setLayout()
@@ -36,7 +36,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         backButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Exo-Medium", size: 19)!], forState: UIControlState.Normal)
         self.navigationItem.backBarButtonItem = backButton
         postTableView.hidden = true
-        self.emptyListLabel.hidden = true
         self.activityIndicatorView.startAnimating()
         self.posts.removeAll(keepCapacity: false)
     }
@@ -44,17 +43,16 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: PostCell = self.postTableView.dequeueReusableCellWithIdentifier(kCellIdentifier as String, forIndexPath: indexPath) as! PostCell
         
+        cell.postBackgroundImage!.image = UIImage(named: "image_placeholder")
+        
         let post: Post = posts[indexPath.row]
         cell.postTextLabel!.text = post.text as String
         cell.postCommentLabel!.text = String(post.commentCount)
-        cell.postImGoingCountUser!.text = String(post.imGoingCount)
         cell.postLikesLabel!.text = String(post.likeCount)
-        cell.userNameLabel!.text = String(post.author.name)
         cell.post = post
         
         cell.userHasLiked = post.userHasLiked
         cell.userHasCommented = post.userHasCommented
-        cell.userIsGoingThere = post.userIsGoing
         
         if (post.userHasLiked) {
             cell.likeButton.setImage(UIImage(named: "like_active"), forState: UIControlState.Normal)
@@ -62,10 +60,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         if (post.userHasCommented) {
             cell.commentButton.setImage(UIImage(named: "comment_active"), forState: UIControlState.Normal)
-        }
-        
-        if (post.userIsGoing) {
-            cell.imGoingButton.setImage(UIImage(named: "imgoing_active"), forState: UIControlState.Normal)
         }
         
         if post.imagePath != "" {
@@ -86,10 +80,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             cell.postLikesLabel.layer.frame.origin.y = height + 15
             cell.commentButton.layer.frame.origin.y = height
             cell.postCommentLabel.layer.frame.origin.y = height + 15
-            cell.imGoingButton.layer.frame.origin.y = height
-            cell.postImGoingCountUser.layer.frame.origin.y = height + 15
         }
-        cell.setLayout()
+        //cell.setLayout()
         
         return cell
     }
@@ -141,7 +133,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             self.postTableView!.reloadData()
             self.postTableView.hidden = false
         } else if results["statusCode"] as! String == MessageCode.RecordNotFound.rawValue {
-            self.emptyListLabel.hidden = false
+            
         }
     }
 }

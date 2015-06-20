@@ -143,7 +143,7 @@ class NewGroupViewController: UIViewController, UIPickerViewDataSource, UIPicker
             var myCustomBackButtonItem:UIBarButtonItem = UIBarButtonItem(customView: myBackButton)
             groupViewController.navigationItem.leftBarButtonItem  = myCustomBackButtonItem
             
-            self.navigationController?.pushViewController(groupViewController, animated: true)
+            self.navigationController?.popViewControllerAnimated(true)
             self.createButton.enabled = true
         }
     }

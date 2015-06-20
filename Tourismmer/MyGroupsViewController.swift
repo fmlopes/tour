@@ -23,7 +23,9 @@ class MyGroupsViewController:UIViewController, UITableViewDelegate, UITableViewD
         
         setLayout()
         
-        api.HTTPGet("/group/getUserGroups/1/50/0/")
+        if let user = Util.getUserFromDefaults() {
+            api.HTTPGet("/group/getUserGroups/\(user.id)/50/0/")
+        }
     }
     
     func setLayout() {

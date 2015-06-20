@@ -175,7 +175,7 @@ class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         
         var animationDuration:CGFloat = CGFloat(info[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber)
         
-        let newViewHeight = self.initialViewHeight + 11 - keyboardHeight
+        let newViewHeight = self.initialViewHeight + 50 - keyboardHeight
         
         UIView.animateWithDuration(0.25, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
             self.commentInputView.frame = CGRectMake(0, newViewHeight, 320, 46)

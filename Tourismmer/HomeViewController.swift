@@ -22,10 +22,12 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         setLayout()
         
-        api.HTTPGet("/group/getTopGroups/\(50)/1")
+        api.HTTPGet("/group/getTopGroups/\(50)/0")
     }
     
     func setLayout() {
@@ -35,6 +37,7 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         self.navigationItem.backBarButtonItem = backButton
         self.activityIndicatorView.startAnimating()
         self.groupsTableView.hidden = true
+        self.groups.removeAll(keepCapacity: false)
     }
     
     required init(coder aDecoder: NSCoder) {

@@ -776,15 +776,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEJA O PRIMEIRO A COMENTAR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xLM-k2-ZDo">
-                                <rect key="frame" x="16" y="89" width="288" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" id="LcP-ru-kSH">
-                                <rect key="frame" x="0.0" y="472" width="320" height="46"/>
+                                <rect key="frame" x="0.0" y="471" width="320" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Digite seu comentário" minimumFontSize="17" id="qco-pR-pWb">
@@ -807,6 +800,13 @@
                                 </subviews>
                                 <color key="backgroundColor" name="quaternaryLabelColor" catalog="System" colorSpace="catalog"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEJA O PRIMEIRO A COMENTAR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xLM-k2-ZDo">
+                                <rect key="frame" x="16" y="89" width="288" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -5399,7 +5399,7 @@ Cg
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="351" id="anD-zZ-AHi" customClass="PostCell" customModule="Tourismmer" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PostCell_Profile" rowHeight="351" id="anD-zZ-AHi" customClass="PostCell" customModule="Tourismmer" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="22" width="320" height="351"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="anD-zZ-AHi" id="iks-nX-EvQ">
@@ -5445,13 +5445,16 @@ Cg
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" id="ByY-wA-r7u">
-                                                    <rect key="frame" x="142" y="10" width="37" height="37"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                </activityIndicatorView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="commentButton" destination="0Rz-ao-B2D" id="aHi-bu-up2"/>
+                                            <outlet property="likeButton" destination="Xht-yh-g7s" id="8xW-9G-H7A"/>
+                                            <outlet property="postBackgroundImage" destination="eOL-MX-6cm" id="pCY-QC-FGz"/>
+                                            <outlet property="postCommentLabel" destination="cOG-dO-oj7" id="8iu-cH-fcb"/>
+                                            <outlet property="postLikesLabel" destination="dNZ-eE-Hgi" id="fDM-aF-1Sg"/>
+                                            <outlet property="postTextLabel" destination="ryr-jx-AD3" id="N8P-8s-0jM"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -5466,13 +5469,20 @@ Cg
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" id="ByY-wA-r7u">
+                                <rect key="frame" x="142" y="174" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Q6b-ve-BEB"/>
+                    <navigationItem key="navigationItem" title="PERFIL" id="Q6b-ve-BEB"/>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="ByY-wA-r7u" id="94m-i6-SRT"/>
                         <outlet property="nameLabel" destination="hFN-Ak-EGY" id="qf4-ly-Ig8"/>
                         <outlet property="postTableView" destination="ZO0-Qc-KDc" id="NNN-8Q-jgg"/>
+                        <outlet property="profileImage" destination="pEg-6d-dOW" id="CWf-jP-jae"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IiV-VN-oNb" userLabel="First Responder" sceneMemberID="firstResponder"/>
