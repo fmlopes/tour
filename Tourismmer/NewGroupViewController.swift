@@ -137,13 +137,14 @@ class NewGroupViewController: UIViewController, UIPickerViewDataSource, UIPicker
             //Custom back button
             var myBackButton:UIButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
             myBackButton.addTarget(self, action: "popToRoot:", forControlEvents: UIControlEvents.TouchUpInside)
-            myBackButton.setTitle("HOME", forState: UIControlState.Normal)
+            myBackButton.setTitle("<", forState: UIControlState.Normal)
             myBackButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
             myBackButton.sizeToFit()
             var myCustomBackButtonItem:UIBarButtonItem = UIBarButtonItem(customView: myBackButton)
+            myCustomBackButtonItem.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Exo-Medium", size: 19)!], forState: UIControlState.Normal)
             groupViewController.navigationItem.leftBarButtonItem  = myCustomBackButtonItem
             
-            self.navigationController?.popViewControllerAnimated(true)
+            self.navigationController?.pushViewController(groupViewController, animated: false)
             self.createButton.enabled = true
         }
     }

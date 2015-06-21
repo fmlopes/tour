@@ -24,6 +24,7 @@ class Post:NSObject {
     var userHasLiked: Bool
     var userHasCommented: Bool
     var userIsGoing: Bool
+    //var image:UIImage? = UIImage(named: "image_placeholder")
     
     init(id:NSNumber, text:NSString, imagePath:NSString, likeCount:NSInteger, commentCount:NSInteger, imGoingCount: NSInteger, user:User, comments:[Comment], postType:PostType, group:Group, date:NSDate, userHasLiked: Bool, userHasCommented: Bool, userIsGoing: Bool) {
         self.id = id

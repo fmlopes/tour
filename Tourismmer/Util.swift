@@ -10,6 +10,19 @@ import Foundation
 
 class Util {
     
+    class func setPostCellImageByURL(imageURL:String, cell:PostCell) -> Void {
+        let request:NSURLRequest = NSURLRequest(URL: NSURL(string:imageURL)!)
+        var image:UIImage?
+        
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!, data: NSData!, error:NSError!) -> Void in
+            if error == nil {
+                cell.postBackgroundImage.image = UIImage(data: data)!
+            } else {
+                println("Error: \(error.localizedDescription)")
+            }
+        })
+    }
+    
     class func getBooleanFromString(str:String) -> Bool {
         if (str == "1") {
             return true

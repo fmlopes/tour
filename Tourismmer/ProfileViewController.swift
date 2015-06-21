@@ -63,15 +63,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         
         if post.imagePath != "" {
-            let request:NSURLRequest = NSURLRequest(URL: NSURL(string:post.imagePath as String)!)
-            
-            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!, data: NSData!, error:NSError!) -> Void in
-                if !(error != nil) {
-                    cell.postBackgroundImage!.image = UIImage(data: data)
-                } else {
-                    println("Error: \(error.localizedDescription)")
-                }
-            })
+            Util.setPostCellImageByURL(post.imagePath as String, cell: cell)
         } else {
             let height:CGFloat = 90
             cell.postBackgroundImage.hidden = true

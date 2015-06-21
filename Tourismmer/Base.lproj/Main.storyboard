@@ -222,7 +222,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="80" id="9TH-h4-4y1" customClass="Cell" customModule="Tourismmer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="80"/>
+                                        <rect key="frame" x="0.0" y="86" width="320" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9TH-h4-4y1" id="G1q-xZ-pfD">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
@@ -292,7 +292,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OBJETIVO?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4Ae-IO-DXI">
-                                <rect key="frame" x="116" y="231" width="96" height="21"/>
+                                <rect key="frame" x="116" y="228" width="96" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Exo-Bold" family="Exo" pointSize="19"/>
                                 <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -307,15 +307,23 @@
                                 </connections>
                             </searchBar>
                             <pickerView tag="2" contentMode="scaleToFill" id="lDb-UZ-btQ">
-                                <rect key="frame" x="0.0" y="252" width="320" height="162"/>
+                                <rect key="frame" x="0.0" y="247" width="320" height="162"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BTr-Fc-ULC" id="P87-oP-Xpq"/>
                                     <outlet property="delegate" destination="BTr-Fc-ULC" id="b55-Sb-uC5"/>
                                 </connections>
                             </pickerView>
+                            <pickerView tag="1" contentMode="scaleToFill" id="j1N-cu-ztt">
+                                <rect key="frame" x="0.0" y="73" width="320" height="148"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BTr-Fc-ULC" id="USr-v3-PMc"/>
+                                    <outlet property="delegate" destination="BTr-Fc-ULC" id="sam-Xj-JZt"/>
+                                </connections>
+                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XIv-1X-du4">
-                                <rect key="frame" x="16" y="410" width="288" height="30"/>
+                                <rect key="frame" x="66" y="400" width="196" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Exo-Medium" family="Exo" pointSize="19"/>
                                 <state key="normal" title="CRIAR">
@@ -326,14 +334,6 @@
                                     <action selector="create:" destination="BTr-Fc-ULC" eventType="touchUpInside" id="aOv-7G-u73"/>
                                 </connections>
                             </button>
-                            <pickerView tag="1" contentMode="scaleToFill" id="j1N-cu-ztt">
-                                <rect key="frame" x="0.0" y="75" width="320" height="162"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="BTr-Fc-ULC" id="USr-v3-PMc"/>
-                                    <outlet property="delegate" destination="BTr-Fc-ULC" id="sam-Xj-JZt"/>
-                                </connections>
-                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -375,7 +375,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GroupCell" rowHeight="260" id="BjD-GR-w4C" customClass="Cell" customModule="Tourismmer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="260"/>
+                                        <rect key="frame" x="0.0" y="86" width="320" height="260"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BjD-GR-w4C" id="buY-wI-NNR">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="259"/>
@@ -477,7 +477,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="redraw" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GroupCell" rowHeight="230" id="iIk-AK-Gm8" customClass="Cell" customModule="Tourismmer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="230"/>
+                                        <rect key="frame" x="0.0" y="86" width="320" height="230"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iIk-AK-Gm8" id="QV9-2J-W0j">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="229"/>
@@ -573,7 +573,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="PostCell" rowHeight="430" id="vbI-o3-gbe" customClass="PostCell" customModule="Tourismmer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="430"/>
+                                        <rect key="frame" x="0.0" y="86" width="320" height="430"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vbI-o3-gbe" id="nht-6O-W7d">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="429"/>
@@ -732,7 +732,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="87" id="2gR-WR-pgn" customClass="CommentCell" customModule="Tourismmer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="87"/>
+                                        <rect key="frame" x="0.0" y="86" width="320" height="87"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="2gR-WR-pgn" id="MTO-S6-f1g">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="87"/>

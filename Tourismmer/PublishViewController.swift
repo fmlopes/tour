@@ -18,6 +18,7 @@ class PublishViewController:UIViewController, APIProtocol, UIImagePickerControll
     var user:User = User()
     lazy var api:API = API(delegate: self)
     var scaledImage:UIImage = UIImage()
+    var imageName:String = "image_placeholder"
     
     @IBOutlet weak var postTextField: UITextField!
     @IBOutlet weak var previewImageView: UIImageView!
@@ -53,8 +54,20 @@ class PublishViewController:UIViewController, APIProtocol, UIImagePickerControll
             self.publishButton.hidden = true
             self.activityIndicator.startAnimating()
         
-            api.callback = didReceiveImageHashAPIResults
-            api.HTTPGet("/image/getIdS3Randown")
+            if (self.imageName == "image_placeholder") {
+                let post:Post = Post()
+                post.text = self.postTextField.text
+                post.author = self.user
+                post.group = self.group
+                post.postType = PostType.valueFromId(1)
+                post.imagePath = ""
+                
+                self.api.callback = nil
+                self.api.HTTPPostJSON("/post", jsonObj: post.dictionaryFromObject())
+            } else {
+                api.callback = didReceiveImageHashAPIResults
+                api.HTTPGet("/image/getIdS3Randown")
+            }
         } else {
             let alert = UIAlertController(title: "Erro", message: "Você deve digitar um texto para seu post.", preferredStyle: UIAlertControllerStyle.Alert)
             
@@ -100,6 +113,7 @@ class PublishViewController:UIViewController, APIProtocol, UIImagePickerControll
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         
+        self.imageName = ""
         let mediaType = info[UIImagePickerControllerMediaType] as! String
         var originalImage:UIImage?, editedImage:UIImage?, imageToSave:UIImage?
         
