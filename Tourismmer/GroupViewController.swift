@@ -54,45 +54,9 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
         var cell: PostCell = self.postTableView.dequeueReusableCellWithIdentifier(kCellIdentifier as String, forIndexPath: indexPath) as! PostCell
         
         let post: Post = posts[indexPath.row]
-        cell.postTextLabel!.text = post.text as String
-        cell.postCommentLabel!.text = String(post.commentCount)
-        cell.postImGoingCountUser!.text = String(post.imGoingCount)
-        cell.postLikesLabel!.text = String(post.likeCount)
-        cell.userNameLabel!.text = String(post.author.name)
+        
         cell.post = post
-        
-        cell.userHasLiked = post.userHasLiked
-        cell.userHasCommented = post.userHasCommented
-        cell.userIsGoingThere = post.userIsGoing
-        
-        if (post.userHasLiked) {
-            cell.likeButton.setImage(UIImage(named: "like_active"), forState: UIControlState.Normal)
-        }
-        
-        if (post.userHasCommented) {
-            cell.commentButton.setImage(UIImage(named: "comment_active"), forState: UIControlState.Normal)
-        }
-        
-        if (post.userIsGoing) {
-            cell.imGoingButton.setImage(UIImage(named: "imgoing_active"), forState: UIControlState.Normal)
-        }
-        
-        if post.imagePath != "" {
-            Util.setPostCellImageByURL(post.imagePath as String, cell: cell)
-        } else {
-            let height:CGFloat = 90
-            cell.postBackgroundImage.hidden = true
-            cell.shadowView.hidden = true
-            cell.likeButton.layer.frame.origin.y = height
-            cell.postLikesLabel.layer.frame.origin.y = height + 15
-            cell.commentButton.layer.frame.origin.y = height
-            cell.postCommentLabel.layer.frame.origin.y = height + 15
-            cell.imGoingButton.layer.frame.origin.y = height
-            cell.postImGoingCountUser.layer.frame.origin.y = height + 15
-        }
-        FacebookService.setFacebookPhotoInPostCell(post.author.profilePicturePath, cell: cell)
-        
-        cell.setLayout()
+        cell.setCell()
         
         return cell
     }

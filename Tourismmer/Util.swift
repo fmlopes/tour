@@ -10,13 +10,26 @@ import Foundation
 
 class Util {
     
-    class func setPostCellImageByURL(imageURL:String, cell:PostCell) -> Void {
+    class func setPostCellImageByURL(imageURL:String, callback:((UIImage, PostCell, Post) -> Void)!, postCell:PostCell, post:Post) -> Void {
         let request:NSURLRequest = NSURLRequest(URL: NSURL(string:imageURL)!)
         var image:UIImage?
         
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!, data: NSData!, error:NSError!) -> Void in
             if error == nil {
-                cell.postBackgroundImage.image = UIImage(data: data)!
+                callback(UIImage(data: data)!, postCell, post)
+            } else {
+                println("Error: \(error.localizedDescription)")
+            }
+        })
+    }
+    
+    class func setProfilePostCellImageByURL(imageURL:String, callback:((UIImage, ProfilePostCell, Post) -> Void)!, postCell:ProfilePostCell, post:Post) -> Void {
+        let request:NSURLRequest = NSURLRequest(URL: NSURL(string:imageURL)!)
+        var image:UIImage?
+        
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!, data: NSData!, error:NSError!) -> Void in
+            if error == nil {
+                callback(UIImage(data: data)!, postCell, post)
             } else {
                 println("Error: \(error.localizedDescription)")
             }

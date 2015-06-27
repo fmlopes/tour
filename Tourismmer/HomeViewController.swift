@@ -9,10 +9,9 @@
 import Foundation
 import UIKit
 
-class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, UISearchDisplayDelegate, APIProtocol {
+class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataSource, APIProtocol {
     
     var groups = [Group]()
-    var filteredGroups = [Group]()
     var kCellIdentifier:String = "GroupCell"
     lazy var api:API = API(delegate: self)
     
@@ -48,72 +47,19 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         var cell: Cell = self.groupsTableView.dequeueReusableCellWithIdentifier(kCellIdentifier, forIndexPath: indexPath) as! Cell
         var group: Group
         
-        if tableView == self.searchDisplayController?.searchResultsTableView {
-            group = filteredGroups[indexPath.row]
-        } else {
-            group = groups[indexPath.row]
-        }
+        group = groups[indexPath.row]
         
-        cell.postText.text = group.location.name.uppercaseString
-        if (group.type  != nil){
-            cell.postGoal.text = group.type?.rawValue.uppercaseString
-        }
-        cell.postImage.image = UIImage(named: "image_placeholder")
-        cell.postDate.text = Util.stringFromDate("MM/yy", date: group.date)
-        cell.id = group.id
+        cell.setCell(group)
         
-        if group.imgPath != "" {
-            var imgURL:NSURL = NSURL(string:group.imgPath as String)!
-        
-            let request:NSURLRequest = NSURLRequest(URL: imgURL)
-        
-            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!, data: NSData!, error:NSError!) -> Void in
-                if !(error != nil) {
-                
-                    cell.postImage.image = UIImage(data: data)
-                
-                } else {
-                    println("Error: \(error.localizedDescription)")
-                }
-            })
-        } else {
-            cell.postImage.hidden = true
-        }
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tableView == self.searchDisplayController?.searchResultsTableView {
-            return self.filteredGroups.count
-        } else {
-            return self.groups.count
-        }
+        return self.groups.count
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
-    }
-    
-    func filterContentForSearchText(searchText: String) {
-        self.filteredGroups = self.groups.filter({( group: Group) -> Bool in
-            //let match = (scope == "All") || (group.location.name == scope)
-            let stringMatch = group.location.name.rangeOfString(searchText).toRange()
-            if (stringMatch != nil) {
-                return true
-            } else {
-                return false
-            }
-        })
-    }
-    
-    func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchString searchString: String!) -> Bool {
-        self.filterContentForSearchText(searchString)
-        return true
-    }
-    
-    func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchScope searchOption: Int) -> Bool {
-        self.filterContentForSearchText(self.searchDisplayController!.searchBar.text)
-        return true
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {

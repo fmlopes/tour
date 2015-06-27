@@ -41,39 +41,12 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell: PostCell = self.postTableView.dequeueReusableCellWithIdentifier(kCellIdentifier as String, forIndexPath: indexPath) as! PostCell
-        
-        cell.postBackgroundImage!.image = UIImage(named: "image_placeholder")
+        var cell: ProfilePostCell = self.postTableView.dequeueReusableCellWithIdentifier(kCellIdentifier as String, forIndexPath: indexPath) as! ProfilePostCell
         
         let post: Post = posts[indexPath.row]
-        cell.postTextLabel!.text = post.text as String
-        cell.postCommentLabel!.text = String(post.commentCount)
-        cell.postLikesLabel!.text = String(post.likeCount)
+        
         cell.post = post
-        
-        cell.userHasLiked = post.userHasLiked
-        cell.userHasCommented = post.userHasCommented
-        
-        if (post.userHasLiked) {
-            cell.likeButton.setImage(UIImage(named: "like_active"), forState: UIControlState.Normal)
-        }
-        
-        if (post.userHasCommented) {
-            cell.commentButton.setImage(UIImage(named: "comment_active"), forState: UIControlState.Normal)
-        }
-        
-        if post.imagePath != "" {
-            Util.setPostCellImageByURL(post.imagePath as String, cell: cell)
-        } else {
-            let height:CGFloat = 90
-            cell.postBackgroundImage.hidden = true
-            cell.shadowView.hidden = true
-            cell.likeButton.layer.frame.origin.y = height
-            cell.postLikesLabel.layer.frame.origin.y = height + 15
-            cell.commentButton.layer.frame.origin.y = height
-            cell.postCommentLabel.layer.frame.origin.y = height + 15
-        }
-        //cell.setLayout()
+        cell.setCell()
         
         return cell
     }
