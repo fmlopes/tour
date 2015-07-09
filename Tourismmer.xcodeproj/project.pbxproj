@@ -43,6 +43,7 @@
 		20BEA0B41A84478D00761DDE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BEA0B31A84478D00761DDE /* SearchViewController.swift */; };
 		20CD0F561A37CCB6003204F8 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD0F551A37CCB6003204F8 /* CommentCell.swift */; };
 		20DC43AC1A3A877A00F2DA8E /* GoogleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DC43AB1A3A877A00F2DA8E /* GoogleService.swift */; };
+		20EA53AA1B4E15ED007D734E /* ImagePostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA53A91B4E15ED007D734E /* ImagePostCell.swift */; };
 		20F654831AAA5E7000A07CF8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F654821AAA5E7000A07CF8 /* SettingsViewController.swift */; };
 		20F92C4C1B37C2BA006915FA /* ProfilePostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F92C4B1B37C2BA006915FA /* ProfilePostCell.swift */; };
 		30C96200C9DAD2C508DDD2D8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C88B247F5885653F0FD848 /* libPods.a */; };
@@ -121,6 +122,7 @@
 		20BEA0B31A84478D00761DDE /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		20CD0F551A37CCB6003204F8 /* CommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		20DC43AB1A3A877A00F2DA8E /* GoogleService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleService.swift; sourceTree = "<group>"; };
+		20EA53A91B4E15ED007D734E /* ImagePostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePostCell.swift; sourceTree = "<group>"; };
 		20F654821AAA5E7000A07CF8 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		20F92C4B1B37C2BA006915FA /* ProfilePostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePostCell.swift; sourceTree = "<group>"; };
 		46C88B247F5885653F0FD848 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -284,6 +286,7 @@
 				205A7A321ACCBF68008A4753 /* PrivacyViewController.swift */,
 				20557CA71B16A93D00003CBA /* ProfileViewController.swift */,
 				20F92C4B1B37C2BA006915FA /* ProfilePostCell.swift */,
+				20EA53A91B4E15ED007D734E /* ImagePostCell.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -539,6 +542,7 @@
 				20DC43AC1A3A877A00F2DA8E /* GoogleService.swift in Sources */,
 				20918E8119E370FE00BD39E8 /* Cell.swift in Sources */,
 				209BB9651991B19C00BE6D26 /* TripType.swift in Sources */,
+				20EA53AA1B4E15ED007D734E /* ImagePostCell.swift in Sources */,
 				55E1D404198D66FC0006749D /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

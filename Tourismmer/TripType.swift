@@ -18,6 +18,7 @@ enum TripType : String {
     case Shopping = "COMPRAS"
     case HikesWaterfalls = "TRILHAS E CACHOEIRAS"
     case Social = "SOCIAL"
+    case Backpacking = "MOCHILÃO"
     
     case Error = ""
     
@@ -40,6 +41,8 @@ enum TripType : String {
             return 21
         } else if self.rawValue == Social.rawValue {
             return 22
+        } else if self.rawValue == Backpacking.rawValue {
+            return 23
         } else {
             return 0
         }
@@ -64,6 +67,8 @@ enum TripType : String {
             return TripType.HikesWaterfalls
         } else if id == 22 {
             return TripType.Social
+        } else if id == 23 {
+            return TripType.Backpacking
         } else {
             return TripType.Error
         }

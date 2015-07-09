@@ -12,6 +12,7 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
     
     var posts = [Post]()
     var kCellIdentifier:NSString = "PostCell"
+    let imageCellIdentifier = "ImagePostCell"
     var group:Group = Group()
     var image:UIImage = UIImage()
     lazy var api:API = API(delegate: self)
@@ -43,6 +44,8 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
         self.emptyListLabel.hidden = true
         self.activityIndicatorView.startAnimating()
         self.posts.removeAll(keepCapacity: false)
+        self.postTableView.estimatedRowHeight = 430.0
+        self.postTableView.rowHeight = UITableViewAutomaticDimension
         self.postTableView.reloadData()
     }
     
@@ -51,9 +54,19 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell: PostCell = self.postTableView.dequeueReusableCellWithIdentifier(kCellIdentifier as String, forIndexPath: indexPath) as! PostCell
         
         let post: Post = posts[indexPath.row]
+        
+        if post.imagePath == "" {
+            return postCellAtIndexPath(indexPath, post: post)
+        } else {
+            return postImageCellAtIndexPath(indexPath, post: post)
+        }
+        
+    }
+    
+    func postCellAtIndexPath(indexPath: NSIndexPath, post:Post) -> PostCell {
+        let cell: PostCell = self.postTableView.dequeueReusableCellWithIdentifier(kCellIdentifier as String, forIndexPath: indexPath) as! PostCell
         
         cell.post = post
         cell.setCell()
@@ -61,14 +74,13 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        let post: Post = posts[indexPath.row]
+    func postImageCellAtIndexPath(indexPath: NSIndexPath, post:Post) -> PostCell {
+        let cell: ImagePostCell = self.postTableView.dequeueReusableCellWithIdentifier(imageCellIdentifier as String, forIndexPath: indexPath) as! ImagePostCell
         
-        if post.imagePath == "" {
-            return 140
-        } else {
-            return 430
-        }
+        cell.post = post
+        cell.setImageCell()
+        
+        return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

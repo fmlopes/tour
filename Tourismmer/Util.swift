@@ -10,7 +10,7 @@ import Foundation
 
 class Util {
     
-    class func setPostCellImageByURL(imageURL:String, callback:((UIImage, PostCell, Post) -> Void)!, postCell:PostCell, post:Post) -> Void {
+    class func setPostCellImageByURL(imageURL:String, callback:((UIImage, ImagePostCell, Post) -> Void)!, postCell:ImagePostCell, post:Post) -> Void {
         let request:NSURLRequest = NSURLRequest(URL: NSURL(string:imageURL)!)
         var image:UIImage?
         
