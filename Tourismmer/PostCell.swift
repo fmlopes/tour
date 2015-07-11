@@ -26,6 +26,7 @@ class PostCell:UITableViewCell, APIProtocol {
     @IBOutlet weak var postCommentLabel: UILabel!
     @IBOutlet weak var postLikesLabel: UILabel!
     @IBOutlet weak var postImGoingCountUser: UILabel!
+    @IBOutlet weak var footerView: UIView?
     
     func setCell() -> Void {
         
@@ -84,13 +85,7 @@ class PostCell:UITableViewCell, APIProtocol {
         userPhoto!.layer.cornerRadius = userPhoto!.frame.height/2
         userPhoto!.clipsToBounds = true
         
-//        if imageDoesExist {
-//            postBackgroundImage.hidden = false
-//            shadowView.hidden = false
-//        } else {
-//            postBackgroundImage.hidden = true
-//            shadowView.hidden = true
-//        }
+        self.footerView?.backgroundColor = UIColor(white: 1, alpha: 0)
         
         postTextLabel.numberOfLines = 0
     }

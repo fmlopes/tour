@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="RKj-R1-hHP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="RKj-R1-hHP">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -723,7 +723,7 @@
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="40" translatesAutoresizingMaskIntoConstraints="NO" id="Rco-tm-YCi" userLabel="Footer View">
-                                                    <rect key="frame" x="10" y="236" width="302" height="40"/>
+                                                    <rect key="frame" x="10" y="190" width="302" height="40"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qhs-8J-MVQ">
                                                             <rect key="frame" x="5" y="0.0" width="33" height="40"/>
@@ -763,6 +763,9 @@
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="qDS-sx-G71"/>
+                                                    </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -772,16 +775,17 @@
                                                 <constraint firstAttribute="trailing" secondItem="d3k-iU-vdy" secondAttribute="trailing" constant="7" id="M5r-Db-e2S"/>
                                                 <constraint firstItem="ZlS-LK-fuj" firstAttribute="top" secondItem="d3k-iU-vdy" secondAttribute="bottom" constant="8" id="PjR-0c-R1p"/>
                                                 <constraint firstItem="DMd-EC-Ltw" firstAttribute="top" secondItem="ZlS-LK-fuj" secondAttribute="bottom" constant="8" id="VBr-ly-cdH"/>
-                                                <constraint firstAttribute="bottom" secondItem="Rco-tm-YCi" secondAttribute="bottom" constant="9" id="Wfi-fq-OJf"/>
+                                                <constraint firstAttribute="bottom" secondItem="Rco-tm-YCi" secondAttribute="bottom" constant="55" id="Wfi-fq-OJf"/>
                                                 <constraint firstItem="d3k-iU-vdy" firstAttribute="leading" secondItem="Iw3-Bf-CI6" secondAttribute="leading" constant="8" id="eEF-Qv-tt6"/>
                                                 <constraint firstItem="Rco-tm-YCi" firstAttribute="leading" secondItem="Iw3-Bf-CI6" secondAttribute="leading" constant="10" id="gz3-UY-P3R"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Rco-tm-YCi" secondAttribute="trailing" id="lwV-re-jZh"/>
-                                                <constraint firstItem="Rco-tm-YCi" firstAttribute="top" secondItem="DMd-EC-Ltw" secondAttribute="bottom" constant="34" id="o3O-CA-bTJ"/>
+                                                <constraint firstItem="Rco-tm-YCi" firstAttribute="top" secondItem="DMd-EC-Ltw" secondAttribute="bottom" constant="-12" id="o3O-CA-bTJ"/>
                                                 <constraint firstAttribute="trailing" secondItem="ZlS-LK-fuj" secondAttribute="trailing" constant="10" id="smQ-lo-sRx"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="commentButton" destination="HH6-yU-Nsd" id="lBd-AH-ddb"/>
+                                            <outlet property="footerView" destination="Rco-tm-YCi" id="B14-TO-AJL"/>
                                             <outlet property="imGoingButton" destination="b2m-Zf-9EQ" id="GMd-sl-8au"/>
                                             <outlet property="likeButton" destination="Qhs-8J-MVQ" id="6FZ-Gi-FGm"/>
                                             <outlet property="postBackgroundImage" destination="bkw-3T-yXE" id="n98-Nf-WFg"/>
