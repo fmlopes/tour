@@ -21,4 +21,17 @@ class CommentCell:UITableViewCell {
         authorPhoto!.layer.cornerRadius = authorPhoto!.frame.height/2
         authorPhoto!.clipsToBounds = true
     }
+    
+    func setCell(comment:Comment) {
+        self.authorName!.text = comment.author.name as String
+        self.authorText!.text = comment.text as String
+        
+        FacebookService.setFacebookProfilePhoto(comment.author.facebookId, callback: profileImageCallback)
+        
+        self.setLayout()
+    }
+    
+    func profileImageCallback(image: UIImage?) -> Void {
+        authorPhoto!.image = image
+    }
 }

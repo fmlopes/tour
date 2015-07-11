@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
-   type = "1"
+   type = "0"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
@@ -9,13 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Tourismmer/API.swift"
-            timestampString = "429917133.096133"
+            filePath = "Tourismmer/GroupViewController.swift"
+            timestampString = "456596641.056058"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "HTTPGet(_:)"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "postImageCellAtIndexPath(_:post:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,61 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Tourismmer/API.swift"
-            timestampString = "429918442.09941"
+            filePath = "Tourismmer/Util.swift"
+            timestampString = "456597723.938283"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "HTTPsendRequest(_:)"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "setPostCellImageByURL(_:callback:postCell:post:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static Tourismmer.Util.setPostCellImageByURL (Tourismmer.Util.Type)(Swift.String, cell : Tourismmer.PostCell) -&gt; ()"
+                  moduleName = "Tourismmer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/felipe/iOS/tour/Tourismmer/Util.swift"
+                  timestampString = "456601954.999208"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "228">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static Tourismmer.Util.(setPostCellImageByURL (Tourismmer.Util.Type) -&gt; (Swift.String, cell : Tourismmer.PostCell) -&gt; ()).(closure #1)"
+                  moduleName = "Tourismmer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/felipe/iOS/tour/Tourismmer/Util.swift"
+                  timestampString = "456601954.999547"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tourismmer/Util.swift"
+            timestampString = "456598960.207249"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "setPostCellImageByURL(_:callback:postCell:post:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,28 +89,14 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Tourismmer/API.swift"
-            timestampString = "429921519.000739"
+            filePath = "Tourismmer/Util.swift"
+            timestampString = "456598961.316659"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "HTTPsendRequest(_:)"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "setPostCellImageByURL(_:callback:postCell:post:)"
             landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tourismmer/API.swift"
-            timestampString = "438361837.965963"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -72,12 +106,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tourismmer/GroupViewController.swift"
-            timestampString = "439657395.552486"
+            timestampString = "458343553.31086"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "init(coder:)"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "didReceiveAPIResults(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -87,12 +121,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Tourismmer/LoginViewController.swift"
-            timestampString = "439658211.412513"
+            filePath = "Tourismmer/GroupViewController.swift"
+            timestampString = "458343971.368388"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -103,45 +137,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Tourismmer/HomeViewController.swift"
-            timestampString = "444502369.642083"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
-            landmarkName = "didReceiveAPIResults(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tourismmer/PublishViewController.swift"
-            timestampString = "444500338.929446"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "publishPost(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Tourismmer/GroupViewController.swift"
-            timestampString = "444500484.420699"
+            timestampString = "458343972.851652"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
-            landmarkName = "didReceiveAPIResults(_:)"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "viewWillAppear(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -151,13 +153,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Tourismmer/PublishViewController.swift"
-            timestampString = "444502492.914036"
+            filePath = "Tourismmer/ProfileViewController.swift"
+            timestampString = "458347249.587119"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
-            landmarkName = "didReceiveAPIResults(_:)"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "viewWillAppear(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

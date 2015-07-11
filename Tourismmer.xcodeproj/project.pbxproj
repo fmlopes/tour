@@ -45,10 +45,10 @@
 		20DC43AC1A3A877A00F2DA8E /* GoogleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DC43AB1A3A877A00F2DA8E /* GoogleService.swift */; };
 		20EA53AA1B4E15ED007D734E /* ImagePostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA53A91B4E15ED007D734E /* ImagePostCell.swift */; };
 		20F654831AAA5E7000A07CF8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F654821AAA5E7000A07CF8 /* SettingsViewController.swift */; };
-		20F92C4C1B37C2BA006915FA /* ProfilePostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F92C4B1B37C2BA006915FA /* ProfilePostCell.swift */; };
 		30C96200C9DAD2C508DDD2D8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C88B247F5885653F0FD848 /* libPods.a */; };
 		5504ED391996774600DA6FC9 /* Blank52.png in Resources */ = {isa = PBXBuildFile; fileRef = 5504ED381996774600DA6FC9 /* Blank52.png */; };
 		551FE5301A0FAA3600B868B1 /* RecoverPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551FE52F1A0FAA3600B868B1 /* RecoverPasswordViewController.swift */; };
+		559CDC491B51D4610016FA85 /* FacebookUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559CDC481B51D4610016FA85 /* FacebookUtil.swift */; };
 		55CC781A1A17BFA4001C41E8 /* MessageCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CC78191A17BFA4001C41E8 /* MessageCode.swift */; };
 		55E1D404198D66FC0006749D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E1D403198D66FC0006749D /* HomeViewController.swift */; };
 		55EFC83F1A7E6F520046D34C /* Exo-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 55EFC82D1A7E6F520046D34C /* Exo-Black.otf */; };
@@ -124,10 +124,10 @@
 		20DC43AB1A3A877A00F2DA8E /* GoogleService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleService.swift; sourceTree = "<group>"; };
 		20EA53A91B4E15ED007D734E /* ImagePostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePostCell.swift; sourceTree = "<group>"; };
 		20F654821AAA5E7000A07CF8 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		20F92C4B1B37C2BA006915FA /* ProfilePostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePostCell.swift; sourceTree = "<group>"; };
 		46C88B247F5885653F0FD848 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5504ED381996774600DA6FC9 /* Blank52.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Blank52.png; path = Tourismmer/Images.xcassets/Blank52.png; sourceTree = "<group>"; };
 		551FE52F1A0FAA3600B868B1 /* RecoverPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewController.swift; sourceTree = "<group>"; };
+		559CDC481B51D4610016FA85 /* FacebookUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookUtil.swift; sourceTree = "<group>"; };
 		55CC78191A17BFA4001C41E8 /* MessageCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCode.swift; sourceTree = "<group>"; };
 		55E1D403198D66FC0006749D /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		55E1D40A198D7C1E0006749D /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "Tourismmer/Bridging-Header.h"; sourceTree = "<group>"; };
@@ -285,7 +285,6 @@
 				205A7A301ACCBED6008A4753 /* TermsViewController.swift */,
 				205A7A321ACCBF68008A4753 /* PrivacyViewController.swift */,
 				20557CA71B16A93D00003CBA /* ProfileViewController.swift */,
-				20F92C4B1B37C2BA006915FA /* ProfilePostCell.swift */,
 				20EA53A91B4E15ED007D734E /* ImagePostCell.swift */,
 			);
 			name = ViewController;
@@ -305,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				20918E8319E4A9B900BD39E8 /* Util.swift */,
+				559CDC481B51D4610016FA85 /* FacebookUtil.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -518,7 +518,6 @@
 				20557CA81B16A93D00003CBA /* ProfileViewController.swift in Sources */,
 				20A84D681A73CEC0003AC6F2 /* TabBarViewController.swift in Sources */,
 				20AC20271A0ACCB50035255C /* Comment.swift in Sources */,
-				20F92C4C1B37C2BA006915FA /* ProfilePostCell.swift in Sources */,
 				208A8198198732890075A441 /* LoginViewController.swift in Sources */,
 				20A891571A7451000057E8ED /* PostType.swift in Sources */,
 				20AE73F91A0C475A00BA12DB /* PostCell.swift in Sources */,
@@ -535,6 +534,7 @@
 				208A81C5198B26DE0075A441 /* API.swift in Sources */,
 				208A81C3198B24DE0075A441 /* User.swift in Sources */,
 				2042C28F1A25529800EEEE99 /* NewGroupViewController.swift in Sources */,
+				559CDC491B51D4610016FA85 /* FacebookUtil.swift in Sources */,
 				55CC781A1A17BFA4001C41E8 /* MessageCode.swift in Sources */,
 				20F654831AAA5E7000A07CF8 /* SettingsViewController.swift in Sources */,
 				20BEA0B41A84478D00761DDE /* SearchViewController.swift in Sources */,

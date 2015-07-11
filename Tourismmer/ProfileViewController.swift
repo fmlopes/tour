@@ -26,6 +26,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         if let user = Util.getUserFromDefaults() {
             nameLabel.text = user.name as String
+            FacebookService.setFacebookProfilePhoto(user.facebookId, callback: profileImageCallback)
             api.callback = nil
             api.HTTPGet("/post/getListPostByUser/\(user.id)/50/0")
         }
@@ -41,6 +42,14 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.posts.removeAll(keepCapacity: false)
         self.postTableView.estimatedRowHeight = 430.0
         self.postTableView.rowHeight = UITableViewAutomaticDimension
+        
+        profileImage!.layer.masksToBounds = false
+        profileImage!.layer.cornerRadius = profileImage!.frame.height/2
+        profileImage!.clipsToBounds = true
+    }
+    
+    func profileImageCallback(image: UIImage?) -> Void {
+        profileImage.image = image
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

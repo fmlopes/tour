@@ -23,19 +23,6 @@ class Util {
         })
     }
     
-    class func setProfilePostCellImageByURL(imageURL:String, callback:((UIImage, ProfilePostCell, Post) -> Void)!, postCell:ProfilePostCell, post:Post) -> Void {
-        let request:NSURLRequest = NSURLRequest(URL: NSURL(string:imageURL)!)
-        var image:UIImage?
-        
-        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!, data: NSData!, error:NSError!) -> Void in
-            if error == nil {
-                callback(UIImage(data: data)!, postCell, post)
-            } else {
-                println("Error: \(error.localizedDescription)")
-            }
-        })
-    }
-    
     class func getBooleanFromString(str:String) -> Bool {
         if (str == "1") {
             return true

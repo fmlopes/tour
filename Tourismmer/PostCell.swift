@@ -54,8 +54,12 @@ class PostCell:UITableViewCell, APIProtocol {
         
         setLayout()
         
-        FacebookService.setFacebookPhotoInPostCell(post.author.profilePicturePath, cell: self)
+        FacebookService.setFacebookProfilePhoto(post.author.facebookId, callback: profileImageCallback)
         
+    }
+    
+    func profileImageCallback(image: UIImage?) -> Void {
+        self.userPhoto!.image = image
     }
     
     func setLayout() {

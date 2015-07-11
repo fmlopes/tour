@@ -48,9 +48,9 @@ class FacebookService {
         task.resume()
     }
     
-    class func setFacebookPhotoInPostCell(profilePicturePath: String, cell:PostCell) -> Void {
+    class func setFacebookProfilePhoto(userFacebookID: NSNumber, callback: (UIImage?) -> Void) -> Void {
         let session = NSURLSession.sharedSession()
-        let fullPath:String = "https://graph.facebook.com/v2.2\(profilePicturePath)"
+        let fullPath:String = "https://graph.facebook.com/v2.2\(FacebookUtil.getProfilePathURL(userFacebookID))"
         var request = NSMutableURLRequest(URL: NSURL(string: fullPath.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)!)
         let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
             println("Task completed")
@@ -71,7 +71,7 @@ class FacebookService {
                 
                 NSURLConnection.sendAsynchronousRequest(requestProfilePicture, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!, data: NSData!, error:NSError!) -> Void in
                     if !(error != nil) {
-                        cell.userPhoto!.image = UIImage(data: data)
+                        callback(UIImage(data: data))
                     } else {
                         println("Error: \(error.localizedDescription)")
                     }

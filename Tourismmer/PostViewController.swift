@@ -79,12 +79,8 @@ class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         var cell: CommentCell = self.commentsTableView.dequeueReusableCellWithIdentifier(kCellIdentifier as String, forIndexPath: indexPath) as! CommentCell
         
         let comment: Comment = comments[indexPath.row]
-        cell.authorName!.text = comment.author.name as String
-        cell.authorText!.text = comment.text as String
         
-        facebookPhoto(comment.author.profilePicturePath, cell: cell)
-        
-        cell.setLayout()
+        cell.setCell(comment)
         
         return cell
     }
@@ -131,39 +127,6 @@ class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataS
             api.HTTPGet("/comment/getListComment/\(self.post.id)/30/0")
         }
         
-    }
-    
-    private func facebookPhoto(profilePicturePath: String, cell:CommentCell) -> Void {
-        let session = NSURLSession.sharedSession()
-        let fullPath:String = "https://graph.facebook.com/v2.2\(profilePicturePath)"
-        var request = NSMutableURLRequest(URL: NSURL(string: fullPath.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)!)
-        let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
-            println("Task completed")
-            if((error) != nil) {
-                // If there is an error in the web request, print it to the console
-                println(error.localizedDescription)
-            }
-            
-            var err: NSError?
-            var jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: .MutableLeaves, error: &err) as! NSDictionary
-            if((err) != nil) {
-                // If there is an error parsing JSON, print it to the console
-                println("JSON Error \(err!.localizedDescription)")
-            }
-            let dataResult:NSDictionary = jsonResult["data"] as! NSDictionary
-            dispatch_async(dispatch_get_main_queue(), {
-                let requestProfilePicture:NSURLRequest = NSURLRequest(URL: NSURL(string:dataResult["url"] as! String)!)
-                
-                NSURLConnection.sendAsynchronousRequest(requestProfilePicture, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!, data: NSData!, error:NSError!) -> Void in
-                    if !(error != nil) {
-                        cell.authorPhoto!.image = UIImage(data: data)
-                    } else {
-                        println("Error: \(error.localizedDescription)")
-                    }
-                })
-            })
-        })
-        task.resume()
     }
     
     func keyboardWillShow(notification: NSNotification) {

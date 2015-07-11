@@ -8,6 +8,7 @@
         <mutableArray key="Exo-Bold.otf">
             <string>Exo-Bold</string>
             <string>Exo-Bold</string>
+            <string>Exo-Bold</string>
         </mutableArray>
         <mutableArray key="Exo-Light.otf">
             <string>Exo-Light</string>
@@ -5524,9 +5525,9 @@ Cg
                                 <rect key="frame" x="8" y="76" width="60" height="60"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NOME" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFN-Ak-EGY">
-                                <rect key="frame" x="76" y="95" width="228" height="21"/>
+                                <rect key="frame" x="76" y="110" width="228" height="21"/>
                                 <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ByY-wA-r7u">
@@ -5782,8 +5783,14 @@ Cg
                                     <outlet property="delegate" destination="bh8-W9-fFU" id="ef7-wP-SJZ"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ARQUIVO DE:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SGq-9m-Wq5">
+                                <rect key="frame" x="76" y="82" width="228" height="21"/>
+                                <fontDescription key="fontDescription" name="Exo-Bold" family="Exo" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.64109370959801892" blue="0.17627125564251922" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="PERFIL" id="Q6b-ve-BEB"/>
                     <connections>
