@@ -54,17 +54,6 @@ class PostCell:UITableViewCell, APIProtocol {
         
         setLayout()
         
-//        if post.imagePath != "" {
-//            if post.imageAlreadyLoaded {
-//                postBackgroundImage.image = post.image
-//            } else {
-//                Util.setPostCellImageByURL(post.imagePath as String, callback: postCellImageCallback, postCell: self, post: post)
-//            }
-//            setLayout(true)
-//        } else {
-//            setLayout(false)
-//        }
-        
         FacebookService.setFacebookPhotoInPostCell(post.author.profilePicturePath, cell: self)
         
     }
@@ -89,12 +78,6 @@ class PostCell:UITableViewCell, APIProtocol {
         
         postTextLabel.numberOfLines = 0
     }
-    
-//    func postCellImageCallback(image:UIImage, postCell:PostCell, post:Post) -> Void {
-//        postCell.postBackgroundImage.image = image
-//        post.image = image
-//        post.imageAlreadyLoaded = true
-//    }
     
     @IBAction func comment(sender: AnyObject) {
         
@@ -135,9 +118,13 @@ class PostCell:UITableViewCell, APIProtocol {
         if (results["statusCode"] as! String == MessageCode.Success.rawValue) {
             likeButton.setImage(UIImage(named: "like_active"), forState: UIControlState.Normal)
             userHasLiked = true
+            post.likeCount++
+            postLikesLabel.text = String(post.likeCount)
         } else if (results["statusCode"] as! String == MessageCode.SuccessUndo.rawValue) {
             likeButton.setImage(UIImage(named: "like_inactive"), forState: UIControlState.Normal)
             userHasLiked = false
+            post.likeCount--
+            postLikesLabel.text = String(post.likeCount)
         }
     }
     
@@ -145,9 +132,13 @@ class PostCell:UITableViewCell, APIProtocol {
         if (results["statusCode"] as! String == MessageCode.Success.rawValue) {
             imGoingButton.setImage(UIImage(named: "imgoing_active"), forState: UIControlState.Normal)
             userIsGoingThere = true
+            post.imGoingCount++
+            postImGoingCountUser.text = String(post.imGoingCount)
         } else if (results["statusCode"] as! String == MessageCode.SuccessUndo.rawValue) {
             imGoingButton.setImage(UIImage(named: "imgoing_inactive"), forState: UIControlState.Normal)
             userIsGoingThere = false
+            post.imGoingCount--
+            postImGoingCountUser.text = String(post.imGoingCount)
         }
     }
 }

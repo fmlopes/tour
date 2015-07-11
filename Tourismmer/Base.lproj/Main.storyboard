@@ -68,6 +68,13 @@
             <string>Exo-Regular</string>
             <string>Exo-Regular</string>
             <string>Exo-Regular</string>
+            <string>Exo-Regular</string>
+            <string>Exo-Regular</string>
+            <string>Exo-Regular</string>
+            <string>Exo-Regular</string>
+            <string>Exo-Regular</string>
+            <string>Exo-Regular</string>
+            <string>Exo-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -590,6 +597,9 @@
                                                             <state key="normal" image="like_inactive">
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="like:" destination="vbI-o3-gbe" eventType="touchUpInside" id="Mg9-MC-p2B"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ybh-Xf-c14">
                                                             <rect key="frame" x="68" y="-11" width="33" height="40"/>
@@ -602,6 +612,9 @@
                                                             <state key="normal" image="imgoing_inactive">
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="imGoingThere:" destination="vbI-o3-gbe" eventType="touchUpInside" id="jal-4C-xCn"/>
+                                                            </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBB-vX-mOw">
                                                             <rect key="frame" x="42" y="0.0" width="19" height="21"/>
@@ -730,6 +743,9 @@
                                                             <state key="normal" image="like_inactive">
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="like:" destination="JZn-jD-48F" eventType="touchUpInside" id="tZH-vz-yDz"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HH6-yU-Nsd">
                                                             <rect key="frame" x="69" y="0.0" width="33" height="40"/>
@@ -742,6 +758,9 @@
                                                             <state key="normal" image="imgoing_inactive">
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="imGoingThere:" destination="JZn-jD-48F" eventType="touchUpInside" id="rKb-1r-fot"/>
+                                                            </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="elp-0s-DHA">
                                                             <rect key="frame" x="104" y="11" width="42" height="21"/>
@@ -5504,67 +5523,6 @@ Cg
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="pEg-6d-dOW">
                                 <rect key="frame" x="8" y="76" width="60" height="60"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="351" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ZO0-Qc-KDc">
-                                <rect key="frame" x="0.0" y="144" width="320" height="416"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PostCell_Profile" rowHeight="351" id="anD-zZ-AHi" customClass="ProfilePostCell" customModule="Tourismmer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="351"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="anD-zZ-AHi" id="iks-nX-EvQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="350"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TEXTO" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryr-jx-AD3">
-                                                    <rect key="frame" x="10" y="0.0" width="304" height="21"/>
-                                                    <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eOL-MX-6cm">
-                                                    <rect key="frame" x="10" y="25" width="300" height="300"/>
-                                                </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xht-yh-g7s">
-                                                    <rect key="frame" x="14" y="313" width="33" height="40"/>
-                                                    <state key="normal" image="like_inactive">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Rz-ao-B2D">
-                                                    <rect key="frame" x="74" y="313" width="33" height="40"/>
-                                                    <state key="normal" image="comment_inactive">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="15" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNZ-eE-Hgi">
-                                                    <rect key="frame" x="49" y="325" width="23" height="21"/>
-                                                    <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="12"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOG-dO-oj7">
-                                                    <rect key="frame" x="115" y="325" width="29" height="21"/>
-                                                    <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="12"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="commentButton" destination="0Rz-ao-B2D" id="aHi-bu-up2"/>
-                                            <outlet property="likeButton" destination="Xht-yh-g7s" id="8xW-9G-H7A"/>
-                                            <outlet property="postBackgroundImage" destination="eOL-MX-6cm" id="pCY-QC-FGz"/>
-                                            <outlet property="postCommentLabel" destination="cOG-dO-oj7" id="8iu-cH-fcb"/>
-                                            <outlet property="postLikesLabel" destination="dNZ-eE-Hgi" id="fDM-aF-1Sg"/>
-                                            <outlet property="postTextLabel" destination="ryr-jx-AD3" id="N8P-8s-0jM"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="bh8-W9-fFU" id="v4N-YZ-AKI"/>
-                                    <outlet property="delegate" destination="bh8-W9-fFU" id="yaQ-Ku-D6f"/>
-                                </connections>
-                            </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NOME" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFN-Ak-EGY">
                                 <rect key="frame" x="76" y="95" width="228" height="21"/>
                                 <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="17"/>
@@ -5575,6 +5533,255 @@ Cg
                                 <rect key="frame" x="142" y="174" width="37" height="37"/>
                                 <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="568" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="2rC-Tk-oqF">
+                                <rect key="frame" x="0.0" y="144" width="320" height="375"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="430" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="PostCell_Profile" rowHeight="140" id="o8h-Yx-O28" customClass="PostCell" customModule="Tourismmer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="86" width="320" height="430"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o8h-Yx-O28" id="5GH-6r-76l">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="429"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="21" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9X-zt-DWP">
+                                                    <rect key="frame" x="12" y="73" width="300" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sbe-ip-utp">
+                                                    <rect key="frame" x="7" y="105" width="305" height="29"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ao-D8-ovG">
+                                                            <rect key="frame" x="5" y="-11" width="33" height="40"/>
+                                                            <state key="normal" image="like_inactive">
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="like:" destination="o8h-Yx-O28" eventType="touchUpInside" id="A46-6P-n9K"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WUc-TB-fNc">
+                                                            <rect key="frame" x="68" y="-11" width="33" height="40"/>
+                                                            <state key="normal" image="comment_inactive">
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FkO-2y-v0W">
+                                                            <rect key="frame" x="254" y="-14" width="43" height="43"/>
+                                                            <state key="normal" image="imgoing_inactive">
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="imGoingThere:" destination="o8h-Yx-O28" eventType="touchUpInside" id="VEw-bj-QFL"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9z-O4-7V3">
+                                                            <rect key="frame" x="42" y="0.0" width="19" height="21"/>
+                                                            <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="14"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNH-rC-SvO">
+                                                            <rect key="frame" x="104" y="0.0" width="42" height="21"/>
+                                                            <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="14"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="15" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qQx-zK-QKN">
+                                                            <rect key="frame" x="225" y="0.0" width="32" height="21"/>
+                                                            <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="14"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="29" id="JEu-5s-MGV"/>
+                                                        <constraint firstAttribute="width" constant="305" id="c69-Sm-VQk"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p7q-ce-aUW">
+                                                    <rect key="frame" x="8" y="8" width="305" height="57"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NOME" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sam-cc-pbh">
+                                                            <rect key="frame" x="66" y="16" width="246" height="21"/>
+                                                            <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="17"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ciP-mZ-cmd">
+                                                            <rect key="frame" x="0.0" y="2" width="50" height="50"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="57" id="6Wc-dx-IMl"/>
+                                                        <constraint firstAttribute="width" constant="305" id="fFn-EH-qea"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="O9X-zt-DWP" secondAttribute="trailing" constant="8" id="198-aH-XoT"/>
+                                                <constraint firstItem="Sbe-ip-utp" firstAttribute="leading" secondItem="5GH-6r-76l" secondAttribute="leading" constant="7" id="B3B-hb-U1a"/>
+                                                <constraint firstItem="O9X-zt-DWP" firstAttribute="leading" secondItem="5GH-6r-76l" secondAttribute="leading" constant="12" id="DhJ-OL-hCl"/>
+                                                <constraint firstItem="Sbe-ip-utp" firstAttribute="top" secondItem="O9X-zt-DWP" secondAttribute="bottom" constant="11" id="GTx-ex-PUN"/>
+                                                <constraint firstItem="p7q-ce-aUW" firstAttribute="top" secondItem="5GH-6r-76l" secondAttribute="top" constant="8" id="IGu-j9-B4Z"/>
+                                                <constraint firstAttribute="trailing" secondItem="Sbe-ip-utp" secondAttribute="trailing" constant="8" id="KkL-h7-AqI"/>
+                                                <constraint firstItem="p7q-ce-aUW" firstAttribute="leading" secondItem="5GH-6r-76l" secondAttribute="leading" constant="8" id="WfA-yg-KgQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="p7q-ce-aUW" secondAttribute="trailing" constant="7" id="bZs-M0-eqX"/>
+                                                <constraint firstAttribute="bottom" secondItem="Sbe-ip-utp" secondAttribute="bottom" constant="5" id="iKp-6Q-wMq"/>
+                                                <constraint firstItem="O9X-zt-DWP" firstAttribute="top" secondItem="p7q-ce-aUW" secondAttribute="bottom" constant="8" id="wYV-pO-ieD"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="commentButton" destination="WUc-TB-fNc" id="1oE-rO-zrY"/>
+                                            <outlet property="imGoingButton" destination="FkO-2y-v0W" id="2Lr-cn-Pd1"/>
+                                            <outlet property="likeButton" destination="2ao-D8-ovG" id="olO-cJ-AVB"/>
+                                            <outlet property="postCommentLabel" destination="fNH-rC-SvO" id="TM2-Ps-ryD"/>
+                                            <outlet property="postImGoingCountUser" destination="qQx-zK-QKN" id="UcV-lR-iR9"/>
+                                            <outlet property="postLikesLabel" destination="u9z-O4-7V3" id="jJB-hE-W6l"/>
+                                            <outlet property="postTextLabel" destination="O9X-zt-DWP" id="45g-A4-alY"/>
+                                            <outlet property="userNameLabel" destination="Sam-cc-pbh" id="ik6-7u-y2G"/>
+                                            <outlet property="userPhoto" destination="ciP-mZ-cmd" id="pw0-h4-lin"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="430" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="ImagePostCell_Profile" rowHeight="430" id="gV9-Bd-8JX" customClass="ImagePostCell" customModule="Tourismmer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="214" width="320" height="140"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gV9-Bd-8JX" id="j2q-Lw-1Bc">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="429"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zDL-rc-09z" userLabel="Header View">
+                                                    <rect key="frame" x="8" y="8" width="305" height="57"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LyR-3H-464">
+                                                            <rect key="frame" x="0.0" y="2" width="50" height="50"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NOME" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M48-f4-8Oc">
+                                                            <rect key="frame" x="66" y="16" width="246" height="21"/>
+                                                            <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="17"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="57" id="7XE-LH-DM8"/>
+                                                        <constraint firstAttribute="width" constant="305" id="Yni-ue-1Bd"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="21" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5U-he-HU1">
+                                                    <rect key="frame" x="10" y="73" width="300" height="19"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="300" id="yFR-BM-U1r"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="300" translatesAutoresizingMaskIntoConstraints="NO" id="x55-nc-jUI" userLabel="Image View">
+                                                    <rect key="frame" x="10" y="100" width="300" height="300"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ode-Ir-jur">
+                                                            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="300" id="B7f-yC-J7e"/>
+                                                        <constraint firstAttribute="height" constant="300" id="K3t-9R-JjH"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="40" translatesAutoresizingMaskIntoConstraints="NO" id="F8S-b7-jfn" userLabel="Footer View">
+                                                    <rect key="frame" x="10" y="388" width="302" height="40"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ao1-oY-Im4">
+                                                            <rect key="frame" x="5" y="0.0" width="33" height="40"/>
+                                                            <state key="normal" image="like_inactive">
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="like:" destination="gV9-Bd-8JX" eventType="touchUpInside" id="zZ1-pw-7UW"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k3D-0J-Jsu">
+                                                            <rect key="frame" x="69" y="0.0" width="33" height="40"/>
+                                                            <state key="normal" image="comment_inactive">
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfY-R8-hRm">
+                                                            <rect key="frame" x="254" y="-3" width="43" height="43"/>
+                                                            <state key="normal" image="imgoing_inactive">
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="imGoingThere:" destination="gV9-Bd-8JX" eventType="touchUpInside" id="gzO-hD-DWF"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Dm-wP-HVs">
+                                                            <rect key="frame" x="104" y="11" width="42" height="21"/>
+                                                            <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="14"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="15" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9lB-ig-vO6">
+                                                            <rect key="frame" x="225" y="11" width="32" height="21"/>
+                                                            <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="14"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctc-rt-2mi">
+                                                            <rect key="frame" x="40" y="12" width="9" height="19"/>
+                                                            <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="14"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="Vtx-Go-Hbw"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="i5U-he-HU1" firstAttribute="top" secondItem="zDL-rc-09z" secondAttribute="bottom" constant="8" id="0PA-uD-baQ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="F8S-b7-jfn" secondAttribute="trailing" id="1Yl-Mu-8wR"/>
+                                                <constraint firstItem="zDL-rc-09z" firstAttribute="leading" secondItem="j2q-Lw-1Bc" secondAttribute="leading" constant="8" id="PiE-Kr-wzW"/>
+                                                <constraint firstAttribute="trailing" secondItem="zDL-rc-09z" secondAttribute="trailing" constant="7" id="QMU-BD-WPd"/>
+                                                <constraint firstItem="F8S-b7-jfn" firstAttribute="leading" secondItem="j2q-Lw-1Bc" secondAttribute="leading" constant="10" id="QPU-ov-DDh"/>
+                                                <constraint firstItem="zDL-rc-09z" firstAttribute="top" secondItem="j2q-Lw-1Bc" secondAttribute="top" constant="8" id="TYc-m9-Opr"/>
+                                                <constraint firstItem="x55-nc-jUI" firstAttribute="top" secondItem="i5U-he-HU1" secondAttribute="bottom" constant="8" id="eAi-Yg-LGL"/>
+                                                <constraint firstItem="x55-nc-jUI" firstAttribute="leading" secondItem="j2q-Lw-1Bc" secondAttribute="leading" constant="10" id="fKv-GE-GH0"/>
+                                                <constraint firstAttribute="trailing" secondItem="i5U-he-HU1" secondAttribute="trailing" constant="10" id="lap-K1-Q7g"/>
+                                                <constraint firstAttribute="bottom" secondItem="F8S-b7-jfn" secondAttribute="bottom" constant="1" id="uBK-1p-nbi"/>
+                                                <constraint firstItem="F8S-b7-jfn" firstAttribute="top" secondItem="x55-nc-jUI" secondAttribute="bottom" constant="-12" id="xII-fQ-fgt"/>
+                                                <constraint firstItem="i5U-he-HU1" firstAttribute="leading" secondItem="j2q-Lw-1Bc" secondAttribute="leading" constant="10" id="zTa-dk-LJN"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="commentButton" destination="k3D-0J-Jsu" id="d5V-Zo-Pfx"/>
+                                            <outlet property="footerView" destination="F8S-b7-jfn" id="lVX-AQ-uJU"/>
+                                            <outlet property="imGoingButton" destination="yfY-R8-hRm" id="Zga-6k-4Hp"/>
+                                            <outlet property="likeButton" destination="ao1-oY-Im4" id="82R-B8-0lb"/>
+                                            <outlet property="postBackgroundImage" destination="Ode-Ir-jur" id="K62-CK-Ixq"/>
+                                            <outlet property="postCommentLabel" destination="9Dm-wP-HVs" id="64Z-65-02y"/>
+                                            <outlet property="postImGoingCountUser" destination="9lB-ig-vO6" id="wZY-8p-YBT"/>
+                                            <outlet property="postLikesLabel" destination="ctc-rt-2mi" id="5rt-2E-h3G"/>
+                                            <outlet property="postTextLabel" destination="i5U-he-HU1" id="zge-bX-x6j"/>
+                                            <outlet property="userNameLabel" destination="M48-f4-8Oc" id="gcs-OB-v38"/>
+                                            <outlet property="userPhoto" destination="LyR-3H-464" id="4gb-Zu-plZ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="bh8-W9-fFU" id="klQ-ky-s6y"/>
+                                    <outlet property="delegate" destination="bh8-W9-fFU" id="ef7-wP-SJZ"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -5582,7 +5789,7 @@ Cg
                     <connections>
                         <outlet property="activityIndicatorView" destination="ByY-wA-r7u" id="94m-i6-SRT"/>
                         <outlet property="nameLabel" destination="hFN-Ak-EGY" id="qf4-ly-Ig8"/>
-                        <outlet property="postTableView" destination="ZO0-Qc-KDc" id="NNN-8Q-jgg"/>
+                        <outlet property="postTableView" destination="2rC-Tk-oqF" id="low-h0-Xb7"/>
                         <outlet property="profileImage" destination="pEg-6d-dOW" id="CWf-jP-jae"/>
                     </connections>
                 </viewController>
