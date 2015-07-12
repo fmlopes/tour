@@ -72,7 +72,8 @@ class Util {
         
             let user:User = User()
             user.id = stringId.integerValue
-            user.facebookId = (loggedUser["facebookId"] as! NSString).integerValue
+            let facebookId:String = loggedUser["facebookId"] as! String
+            user.facebookId = strtoll(facebookId, nil, 10)
             user.name = loggedUser["name"] as! NSString
             user.email = loggedUser["email"] as! NSString
         

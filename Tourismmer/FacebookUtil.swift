@@ -9,7 +9,7 @@
 import Foundation
 
 class FacebookUtil {
-    class func getProfilePathURL(facebookID:NSNumber) -> String {
+    class func getProfilePathURL(facebookID:Int64) -> String {
         return "/\(facebookID)/picture?redirect=false"
     }
 }

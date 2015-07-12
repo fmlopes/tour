@@ -48,7 +48,7 @@ class FacebookService {
         task.resume()
     }
     
-    class func setFacebookProfilePhoto(userFacebookID: NSNumber, callback: (UIImage?) -> Void) -> Void {
+    class func setFacebookProfilePhoto(userFacebookID: Int64, callback: (UIImage?) -> Void) -> Void {
         let session = NSURLSession.sharedSession()
         let fullPath:String = "https://graph.facebook.com/v2.2\(FacebookUtil.getProfilePathURL(userFacebookID))"
         var request = NSMutableURLRequest(URL: NSURL(string: fullPath.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)!)

@@ -104,8 +104,9 @@ class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataS
                 let comment:Comment = Comment()
                 comment.text = item["description"] as! String
                 let author:NSDictionary = item["author"] as! NSDictionary
+                let facebookId:String = author["facebookId"] as! String
                 
-                let user:User = User(id: author["id"] as! NSNumber, name: author["name"] as! String, birthdate: NSDate(), email: "", pass: "", gender: "", facebookId: (author["facebookId"] as! NSString).integerValue)
+                let user:User = User(id: author["id"] as! NSNumber, name: author["name"] as! String, birthdate: NSDate(), email: "", pass: "", gender: "", facebookId: strtoll(facebookId, nil, 10))
                 
                 comment.author = user
                 

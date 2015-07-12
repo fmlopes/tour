@@ -14,8 +14,7 @@ class User:NSObject {
     var email:NSString
     var pass:NSString
     var gender:NSString
-    var facebookId:NSNumber
-    var profilePicturePath:String
+    var facebookId:Int64
     
     override init() {
         self.id = 0
@@ -25,12 +24,11 @@ class User:NSObject {
         self.pass = ""
         self.gender = ""
         self.facebookId = 0
-        self.profilePicturePath = ""
         
         super.init()
     }
     
-    init(id:NSNumber, name:NSString, birthdate:NSDate, email:NSString, pass:NSString, gender:NSString, facebookId:NSNumber) {
+    init(id:NSNumber, name:NSString, birthdate:NSDate, email:NSString, pass:NSString, gender:NSString, facebookId:Int64) {
         self.id = id
         self.name = name
         self.birthdate = birthdate
@@ -38,7 +36,6 @@ class User:NSObject {
         self.pass = pass
         self.gender = gender
         self.facebookId = facebookId
-        self.profilePicturePath = "/\(facebookId)/picture?redirect=false"
     }
     
     func dictionaryFromUser() -> Dictionary<NSString, NSString> {
@@ -66,7 +63,7 @@ class User:NSObject {
         if (self.facebookId == 0) {
             return "";
         } else {
-            return self.facebookId.stringValue
+            return String(self.facebookId)
         }
     }
 }

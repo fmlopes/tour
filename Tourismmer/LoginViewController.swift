@@ -39,8 +39,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, APIProtoc
             println("User already authorized app")
             returnUserData()
             
-            let homeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("TabBar") as! UITabBarController
-            self.navigationController?.pushViewController(homeViewController, animated: false)
+            //let homeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("TabBar") as! UITabBarController
+            //self.navigationController?.pushViewController(homeViewController, animated: false)
         } else {
             
             self.emailTextField.backgroundColor = UIColor.whiteColor()
@@ -129,7 +129,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, APIProtoc
             
             api.HTTPPostJSON("/user", jsonObj: self.user.dictionaryFromUser())
         } else if (results["statusCode"] as! String == MessageCode.UserNotRegistered.rawValue) {
-            
+            api.HTTPPostJSON("/user", jsonObj: self.user.dictionaryFromUser())
         } else if (results["statusCode"] as! String == MessageCode.UserOrPassInvalid.rawValue) {
             let alert = UIAlertController(title: "Erro", message: "Email ou senha inválidos.", preferredStyle: UIAlertControllerStyle.Alert)
             
@@ -166,7 +166,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, APIProtoc
                     self.user.name = result.valueForKey("name") as! String
                     self.user.email = result.valueForKey("email") as! String
                     let facebookId:String = result.valueForKey("id") as! String
-                    self.user.facebookId = facebookId.toInt()!
+                    self.user.facebookId = strtoll(facebookId, nil, 10)
                     self.user.gender = result.valueForKey("gender") as! String
                     if let birthday: AnyObject = result.valueForKey("birthday") as? String {
                         self.user.birthdate = Util.dateFromString("MM/dd/yyyy", date: birthday as! String)
