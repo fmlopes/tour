@@ -12,10 +12,10 @@ import UIKit
 import CoreData
 import MobileCoreServices
 
-class PublishViewController:UIViewController, APIProtocol, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class PublishViewController:UIViewController, APIProtocol, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     var group:Group = Group()
-    var user:User = User()
+    var user:User = Util.getUserFromDefaults()!
     lazy var api:API = API(delegate: self)
     var scaledImage:UIImage = UIImage()
     var imageName:String = "image_placeholder"
@@ -25,15 +25,10 @@ class PublishViewController:UIViewController, APIProtocol, UIImagePickerControll
     @IBOutlet weak var publishButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         setLayout()
         
-        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-        
-        let loggedUser:Dictionary<NSString, AnyObject> = defaults.objectForKey("loggedUser") as! Dictionary<String, AnyObject>
-        let stringId:NSString = loggedUser["id"] as! NSString
-        user.id = NSNumber(longLong: stringId.longLongValue)
     }
     
     func setLayout() {
@@ -42,6 +37,12 @@ class PublishViewController:UIViewController, APIProtocol, UIImagePickerControll
         backButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Exo-Medium", size: 19)!], forState: UIControlState.Normal)
         self.navigationItem.backBarButtonItem = backButton
         self.previewImageView.hidden = true
+        self.postTextField.becomeFirstResponder()
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
@@ -124,7 +125,7 @@ class PublishViewController:UIViewController, APIProtocol, UIImagePickerControll
             editedImage = info[UIImagePickerControllerEditedImage] as! UIImage?
             originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage?
             
-            if ( editedImage == nil ) {
+            if ( editedImage != nil ) {
                 imageToSave = editedImage
             } else {
                 imageToSave = originalImage

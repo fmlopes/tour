@@ -32,22 +32,6 @@
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tourismmer/API.swift"
-            timestampString = "450051989.550303"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "HTTPsendRequest(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.AddressBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "No"
@@ -111,8 +95,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "132"
             endingLineNumber = "132"
-            landmarkName = "didReceiveAPIResults(_:)"
-            landmarkType = "5">
+            landmarkName = "HomeViewController"
+            landmarkType = "3">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -354,11 +338,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tourismmer/GroupViewController.swift"
-            timestampString = "458157081.113609"
+            timestampString = "458616520.024124"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
             landmarkName = "didReceiveAPIResults(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -370,11 +354,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tourismmer/GroupViewController.swift"
-            timestampString = "458157081.113609"
+            timestampString = "458616520.024124"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
             landmarkName = "didReceiveAPIResults(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -402,11 +386,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tourismmer/GroupViewController.swift"
-            timestampString = "458157081.113609"
+            timestampString = "458616520.024124"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
             landmarkName = "didReceiveAPIResults(_:)"
             landmarkType = "5">
             <Locations>
@@ -450,11 +434,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tourismmer/GroupViewController.swift"
-            timestampString = "458157081.113609"
+            timestampString = "458616520.024124"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
             landmarkName = "prepareForSegue(_:sender:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -466,12 +450,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tourismmer/PostViewController.swift"
-            timestampString = "453780559.110277"
+            timestampString = "458705024.860632"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "numberOfSectionsInTableView(_:)"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -482,11 +466,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tourismmer/PostViewController.swift"
-            timestampString = "453780559.110277"
+            timestampString = "458705111.433521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
             landmarkName = "didReceiveComposePostResults(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -498,11 +482,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tourismmer/PostViewController.swift"
-            timestampString = "453780559.110277"
+            timestampString = "458705111.433521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
             landmarkName = "didReceiveComposePostResults(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -514,11 +498,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tourismmer/PostViewController.swift"
-            timestampString = "450834355.815196"
+            timestampString = "458701822.401977"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -530,11 +514,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tourismmer/PostViewController.swift"
-            timestampString = "453780559.110277"
+            timestampString = "458705024.860632"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "didReceiveAPIResults(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -546,11 +530,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tourismmer/PostViewController.swift"
-            timestampString = "453780559.110277"
+            timestampString = "458705111.433521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "didReceiveComposePostResults(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -562,11 +546,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tourismmer/PostViewController.swift"
-            timestampString = "453780559.110277"
+            timestampString = "458705111.433521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "didReceiveComposePostResults(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -578,13 +562,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tourismmer/PostViewController.swift"
-            timestampString = "450834355.815196"
+            timestampString = "458705024.860632"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "touchesBegan(_:withEvent:)"
-            landmarkType = "5">
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "PostViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -615,8 +599,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "139"
             endingLineNumber = "139"
-            landmarkName = "didReceiveAPIResults(_:)"
-            landmarkType = "5">
+            landmarkName = "HomeViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -658,13 +642,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tourismmer/PostViewController.swift"
-            timestampString = "456279320.191842"
+            timestampString = "458705111.433521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "171"
             endingLineNumber = "171"
-            landmarkName = "keyboardWillShow(_:)"
-            landmarkType = "5">
+            landmarkName = "PostViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -674,13 +658,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tourismmer/PostViewController.swift"
-            timestampString = "456279320.191842"
+            timestampString = "458705111.433521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "179"
             endingLineNumber = "179"
-            landmarkName = "keyboardWillShow(_:)"
-            landmarkType = "5">
+            landmarkName = "PostViewController"
+            landmarkType = "3">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -849,28 +833,14 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Tourismmer/PublishViewController.swift"
-            timestampString = "453779358.56586"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Tourismmer/PostViewController.swift"
-            timestampString = "453780559.110277"
+            timestampString = "458705024.860632"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
-            landmarkName = "didReceiveAPIResults(_:)"
-            landmarkType = "5">
+            startingLineNumber = "137"
+            endingLineNumber = "137"
+            landmarkName = "PostViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -896,11 +866,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tourismmer/GroupViewController.swift"
-            timestampString = "458157081.113609"
+            timestampString = "458616520.024124"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180">
+            startingLineNumber = "182"
+            endingLineNumber = "182">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -910,11 +880,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tourismmer/GroupViewController.swift"
-            timestampString = "458157081.113609"
+            timestampString = "458616520.024124"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "176"
-            endingLineNumber = "176">
+            startingLineNumber = "178"
+            endingLineNumber = "178">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -924,12 +894,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tourismmer/PostViewController.swift"
-            timestampString = "453780559.110277"
+            timestampString = "458705024.860632"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "didReceiveAPIResults(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -940,11 +910,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tourismmer/PostViewController.swift"
-            timestampString = "450834355.815196"
+            timestampString = "458705024.860632"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
             landmarkName = "PostViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -956,11 +926,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tourismmer/PostViewController.swift"
-            timestampString = "453780559.110277"
+            timestampString = "458705024.860632"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>

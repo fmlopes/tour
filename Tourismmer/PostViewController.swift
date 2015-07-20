@@ -27,6 +27,7 @@ class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var composeTextField: UITextField!
     @IBOutlet weak var postButton: UIButton!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,23 +46,36 @@ class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         self.initialViewHeight = self.commentInputView.frame.origin.y
         self.commentsTableView.hidden = true
         self.activityIndicatorView.startAnimating()
+        self.composeTextField.becomeFirstResponder()
     }
     
     override func viewWillAppear(animated: Bool) {
         // Keyboard stuff.
         var center: NSNotificationCenter = NSNotificationCenter.defaultCenter()
-        center.addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
-        center.addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+        center.addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillChangeFrameNotification, object: nil)
+        
+        super.viewWillAppear(animated)
     }
     
     override func viewWillDisappear(animated: Bool) {
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillChangeFrameNotification, object: nil)
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         self.view.endEditing(true)
         self.composeTextField.resignFirstResponder()
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        let comment:Comment = Comment()
+        comment.text = composeTextField.text
+        comment.author = Util.getUserFromDefaults()!
+        comment.post = self.post
+        
+        composeCommentApi.callback = didReceiveComposePostResults
+        composeCommentApi.HTTPPostJSON("/comment", jsonObj: comment.dictionaryFromObject())
+        return true
     }
     
     @IBAction func postComment(sender: AnyObject) {
@@ -125,6 +139,9 @@ class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         if (results["statusCode"] as! String == MessageCode.Success.rawValue) {
             self.composeTextField.text = ""
             self.composeTextField.resignFirstResponder()
+            UIView.animateWithDuration(0.25, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                self.bottomConstraint.constant = 0
+                }, completion: nil)
             api.HTTPGet("/comment/getListComment/\(self.post.id)/30/0")
         }
         
@@ -132,37 +149,20 @@ class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     
     func keyboardWillShow(notification: NSNotification) {
         
-        let info:NSDictionary = notification.userInfo!
-        let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as! NSValue).CGRectValue()
+        if let userInfo = notification.userInfo {
+            let keyboardSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
         
-        let keyboardHeight:CGFloat = keyboardSize.height
+            var height:CGFloat = 0
         
-        var animationDuration:CGFloat = CGFloat(info[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber)
+            if let tabBarHeight = self.tabBarController?.tabBar.frame.height {
+                height = tabBarHeight
+            }
         
-        let newViewHeight = self.initialViewHeight + 50 - keyboardHeight
-        
-        UIView.animateWithDuration(0.25, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-            self.commentInputView.frame = CGRectMake(0, newViewHeight, 320, 46)
+            UIView.animateWithDuration(0.25, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                self.bottomConstraint.constant = keyboardSize.size.height - height
             }, completion: nil)
-        
-        
-        
-    }
-    
-    func keyboardWillHide(notification: NSNotification) {
-        let info:NSDictionary = notification.userInfo!
-        let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as! NSValue).CGRectValue()
-        
-        let keyboardHeight:CGFloat = keyboardSize.height
-        
-        var animationDuration:CGFloat = info[UIKeyboardAnimationDurationUserInfoKey] as! CGFloat
-        
-        let newViewHeight = self.initialViewHeight
-        
-        UIView.animateWithDuration(0.25, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-            self.commentInputView.frame = CGRectMake(0, newViewHeight, 320, 46)
-            }, completion: nil)
-        
+            
+        }
     }
 
 }

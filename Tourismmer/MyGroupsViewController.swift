@@ -15,6 +15,7 @@ class MyGroupsViewController:UIViewController, UITableViewDelegate, UITableViewD
     var kCellIdentifier:NSString = "GroupCell"
     lazy var api:API = API(delegate: self)
     
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var groupsTableView: UITableView!
     
     override func viewWillAppear(animated: Bool) {
@@ -32,6 +33,9 @@ class MyGroupsViewController:UIViewController, UITableViewDelegate, UITableViewD
         let backButton = UIBarButtonItem(title: "GRUPOS", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
         backButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Exo-Medium", size: 19)!], forState: UIControlState.Normal)
         self.navigationItem.backBarButtonItem = backButton
+        self.activityIndicatorView.startAnimating()
+        self.groupsTableView.hidden = true
+        self.groups.removeAll(keepCapacity: false)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -67,9 +71,8 @@ class MyGroupsViewController:UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func didReceiveAPIResults(results: NSDictionary) {
+        self.activityIndicatorView.stopAnimating()
         if (results["statusCode"] as! String == MessageCode.Success.rawValue) {
-            //let array:Array = results["listGroup"] as String
-            
             for item in results["listGroup"] as! NSArray {
                 var users = [User]()
                 users.append(User(id: 0, name: "", birthdate: NSDate(), email: "", pass: "", gender: "", facebookId: 0))
@@ -82,6 +85,7 @@ class MyGroupsViewController:UIViewController, UITableViewDelegate, UITableViewD
                 groups.append(Group(users: users, user: User(), location: location.name as String, date: Util.dateFromString("dd-MM-yyyy", date: dateString), type: TripType.valueFromId(purpose["id"] as! Int), imgPath: image["url"] as! String, id: item["id"] as! Int))
             }
             self.groupsTableView!.reloadData()
+            self.groupsTableView.hidden = false
         }
     }
 }

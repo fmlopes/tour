@@ -34,13 +34,15 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>4</string>
+	<string>9</string>
 	<key>FacebookAppID</key>
 	<string>764965346856305</string>
 	<key>FacebookDisplayName</key>
 	<string>Tourismmer</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSHumanReadableCopyright</key>
+	<string>© 2015, Lugger - All right reserved</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Exo-Black.otf</string>
