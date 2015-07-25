@@ -87,7 +87,7 @@ class Post:NSObject {
     
     func likeDictionaryFromObject() -> Dictionary<String, AnyObject> {
         var array: Dictionary<String, AnyObject> = [
-            "idUser": self.author.id,
+            "idUser": Util.getUserFromDefaults()!.id,
             "idPost": self.id
         ]
         return array
