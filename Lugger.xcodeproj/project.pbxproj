@@ -24,7 +24,6 @@
 		20918E8119E370FE00BD39E8 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20918E8019E370FE00BD39E8 /* Cell.swift */; };
 		20918E8419E4A9B900BD39E8 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20918E8319E4A9B900BD39E8 /* Util.swift */; };
 		2097D08F1A7339AA001EF5A4 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2097D08E1A7339AA001EF5A4 /* bg.jpg */; };
-		2097D0911A733A46001EF5A4 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2097D0901A733A46001EF5A4 /* logo.png */; };
 		209BB9611991B03E00BE6D26 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209BB9601991B03E00BE6D26 /* Group.swift */; };
 		209BB9631991B07200BE6D26 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209BB9621991B07200BE6D26 /* Location.swift */; };
 		209BB9651991B19C00BE6D26 /* TripType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209BB9641991B19C00BE6D26 /* TripType.swift */; };
@@ -88,13 +87,13 @@
 		205A7A301ACCBED6008A4753 /* TermsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
 		205A7A321ACCBF68008A4753 /* PrivacyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
 		205BDBBC1A7877A9001071F8 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
-		208A8190198732890075A441 /* Tourismmer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tourismmer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		208A8190198732890075A441 /* Lugger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lugger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		208A8194198732890075A441 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		208A8195198732890075A441 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		208A8197198732890075A441 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		208A819A198732890075A441 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		208A819C198732890075A441 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		208A81A2198732890075A441 /* TourismmerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TourismmerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		208A81A2198732890075A441 /* LuggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LuggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		208A81A7198732890075A441 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		208A81A8198732890075A441 /* TourismmerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourismmerTests.swift; sourceTree = "<group>"; };
 		208A81C2198B24DE0075A441 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -103,7 +102,6 @@
 		20918E8019E370FE00BD39E8 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		20918E8319E4A9B900BD39E8 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		2097D08E1A7339AA001EF5A4 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bg.jpg; path = Tourismmer/Images.xcassets/LaunchImage.launchimage/bg.jpg; sourceTree = "<group>"; };
-		2097D0901A733A46001EF5A4 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = Tourismmer/Images.xcassets/LaunchImage.launchimage/logo.png; sourceTree = "<group>"; };
 		209BB9601991B03E00BE6D26 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		209BB9621991B07200BE6D26 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		209BB9641991B19C00BE6D26 /* TripType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripType.swift; sourceTree = "<group>"; };
@@ -192,7 +190,6 @@
 				5504ED381996774600DA6FC9 /* Blank52.png */,
 				20526DB41A73365E00A704C8 /* loading.jpg */,
 				2097D08E1A7339AA001EF5A4 /* bg.jpg */,
-				2097D0901A733A46001EF5A4 /* logo.png */,
 				378832293D9BBA23E333F4DF /* Pods */,
 			);
 			sourceTree = "<group>";
@@ -200,8 +197,8 @@
 		208A8191198732890075A441 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				208A8190198732890075A441 /* Tourismmer.app */,
-				208A81A2198732890075A441 /* TourismmerTests.xctest */,
+				208A8190198732890075A441 /* Lugger.app */,
+				208A81A2198732890075A441 /* LuggerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -354,9 +351,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		208A818F198732890075A441 /* Tourismmer */ = {
+		208A818F198732890075A441 /* Lugger */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 208A81AC198732890075A441 /* Build configuration list for PBXNativeTarget "Tourismmer" */;
+			buildConfigurationList = 208A81AC198732890075A441 /* Build configuration list for PBXNativeTarget "Lugger" */;
 			buildPhases = (
 				441FCA35BAF9BA0CD3D94E3D /* Check Pods Manifest.lock */,
 				208A818C198732890075A441 /* Sources */,
@@ -368,14 +365,14 @@
 			);
 			dependencies = (
 			);
-			name = Tourismmer;
+			name = Lugger;
 			productName = Tourismmer;
-			productReference = 208A8190198732890075A441 /* Tourismmer.app */;
+			productReference = 208A8190198732890075A441 /* Lugger.app */;
 			productType = "com.apple.product-type.application";
 		};
-		208A81A1198732890075A441 /* TourismmerTests */ = {
+		208A81A1198732890075A441 /* LuggerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 208A81AF198732890075A441 /* Build configuration list for PBXNativeTarget "TourismmerTests" */;
+			buildConfigurationList = 208A81AF198732890075A441 /* Build configuration list for PBXNativeTarget "LuggerTests" */;
 			buildPhases = (
 				208A819E198732890075A441 /* Sources */,
 				208A819F198732890075A441 /* Frameworks */,
@@ -386,9 +383,9 @@
 			dependencies = (
 				208A81A4198732890075A441 /* PBXTargetDependency */,
 			);
-			name = TourismmerTests;
+			name = LuggerTests;
 			productName = TourismmerTests;
-			productReference = 208A81A2198732890075A441 /* TourismmerTests.xctest */;
+			productReference = 208A81A2198732890075A441 /* LuggerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -410,7 +407,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 208A818B198732890075A441 /* Build configuration list for PBXProject "Tourismmer" */;
+			buildConfigurationList = 208A818B198732890075A441 /* Build configuration list for PBXProject "Lugger" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -423,8 +420,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				208A818F198732890075A441 /* Tourismmer */,
-				208A81A1198732890075A441 /* TourismmerTests */,
+				208A818F198732890075A441 /* Lugger */,
+				208A81A1198732890075A441 /* LuggerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -444,7 +441,6 @@
 				20A3FA5C1A9C12AE00C6A72E /* podfile in Resources */,
 				55EFC84B1A7E6F520046D34C /* Exo-MediumItalic.otf in Resources */,
 				55EFC84C1A7E6F520046D34C /* Exo-Regular.otf in Resources */,
-				2097D0911A733A46001EF5A4 /* logo.png in Resources */,
 				55EFC8481A7E6F520046D34C /* Exo-Light.otf in Resources */,
 				5504ED391996774600DA6FC9 /* Blank52.png in Resources */,
 				208A819B198732890075A441 /* Main.storyboard in Resources */,
@@ -560,7 +556,7 @@
 /* Begin PBXTargetDependency section */
 		208A81A4198732890075A441 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 208A818F198732890075A441 /* Tourismmer */;
+			target = 208A818F198732890075A441 /* Lugger */;
 			targetProxy = 208A81A3198732890075A441 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -674,7 +670,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Lugger;
 				PROVISIONING_PROFILE = "46e963c0-53d7-42fb-b1ba-c077bd20edba";
 				SWIFT_OBJC_BRIDGING_HEADER = "Tourismmer/Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -701,7 +697,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Lugger;
 				PROVISIONING_PROFILE = "46e963c0-53d7-42fb-b1ba-c077bd20edba";
 				SWIFT_OBJC_BRIDGING_HEADER = "Tourismmer/Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -724,7 +720,7 @@
 				);
 				INFOPLIST_FILE = TourismmerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LuggerTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Debug;
@@ -739,7 +735,7 @@
 				);
 				INFOPLIST_FILE = TourismmerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LuggerTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Release;
@@ -747,7 +743,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		208A818B198732890075A441 /* Build configuration list for PBXProject "Tourismmer" */ = {
+		208A818B198732890075A441 /* Build configuration list for PBXProject "Lugger" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				208A81AA198732890075A441 /* Debug */,
@@ -756,7 +752,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		208A81AC198732890075A441 /* Build configuration list for PBXNativeTarget "Tourismmer" */ = {
+		208A81AC198732890075A441 /* Build configuration list for PBXNativeTarget "Lugger" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				208A81AD198732890075A441 /* Debug */,
@@ -765,7 +761,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		208A81AF198732890075A441 /* Build configuration list for PBXNativeTarget "TourismmerTests" */ = {
+		208A81AF198732890075A441 /* Build configuration list for PBXNativeTarget "LuggerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				208A81B0198732890075A441 /* Debug */,

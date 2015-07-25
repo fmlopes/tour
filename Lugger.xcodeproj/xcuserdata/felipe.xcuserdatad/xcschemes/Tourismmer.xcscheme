@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "208A818F198732890075A441"
-               BuildableName = "Tourismmer.app"
-               BlueprintName = "Tourismmer"
-               ReferencedContainer = "container:Tourismmer.xcodeproj">
+               BuildableName = "Lugger.app"
+               BlueprintName = "Lugger"
+               ReferencedContainer = "container:Lugger.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "208A81A1198732890075A441"
-               BuildableName = "TourismmerTests.xctest"
-               BlueprintName = "TourismmerTests"
-               ReferencedContainer = "container:Tourismmer.xcodeproj">
+               BuildableName = "LuggerTests.xctest"
+               BlueprintName = "LuggerTests"
+               ReferencedContainer = "container:Lugger.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "208A818F198732890075A441"
-            BuildableName = "Tourismmer.app"
-            BlueprintName = "Tourismmer"
-            ReferencedContainer = "container:Tourismmer.xcodeproj">
+            BuildableName = "Lugger.app"
+            BlueprintName = "Lugger"
+            ReferencedContainer = "container:Lugger.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -58,13 +58,14 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "208A818F198732890075A441"
-            BuildableName = "Tourismmer.app"
-            BlueprintName = "Tourismmer"
-            ReferencedContainer = "container:Tourismmer.xcodeproj">
+            BuildableName = "Lugger.app"
+            BlueprintName = "Lugger"
+            ReferencedContainer = "container:Lugger.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -76,13 +77,14 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "208A818F198732890075A441"
-            BuildableName = "Tourismmer.app"
-            BlueprintName = "Tourismmer"
-            ReferencedContainer = "container:Tourismmer.xcodeproj">
+            BuildableName = "Lugger.app"
+            BlueprintName = "Lugger"
+            ReferencedContainer = "container:Lugger.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

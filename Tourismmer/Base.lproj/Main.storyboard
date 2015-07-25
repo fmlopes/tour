@@ -83,7 +83,7 @@
         <!--LOGIN-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="Login" title="LOGIN" id="BYZ-38-t0r" customClass="LoginViewController" customModule="Tourismmer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" title="LOGIN" id="BYZ-38-t0r" customClass="LoginViewController" customModule="Lugger" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xq4-ul-9qA"/>
                         <viewControllerLayoutGuide type="bottom" id="nSK-s4-OsS"/>
@@ -124,7 +124,7 @@
                                     <segue destination="9w3-c3-LwC" kind="push" id="VnV-b6-mnf"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="d6r-fr-dmX">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="d6r-fr-dmX">
                                 <rect key="frame" x="94" y="87" width="132" height="132"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="SENHA" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7sz-j8-WtZ">
@@ -167,7 +167,7 @@
         <!--RECUPERAR SENHA-->
         <scene sceneID="yGu-Le-8r5">
             <objects>
-                <viewController title="RECUPERAR SENHA" id="9w3-c3-LwC" customClass="RecoverPasswordViewController" customModule="Tourismmer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="RECUPERAR SENHA" id="9w3-c3-LwC" customClass="RecoverPasswordViewController" customModule="Lugger" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="j6h-h3-gik"/>
                         <viewControllerLayoutGuide type="bottom" id="ttP-QG-MP4"/>
@@ -195,12 +195,13 @@
                                     <action selector="send:" destination="9w3-c3-LwC" eventType="touchUpInside" id="7TB-bv-lrH"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="WNc-i3-7Et">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="WNc-i3-7Et">
                                 <rect key="frame" x="94" y="89" width="132" height="132"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VOCE RECEBERÁ UM EMAIL COM SUA NOVA SENHA." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vx6-IB-ONX">
                                 <rect key="frame" x="24" y="242" width="280" height="64"/>
                                 <fontDescription key="fontDescription" name="Exo-Light" family="Exo" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -221,7 +222,7 @@
         <!--BUSCAR-->
         <scene sceneID="2lh-i9-iia">
             <objects>
-                <viewController title="BUSCAR" id="pLV-s8-t6l" customClass="SearchViewController" customModule="Tourismmer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="BUSCAR" id="pLV-s8-t6l" customClass="SearchViewController" customModule="Lugger" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="U40-Er-Fje"/>
                         <viewControllerLayoutGuide type="bottom" id="kfC-i8-jAR"/>
@@ -234,7 +235,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="80" id="9TH-h4-4y1" customClass="Cell" customModule="Tourismmer" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="80" id="9TH-h4-4y1" customClass="Cell" customModule="Lugger" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="86" width="320" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9TH-h4-4y1" id="G1q-xZ-pfD">
@@ -289,7 +290,7 @@
         <!--NOVO GRUPO-->
         <scene sceneID="TcU-Er-TAF">
             <objects>
-                <viewController id="BTr-Fc-ULC" customClass="NewGroupViewController" customModule="Tourismmer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BTr-Fc-ULC" customClass="NewGroupViewController" customModule="Lugger" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gf2-0Q-unE"/>
                         <viewControllerLayoutGuide type="bottom" id="a4N-st-rhm"/>
@@ -372,7 +373,7 @@
         <!--HOME-->
         <scene sceneID="3M6-V3-apL">
             <objects>
-                <viewController storyboardIdentifier="Home" id="Nf4-Vd-m2E" customClass="HomeViewController" customModule="Tourismmer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Home" id="Nf4-Vd-m2E" customClass="HomeViewController" customModule="Lugger" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="j6z-zO-Nnq"/>
                         <viewControllerLayoutGuide type="bottom" id="PvL-L3-Ond"/>
@@ -385,7 +386,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GroupCell" rowHeight="260" id="BjD-GR-w4C" customClass="Cell" customModule="Tourismmer" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GroupCell" rowHeight="260" id="BjD-GR-w4C" customClass="Cell" customModule="Lugger" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="86" width="320" height="260"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BjD-GR-w4C" id="buY-wI-NNR">
@@ -465,7 +466,7 @@
         <!--MyGroups-->
         <scene sceneID="Iqx-hY-fgI">
             <objects>
-                <viewController storyboardIdentifier="MyGroups" title="MyGroups" id="0BH-FM-yt9" customClass="MyGroupsViewController" customModule="Tourismmer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyGroups" title="MyGroups" id="0BH-FM-yt9" customClass="MyGroupsViewController" customModule="Lugger" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Aac-Q7-vuD"/>
                         <viewControllerLayoutGuide type="bottom" id="6sa-to-BOA"/>
@@ -478,7 +479,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="redraw" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GroupCell" rowHeight="260" id="iIk-AK-Gm8" customClass="Cell" customModule="Tourismmer" customModuleProvider="target">
+                                    <tableViewCell contentMode="redraw" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GroupCell" rowHeight="260" id="iIk-AK-Gm8" customClass="Cell" customModule="Lugger" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="86" width="320" height="230"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iIk-AK-Gm8" id="QV9-2J-W0j">
@@ -558,7 +559,7 @@
         <!--GRUPO-->
         <scene sceneID="aLw-iA-4E2">
             <objects>
-                <viewController storyboardIdentifier="Group" title="GRUPO" id="X5e-do-ZUI" customClass="GroupViewController" customModule="Tourismmer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Group" title="GRUPO" id="X5e-do-ZUI" customClass="GroupViewController" customModule="Lugger" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZDT-kg-qlF"/>
                         <viewControllerLayoutGuide type="bottom" id="jD7-qm-ZWf"/>
@@ -571,7 +572,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="430" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="PostCell" rowHeight="140" id="vbI-o3-gbe" customClass="PostCell" customModule="Tourismmer" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="430" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="PostCell" rowHeight="140" id="vbI-o3-gbe" customClass="PostCell" customModule="Lugger" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="86" width="320" height="430"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vbI-o3-gbe" id="nht-6O-W7d">
@@ -682,7 +683,7 @@
                                             <segue destination="Ib5-sI-8oP" kind="push" identifier="group_post" id="Ged-iD-hWn"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="430" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="ImagePostCell" rowHeight="430" id="JZn-jD-48F" customClass="ImagePostCell" customModule="Tourismmer" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="430" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="ImagePostCell" rowHeight="430" id="JZn-jD-48F" customClass="ImagePostCell" customModule="Lugger" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="214" width="320" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JZn-jD-48F" id="Iw3-Bf-CI6">
@@ -854,7 +855,7 @@
         <!--POST-->
         <scene sceneID="U1N-cM-eQm">
             <objects>
-                <viewController title="POST" id="Ib5-sI-8oP" customClass="PostViewController" customModule="Tourismmer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="POST" id="Ib5-sI-8oP" customClass="PostViewController" customModule="Lugger" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fUF-qo-7Fs"/>
                         <viewControllerLayoutGuide type="bottom" id="ORE-PJ-3eW"/>
@@ -867,7 +868,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="87" id="2gR-WR-pgn" customClass="CommentCell" customModule="Tourismmer" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="87" id="2gR-WR-pgn" customClass="CommentCell" customModule="Lugger" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="86" width="320" height="87"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="2gR-WR-pgn" id="MTO-S6-f1g">
@@ -967,7 +968,7 @@
         <!--PUBLICAR-->
         <scene sceneID="LTd-b0-qds">
             <objects>
-                <viewController id="wsH-Ko-Zyz" customClass="PublishViewController" customModule="Tourismmer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wsH-Ko-Zyz" customClass="PublishViewController" customModule="Lugger" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qla-br-U8K"/>
                         <viewControllerLayoutGuide type="bottom" id="XNf-zb-Wp0"/>
@@ -1035,7 +1036,7 @@
         <!--CRIAR CONTA-->
         <scene sceneID="kfP-1g-nwm">
             <objects>
-                <viewController title="CRIAR CONTA" id="L2z-4B-tfn" customClass="RegisterViewController" customModule="Tourismmer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="CRIAR CONTA" id="L2z-4B-tfn" customClass="RegisterViewController" customModule="Lugger" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hx4-8h-4jd"/>
                         <viewControllerLayoutGuide type="bottom" id="EAQ-i3-PKE"/>
@@ -1160,7 +1161,7 @@
         <!--TabBar-->
         <scene sceneID="C8u-eB-07k">
             <objects>
-                <tabBarController storyboardIdentifier="TabBar" title="TabBar" automaticallyAdjustsScrollViewInsets="NO" id="JNr-Im-9sf" customClass="MenuController" customModule="Tourismmer" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBar" title="TabBar" automaticallyAdjustsScrollViewInsets="NO" id="JNr-Im-9sf" customClass="MenuController" customModule="Lugger" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="E5g-Iq-HeS"/>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -1233,7 +1234,7 @@
         <!--SETTINGS-->
         <scene sceneID="tJr-G8-mMZ">
             <objects>
-                <viewController title="SETTINGS" id="pDR-TV-hBP" customClass="SettingsViewController" customModule="Tourismmer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="SETTINGS" id="pDR-TV-hBP" customClass="SettingsViewController" customModule="Lugger" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="deM-ES-csh"/>
                         <viewControllerLayoutGuide type="bottom" id="ePE-An-Pkh"/>
@@ -1302,7 +1303,7 @@
         <!--TERMOS-->
         <scene sceneID="aS0-ij-b4v">
             <objects>
-                <viewController id="0uR-rH-pfx" customClass="TermsViewController" customModule="Tourismmer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0uR-rH-pfx" customClass="TermsViewController" customModule="Lugger" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MCo-iV-OO3"/>
                         <viewControllerLayoutGuide type="bottom" id="AFo-FD-YmG"/>
@@ -4797,7 +4798,7 @@ Cg
         <!--POLÍTICA-->
         <scene sceneID="ehD-UA-GN1">
             <objects>
-                <viewController id="YDR-D5-pmT" customClass="PrivacyViewController" customModule="Tourismmer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="YDR-D5-pmT" customClass="PrivacyViewController" customModule="Lugger" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BfW-54-emV"/>
                         <viewControllerLayoutGuide type="bottom" id="QLS-cI-F1d"/>
@@ -5520,7 +5521,7 @@ Cg
         <!--PROFILE-->
         <scene sceneID="uCu-V1-vYJ">
             <objects>
-                <viewController title="PROFILE" id="bh8-W9-fFU" customClass="ProfileViewController" customModule="Tourismmer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="PROFILE" id="bh8-W9-fFU" customClass="ProfileViewController" customModule="Lugger" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FIB-WC-gqx"/>
                         <viewControllerLayoutGuide type="bottom" id="f8v-Hj-xnR"/>
@@ -5540,7 +5541,7 @@ Cg
                                 <rect key="frame" x="0.0" y="144" width="320" height="375"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="430" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="PostCell_Profile" rowHeight="140" id="o8h-Yx-O28" customClass="PostCell" customModule="Tourismmer" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="430" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="PostCell_Profile" rowHeight="140" id="o8h-Yx-O28" customClass="PostCell" customModule="Lugger" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="86" width="320" height="430"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o8h-Yx-O28" id="5GH-6r-76l">
@@ -5650,7 +5651,7 @@ Cg
                                             <outlet property="userPhoto" destination="ciP-mZ-cmd" id="pw0-h4-lin"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="430" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="ImagePostCell_Profile" rowHeight="430" id="gV9-Bd-8JX" customClass="ImagePostCell" customModule="Tourismmer" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="430" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="ImagePostCell_Profile" rowHeight="430" id="gV9-Bd-8JX" customClass="ImagePostCell" customModule="Lugger" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="214" width="320" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gV9-Bd-8JX" id="j2q-Lw-1Bc">
@@ -5794,7 +5795,7 @@ Cg
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NOME" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFN-Ak-EGY">
                                 <rect key="frame" x="54" y="80" width="228" height="21"/>
                                 <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -5892,7 +5893,7 @@ Cg
         <image name="image_placeholder" width="200" height="200"/>
         <image name="imgoing_inactive" width="43" height="43"/>
         <image name="like_inactive" width="33" height="40"/>
-        <image name="logo.png" width="263" height="263"/>
+        <image name="logo" width="890" height="890"/>
         <image name="menu_home_64" width="64" height="38"/>
         <image name="menu_mygroups_64" width="64" height="38"/>
         <image name="menu_profile_64" width="64" height="38"/>
