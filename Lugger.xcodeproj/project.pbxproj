@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2042C28F1A25529800EEEE99 /* NewGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2042C28E1A25529800EEEE99 /* NewGroupViewController.swift */; };
-		20526DB51A73365E00A704C8 /* loading.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 20526DB41A73365E00A704C8 /* loading.jpg */; };
 		20557CA81B16A93D00003CBA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20557CA71B16A93D00003CBA /* ProfileViewController.swift */; };
 		205A7A311ACCBED6008A4753 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205A7A301ACCBED6008A4753 /* TermsViewController.swift */; };
 		205A7A331ACCBF68008A4753 /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205A7A321ACCBF68008A4753 /* PrivacyViewController.swift */; };
@@ -23,7 +22,6 @@
 		208A81C9198C464E0075A441 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A81C8198C464E0075A441 /* RegisterViewController.swift */; };
 		20918E8119E370FE00BD39E8 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20918E8019E370FE00BD39E8 /* Cell.swift */; };
 		20918E8419E4A9B900BD39E8 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20918E8319E4A9B900BD39E8 /* Util.swift */; };
-		2097D08F1A7339AA001EF5A4 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2097D08E1A7339AA001EF5A4 /* bg.jpg */; };
 		209BB9611991B03E00BE6D26 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209BB9601991B03E00BE6D26 /* Group.swift */; };
 		209BB9631991B07200BE6D26 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209BB9621991B07200BE6D26 /* Location.swift */; };
 		209BB9651991B19C00BE6D26 /* TripType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209BB9641991B19C00BE6D26 /* TripType.swift */; };
@@ -82,7 +80,6 @@
 
 /* Begin PBXFileReference section */
 		2042C28E1A25529800EEEE99 /* NewGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGroupViewController.swift; sourceTree = "<group>"; };
-		20526DB41A73365E00A704C8 /* loading.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = loading.jpg; path = Tourismmer/Images.xcassets/LaunchImage.launchimage/loading.jpg; sourceTree = "<group>"; };
 		20557CA71B16A93D00003CBA /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		205A7A301ACCBED6008A4753 /* TermsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
 		205A7A321ACCBF68008A4753 /* PrivacyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
@@ -101,7 +98,6 @@
 		208A81C8198C464E0075A441 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		20918E8019E370FE00BD39E8 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		20918E8319E4A9B900BD39E8 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
-		2097D08E1A7339AA001EF5A4 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bg.jpg; path = Tourismmer/Images.xcassets/LaunchImage.launchimage/bg.jpg; sourceTree = "<group>"; };
 		209BB9601991B03E00BE6D26 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		209BB9621991B07200BE6D26 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		209BB9641991B19C00BE6D26 /* TripType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripType.swift; sourceTree = "<group>"; };
@@ -188,8 +184,6 @@
 				208A81A5198732890075A441 /* TourismmerTests */,
 				208A8191198732890075A441 /* Products */,
 				5504ED381996774600DA6FC9 /* Blank52.png */,
-				20526DB41A73365E00A704C8 /* loading.jpg */,
-				2097D08E1A7339AA001EF5A4 /* bg.jpg */,
 				378832293D9BBA23E333F4DF /* Pods */,
 			);
 			sourceTree = "<group>";
@@ -436,8 +430,6 @@
 				55EFC84F1A7E6F520046D34C /* Exo-Thin.otf in Resources */,
 				55EFC8501A7E6F520046D34C /* Exo-ThinItalic.otf in Resources */,
 				55EFC8461A7E6F520046D34C /* Exo-ExtraLightItalic.otf in Resources */,
-				2097D08F1A7339AA001EF5A4 /* bg.jpg in Resources */,
-				20526DB51A73365E00A704C8 /* loading.jpg in Resources */,
 				20A3FA5C1A9C12AE00C6A72E /* podfile in Resources */,
 				55EFC84B1A7E6F520046D34C /* Exo-MediumItalic.otf in Resources */,
 				55EFC84C1A7E6F520046D34C /* Exo-Regular.otf in Resources */,
