@@ -137,6 +137,53 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
             let postCell = sender as! PostCell
             
             vc.post.id = postCell.post.id
+        } else if segue.identifier == "comment_post" {
+            let vc = segue.destinationViewController as! PostViewController
+            
+            let button = sender as! UIButton
+            let footerView = button.superview!
+            let contentView = footerView.superview!
+            let postCell = contentView.superview as! PostCell
+            
+            vc.post.id = postCell.post.id
+        }
+    }
+    
+    @IBAction func ImgoingPost(sender: AnyObject) {
+        
+        let button = sender as! UIButton
+        let footerView = button.superview!
+        let contentView = footerView.superview!
+        let postCell = contentView.superview as! PostCell
+        
+        if (postCell.userIsGoingThere) {
+            let alert = UIAlertController(title: "Abandonar post?", message: "Você não receberá mais notificações sobre este post.", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,
+                handler: { (action:UIAlertAction!) -> Void in
+                    postCell.imGoingThere(sender)
+                }
+            ))
+            
+            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel,
+                handler: nil))
+            
+            self.presentViewController(alert, animated: false, completion: nil)
+        } else {
+        
+            let alert = UIAlertController(title: "Seguir post?", message: "Você receberá notificações sobre este post.", preferredStyle: UIAlertControllerStyle.Alert)
+        
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,
+                handler: { (action:UIAlertAction!) -> Void in
+                    postCell.imGoingThere(sender)
+                }
+            ))
+        
+            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel,
+            handler: nil))
+        
+            self.presentViewController(alert, animated: false, completion: nil)
+            
         }
     }
     

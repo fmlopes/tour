@@ -29,4 +29,8 @@ class ImagePostCell:PostCell {
         post.image = image
         post.imageAlreadyLoaded = true
     }
+    
+    @IBAction override  func comment(sender: AnyObject) {
+        super.comment(sender)
+    }
 }

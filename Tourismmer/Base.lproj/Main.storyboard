@@ -125,7 +125,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="d6r-fr-dmX">
-                                <rect key="frame" x="94" y="87" width="132" height="132"/>
+                                <rect key="frame" x="94" y="57" width="130" height="157"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="SENHA" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7sz-j8-WtZ">
                                 <rect key="frame" x="24" y="294" width="273" height="45"/>
@@ -195,15 +195,15 @@
                                     <action selector="send:" destination="9w3-c3-LwC" eventType="touchUpInside" id="7TB-bv-lrH"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="WNc-i3-7Et">
-                                <rect key="frame" x="94" y="89" width="132" height="132"/>
-                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VOCE RECEBERÁ UM EMAIL COM SUA NOVA SENHA." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vx6-IB-ONX">
                                 <rect key="frame" x="24" y="242" width="280" height="64"/>
                                 <fontDescription key="fontDescription" name="Exo-Light" family="Exo" pointSize="21"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="WNc-i3-7Et">
+                                <rect key="frame" x="95" y="53" width="130" height="157"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -217,7 +217,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VYi-En-mym" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-194.40000000000001" y="-220.57333333333332"/>
+            <point key="canvasLocation" x="-195" y="-221"/>
         </scene>
         <!--BUSCAR-->
         <scene sceneID="2lh-i9-iia">
@@ -602,14 +602,17 @@
                                                             <state key="normal" image="comment_inactive">
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <connections>
+                                                                <segue destination="Ib5-sI-8oP" kind="push" identifier="comment_post" id="aok-Kc-19t"/>
+                                                            </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k5u-sf-i4E">
-                                                            <rect key="frame" x="254" y="-14" width="43" height="43"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k5u-sf-i4E">
+                                                            <rect key="frame" x="257" y="-14" width="43" height="43"/>
                                                             <state key="normal" image="imgoing_inactive">
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                             <connections>
-                                                                <action selector="imGoingThere:" destination="vbI-o3-gbe" eventType="touchUpInside" id="jal-4C-xCn"/>
+                                                                <action selector="ImgoingPost:" destination="X5e-do-ZUI" eventType="touchUpInside" id="Y2f-Pm-HCQ"/>
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBB-vX-mOw">
@@ -634,6 +637,8 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="305" id="0Xt-4T-JwT"/>
+                                                        <constraint firstAttribute="trailing" secondItem="k5u-sf-i4E" secondAttribute="trailing" constant="5" id="gGw-Hc-1x1"/>
+                                                        <constraint firstItem="k5u-sf-i4E" firstAttribute="top" secondItem="r09-zf-Vbq" secondAttribute="top" constant="-14" id="ow8-i5-a9U"/>
                                                         <constraint firstAttribute="height" constant="29" id="uAF-9g-lK1"/>
                                                     </constraints>
                                                 </view>
@@ -680,7 +685,7 @@
                                             <outlet property="postTextLabel" destination="XSY-36-WNe" id="77s-i6-Rjd"/>
                                             <outlet property="userNameLabel" destination="dJp-Ko-WeP" id="j81-vT-vE6"/>
                                             <outlet property="userPhoto" destination="yxF-nP-fr0" id="elU-Ak-CF1"/>
-                                            <segue destination="Ib5-sI-8oP" kind="push" identifier="group_post" id="Ged-iD-hWn"/>
+                                            <segue destination="Ib5-sI-8oP" kind="push" identifier="group_post" id="JUv-jf-Q15"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="430" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="ImagePostCell" rowHeight="430" id="JZn-jD-48F" customClass="ImagePostCell" customModule="Lugger" customModuleProvider="target">
@@ -748,6 +753,9 @@
                                                             <state key="normal" image="comment_inactive">
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <connections>
+                                                                <segue destination="Ib5-sI-8oP" kind="push" identifier="comment_post" id="zy5-SF-3JE"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2m-Zf-9EQ">
                                                             <rect key="frame" x="254" y="-3" width="43" height="43"/>
@@ -755,7 +763,7 @@
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                             <connections>
-                                                                <action selector="imGoingThere:" destination="JZn-jD-48F" eventType="touchUpInside" id="rKb-1r-fot"/>
+                                                                <action selector="ImgoingPost:" destination="X5e-do-ZUI" eventType="touchUpInside" id="qQJ-ze-w50"/>
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="elp-0s-DHA">
@@ -864,8 +872,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="87" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fJd-sr-ljQ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="87" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fJd-sr-ljQ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="465"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="87" id="2gR-WR-pgn" customClass="CommentCell" customModule="Lugger" customModuleProvider="target">
@@ -924,7 +932,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="postComment:" destination="Ib5-sI-8oP" eventType="touchUpInside" id="2EZ-rj-Okb"/>
+                                            <action selector="postComment:" destination="Ib5-sI-8oP" eventType="touchUpInside" id="mVA-aF-bqK"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -943,7 +951,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="LcP-ru-kSH" firstAttribute="top" secondItem="fJd-sr-ljQ" secondAttribute="bottom" constant="8" id="8XU-Yv-3dh"/>
                             <constraint firstItem="LcP-ru-kSH" firstAttribute="leading" secondItem="dWf-sq-dTu" secondAttribute="leading" id="AMX-dd-Lss"/>
+                            <constraint firstAttribute="trailing" secondItem="fJd-sr-ljQ" secondAttribute="trailing" id="RSH-lw-6fw"/>
+                            <constraint firstItem="fJd-sr-ljQ" firstAttribute="top" secondItem="dWf-sq-dTu" secondAttribute="top" id="Tvl-4q-MXh"/>
+                            <constraint firstItem="fJd-sr-ljQ" firstAttribute="leading" secondItem="dWf-sq-dTu" secondAttribute="leading" id="cXZ-JN-0Ry"/>
                             <constraint firstItem="ORE-PJ-3eW" firstAttribute="top" secondItem="LcP-ru-kSH" secondAttribute="bottom" id="tyX-Xw-7PD"/>
                             <constraint firstAttribute="trailing" secondItem="LcP-ru-kSH" secondAttribute="trailing" id="yPY-F3-zzp"/>
                         </constraints>
@@ -5893,7 +5905,7 @@ Cg
         <image name="image_placeholder" width="200" height="200"/>
         <image name="imgoing_inactive" width="43" height="43"/>
         <image name="like_inactive" width="33" height="40"/>
-        <image name="logo" width="890" height="890"/>
+        <image name="logo" width="401" height="484"/>
         <image name="menu_home_64" width="64" height="38"/>
         <image name="menu_mygroups_64" width="64" height="38"/>
         <image name="menu_profile_64" width="64" height="38"/>
@@ -5907,9 +5919,9 @@ Cg
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="XF8-f6-yk0"/>
         <segue reference="KFx-HV-Xlk"/>
-        <segue reference="T7r-vt-FNv"/>
+        <segue reference="XF8-f6-yk0"/>
+        <segue reference="zy5-SF-3JE"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

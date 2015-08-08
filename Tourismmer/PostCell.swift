@@ -42,14 +42,20 @@ class PostCell:UITableViewCell, APIProtocol {
         
         if (post.userHasLiked) {
             likeButton.setImage(UIImage(named: "like_active"), forState: UIControlState.Normal)
+        } else {
+            likeButton.setImage(UIImage(named: "like_inactive"), forState: UIControlState.Normal)
         }
         
         if (post.userHasCommented) {
             commentButton.setImage(UIImage(named: "comment_active"), forState: UIControlState.Normal)
+        } else {
+            commentButton.setImage(UIImage(named: "comment_inactive"), forState: UIControlState.Normal)
         }
         
         if (post.userIsGoing) {
             imGoingButton.setImage(UIImage(named: "imgoing_active"), forState: UIControlState.Normal)
+        } else {
+            imGoingButton.setImage(UIImage(named: "imgoing_inactive"), forState: UIControlState.Normal)
         }
         
         setLayout()
@@ -101,6 +107,7 @@ class PostCell:UITableViewCell, APIProtocol {
     }
     
     @IBAction func imGoingThere(sender: AnyObject) {
+        
         api.callback = didReceiveImGoingResults
         api.HTTPPostJSON("/post/userGo", jsonObj: self.post.likeDictionaryFromObject())
         

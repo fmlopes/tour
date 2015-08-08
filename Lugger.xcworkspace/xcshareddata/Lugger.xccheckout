@@ -5,9 +5,9 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>78C49F2E-0A9F-4689-A8C6-5015313D33D0</string>
+	<string>8FCC8F69-1C75-4D8C-8828-59FB67D5E7D5</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Tourismmer</string>
+	<string>Lugger</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>B4F0480BF7AFAA34DB13926B18E31C528B6A7577</key>
@@ -16,7 +16,7 @@
 		<string>http://54.94.138.1:85/svn/tour</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Tourismmer.xcworkspace</string>
+	<string>Lugger.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>B4F0480BF7AFAA34DB13926B18E31C528B6A7577</key>
