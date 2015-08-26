@@ -22,30 +22,32 @@ class API {
     }
     
     func HTTPsendRequest(request: NSMutableURLRequest) -> Void {
-        let session = NSURLSession.sharedSession()
-        let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
-            println("Task completed")
-            if((error) != nil) {
-                // If there is an error in the web request, print it to the console
-                println(error.localizedDescription)
-            }
-            
-            var err: NSError?
-            var jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers, error: &err) as! NSDictionary
-            if((err) != nil) {
-                // If there is an error parsing JSON, print it to the console
-                println("JSON Error \(err!.localizedDescription)")
-            }
-            dispatch_async(dispatch_get_main_queue(), {
-                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                if ((self.callback) != nil) {
-                    self.callback(jsonResult)
-                } else {
-                    self.delegate.didReceiveAPIResults(jsonResult)
+        if Util.hasConnectivity() {
+            let session = NSURLSession.sharedSession()
+            let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+                println("Task completed")
+                if((error) != nil) {
+                    // If there is an error in the web request, print it to the console
+                    println(error.localizedDescription)
                 }
+            
+                var err: NSError?
+                var jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers, error: &err) as! NSDictionary
+                if((err) != nil) {
+                    // If there is an error parsing JSON, print it to the console
+                    println("JSON Error \(err!.localizedDescription)")
+                }
+                dispatch_async(dispatch_get_main_queue(), {
+                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                    if ((self.callback) != nil) {
+                        self.callback(jsonResult)
+                    } else {
+                        self.delegate.didReceiveAPIResults(jsonResult)
+                    }
+                })
             })
-        })
-        task.resume()
+            task.resume()
+        }
     }
     
     func HTTPGet(url: String) -> Void {
