@@ -36,19 +36,19 @@ class SettingsViewController: UIViewController, FBSDKLoginButtonDelegate {
     // Facebook Delegate Methods
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
-        println("User Logged In")
+        print("User Logged In")
         
         if ((error) != nil) {
             // Process error
         } else if result.isCancelled {
-            println("Cancelled")
+            print("Cancelled")
         } else {
             
         }
     }
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
-        println("User Logged Out")
+        print("User Logged Out")
         
         Util.dropUserFromDefaults()
         

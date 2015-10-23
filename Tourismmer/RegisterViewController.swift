@@ -15,6 +15,8 @@ import MobileCoreServices
 class RegisterViewController:UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, APIProtocol {
     
     lazy var api:API = API(delegate: self)
+    var selectedGender:String = "MALE"
+    var user:User = User()
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -27,7 +29,7 @@ class RegisterViewController:UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var profileImgButton: UIButton!
     
     required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        super.init(coder: aDecoder)!
     }
     
     override func viewDidLoad() {
@@ -41,31 +43,48 @@ class RegisterViewController:UIViewController, UIImagePickerControllerDelegate, 
     
     @IBAction func RegisterClick(sender: AnyObject) {
         
-        if nameTextField.text.isEmpty {
-            println("Nome é obrigatório")
+        if nameTextField.text!.isEmpty {
+            print("Nome é obrigatório")
             return
         }
-        if emailTextField.text.isEmpty {
-            println("Email é obrigatório")
+        if emailTextField.text!.isEmpty {
+            print("Email é obrigatório")
             return
         }
-        if passTextField.text.isEmpty {
-            println("Senha é obrigatório")
+        if passTextField.text!.isEmpty {
+            print("Senha é obrigatório")
             return
         }
         
-        let user:User = User(id: 0, name: nameTextField.text, birthdate: birthdayDatePicker.date, email: emailTextField.text, pass: passTextField.text, gender: gendersSegmentedControl.description, facebookId: 0)
+        self.user = User(id: 0, name: nameTextField.text!, birthdate: Util.dateFromString("dd/MM/yyyy", date: birthdayTextField.text!), email: emailTextField.text!, pass: passTextField.text!, gender: selectedGender, facebookId: 0)
         
-        api.HTTPPostJSON("/user", jsonObj: user.dictionaryFromUser())
+        api.HTTPPostJSON("/user", jsonObj: self.user.dictionaryFromUserDTO())
+    }
+    
+    @IBAction func segmentedControlAction(sender: AnyObject) {
+        if(gendersSegmentedControl.selectedSegmentIndex == 0)
+        {
+            selectedGender = "MALE";
+        }
+        else if(gendersSegmentedControl.selectedSegmentIndex == 1)
+        {
+            selectedGender = "FEMALE";
+        }
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+        self.nameTextField.resignFirstResponder()
+        self.emailTextField.resignFirstResponder()
+        self.passTextField.resignFirstResponder()
+        self.birthdayTextField.resignFirstResponder()
     }
     
     @IBAction func loadCamera(sender: AnyObject) {
         if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)){
-            var picker = UIImagePickerController()
+            let picker = UIImagePickerController()
             picker.delegate = self
             picker.sourceType = UIImagePickerControllerSourceType.Camera
-            var mediaTypes: Array<AnyObject> = [kUTTypeImage]
-            picker.mediaTypes = mediaTypes
             picker.allowsEditing = true
             self.presentViewController(picker, animated: true, completion: nil)
             
@@ -80,7 +99,7 @@ class RegisterViewController:UIViewController, UIImagePickerControllerDelegate, 
         picker.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         
         let mediaType = info[UIImagePickerControllerMediaType] as! String
         var originalImage:UIImage?, editedImage:UIImage?, imageToSave:UIImage?
@@ -102,7 +121,7 @@ class RegisterViewController:UIViewController, UIImagePickerControllerDelegate, 
             profileImgButton.reloadInputViews()
             
             // Save the new image (original or edited) to the Camera Roll
-            UIImageWriteToSavedPhotosAlbum (imageToSave, nil, nil , nil)
+            UIImageWriteToSavedPhotosAlbum (imageToSave!, nil, nil , nil)
             
         }
         
@@ -112,18 +131,19 @@ class RegisterViewController:UIViewController, UIImagePickerControllerDelegate, 
     func uploadToS3(name: String){
         
         // get the image from a UIImageView that is displaying the selected Image
-        var img:UIImage = resizedImage()
+        let img:UIImage = resizedImage()
         
         // create a local image that we can use to upload to s3
-        var path:NSString = NSTemporaryDirectory().stringByAppendingPathComponent("\(name).png")
-        var imageData:NSData = UIImagePNGRepresentation(img)
+        let temp = NSTemporaryDirectory()
+        let path:NSString = (temp as NSString).stringByAppendingPathComponent("\(name).png")
+        let imageData:NSData = UIImagePNGRepresentation(img)!
         imageData.writeToFile(path as String, atomically: true)
         
         // once the image is saved we can use the path to create a local fileurl
-        var url:NSURL = NSURL(fileURLWithPath: path as String)!
+        let url:NSURL = NSURL(fileURLWithPath: path as String)
         
         // next we set up the S3 upload request manager
-        var uploadRequest = AWSS3TransferManagerUploadRequest()
+        let uploadRequest = AWSS3TransferManagerUploadRequest()
         uploadRequest?.bucket = "tour-imgs"
         uploadRequest?.ACL = AWSS3ObjectCannedACL.PublicRead
         uploadRequest?.key = "profile-imgs/\(name).png"
@@ -141,7 +161,7 @@ class RegisterViewController:UIViewController, UIImagePickerControllerDelegate, 
             }else{
                 NSLog("Image uploaded.")
                 
-                let imageURL = "https://s3-sa-east-1.amazonaws.com/tour-imgs/profile-imgs/\(name).png"
+                //let imageURL = "https://s3-sa-east-1.amazonaws.com/tour-imgs/profile-imgs/\(name).png"
                 
             }
             
@@ -171,7 +191,14 @@ class RegisterViewController:UIViewController, UIImagePickerControllerDelegate, 
     
     func didReceiveAPIResults(results: NSDictionary) {
         if (results["statusCode"] as! String == MessageCode.Success.rawValue) {
-            println("Registered")
+            print("Registered")
+            
+            // TO DO: Set User Defaults.
+            self.user.id = results["id"] as! NSNumber
+            let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject(self.user.dictionaryFromUserDefaults(), forKey: "loggedUser")
+            defaults.synchronize()
+            
             let homeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("TabBar") as!  UITabBarController
         
             self.navigationController?.pushViewController(homeViewController, animated: true)

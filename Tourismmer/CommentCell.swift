@@ -14,6 +14,7 @@ class CommentCell:UITableViewCell {
     @IBOutlet weak var authorPhoto: UIImageView!
     @IBOutlet weak var authorName: UILabel!
     @IBOutlet weak var authorText: UILabel!
+    lazy var facebookService:FacebookService = FacebookService()
     
     func setLayout() {
         // Circle Profile Photo
@@ -26,12 +27,14 @@ class CommentCell:UITableViewCell {
         self.authorName!.text = comment.author.name as String
         self.authorText!.text = comment.text as String
         
-        FacebookService.setFacebookProfilePhoto(comment.author.facebookId, callback: profileImageCallback)
+        facebookService.setFacebookProfilePhoto(comment.author.facebookId, facebookImageCallback: imageCallback)
         
         self.setLayout()
     }
     
-    func profileImageCallback(image: UIImage?) -> Void {
-        authorPhoto!.image = image
+    func imageCallback(result:UIImage?) -> Void {
+        authorPhoto!.image = result
     }
+    
+    
 }

@@ -22,7 +22,9 @@ class SearchViewController:UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         setLayout()
     }
     
@@ -46,13 +48,12 @@ class SearchViewController:UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var cell: Cell = self.searchTableView.dequeueReusableCellWithIdentifier(kCellIdentifier, forIndexPath: indexPath) as! Cell
+        let cell: Cell = self.searchTableView.dequeueReusableCellWithIdentifier(kCellIdentifier, forIndexPath: indexPath) as! Cell
         
         if selectedSearch == "LUGARES" || selectedSearch == "INTERESSE"{
-            var group:Group = searchGroupResults[indexPath.row]
+            let group:Group = searchGroupResults[indexPath.row]
             
             cell.postText.text = group.location.name as String
-            cell.postDate.text = Util.stringFromDate("MMM/yyyy", date: group.date)
             cell.postGoal.text = group.type?.rawValue
             cell.id = group.id
         } else if selectedSearch == "PESSOAS" {
@@ -94,7 +95,7 @@ class SearchViewController:UIViewController, UITableViewDataSource, UITableViewD
     
     func updateSearchResultsForSearchController(searchController: UISearchController)
     {
-        filterContentForSearchText(searchController.searchBar.text)
+        filterContentForSearchText(searchController.searchBar.text!)
     }
     
     func didReceiveAPIResults(results: NSDictionary) {
@@ -105,11 +106,11 @@ class SearchViewController:UIViewController, UITableViewDataSource, UITableViewD
                 var users = [User]()
                 users.append(User(id: 0, name: "", birthdate: NSDate(), email: "", pass: "", gender: "", facebookId: 0))
                 
-                var location = Location(name: item["destination"] as! String, lat: NSDecimalNumber.zero(), long: NSDecimalNumber.zero())
+                let location = Location(name: item["destination"] as! String, lat: NSDecimalNumber.zero(), long: NSDecimalNumber.zero())
                 
-                var purpose:NSDictionary = item["purpose"] as! NSDictionary
-                var image:NSDictionary = item["image"]as! NSDictionary
-                var dateString = item["date"] as! String
+                let purpose:NSDictionary = item["purpose"] as! NSDictionary
+                let image:NSDictionary = item["image"]as! NSDictionary
+                let dateString = item["date"] as! String
                 searchGroupResults.append(Group(users: users, user: User(), location: location.name as String, date: Util.dateFromString("dd-MM-yyyy", date: dateString), type: TripType.valueFromId(purpose["id"] as! Int), imgPath: image["url"]as! String, id: item["id"] as! Int))
             }
             self.searchTableView.reloadData()
@@ -123,7 +124,6 @@ class SearchViewController:UIViewController, UITableViewDataSource, UITableViewD
             let groupCell = sender as! Cell
             
             vc.group.location = Location(name: groupCell.postText.text!, lat: NSDecimalNumber.zero(), long: NSDecimalNumber.zero())
-            vc.group.date = Util.dateFromString("MM/yy", date: groupCell.postDate.text!)
             vc.group.type = TripType(rawValue: (groupCell.postGoal.text!))
             //vc.image = groupCell.postImage.image!
             vc.group.id = groupCell.id

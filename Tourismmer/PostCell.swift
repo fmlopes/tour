@@ -16,6 +16,7 @@ class PostCell:UITableViewCell, APIProtocol {
     var userHasCommented = false
     var userIsGoingThere = false
     lazy var api:API = API(delegate: self)
+    lazy var facebookService:FacebookService = FacebookService()
     
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var commentButton: UIButton!
@@ -27,6 +28,7 @@ class PostCell:UITableViewCell, APIProtocol {
     @IBOutlet weak var postLikesLabel: UILabel!
     @IBOutlet weak var postImGoingCountUser: UILabel!
     @IBOutlet weak var footerView: UIView?
+    @IBOutlet weak var postDatetime: UILabel!
     
     func setCell() -> Void {
         
@@ -35,6 +37,7 @@ class PostCell:UITableViewCell, APIProtocol {
         postImGoingCountUser!.text = String(post.imGoingCount)
         postLikesLabel!.text = String(post.likeCount)
         userNameLabel!.text = String(post.author.name)
+        postDatetime.text = Util.stringFromDate("dd/MM/yyyy HH:mm", date: post.date)
         
         userHasLiked = post.userHasLiked
         userHasCommented = post.userHasCommented
@@ -60,12 +63,12 @@ class PostCell:UITableViewCell, APIProtocol {
         
         setLayout()
         
-        FacebookService.setFacebookProfilePhoto(post.author.facebookId, callback: profileImageCallback)
+        facebookService.setFacebookProfilePhoto(post.author.facebookId, facebookImageCallback: profileImageCallback)
         
     }
     
-    func profileImageCallback(image: UIImage?) -> Void {
-        self.userPhoto!.image = image
+    func profileImageCallback(result:UIImage?) -> Void {
+        self.userPhoto!.image = result
     }
     
     func setLayout() {

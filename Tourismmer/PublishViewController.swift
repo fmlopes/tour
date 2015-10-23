@@ -45,7 +45,7 @@ class PublishViewController:UIViewController, APIProtocol, UIImagePickerControll
         return true
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
         self.postTextField.resignFirstResponder()
     }
@@ -57,7 +57,7 @@ class PublishViewController:UIViewController, APIProtocol, UIImagePickerControll
         
             if (self.imageName == "image_placeholder") {
                 let post:Post = Post()
-                post.text = self.postTextField.text
+                post.text = self.postTextField.text!
                 post.author = self.user
                 post.group = self.group
                 post.postType = PostType.valueFromId(1)
@@ -81,11 +81,9 @@ class PublishViewController:UIViewController, APIProtocol, UIImagePickerControll
     
     @IBAction func loadCamera(sender: AnyObject) {
         if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)){
-            var picker = UIImagePickerController()
+            let picker = UIImagePickerController()
             picker.delegate = self
             picker.sourceType = UIImagePickerControllerSourceType.Camera
-            var mediaTypes: Array<AnyObject> = [kUTTypeImage]
-            picker.mediaTypes = mediaTypes
             picker.allowsEditing = true
             self.presentViewController(picker, animated: true, completion: nil)
             
@@ -112,7 +110,7 @@ class PublishViewController:UIViewController, APIProtocol, UIImagePickerControll
         picker.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         
         self.imageName = ""
         let mediaType = info[UIImagePickerControllerMediaType] as! String
@@ -136,7 +134,7 @@ class PublishViewController:UIViewController, APIProtocol, UIImagePickerControll
             self.previewImageView.hidden = false
             
             // Save the new image (original or edited) to the Camera Roll
-            UIImageWriteToSavedPhotosAlbum (imageToSave, nil, nil , nil)
+            UIImageWriteToSavedPhotosAlbum (imageToSave!, nil, nil , nil)
             
         }
         
@@ -146,18 +144,19 @@ class PublishViewController:UIViewController, APIProtocol, UIImagePickerControll
     func uploadToS3(name: String){
         
         // get the image from a UIImageView that is displaying the selected Image
-        var img:UIImage = resizedImage()
+        let img:UIImage = resizedImage()
         
         // create a local image that we can use to upload to s3
-        var path:NSString = NSTemporaryDirectory().stringByAppendingPathComponent("\(name).png")
-        var imageData:NSData = UIImagePNGRepresentation(img)
+        let temp = NSTemporaryDirectory() as NSString
+        let path:NSString = temp.stringByAppendingPathComponent("\(name).png")
+        let imageData:NSData = UIImagePNGRepresentation(img)!
         imageData.writeToFile(path as String, atomically: true)
         
         // once the image is saved we can use the path to create a local fileurl
-        var url:NSURL = NSURL(fileURLWithPath: path as String)!
+        let url:NSURL = NSURL(fileURLWithPath: path as String)
         
         // next we set up the S3 upload request manager
-        var uploadRequest = AWSS3TransferManagerUploadRequest()
+        let uploadRequest = AWSS3TransferManagerUploadRequest()
         uploadRequest?.bucket = "tour-imgs"
         uploadRequest?.ACL = AWSS3ObjectCannedACL.PublicRead
         uploadRequest?.key = "post-imgs/\(name).png"
@@ -188,7 +187,7 @@ class PublishViewController:UIViewController, APIProtocol, UIImagePickerControll
                 let imageURL = "https://s3-sa-east-1.amazonaws.com/tour-imgs/post-imgs/\(name).png"
                 
                 let post:Post = Post()
-                post.text = self.postTextField.text
+                post.text = self.postTextField.text!
                 post.author = self.user
                 post.group = self.group
                 post.postType = PostType.valueFromId(1)

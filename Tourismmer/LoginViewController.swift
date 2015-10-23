@@ -12,12 +12,12 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, APIProtoc
     
     var user:User = User()
     
-    @IBOutlet weak var recoverPassButton: UIButton!
-    @IBOutlet weak var registerButton: UIButton!
+    //@IBOutlet weak var recoverPassButton: UIButton!
+    //@IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var fbLoginView: FBSDKLoginButton!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passTextField: UITextField!
-    @IBOutlet weak var loginButton: UIButton!
+    //@IBOutlet weak var emailTextField: UITextField!
+    //@IBOutlet weak var passTextField: UITextField!
+    //@IBOutlet weak var loginButton: UIButton!
     lazy var api:API = API(delegate: self)
     
     override func viewWillAppear(animated: Bool) {
@@ -36,35 +36,33 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, APIProtoc
             self.navigationController?.pushViewController(homeViewController, animated: false)
             
         } else if (FBSDKAccessToken.currentAccessToken() != nil) {
-            println("User already authorized app")
+            print("User already authorized app")
             returnUserData()
             
-            //let homeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("TabBar") as! UITabBarController
-            //self.navigationController?.pushViewController(homeViewController, animated: false)
         } else {
             
-            self.emailTextField.backgroundColor = UIColor.whiteColor()
-            self.emailTextField.alpha = 0.3
+//            self.emailTextField.backgroundColor = UIColor.whiteColor()
+//            self.emailTextField.alpha = 0.3
+//            
+//            self.passTextField.backgroundColor = UIColor.whiteColor()
+//            self.passTextField.alpha = 0.3
             
-            self.passTextField.backgroundColor = UIColor.whiteColor()
-            self.passTextField.alpha = 0.3
-            
-            emailTextField.hidden = false
-            passTextField.hidden = false
-            loginButton.hidden = false
+//            emailTextField.hidden = false
+//            passTextField.hidden = false
+//            loginButton.hidden = false
             fbLoginView.hidden = false
-            registerButton.hidden = false
-            recoverPassButton.hidden = false
+            //registerButton.hidden = false
+            //recoverPassButton.hidden = false
         }
     }
     
     func setLayout() {
-        emailTextField.hidden = true
-        passTextField.hidden = true
-        loginButton.hidden = true
+//        emailTextField.hidden = true
+//        passTextField.hidden = true
+//        loginButton.hidden = true
         fbLoginView.hidden = true
-        registerButton.hidden = true
-        recoverPassButton.hidden = true
+        //registerButton.hidden = true
+//        recoverPassButton.hidden = true
         
         self.navigationController?.navigationBarHidden = true
     }
@@ -74,62 +72,64 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, APIProtoc
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func login(sender: AnyObject) {
-        if (isValidForm()) {
-            let encodedEmail:String = emailTextField.text.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
-            let encodedPass:String = passTextField.text.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
-            
-            api.HTTPGet("/user/\(encodedEmail)/\(encodedPass)")
-            
-        } else {
-            let alert = UIAlertController(title: "Erro", message: "Os campos Email e Senha são obrigatórios.", preferredStyle: UIAlertControllerStyle.Alert)
-            
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,
-                handler: nil))
-            
-            self.presentViewController(alert, animated: false, completion: nil)
-        }
-    }
+//    @IBAction func login(sender: AnyObject) {
+//        if (isValidForm()) {
+//            let encodedEmail:String = emailTextField.text.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+//            let encodedPass:String = passTextField.text.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+//            
+//            self.user.loginType = "EMAIL"
+//            
+//            api.HTTPGet("/user/\(encodedEmail)/\(encodedPass)")
+//            
+//        } else {
+//            let alert = UIAlertController(title: "Erro", message: "Os campos Email e Senha são obrigatórios.", preferredStyle: UIAlertControllerStyle.Alert)
+//            
+//            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,
+//                handler: nil))
+//            
+//            self.presentViewController(alert, animated: true, completion: nil)
+//        }
+//    }
     
-    func isValidForm() -> Bool {
-        if (emailTextField.text.isEmpty || passTextField.text.isEmpty) {
-            return false
-        }
-        
-        return true
-    }
+//    func isValidForm() -> Bool {
+//        if (emailTextField.text.isEmpty || passTextField.text.isEmpty) {
+//            return false
+//        }
+//        
+//        return true
+//    }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
-        self.emailTextField.resignFirstResponder()
-        self.passTextField.resignFirstResponder()
+//        self.emailTextField.resignFirstResponder()
+//        self.passTextField.resignFirstResponder()
     }
     
     // Facebook Delegate Methods
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
-        println("User Logged In")
+        print("User Logged In")
         
         if ((error) != nil) {
             // Process error
         } else if result.isCancelled {
-            println("Cancelled")
+            print("Cancelled")
         } else {
             self.returnUserData()
         }
     }
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
-        println("User Logged Out")
+        print("User Logged Out")
     }
     
     func didReceiveAPIResults(results: NSDictionary)  {
-        println(results)
+        print(results)
         if (results["statusCode"] as! String == MessageCode.RecordNotFound.rawValue) {
             
-            api.HTTPPostJSON("/user", jsonObj: self.user.dictionaryFromUser())
+            api.HTTPPostJSON("/user", jsonObj: self.user.dictionaryFromUserDTO())
         } else if (results["statusCode"] as! String == MessageCode.UserNotRegistered.rawValue) {
-            api.HTTPPostJSON("/user", jsonObj: self.user.dictionaryFromUser())
+            api.HTTPPostJSON("/user", jsonObj: self.user.dictionaryFromUserDTO())
         } else if (results["statusCode"] as! String == MessageCode.UserOrPassInvalid.rawValue) {
             let alert = UIAlertController(title: "Erro", message: "Email ou senha inválidos.", preferredStyle: UIAlertControllerStyle.Alert)
             
@@ -138,10 +138,9 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, APIProtoc
             
             self.presentViewController(alert, animated: false, completion: nil)
         } else {
-            //let stringId:NSString = results["id"] as NSNumber
             self.user.id = results["id"] as! NSNumber
-            var defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject(self.user.dictionaryFromUser(), forKey: "loggedUser")
+            let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject(self.user.dictionaryFromUserDefaults(), forKey: "loggedUser")
             defaults.synchronize()
             
             let homeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("TabBar") as! UITabBarController
@@ -157,7 +156,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, APIProtoc
             if ((error) != nil)
             {
                 // Process error
-                println("Error: \(error)")
+                print("Error: \(error)")
             }
             else
             {
@@ -171,7 +170,9 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, APIProtoc
                     if let birthday: AnyObject = result.valueForKey("birthday") as? String {
                         self.user.birthdate = Util.dateFromString("MM/dd/yyyy", date: birthday as! String)
                     }
+                    self.user.loginType = "FB"
                     
+                    self.api.callback = nil
                     self.api.HTTPGet("/user/facebook/\(self.user.facebookId)")
                 }
             }

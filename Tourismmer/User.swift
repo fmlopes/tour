@@ -15,6 +15,7 @@ class User:NSObject {
     var pass:NSString
     var gender:NSString
     var facebookId:Int64
+    var loginType:String = ""
     
     override init() {
         self.id = 0
@@ -24,6 +25,7 @@ class User:NSObject {
         self.pass = ""
         self.gender = ""
         self.facebookId = 0
+        self.loginType = ""
         
         super.init()
     }
@@ -38,7 +40,7 @@ class User:NSObject {
         self.facebookId = facebookId
     }
     
-    func dictionaryFromUser() -> Dictionary<NSString, NSString> {
+    func dictionaryFromUserDTO() -> Dictionary<NSString, NSString> {
         var array: Dictionary<NSString, NSString> = [
             "id": getId(),
             "name": self.name,
@@ -47,6 +49,20 @@ class User:NSObject {
             "pass": self.pass,
             "gender": "male",
             "facebookId": getFacebookId()
+        ]
+        return array
+    }
+    
+    func dictionaryFromUserDefaults() -> Dictionary<NSString, NSString> {
+        var array: Dictionary<NSString, NSString> = [
+            "id": getId(),
+            "name": self.name,
+            "birthday": Util.stringFromDate("dd-MM-yyyy", date: self.birthdate),
+            "email": self.email,
+            "pass": self.pass,
+            "gender": "male",
+            "facebookId": getFacebookId(),
+            "loginType": loginType
         ]
         return array
     }

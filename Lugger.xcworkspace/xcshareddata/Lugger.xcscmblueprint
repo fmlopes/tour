@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "B4F0480BF7AFAA34DB13926B18E31C528B6A7577",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "B4F0480BF7AFAA34DB13926B18E31C528B6A7577" : 0,
+    "abb01da6-9fe7-5249-a21d-913f9d9322d6" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "8FCC8F69-1C75-4D8C-8828-59FB67D5E7D5",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "B4F0480BF7AFAA34DB13926B18E31C528B6A7577" : "tour",
+    "abb01da6-9fe7-5249-a21d-913f9d9322d6" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Lugger",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Lugger.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/fmlopes\/tour.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B4F0480BF7AFAA34DB13926B18E31C528B6A7577"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/54.94.138.1:85\/svn\/tour",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "abb01da6-9fe7-5249-a21d-913f9d9322d6"
+    }
+  ]
+}

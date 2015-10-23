@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="RKj-R1-hHP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="RKj-R1-hHP">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -12,8 +12,6 @@
             <string>Exo-Bold</string>
         </mutableArray>
         <mutableArray key="Exo-Light.otf">
-            <string>Exo-Light</string>
-            <string>Exo-Light</string>
             <string>Exo-Light</string>
         </mutableArray>
         <mutableArray key="Exo-Medium.otf">
@@ -29,12 +27,10 @@
             <string>Exo-Medium</string>
             <string>Exo-Medium</string>
             <string>Exo-Medium</string>
-            <string>Exo-Medium</string>
-            <string>Exo-Medium</string>
-            <string>Exo-Medium</string>
-            <string>Exo-Medium</string>
         </mutableArray>
         <mutableArray key="Exo-Regular.otf">
+            <string>Exo-Regular</string>
+            <string>Exo-Regular</string>
             <string>Exo-Regular</string>
             <string>Exo-Regular</string>
             <string>Exo-Regular</string>
@@ -95,55 +91,25 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="oH7-g3-ZVe">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="EMAIL" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xW9-kN-Y2b">
-                                <rect key="frame" x="16" y="231" width="288" height="50"/>
-                                <accessibility key="accessibilityConfiguration" hint="Email" label="Email"/>
-                                <fontDescription key="fontDescription" name="Exo-Light" family="Exo" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
-                            </textField>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mf8-pY-Iub" customClass="FBSDKLoginButton">
-                                <rect key="frame" x="16" y="414" width="288" height="58"/>
+                                <rect key="frame" x="16" y="492" width="288" height="58"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fe7-RX-kh1">
-                                <rect key="frame" x="82" y="480" width="156" height="30"/>
-                                <fontDescription key="fontDescription" name="Exo-Medium" family="Exo" pointSize="19"/>
-                                <state key="normal" title="CADASTRE-SE">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="L2z-4B-tfn" kind="push" id="6Nl-Nq-Ufc"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="31g-xH-iMk">
-                                <rect key="frame" x="67" y="518" width="186" height="30"/>
-                                <fontDescription key="fontDescription" name="Exo-Medium" family="Exo" pointSize="19"/>
-                                <state key="normal" title="RECUPERAR SENHA">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="9w3-c3-LwC" kind="push" id="VnV-b6-mnf"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="d6r-fr-dmX">
-                                <rect key="frame" x="94" y="57" width="130" height="157"/>
+                                <rect key="frame" x="94" y="77" width="130" height="157"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="di9-VE-t8C">
-                                <rect key="frame" x="16" y="351" width="288" height="55"/>
-                                <color key="backgroundColor" red="0.61960786581039429" green="0.27058824896812439" blue="0.08235294371843338" alpha="1" colorSpace="deviceRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Para acessar o Lugger, você deve realizar o login através do facebook:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sg4-J6-1Oe">
+                                <rect key="frame" x="16" y="422" width="288" height="62"/>
                                 <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="17"/>
-                                <state key="normal" title="ENTRAR">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zpd-vO-gtq"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="SENHA" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7sz-j8-WtZ">
-                                <rect key="frame" x="16" y="289" width="288" height="50"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="Exo-Light" family="Exo" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                            </textField>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Encontre pessoas e programe, em grupo, o roteiro da sua viagem!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xiy-ed-YIl">
+                                <rect key="frame" x="16" y="274" width="288" height="99"/>
+                                <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                     </view>
@@ -151,12 +117,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="emailTextField" destination="xW9-kN-Y2b" id="TpY-pl-SZ5"/>
                         <outlet property="fbLoginView" destination="mf8-pY-Iub" id="b7O-xL-CAU"/>
-                        <outlet property="loginButton" destination="di9-VE-t8C" id="X22-We-Qcu"/>
-                        <outlet property="passTextField" destination="7sz-j8-WtZ" id="8CQ-qc-lOa"/>
-                        <outlet property="recoverPassButton" destination="31g-xH-iMk" id="VA9-XV-Quf"/>
-                        <outlet property="registerButton" destination="Fe7-RX-kh1" id="3Tw-dd-kS9"/>
                         <segue destination="JNr-Im-9sf" kind="push" id="wPW-iH-7MJ"/>
                     </connections>
                 </viewController>
@@ -239,31 +200,24 @@
                                         <rect key="frame" x="0.0" y="86" width="320" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9TH-h4-4y1" id="G1q-xZ-pfD">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CIDADE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2Q-bd-PWN">
-                                                    <rect key="frame" x="8" y="14" width="210" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CIDADE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2Q-bd-PWN">
+                                                    <rect key="frame" x="8" y="14" width="304" height="21"/>
                                                     <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OBJETIVO" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Df-AV-hnM">
-                                                    <rect key="frame" x="8" y="43" width="210" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OBJETIVO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Df-AV-hnM">
+                                                    <rect key="frame" x="8" y="43" width="304" height="21"/>
                                                     <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="14"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DATA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pAJ-M2-CVi">
-                                                    <rect key="frame" x="226" y="29" width="86" height="21"/>
-                                                    <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="postDate" destination="pAJ-M2-CVi" id="hbe-U0-8wI"/>
                                             <outlet property="postGoal" destination="3Df-AV-hnM" id="7Mz-6d-b6a"/>
                                             <outlet property="postText" destination="x2Q-bd-PWN" id="aI0-iw-bZG"/>
                                             <segue destination="X5e-do-ZUI" kind="push" identifier="search_group" id="qjO-qt-8w9"/>
@@ -296,7 +250,7 @@
                         <viewControllerLayoutGuide type="bottom" id="a4N-st-rhm"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="WbL-5F-GEA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="QUANDO?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jrX-7r-E0v">
@@ -390,26 +344,20 @@
                                         <rect key="frame" x="0.0" y="86" width="320" height="260"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BjD-GR-w4C" id="buY-wI-NNR">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="259"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="259.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cwR-Ly-wzn">
-                                                    <rect key="frame" x="0.0" y="-11" width="320" height="270"/>
+                                                    <rect key="frame" x="0.0" y="-6" width="320" height="270"/>
                                                 </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GOAL" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8u5-C9-5x4">
-                                                    <rect key="frame" x="8" y="112" width="304" height="24"/>
-                                                    <fontDescription key="fontDescription" name="Exo-Medium" family="Exo" pointSize="15"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LOCATION" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lf4-KX-A2f">
-                                                    <rect key="frame" x="8" y="65" width="304" height="37"/>
+                                                    <rect key="frame" x="8" y="80" width="304" height="37"/>
                                                     <fontDescription key="fontDescription" name="Exo-Medium" family="Exo" pointSize="25"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DATE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wd6-ft-aNQ">
-                                                    <rect key="frame" x="8" y="141" width="304" height="24"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GOAL" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8u5-C9-5x4">
+                                                    <rect key="frame" x="8" y="139" width="304" height="24"/>
                                                     <fontDescription key="fontDescription" name="Exo-Medium" family="Exo" pointSize="15"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -418,10 +366,9 @@
                                         </tableViewCellContentView>
                                         <rect key="contentStretch" x="0.0" y="1.3877787807814457e-17" width="1" height="1"/>
                                         <connections>
-                                            <outlet property="postDate" destination="wd6-ft-aNQ" id="qBy-Yb-dJG"/>
-                                            <outlet property="postGoal" destination="8u5-C9-5x4" id="KSZ-Lj-asf"/>
+                                            <outlet property="postGoal" destination="8u5-C9-5x4" id="iIr-TS-38i"/>
                                             <outlet property="postImage" destination="cwR-Ly-wzn" id="X5J-K4-c0E"/>
-                                            <outlet property="postText" destination="lf4-KX-A2f" id="FDE-Hj-TkF"/>
+                                            <outlet property="postText" destination="lf4-KX-A2f" id="Fgv-Ck-O9y"/>
                                             <segue destination="X5e-do-ZUI" kind="push" identifier="home_group" id="XF8-f6-yk0"/>
                                         </connections>
                                     </tableViewCell>
@@ -432,7 +379,7 @@
                                 </connections>
                             </tableView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="o0N-pC-KxM">
-                                <rect key="frame" x="142" y="127" width="37" height="37"/>
+                                <rect key="frame" x="141" y="100" width="37" height="37"/>
                                 <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
@@ -446,7 +393,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="activityIndicatorView" destination="o0N-pC-KxM" id="SUr-i1-Hbt"/>
+                        <outlet property="activityIndicatorView" destination="o0N-pC-KxM" id="WaF-M7-ImE"/>
                         <outlet property="groupsTableView" destination="FGl-hd-OYY" id="oNz-Ym-2jR"/>
                         <outlet property="searchDisplayController" destination="GCF-HI-Nbx" id="8BK-dz-2bM"/>
                     </connections>
@@ -480,37 +427,30 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="redraw" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GroupCell" rowHeight="260" id="iIk-AK-Gm8" customClass="Cell" customModule="Lugger" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="86" width="320" height="230"/>
+                                        <rect key="frame" x="0.0" y="86" width="320" height="260"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iIk-AK-Gm8" id="QV9-2J-W0j">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="229"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="259.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z0b-oA-5M3">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="260"/>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LOCATION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wZ-hy-yUI">
-                                                    <rect key="frame" x="8" y="65" width="304" height="37"/>
+                                                    <rect key="frame" x="8" y="75" width="304" height="37"/>
                                                     <fontDescription key="fontDescription" name="Exo-Medium" family="Exo" pointSize="25"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PURPOSE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oFX-RQ-c04">
-                                                    <rect key="frame" x="8" y="112" width="304" height="24"/>
+                                                    <rect key="frame" x="8" y="147" width="304" height="24"/>
                                                     <fontDescription key="fontDescription" name="Exo-Medium" family="Exo" pointSize="15"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DATE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9g-pu-X9X">
-                                                    <rect key="frame" x="8" y="141" width="304" height="24"/>
-                                                    <fontDescription key="fontDescription" name="Exo-Medium" family="Exo" pointSize="15"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z0b-oA-5M3">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="260"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="postDate" destination="w9g-pu-X9X" id="1DH-My-ysx"/>
                                             <outlet property="postGoal" destination="oFX-RQ-c04" id="5zk-Kk-w5T"/>
                                             <outlet property="postImage" destination="z0b-oA-5M3" id="YcP-jB-Hto"/>
                                             <outlet property="postText" destination="1wZ-hy-yUI" id="LPk-mr-rvs"/>
@@ -573,10 +513,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="430" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="PostCell" rowHeight="140" id="vbI-o3-gbe" customClass="PostCell" customModule="Lugger" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="86" width="320" height="430"/>
+                                        <rect key="frame" x="0.0" y="86" width="320" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vbI-o3-gbe" id="nht-6O-W7d">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="429"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="139.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="21" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XSY-36-WNe">
@@ -646,7 +586,7 @@
                                                     <rect key="frame" x="8" y="8" width="305" height="57"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NOME" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJp-Ko-WeP">
-                                                            <rect key="frame" x="66" y="16" width="246" height="21"/>
+                                                            <rect key="frame" x="66" y="9" width="246" height="21"/>
                                                             <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -654,6 +594,12 @@
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yxF-nP-fr0">
                                                             <rect key="frame" x="0.0" y="2" width="50" height="50"/>
                                                         </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vUt-u7-0jw">
+                                                            <rect key="frame" x="66" y="28" width="239" height="21"/>
+                                                            <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="14"/>
+                                                            <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -680,6 +626,7 @@
                                             <outlet property="imGoingButton" destination="k5u-sf-i4E" id="rlU-qj-MkW"/>
                                             <outlet property="likeButton" destination="1h5-Sk-ulx" id="OhG-cn-moF"/>
                                             <outlet property="postCommentLabel" destination="SSt-ld-KAW" id="F28-Fy-EiG"/>
+                                            <outlet property="postDatetime" destination="vUt-u7-0jw" id="poK-tG-6P5"/>
                                             <outlet property="postImGoingCountUser" destination="EDw-f9-J89" id="o25-PP-bq7"/>
                                             <outlet property="postLikesLabel" destination="NBB-vX-mOw" id="sLU-Vk-w6S"/>
                                             <outlet property="postTextLabel" destination="XSY-36-WNe" id="77s-i6-Rjd"/>
@@ -689,10 +636,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="430" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="ImagePostCell" rowHeight="430" id="JZn-jD-48F" customClass="ImagePostCell" customModule="Lugger" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="214" width="320" height="140"/>
+                                        <rect key="frame" x="0.0" y="226" width="320" height="430"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JZn-jD-48F" id="Iw3-Bf-CI6">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="429"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="429.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d3k-iU-vdy" userLabel="Header View">
@@ -701,8 +648,14 @@
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Ja-E1-cXW">
                                                             <rect key="frame" x="0.0" y="2" width="50" height="50"/>
                                                         </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mLr-al-PCG">
+                                                            <rect key="frame" x="66" y="27" width="231" height="21"/>
+                                                            <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="14"/>
+                                                            <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NOME" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMa-bi-FjR">
-                                                            <rect key="frame" x="66" y="16" width="246" height="21"/>
+                                                            <rect key="frame" x="66" y="8" width="246" height="21"/>
                                                             <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -813,6 +766,7 @@
                                             <outlet property="likeButton" destination="Qhs-8J-MVQ" id="6FZ-Gi-FGm"/>
                                             <outlet property="postBackgroundImage" destination="bkw-3T-yXE" id="n98-Nf-WFg"/>
                                             <outlet property="postCommentLabel" destination="elp-0s-DHA" id="SsA-r4-xIg"/>
+                                            <outlet property="postDatetime" destination="mLr-al-PCG" id="bfQ-8O-d0z"/>
                                             <outlet property="postImGoingCountUser" destination="HoD-iZ-FWc" id="6PY-Ci-F2t"/>
                                             <outlet property="postLikesLabel" destination="JU9-5K-IOR" id="o3o-2p-ImI"/>
                                             <outlet property="postTextLabel" destination="ZlS-LK-fuj" id="L01-Jy-EIU"/>
@@ -1083,6 +1037,9 @@
                                     <segment title="Feminino"/>
                                 </segments>
                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="segmentedControlAction:" destination="L2z-4B-tfn" eventType="valueChanged" id="Tyk-uf-rto"/>
+                                </connections>
                             </segmentedControl>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="SENHA" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mpr-Lx-k0Y">
                                 <rect key="frame" x="90" y="342" width="218" height="40"/>
@@ -1126,7 +1083,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="DATA DE NASCIMENTO" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mhM-JO-ncN">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="dd/MM/yyyy" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mhM-JO-ncN">
                                 <rect key="frame" x="90" y="392" width="218" height="40"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="15"/>
@@ -5567,15 +5524,16 @@ Cg
                                 <rect key="frame" x="142" y="174" width="37" height="37"/>
                                 <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="568" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="2rC-Tk-oqF">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="568" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="140" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="2rC-Tk-oqF">
                                 <rect key="frame" x="0.0" y="144" width="320" height="375"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="430" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="PostCell_Profile" rowHeight="140" id="o8h-Yx-O28" customClass="PostCell" customModule="Lugger" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="86" width="320" height="430"/>
+                                        <rect key="frame" x="0.0" y="22" width="320" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o8h-Yx-O28" id="5GH-6r-76l">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="429"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="139.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="21" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9X-zt-DWP">
@@ -5669,6 +5627,7 @@ Cg
                                                 <constraint firstItem="O9X-zt-DWP" firstAttribute="top" secondItem="p7q-ce-aUW" secondAttribute="bottom" constant="8" id="wYV-pO-ieD"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
                                             <outlet property="commentButton" destination="WUc-TB-fNc" id="1oE-rO-zrY"/>
                                             <outlet property="imGoingButton" destination="FkO-2y-v0W" id="2Lr-cn-Pd1"/>
@@ -5682,10 +5641,10 @@ Cg
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="430" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="ImagePostCell_Profile" rowHeight="430" id="gV9-Bd-8JX" customClass="ImagePostCell" customModule="Lugger" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="214" width="320" height="140"/>
+                                        <rect key="frame" x="0.0" y="162" width="320" height="430"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gV9-Bd-8JX" id="j2q-Lw-1Bc">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="429"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="429.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zDL-rc-09z" userLabel="Header View">
@@ -5796,6 +5755,7 @@ Cg
                                                 <constraint firstItem="i5U-he-HU1" firstAttribute="leading" secondItem="j2q-Lw-1Bc" secondAttribute="leading" constant="10" id="zTa-dk-LJN"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
                                             <outlet property="commentButton" destination="k3D-0J-Jsu" id="d5V-Zo-Pfx"/>
                                             <outlet property="footerView" destination="F8S-b7-jfn" id="lVX-AQ-uJU"/>
@@ -5931,14 +5891,9 @@ Cg
         <image name="menu_search_selected" width="64" height="38"/>
         <image name="menu_settings_64" width="64" height="38"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="KFx-HV-Xlk"/>
-        <segue reference="XF8-f6-yk0"/>
+        <segue reference="qjO-qt-8w9"/>
         <segue reference="zy5-SF-3JE"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

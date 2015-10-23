@@ -12,9 +12,10 @@ protocol GoogleServiceProtocol {
     func didReceiveGoogleResults(results: NSDictionary)
 }
 
-class GoogleService {
+class GoogleService:APIProtocol {
     var googleURL:String = "https://maps.googleapis.com"
     var delegate:GoogleServiceProtocol
+    lazy var api:API = API(delegate: self)
     
     init(delegate:GoogleServiceProtocol){
         self.delegate = delegate
@@ -22,29 +23,11 @@ class GoogleService {
     
     func HTTPGet(url: String) -> Void {
         let fullPath:String = googleURL + url
-        var request = NSMutableURLRequest(URL: NSURL(string: fullPath.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)!)
-        HTTPsendRequest(request)
+        let request = NSMutableURLRequest(URL: NSURL(string: fullPath.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)!)
+        api.HTTPsendRequest(request)
     }
     
-    private func HTTPsendRequest(request: NSMutableURLRequest) -> Void {
-        let session = NSURLSession.sharedSession()
-        let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
-            println("Task completed")
-            if((error) != nil) {
-                // If there is an error in the web request, print it to the console
-                println(error.localizedDescription)
-            }
-            
-            var err: NSError?
-            var jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: .MutableLeaves, error: &err) as! NSDictionary
-            if((err) != nil) {
-                // If there is an error parsing JSON, print it to the console
-                println("JSON Error \(err!.localizedDescription)")
-            }
-            dispatch_async(dispatch_get_main_queue(), {
-                self.delegate.didReceiveGoogleResults(jsonResult)
-            })
-        })
-        task.resume()
+    func didReceiveAPIResults(result: NSDictionary) -> Void {
+        self.delegate.didReceiveGoogleResults(result)
     }
 }

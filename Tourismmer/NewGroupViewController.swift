@@ -51,7 +51,7 @@ class NewGroupViewController: UIViewController, UIPickerViewDataSource, UIPicker
         let stringId:NSString = loggedUser["id"] as! NSString
         owner.id = NSNumber(longLong: stringId.longLongValue)
         
-        let group:Group = Group(users: [User](), user: owner, location: searchBar.text, date: Util.dateFromString("dd/MM/yyyy", date: stringDate), type: TripType(rawValue: selectedPurpose)!, imgPath: "", id: 0)
+        let group:Group = Group(users: [User](), user: owner, location: searchBar.text!, date: Util.dateFromString("dd/MM/yyyy", date: stringDate), type: TripType(rawValue: selectedPurpose)!, imgPath: "", id: 0)
         
         api.HTTPPostJSON("/group", jsonObj: group.dictionaryFromGroup())
     }
@@ -108,7 +108,7 @@ class NewGroupViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchScope searchOption: Int) -> Bool {
         
-        self.filterContentForSearchText(self.searchDisplayController!.searchBar.text)
+        self.filterContentForSearchText(self.searchDisplayController!.searchBar.text!)
         return false
     }
     
@@ -132,15 +132,15 @@ class NewGroupViewController: UIViewController, UIPickerViewDataSource, UIPicker
             let groupViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Group") as! GroupViewController
             let groupId:NSNumber = results["id"] as! NSNumber
             groupViewController.group.id = groupId
-            groupViewController.group.location.name = searchBar.text
+            groupViewController.group.location.name = searchBar.text!
             
             //Custom back button
-            var myBackButton:UIButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+            let myBackButton:UIButton = UIButton(type: UIButtonType.Custom)
             myBackButton.addTarget(self, action: "popToRoot:", forControlEvents: UIControlEvents.TouchUpInside)
             myBackButton.setTitle("<", forState: UIControlState.Normal)
             myBackButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
             myBackButton.sizeToFit()
-            var myCustomBackButtonItem:UIBarButtonItem = UIBarButtonItem(customView: myBackButton)
+            let myCustomBackButtonItem:UIBarButtonItem = UIBarButtonItem(customView: myBackButton)
             myCustomBackButtonItem.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Exo-Medium", size: 19)!], forState: UIControlState.Normal)
             groupViewController.navigationItem.leftBarButtonItem  = myCustomBackButtonItem
             

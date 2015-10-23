@@ -50,7 +50,7 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        super.init(coder: aDecoder)!
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -111,11 +111,11 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
                 let userHasCommented = Util.getJsonOptionalBool(item as! NSDictionary, fieldName: "userCommented")
                 let userIsGoing = Util.getJsonOptionalBool(item as! NSDictionary, fieldName: "userGo")
                 
-                var imGoingCount = Util.getJsonOptionalInteger(item as! NSDictionary, fieldName: "countUserGo")
-                var commentCount = Util.getJsonOptionalInteger(item as! NSDictionary, fieldName: "countComment")
-                var likeCount = Util.getJsonOptionalInteger(item as! NSDictionary, fieldName: "countLike")
+                let imGoingCount = Util.getJsonOptionalInteger(item as! NSDictionary, fieldName: "countUserGo")
+                let commentCount = Util.getJsonOptionalInteger(item as! NSDictionary, fieldName: "countComment")
+                let likeCount = Util.getJsonOptionalInteger(item as! NSDictionary, fieldName: "countLike")
                 
-                let post = Post(id: item["id"] as! NSNumber, text: item["description"] as! String, imagePath: imagePath, likeCount: likeCount, commentCount: commentCount, imGoingCount: imGoingCount, user: user, comments: [Comment](), postType: PostType.valueFromId(postTypeId), group: Group(), date: NSDate(), userHasLiked: userHasLiked, userHasCommented: userHasCommented, userIsGoing: userIsGoing)
+                let post = Post(id: item["id"] as! NSNumber, text: item["description"] as! String, imagePath: imagePath, likeCount: likeCount, commentCount: commentCount, imGoingCount: imGoingCount, user: user, comments: [Comment](), postType: PostType.valueFromId(postTypeId), group: Group(), date: Util.dateFromString("dd-MM-yyyy HH:mm:ss", date: item["date"] as! String), userHasLiked: userHasLiked, userHasCommented: userHasCommented, userIsGoing: userIsGoing)
                 posts.append(post)
             }
             
@@ -192,7 +192,7 @@ class GroupViewController : UIViewController, UITableViewDelegate, UITableViewDa
         let publishViewController = segue.sourceViewController as! PublishViewController
         
         let post:Post = Post()
-        post.text = publishViewController.postTextField.text
+        post.text = publishViewController.postTextField.text!
         post.author = publishViewController.user
         post.group = group
         post.postType = PostType.valueFromId(1)

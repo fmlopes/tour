@@ -39,7 +39,7 @@ class Comment:NSObject {
         var postDictionary:Dictionary<String, AnyObject> = Dictionary<String, AnyObject>()
         postDictionary.updateValue(self.post.id, forKey: "id")
         
-        var array: Dictionary<NSString, AnyObject> = [
+        let array: Dictionary<NSString, AnyObject> = [
             "description": self.text,
             "author": userDictionary,
             "post": postDictionary

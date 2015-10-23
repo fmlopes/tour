@@ -75,7 +75,7 @@ class Post:NSObject {
         var imageDictionary:Dictionary<String, AnyObject> = Dictionary<String, AnyObject>()
         imageDictionary.updateValue(self.imagePath, forKey: "url")
         
-        var array: Dictionary<String, AnyObject> = [
+        let array: Dictionary<String, AnyObject> = [
             "description": text,
             "author": authorDictionary,
             "group": groupDictionary,
@@ -86,7 +86,7 @@ class Post:NSObject {
     }
     
     func likeDictionaryFromObject() -> Dictionary<String, AnyObject> {
-        var array: Dictionary<String, AnyObject> = [
+        let array: Dictionary<String, AnyObject> = [
             "idUser": Util.getUserFromDefaults()!.id,
             "idPost": self.id
         ]

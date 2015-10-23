@@ -51,7 +51,7 @@ class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     
     override func viewWillAppear(animated: Bool) {
         // Keyboard stuff.
-        var center: NSNotificationCenter = NSNotificationCenter.defaultCenter()
+        let center: NSNotificationCenter = NSNotificationCenter.defaultCenter()
         center.addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillChangeFrameNotification, object: nil)
         
         super.viewWillAppear(animated)
@@ -61,7 +61,7 @@ class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillChangeFrameNotification, object: nil)
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
         self.composeTextField.resignFirstResponder()
     }
@@ -69,7 +69,7 @@ class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         let comment:Comment = Comment()
-        comment.text = composeTextField.text
+        comment.text = composeTextField.text!
         comment.author = Util.getUserFromDefaults()!
         comment.post = self.post
         
@@ -81,7 +81,7 @@ class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     @IBAction func postComment(sender: AnyObject) {
 
         let comment:Comment = Comment()
-        comment.text = composeTextField.text
+        comment.text = composeTextField.text!
         comment.author = Util.getUserFromDefaults()!
         comment.post = self.post
         
@@ -90,7 +90,7 @@ class PostViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell: CommentCell = self.commentsTableView.dequeueReusableCellWithIdentifier(kCellIdentifier as String, forIndexPath: indexPath) as! CommentCell
+        let cell: CommentCell = self.commentsTableView.dequeueReusableCellWithIdentifier(kCellIdentifier as String, forIndexPath: indexPath) as! CommentCell
         
         let comment: Comment = comments[indexPath.row]
         

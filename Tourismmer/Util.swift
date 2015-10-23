@@ -11,37 +11,49 @@ import SystemConfiguration
 
 class Util {
     
+    class func getImageFromURL(imgPath:String) -> UIImage? {
+        let url = NSURL(string: imgPath as String)
+        let data = NSData(contentsOfURL: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check
+        return UIImage(data: data!)
+    }
+    
+    class func nsDataToJson(data:NSData, callback:((NSDictionary) -> Void)!) -> Void {
+        do {
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+            
+            let jsonResult = try NSJSONSerialization.JSONObjectWithData(data, options: [.AllowFragments, .MutableContainers]) as! NSDictionary
+            
+            callback(jsonResult)
+        } catch {
+            print("Fetch failed: \((error as NSError).localizedDescription)")
+        }
+    }
+    
     class func hasConnectivity() -> Bool {
-        var zeroAddress = sockaddr_in(sin_len: 0, sin_family: 0, sin_port: 0, sin_addr: in_addr(s_addr: 0), sin_zero: (0, 0, 0, 0, 0, 0, 0, 0))
+        var zeroAddress = sockaddr_in()
         zeroAddress.sin_len = UInt8(sizeofValue(zeroAddress))
         zeroAddress.sin_family = sa_family_t(AF_INET)
-        
         let defaultRouteReachability = withUnsafePointer(&zeroAddress) {
-            SCNetworkReachabilityCreateWithAddress(nil, UnsafePointer($0)).takeRetainedValue()
+            SCNetworkReachabilityCreateWithAddress(nil, UnsafePointer($0))
         }
-        
-        var flags: SCNetworkReachabilityFlags = 0
-        if SCNetworkReachabilityGetFlags(defaultRouteReachability, &flags) == 0 {
+        var flags = SCNetworkReachabilityFlags.ConnectionAutomatic
+        if !SCNetworkReachabilityGetFlags(defaultRouteReachability!, &flags) {
             return false
         }
-        
-        let isReachable = (flags & UInt32(kSCNetworkFlagsReachable)) != 0
-        let needsConnection = (flags & UInt32(kSCNetworkFlagsConnectionRequired)) != 0
-        
-        return isReachable && !needsConnection
+        let isReachable = (flags.rawValue & UInt32(kSCNetworkFlagsReachable)) != 0
+        let needsConnection = (flags.rawValue & UInt32(kSCNetworkFlagsConnectionRequired)) != 0
+        return (isReachable && !needsConnection)
     }
     
     class func setPostCellImageByURL(imageURL:String, callback:((UIImage, ImagePostCell, Post) -> Void)!, postCell:ImagePostCell, post:Post) -> Void {
         let request:NSURLRequest = NSURLRequest(URL: NSURL(string:imageURL)!)
-        var image:UIImage?
         
-        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!, data: NSData!, error:NSError!) -> Void in
-            if error == nil {
-                callback(UIImage(data: data)!, postCell, post)
-            } else {
-                println("Error: \(error.localizedDescription)")
-            }
-        })
+        let session = NSURLSession.sharedSession()
+        session.dataTaskWithRequest(request) { (data, response, error) -> Void in
+            
+            // Handle incoming data like you would in synchronous request
+            callback(UIImage(data: data!)!, postCell, post)
+        }
     }
     
     class func getBooleanFromString(str:String) -> Bool {

@@ -43,7 +43,7 @@ class Group {
         var userDictionary:Dictionary<String, AnyObject> = Dictionary<String, AnyObject>()
         userDictionary.updateValue(self.owner.id, forKey: "id")
         
-        var array: Dictionary<String, AnyObject> = [
+        let array: Dictionary<String, AnyObject> = [
             "destination": location.name,
             "date": Util.stringFromDate("dd-MM-yyyy", date: date),
             "purpose": purposeDictionary,

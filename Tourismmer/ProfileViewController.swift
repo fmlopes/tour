@@ -15,6 +15,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     let imageCellIdentifier = "ImagePostCell_Profile"
     var group:Group = Group()
     lazy var api:API = API(delegate: self)
+    lazy var facebookService:FacebookService = FacebookService()
     
     @IBOutlet weak var postTableView: UITableView!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
@@ -26,7 +27,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         if let user = Util.getUserFromDefaults() {
             nameLabel.text = user.name as String
-            FacebookService.setFacebookProfilePhoto(user.facebookId, callback: profileImageCallback)
+            
+            facebookService.setFacebookProfilePhoto(user.facebookId, facebookImageCallback: imageCallback)
+            
             api.callback = nil
             api.HTTPGet("/post/getListPostByUser/\(user.id)/50/0")
         }
@@ -48,8 +51,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         profileImage!.clipsToBounds = true
     }
     
-    func profileImageCallback(image: UIImage?) -> Void {
-        profileImage.image = image
+    func imageCallback(result:UIImage?) -> Void {
+        self.profileImage.image = result
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -108,9 +111,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 let userHasCommented = Util.getJsonOptionalBool(item as! NSDictionary, fieldName: "userCommented")
                 let userIsGoing = Util.getJsonOptionalBool(item as! NSDictionary, fieldName: "userGo")
                 
-                var imGoingCount = Util.getJsonOptionalInteger(item as! NSDictionary, fieldName: "countUserGo")
-                var commentCount = Util.getJsonOptionalInteger(item as! NSDictionary, fieldName: "countComment")
-                var likeCount = Util.getJsonOptionalInteger(item as! NSDictionary, fieldName: "countLike")
+                let imGoingCount = Util.getJsonOptionalInteger(item as! NSDictionary, fieldName: "countUserGo")
+                let commentCount = Util.getJsonOptionalInteger(item as! NSDictionary, fieldName: "countComment")
+                let likeCount = Util.getJsonOptionalInteger(item as! NSDictionary, fieldName: "countLike")
                 
                 let post = Post(id: item["id"] as! NSNumber, text: item["description"] as! String, imagePath: imagePath, likeCount: likeCount, commentCount: commentCount, imGoingCount: imGoingCount, user: user, comments: [Comment](), postType: PostType.valueFromId(postTypeId), group: Group(), date: NSDate(), userHasLiked: userHasLiked, userHasCommented: userHasCommented, userIsGoing: userIsGoing)
                 posts.append(post)

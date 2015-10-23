@@ -76,11 +76,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // implemented in your application delegate
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-        println("Got token data! \(deviceToken)")
+        print("Got token data! \(deviceToken)")
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
-        println("Couldn't register: \(error)")
+        print("Couldn't register: \(error)")
     }
 }
 
