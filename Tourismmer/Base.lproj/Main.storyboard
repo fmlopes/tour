@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="RKj-R1-hHP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="RKj-R1-hHP">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -387,6 +387,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="HOME" id="PwT-IJ-ftw">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="CdB-YN-bbc">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="BTr-Fc-ULC" kind="push" identifier="home_new_group" id="KFx-HV-Xlk"/>
                             </connections>
@@ -574,7 +575,6 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="305" id="0Xt-4T-JwT"/>
                                                         <constraint firstAttribute="trailing" secondItem="k5u-sf-i4E" secondAttribute="trailing" constant="5" id="gGw-Hc-1x1"/>
@@ -601,13 +601,13 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="305" id="593-3I-7Cb"/>
                                                         <constraint firstAttribute="height" constant="57" id="a6S-mt-9Hb"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="Ix2-J0-VKN" secondAttribute="trailing" constant="7" id="3Ra-Rf-DX8"/>
                                                 <constraint firstAttribute="trailing" secondItem="XSY-36-WNe" secondAttribute="trailing" constant="8" id="A2E-yK-UQX"/>
@@ -661,7 +661,6 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="305" id="1xm-uO-hSH"/>
                                                         <constraint firstAttribute="height" constant="57" id="E35-PV-PUr"/>
@@ -738,12 +737,12 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="qDS-sx-G71"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="DMd-EC-Ltw" firstAttribute="leading" secondItem="Iw3-Bf-CI6" secondAttribute="leading" constant="10" id="1yR-GF-Aio"/>
                                                 <constraint firstItem="ZlS-LK-fuj" firstAttribute="leading" secondItem="Iw3-Bf-CI6" secondAttribute="leading" constant="10" id="9nJ-7F-pLY"/>
@@ -797,6 +796,7 @@
                     <navigationItem key="navigationItem" title="GRUPO" id="dvK-03-SXH">
                         <barButtonItem key="backBarButtonItem" title="GRUPO" id="7co-36-TQb"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="bSj-ZT-cf9">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="wsH-Ko-Zyz" kind="push" identifier="group_newPost" id="VMx-rQ-zdo"/>
                             </connections>
@@ -1300,57 +1300,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rir-wS-TTX">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="Termos de Uso">
-                                        <attributes>
-                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
-                                            <font key="NSFont" size="19" name="Arial-BoldMT"/>
-                                            <real key="NSKern" value="0.0"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="26" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                            <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
-                                            <real key="NSStrokeWidth" value="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content" base64-UTF8="YES">
-Cg
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
-                                            <font key="NSFont" size="12" name="Times-Roman"/>
-                                            <real key="NSKern" value="0.0"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="26" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                            <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
-                                            <real key="NSStrokeWidth" value="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content" base64-UTF8="YES">
-Cg
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
-                                            <font key="NSFont" size="12" name="Times-Roman"/>
-                                            <real key="NSKern" value="0.0"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                            <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
-                                            <real key="NSStrokeWidth" value="0.0"/>
-                                        </attributes>
-                                    </fragment>
                                     <fragment content="O resumo">
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                                             <font key="NSFont" size="16" name="Arial-BoldMT"/>
                                             <real key="NSKern" value="0.0"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="22" defaultTabInterval="36">
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="22" defaultTabInterval="36">
                                                 <tabStops/>
                                             </paragraphStyle>
                                             <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
@@ -1365,7 +1323,7 @@ Cg
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                                             <font key="NSFont" size="12" name="Times-Roman"/>
                                             <real key="NSKern" value="0.0"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="22" defaultTabInterval="36">
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="22" defaultTabInterval="36">
                                                 <tabStops/>
                                             </paragraphStyle>
                                             <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
@@ -1388,7 +1346,7 @@ Cg
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">            Caro usuário(a), você deve ler estes termos e condições inteiros, pois eles se aplicam toda vez que você visita o Tourismmer. Caso você precise lembrar as principais informações contidas nestes termos de uso, nós reunimos aqui um breve resumo com os principais tópicos:</string>
+                                        <string key="content">            Caro usuário(a), você deve ler estes termos e condições inteiros, pois eles se aplicam toda vez que você visita o Lugger. Caso você precise lembrar as principais informações contidas nestes termos de uso, nós reunimos aqui um breve resumo com os principais tópicos:</string>
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                                             <font key="NSFont" size="15" name="ArialMT"/>
@@ -4774,9 +4732,7 @@ Cg
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="TERMOS" id="Lk6-OO-zPc">
-                        <barButtonItem key="backBarButtonItem" title="VOLTAR" id="7Oq-3g-wGJ"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="TERMOS" id="9p4-NF-3Lr"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3gQ-Ba-LfS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -4794,18 +4750,6 @@ Cg
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sfl-f2-wto">
-                                <rect key="frame" x="0.0" y="18" width="320" height="44"/>
-                                <items>
-                                    <navigationItem title="PRIVACIDADE" id="sei-Iy-4pl">
-                                        <barButtonItem key="leftBarButtonItem" title="Voltar" id="yI1-C0-m2V">
-                                            <connections>
-                                                <segue destination="oI8-Qc-osq" kind="unwind" unwindAction="cancelToSettingsViewController:" id="BzI-IQ-1Eu"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZCT-6B-wJF">
                                 <rect key="frame" x="0.0" y="62" width="320" height="506"/>
                                 <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
@@ -5501,7 +5445,6 @@ Cg
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c8s-G4-zzq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="oI8-Qc-osq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1086" y="2163"/>
         </scene>
@@ -5893,7 +5836,7 @@ Cg
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="KFx-HV-Xlk"/>
-        <segue reference="qjO-qt-8w9"/>
+        <segue reference="XF8-f6-yk0"/>
         <segue reference="zy5-SF-3JE"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

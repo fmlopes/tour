@@ -13,4 +13,9 @@ class TermsViewController: UIViewController {
     @IBAction func cancelToSettingsViewController(segue:UIStoryboardSegue) {
         print("fwfew")
     }
+    
+    override func viewDidLoad() {
+        self.navigationController!.navigationBar.barTintColor = UIColor.orangeColor()
+        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Exo-Medium", size: 19)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
+    }
 }

@@ -27,7 +27,8 @@ class SettingsViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     func setLayout() {
-        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Exo-Medium", size: 19)!]
+        self.navigationController!.navigationBar.barTintColor = UIColor.orangeColor()
+        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Exo-Medium", size: 19)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
         let backButton = UIBarButtonItem(title: "VOLTAR", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
         backButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Exo-Medium", size: 19)!], forState: UIControlState.Normal)
         self.navigationItem.backBarButtonItem = backButton

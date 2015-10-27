@@ -34,8 +34,9 @@ class NewGroupViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
     
     func setLayout() {
-        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Exo-Medium", size: 19)!]
-        self.pickerViewArray.sort({ $0.rawValue > $1.rawValue })
+        self.navigationController!.navigationBar.barTintColor = UIColor.orangeColor()
+        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Exo-Medium", size: 19)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
+        self.pickerViewArray.sortInPlace({ $0.rawValue > $1.rawValue })
     }
     
     @IBAction func create(sender: AnyObject) {
