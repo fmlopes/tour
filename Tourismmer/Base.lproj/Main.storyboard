@@ -9,7 +9,6 @@
         <mutableArray key="Exo-Bold.otf">
             <string>Exo-Bold</string>
             <string>Exo-Bold</string>
-            <string>Exo-Bold</string>
         </mutableArray>
         <mutableArray key="Exo-Light.otf">
             <string>Exo-Light</string>
@@ -253,14 +252,8 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="QUANDO?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jrX-7r-E0v">
-                                <rect key="frame" x="120" y="55" width="88" height="21"/>
-                                <fontDescription key="fontDescription" name="Exo-Bold" family="Exo" pointSize="19"/>
-                                <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OBJETIVO?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ae-IO-DXI">
-                                <rect key="frame" x="116" y="228" width="96" height="21"/>
+                                <rect key="frame" x="112" y="83" width="96" height="21"/>
                                 <fontDescription key="fontDescription" name="Exo-Bold" family="Exo" pointSize="19"/>
                                 <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -272,33 +265,26 @@
                                     <outlet property="delegate" destination="BTr-Fc-ULC" id="Ppd-fL-kOe"/>
                                 </connections>
                             </searchBar>
-                            <pickerView tag="2" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lDb-UZ-btQ">
-                                <rect key="frame" x="0.0" y="247" width="320" height="162"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="BTr-Fc-ULC" id="P87-oP-Xpq"/>
-                                    <outlet property="delegate" destination="BTr-Fc-ULC" id="b55-Sb-uC5"/>
-                                </connections>
-                            </pickerView>
-                            <pickerView tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j1N-cu-ztt">
-                                <rect key="frame" x="0.0" y="73" width="320" height="148"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="BTr-Fc-ULC" id="USr-v3-PMc"/>
-                                    <outlet property="delegate" destination="BTr-Fc-ULC" id="sam-Xj-JZt"/>
-                                </connections>
-                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XIv-1X-du4">
-                                <rect key="frame" x="66" y="400" width="196" height="39"/>
+                                <rect key="frame" x="62" y="367" width="196" height="47"/>
                                 <fontDescription key="fontDescription" name="Exo-Medium" family="Exo" pointSize="19"/>
-                                <state key="normal" title="CRIAR">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="CRIAR" backgroundImage="bg">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="create:" destination="BTr-Fc-ULC" eventType="touchUpInside" id="aOv-7G-u73"/>
                                 </connections>
                             </button>
+                            <pickerView tag="2" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lDb-UZ-btQ">
+                                <rect key="frame" x="0.0" y="102" width="320" height="207"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BTr-Fc-ULC" id="P87-oP-Xpq"/>
+                                    <outlet property="delegate" destination="BTr-Fc-ULC" id="b55-Sb-uC5"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.93122782630000001" blue="0.88566496029999997" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="NOVO GRUPO" id="6BR-pP-5Br"/>
@@ -434,6 +420,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="259.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z0b-oA-5M3">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="260"/>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LOCATION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wZ-hy-yUI">
                                                     <rect key="frame" x="8" y="75" width="304" height="37"/>
                                                     <fontDescription key="fontDescription" name="Exo-Medium" family="Exo" pointSize="25"/>
@@ -446,9 +435,6 @@
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z0b-oA-5M3">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="260"/>
-                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
@@ -903,7 +889,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.93122782630000001" blue="0.88566496029999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="LcP-ru-kSH" firstAttribute="top" secondItem="fJd-sr-ljQ" secondAttribute="bottom" constant="8" id="8XU-Yv-3dh"/>
                             <constraint firstItem="LcP-ru-kSH" firstAttribute="leading" secondItem="dWf-sq-dTu" secondAttribute="leading" id="AMX-dd-Lss"/>
@@ -5835,8 +5821,8 @@ Cg
         <image name="menu_settings_64" width="64" height="38"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="KFx-HV-Xlk"/>
-        <segue reference="XF8-f6-yk0"/>
+        <segue reference="nVA-Hw-ljQ"/>
+        <segue reference="We1-Rf-i1t"/>
         <segue reference="zy5-SF-3JE"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

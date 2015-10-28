@@ -30,6 +30,7 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func setLayout() {
+        self.navigationController!.navigationBar.tintColor = UIColor.whiteColor()
         self.navigationController!.navigationBar.barTintColor = UIColor.orangeColor()
         self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Exo-Medium", size: 19)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
         let backButton = UIBarButtonItem(title: "HOME", style: UIBarButtonItemStyle.Plain, target: self, action: nil)

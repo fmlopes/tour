@@ -11,8 +11,8 @@ import Foundation
 class NewGroupViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate, GoogleServiceProtocol, APIProtocol, UITableViewDataSource, UITableViewDelegate  {
     
     var pickerViewArray:[TripType] = [TripType.Business, TripType.ExchangeProgram, TripType.Vacation, TripType.Excursion, TripType.Snowboarding, TripType.Parachute, TripType.Shopping, TripType.Social, TripType.HikesWaterfalls, ]
-    var monthArray:[String] = ["JANEIRO", "FEVEREIRO", "MARÇO", "ABRIL" ,"MAIO" ,"JUNHO", "JULHO", "AGOSTO", "SETEMBRO", "OUTUBRO", "NOVEMBRO", "DEZEMBRO"]
-    var yearArray:[Int] = [2015, 2016, 2017, 2018, 2019, 2020]
+//    var monthArray:[String] = ["JANEIRO", "FEVEREIRO", "MARÇO", "ABRIL" ,"MAIO" ,"JUNHO", "JULHO", "AGOSTO", "SETEMBRO", "OUTUBRO", "NOVEMBRO", "DEZEMBRO"]
+//    var yearArray:[Int] = [2015, 2016, 2017, 2018, 2019, 2020]
     
     var selectedMonth:String = "JANEIRO"
     var selectedYear:Int = 2015
@@ -68,9 +68,11 @@ class NewGroupViewController: UIViewController, UIPickerViewDataSource, UIPicker
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView.tag == 1 {
             if component == 0 {
-                return monthArray.count
+//                return monthArray.count
+                return 0
             } else {
-                return yearArray.count
+//                return yearArray.count
+                return 0
             }
         } else {
             return pickerViewArray.count
@@ -80,9 +82,11 @@ class NewGroupViewController: UIViewController, UIPickerViewDataSource, UIPicker
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
         if pickerView.tag == 1 {
             if component == 0 {
-                return monthArray[row]
+//                return monthArray[row] 
+                return ""
             } else {
-                return String(yearArray[row])
+//                return String(yearArray[row])
+                return ""
             }
         } else {
             return pickerViewArray[row].rawValue
@@ -92,9 +96,11 @@ class NewGroupViewController: UIViewController, UIPickerViewDataSource, UIPicker
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView.tag == 1 {
             if component == 0 {
-                selectedMonth = monthArray[row]
+//                selectedMonth = monthArray[row]
+                selectedMonth = ""
             } else {
-                selectedYear = yearArray[row]
+//                selectedYear = yearArray[row]
+                selectedYear = 0
             }
         } else {
             selectedPurpose = pickerViewArray[row].rawValue
