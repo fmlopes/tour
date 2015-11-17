@@ -144,7 +144,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, APIProtoc
             defaults.synchronize()
             
             let homeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("TabBar") as! UITabBarController
-            self.navigationController?.pushViewController(homeViewController, animated: false)
+            self.navigationController?.pushViewController(homeViewController, animated: true)
         }
     }
     

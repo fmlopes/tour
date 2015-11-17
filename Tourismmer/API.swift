@@ -28,13 +28,17 @@ class API {
             session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
                 print("Task completed")
                 
-                dispatch_async(dispatch_get_main_queue(), {
-                    if self.callback == nil {
-                        self.callback = self.delegate.didReceiveAPIResults
-                    }
+                if data != nil {
+                    dispatch_async(dispatch_get_main_queue(), {
+                        if self.callback == nil {
+                            self.callback = self.delegate.didReceiveAPIResults
+                        }
                     
-                    Util.nsDataToJson(data!, callback: self.callback)
-                })
+                        Util.nsDataToJson(data!, callback: self.callback)
+                    })
+                } else {
+                    print("data is nil")
+                }
             }).resume()
         }
     }

@@ -67,8 +67,8 @@ class PostCell:UITableViewCell, APIProtocol {
         
     }
     
-    func profileImageCallback(result:UIImage?) -> Void {
-        self.userPhoto!.image = result
+    func profileImageCallback(result:NSData?) -> Void {
+        self.userPhoto!.image = UIImage(data: result!)
     }
     
     func setLayout() {

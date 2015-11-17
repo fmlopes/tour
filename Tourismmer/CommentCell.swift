@@ -32,8 +32,8 @@ class CommentCell:UITableViewCell {
         self.setLayout()
     }
     
-    func imageCallback(result:UIImage?) -> Void {
-        authorPhoto!.image = result
+    func imageCallback(result:NSData?) -> Void {
+        authorPhoto!.image = UIImage(data: result!)
     }
     
     

@@ -28,12 +28,16 @@ class Cell:UITableViewCell, APIProtocol {
         self.id = group.id
         
         if group.imgPath != "" {
-            self.postImage.image = Util.getImageFromURL(group.imgPath as String)
+            Util.getImageFromURL(group.imgPath as String, callback: imageCallback)
         } else {
             self.postImage.hidden = true
         }
     }
     
     func didReceiveAPIResults(results: NSDictionary) {
+    }
+    
+    func imageCallback(data: NSData) -> Void {
+        self.postImage.image = UIImage(data: data)
     }
 }

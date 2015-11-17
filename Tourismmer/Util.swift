@@ -11,10 +11,24 @@ import SystemConfiguration
 
 class Util {
     
-    class func getImageFromURL(imgPath:String) -> UIImage? {
+    class func getImageFromURL(imgPath:String, callback: (NSData) -> Void) -> Void {
         let url = NSURL(string: imgPath as String)
-        let data = NSData(contentsOfURL: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check
-        return UIImage(data: data!)
+//        let data = NSData(contentsOfURL: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check
+//        return UIImage(data: data!)
+        
+        getDataFromUrl(url!) { (data, response, error)  in
+            dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                guard let data = data where error == nil else { return }
+                print("Finished downloading \"\(url!.URLByDeletingPathExtension!.lastPathComponent!)\".")
+                callback(data)
+            }
+        }
+    }
+    
+    class func getDataFromUrl(url:NSURL, completion: ((data: NSData?, response: NSURLResponse?, error: NSError? ) -> Void)) {
+        NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
+            completion(data: data, response: response, error: error)
+            }.resume()
     }
     
     class func nsDataToJson(data:NSData, callback:((NSDictionary) -> Void)!) -> Void {

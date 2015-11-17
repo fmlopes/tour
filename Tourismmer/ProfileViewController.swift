@@ -52,8 +52,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         profileImage!.clipsToBounds = true
     }
     
-    func imageCallback(result:UIImage?) -> Void {
-        self.profileImage.image = result
+    func imageCallback(result:NSData?) -> Void {
+        self.profileImage.image = UIImage(data: result!)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

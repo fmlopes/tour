@@ -13,16 +13,20 @@ class FacebookService:APIProtocol {
     var facebookImageCallback: ((UIImage?) -> Void)!
     lazy var api:API = API(delegate: self)
     
-    func setFacebookProfilePhoto(userFacebookID: Int64, facebookImageCallback: ((UIImage?) -> Void)!) -> Void {
+    func setFacebookProfilePhoto(userFacebookID: Int64, facebookImageCallback: ((NSData?) -> Void)!) -> Void {
         let fullPath:String = "https://graph.facebook.com/\(FacebookUtil.getProfilePathURL(userFacebookID))"
         
-        facebookImageCallback(Util.getImageFromURL(fullPath))
+        Util.getImageFromURL(fullPath, callback: facebookImageCallback)
     }
     
     func didReceiveAPIResults(result: NSDictionary) -> Void {
         let dataResult:NSDictionary = result["data"] as! NSDictionary
         
-        facebookImageCallback(Util.getImageFromURL(dataResult["url"] as! String))
+        Util.getImageFromURL(dataResult["url"] as! String, callback: imageCallback)
         
+    }
+    
+    func imageCallback(data: NSData) -> Void {
+        facebookImageCallback(UIImage(data: data))
     }
 }
